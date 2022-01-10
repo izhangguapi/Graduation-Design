@@ -1,0 +1,13 @@
+<view class="img-wrapper">
+
+  <image src="{{catelogimg}}"></image>
+  <text class="title">   TJU校园活动管理系统欢迎您！</text>
+  <text class="goStudy">  </text>
+</view>
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" bindtap="topicture"/>
+      </swiper-item>
+    </block>
+  </swiper>

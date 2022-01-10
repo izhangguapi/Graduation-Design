@@ -1,0 +1,72 @@
+/* pages/enroll/enroll.wxss */
+page{
+  left:0rpx;
+  right:0rpx;
+  background-color:white;
+}
+.first{
+  width:90%;
+  height:100rpx;
+  margin-top:80rpx;
+  margin-left:5%;
+  margin-right:5%;
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  justify-content:center;
+  background-color:#F2F2F2;
+}
+.plas{
+  font-size:30rpx;
+  color:#CCCCCC;
+}
+.inputs{
+  line-height:100rpx;
+  font-size:30rpx;
+  color:#000;
+  margin:auto;
+  margin-left:20rpx;
+  width:100%;
+}
+.second{
+  width:90%;
+  height:100rpx;
+  margin-top:30rpx;
+  margin-left:5%;
+  margin-right:5%;
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  justify-content:center;
+  background-color:#F2F2F2;
+}
+
+.click{
+  width:90%;
+  height:100rpx;
+  line-height:100rpx;
+  margin:auto;
+  margin-top:100rpx;
+  margin-left:5%;
+  margin-right:5%;
+  background-color:#F76968;
+  text-align:center;
+  color:white;
+  font-size:33rpx;
+}
+
+.cha{
+  width:90%;
+  height:50rpx;
+  margin:auto;
+  margin-top:30rpx;
+  margin-left:5%;
+  margin-right:5%;
+}
+
+.no{
+  color:black;
+  font-size:28rpx;
+  margin-left:15rpx;
+  font-family:PingFangSC-regular;
+}

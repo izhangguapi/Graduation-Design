@@ -1,0 +1,33 @@
+<view class="container">
+  <view class="coupon-list"
+  wx:for="{{goodsList}}"
+      wx:key="aid">
+
+    <view class="sawtooth-bor item">
+      <view class="pt10 discount" bindtap="details"  id='{{item.aid}}'>
+       
+        <view class="fs36">活动名称：{{item.aname}}</view>
+        <view class="fs12">发起人：{{item.uusername}}</view>
+        <view class="fs12">活动时间：{{item.atime}}</view>
+      </view>
+      <view class="textc receive"  bindtap="btns1" id='{{item.aid}}' >删除活动 </view>
+    </view>
+  </view>
+</view>
+
+<!-- <view class="first_tab">
+      <view class="goods_item"
+      wx:for="{{goodsList}}"
+      wx:key="aid"
+      >
+
+      
+        <view class="goods_info_wrap">
+          <view class="goods_name">活动名称：{{item.aname}}</view>
+          <view class="goods_name">发起人：{{item.uusername}}</view>
+          <view class="goods_price">发起时间：{{item.aTime}}</view>
+          
+        </view>
+      </view>
+    </view> -->
+  

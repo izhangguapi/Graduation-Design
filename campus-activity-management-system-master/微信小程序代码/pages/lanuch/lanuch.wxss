@@ -1,0 +1,161 @@
+/* pages/goods_list/index.wxss */
+
+/* .goods_item {
+  display: flex;
+  border-bottom: 1px solid #cccccc;
+}
+  .goods_img_wrap {
+      flex: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      
+  }
+  .goods_img_wrap .image {
+    width: 70%;
+}
+
+  .goods_info_wrap {
+      flex: 3;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+}
+      .goods_name {
+          display: -webkit-box;
+          overflow: hidden;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+      }
+
+      .goods_price {
+          color: var(--themeColor);
+          font-size: 32rpx;
+      }
+   */
+   page {
+    width: 100%;
+    min-height: 100%;
+  }
+  
+  .container {
+    /* position: absolute; */
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .coupon-list {
+    width: 710rpx;
+    margin: 0 auto;
+  }
+  
+  .coupon-list .item:first-child {
+    margin-top: 20rpx;
+  }
+  
+  .coupon-list .item {
+    width: 710rpx;
+    height: 250rpx;
+    /* margin-bottom: 20rpx; */
+    /* display: flex; */
+    justify-content: space-between;
+  }
+  /* 第一个 */
+  .sawtooth-bor {
+    display: flex;
+    color: #fff;
+    padding-left: 10rpx;
+    box-sizing: border-box;
+    /* 画出一个半径为8rpx的透明的圆，透明圆以外都是#ffb937颜色 */
+    background: radial-gradient(transparent 0, transparent 8rpx, #ffb937 8rpx);
+    /* 截取上面生成的渐变图的一部分，相当于截取30rpx的正方形中有一个直径10px的透明圆点 */
+    background-size: 30rpx 28rpx;
+    /* 根据优惠券div大小进行微调 */
+    background-position: 16rpx 0rpx;
+    background-color: #fff;
+    position: relative;
+  }
+  
+  .sawtooth-bor:before {
+    content: ' ';
+    display: block;
+    /* 用相同的颜色覆盖 */
+    background-color: #ffb937;
+    /* 绝对定位，遮住中间所有的洞，只保留边角的锯齿 */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    /* 为锯齿保留的距离 */
+    left: 20rpx;
+    right: 20rpx;
+    z-index: -1;
+  }
+  
+  .discount {
+    border-right: 2rpx dashed #f5f5f5;
+    padding: 20rpx;
+    flex: 1;
+    box-sizing: border-box;
+    background-color: #ffb937;
+  }
+  
+  .receive {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 204rpx;
+    height: 100%;
+    padding: 20rpx;
+    box-sizing: border-box;
+    background-color: #ffb937;
+  }
+  
+  /* 这是第二个 */
+  .wrapper {
+    display: flex;
+    position: relative;
+    width: 320px;
+    height: 100px;
+    margin: auto;
+    filter: drop-shadow(2px 2px 3px #999);
+  }
+  .wrapper view{
+    height: 100%;
+  }
+  .wrapper text{
+    display: inline-block;
+    position: absolute;
+    right: 30%;
+    top: 5px;
+    border: 1px solid red;
+  }
+  .left {
+    background: #58a;
+    background: radial-gradient(circle at top right, transparent 5px, #44c9a1 0) top right, radial-gradient(circle at bottom right, transparent 5px, #44c9a1 0) bottom right;
+    background-size: 100% 60%;
+    background-repeat: no-repeat;
+    color: white;
+    width: 70%;
+    border-radius: 5px 0 0 5px;
+  }
+  
+  .right {
+    background: #58a;
+    background: radial-gradient(circle at top left, transparent 5px, #44c9a1 0) top left,radial-gradient(circle at bottom left, transparent 5px, #44c9a1 0) bottom left;
+    background-size: 100% 60%;
+    background-repeat: no-repeat;
+    width: 30%;
+    color: white;
+    border-radius: 0 5px 5px 0; 
+  }
+  .right::after{
+    content: "";
+    position: absolute;
+    top: 5px;
+    height: 90px;
+    border-left: 2rpx dashed #fff;
+  }
+  

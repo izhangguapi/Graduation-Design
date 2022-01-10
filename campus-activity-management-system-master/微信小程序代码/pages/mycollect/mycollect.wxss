@@ -1,0 +1,90 @@
+/* pages/takeLessons/lessonList.wxss */
+
+
+
+.lesson-total {
+  position: fixed;
+  width: calc(100% - 20rpx);
+  top: 80rpx;
+  left: 10rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  font-size: 24rpx;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+  z-index: 100;
+  background: #eef4f5;
+  border-top-left-radius:8rpx;
+  border-top-right-radius:8rpx;
+
+}
+.tab-list{
+  height: 80rpx;
+  position: fixed;
+  top: 0;
+  color: #acd3fe;
+  font-size: 28rpx;
+  line-height: 80rpx;
+  z-index: 100;
+  background: #007af8;
+  width: 100%;
+  text-align: center;
+}
+.tab-list .btn{
+  display: inline-block;
+  padding: 0 30rpx;
+  position: relative;
+}
+.tab-list .btn text{
+  display: inline-block;
+  height: 2px;
+  width: 40rpx;
+  position: absolute;
+  bottom: 6rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffff;
+}
+.footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #007af8;
+  z-index: 100;
+  height: 20rpx;
+  width: 100%;
+}
+
+.content{
+  padding: 152rpx 30rpx 20rpx;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  box-sizing: border-box;
+}
+.lesson-list{
+  height: 100%;
+  overflow-y: scroll;
+}
+.lesson-list-item {
+  margin-bottom:16rpx;
+}
+
+.modal{
+   padding: 80rpx 10rpx 20rpx 10rpx; 
+   background: #007af8;
+   position: fixed;
+   top: 0;
+   width: 100%;
+   box-sizing: border-box;
+}
+.scroll-wrap {
+  width: 100%; 
+  height: calc(100% - 72rpx);
+  position: relative;
+  padding-top:72rpx;
+  background: #eef4f5;
+  box-sizing: content-box;
+  overflow: hidden;
+  border-radius: 8rpx;
+}

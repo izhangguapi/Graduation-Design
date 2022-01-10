@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+  },
+  "navigationBarTitleText": "我的发起", 
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

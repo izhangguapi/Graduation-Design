@@ -1,0 +1,61 @@
+{
+  "pages": [
+    "pages/personal/personal",
+    "pages/index/index",
+    "pages/graph/index",
+    "pages/company/company",
+    "pages/login/login",
+    "static/iconfont/iconfont",
+    "pages/lanuch/lanuch",
+    "pages/myjoin/myjoin",
+    "pages/mycollect/mycollect",
+    "pages/more/more",
+    "style/weui.wxss",
+    "style/zanui",
+    "pages/activity/activity",
+    "pages/remove/remove",
+    "pages/resgistration/resgistration",
+    "pages/joindetails/joindetails",
+    "pages/unjoindetails/unjoindetails"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1B82D1",
+    "navigationBarTitleText": "校园活动管理系统",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#707070",
+    "selectedColor": "#1B82D1",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "public/images/home.png",
+        "selectedIconPath": "public/images/homes.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/graph/index",
+        "iconPath": "public/images/analys.png",
+        "selectedIconPath": "public/images/analyss.png",
+        "text": "发起"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "iconPath": "public/images/usr.png",
+        "selectedIconPath": "public/images/usrs.png",
+        "text": "账户"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 8000,
+    "connectSocket": 8000,
+    "uploadFile": 8000,
+    "downloadFile": 8000
+  },
+  "debug": true,
+  "sitemapLocation": "sitemap.json"
+}

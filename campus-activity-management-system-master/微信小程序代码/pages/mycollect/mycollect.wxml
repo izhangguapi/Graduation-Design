@@ -1,0 +1,31 @@
+<view class="container">
+  <view class="tab-list">
+    <view bindtap="switch" data-tab-type="tack" class="tack-btn btn {{tab_type=='tack'?'active':''}}">未开始
+      <text wx:if="{{tab_type=='tack'}}"></text>
+    </view>
+    <view bindtap="switch" data-tab-type="my" class="my-btn btn {{tab_type=='my'?'active':''}}">正在进行({{my_list.length}})
+      <text wx:if="{{tab_type=='my'}}"></text>
+    </view>
+    <view bindtap="switch" data-tab-type="tack" class="tack-btn btn {{tab_type=='tack'?'active':''}}">已结束
+      <text wx:if="{{tab_type=='tack'}}"></text>
+    </view>
+  </view>
+  <view class="lesson-total">
+    {{top_text}}（{{lesson_list.length}}）:
+  </view>
+  
+
+  <view class="content">
+    <view class="lesson-list">
+      <view class="lesson-list-item" wx:for="{{lesson_list}}" wx:key="{{idx}}" wx:for-index="idx">
+        <lessonInfo id='lessonInfo' class="lessonInfo" lesson_info="{{item}}" bind:stackLesson="_stackLesson" index="{{idx}}" bind:openDetail="_openDetail"></lessonInfo>
+      </view>
+    </view>
+  </view>
+  <view class="footer"></view>
+  <view class="modal" style="height:{{height+'px'}};">
+    <view class="scroll-wrap">
+    </view>
+  </view>
+  <lessonDetail id='lessonDetail' bind:tack="_stackLesson" bind:reject="_reject"></lessonDetail>
+</view>

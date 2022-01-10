@@ -1,0 +1,43 @@
+root
+│ 
+│  app.js
+│  app.json
+│  app.wxss
+│  
+├─mars                    //核心文件
+│  ├─apps  //业务
+│  │      articleApp.js   //用于处理部分页面业务（使页面js代码不那么杂乱）
+│  │      
+│  ├─conf
+│  │      config.js       //全局配置文件（import即可使用）
+│  │      
+│  ├─plugins
+│  │      bluebird.js     //Promise对象插件
+│  │      crypto.js       //加密方法（md5等），可自由扩展
+│  │      html2wxml.js    //html转json插件，配合在base中定义的模板可转wxml
+│  │      validator.js    //验证插件（正则），可自由扩展
+│  │      wxcharts.js     //图表插件
+│  │      
+│  ├─services
+│  │  │  baseService.js  //数据业务（逻辑）层
+│  │  │  
+│  │  └─repository      //仓储（数据交互层）
+│  │          
+│  ├─templates           //公共模板
+│  │      base.wxml  
+│  │      
+│  └─common
+│          base.js         //公共方法（Promise对象使用及带有回调函数的wx.request方法）
+│          
+├─pages 
+│  ├─index 
+│  │      
+│  ├─graph               //示例图表插件使用
+│  │      
+│  └─users
+│          
+└─public                  //公共资源
+    ├─images              //图片素材
+    │          
+    └─style               //WeUI官方样式，并在app.wxss中引入
+                    

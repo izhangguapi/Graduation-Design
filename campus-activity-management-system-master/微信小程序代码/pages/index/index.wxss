@@ -1,0 +1,22 @@
+
+.img-wrapper{
+  padding: 20rpx;
+}
+.title{
+  font-size: 50rpx;
+  text-align: center;
+  margin-bottom: 25rpx;
+  color: green;
+}
+.swiper {
+  height: 400rpx;
+  width: 100%;
+}
+.swiper-image {
+  height: 100%;
+  width: 100%;
+}
+.slide-image{
+   height: 100%;
+  width: 100%;
+}
