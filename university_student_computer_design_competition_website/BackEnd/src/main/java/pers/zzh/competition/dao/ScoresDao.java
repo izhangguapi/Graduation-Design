@@ -1,7 +1,7 @@
 package pers.zzh.competition.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import pers.zzh.competition.entities.Scores;
+import pers.zzh.competition.entity.Scores;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

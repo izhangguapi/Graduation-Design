@@ -1,4 +1,4 @@
-package pers.zzh.competition.entities;
+package pers.zzh.competition.entity;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;

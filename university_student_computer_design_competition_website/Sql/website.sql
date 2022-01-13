@@ -61,6 +61,7 @@ INSERT INTO users VALUES (DEFAULT,'小周同学','1','2000-02-15','武汉城市�
 INSERT INTO users VALUES (DEFAULT,'小吴同学','1','1998-10-08','华中师范大学'	,'西安','14912959902','14912959902@qq.com','2','14912959902');
 INSERT INTO users VALUES (DEFAULT,'小郑同学','0','2002-04-16','复旦大学'		,'南通','15089652824','15089652824@qq.com','2','15089652824');
 INSERT INTO users VALUES (DEFAULT,'小王同学','0','2003-09-09','哈尔滨工业大学'	,'惠州','15939648850','15939648850@qq.com','2','15939648850');
+INSERT INTO users VALUES (DEFAULT,'6',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'6');
 
 -- ----------------------------
 -- 创建比赛表:  `contests`

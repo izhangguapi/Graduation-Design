@@ -1,4 +1,4 @@
-package pers.zzh.competition.entities;
+package pers.zzh.competition.entity;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -24,7 +24,7 @@ public class Users {
     @Override
     public String toString() {
         return "Users{" +
-                "user_id=" + userId +
+                "userId=" + userId +
                 ", name='" + name + '\'' +
                 ", sex=" + sex +
                 ", birthday='" + birthday + '\'' +
@@ -32,7 +32,7 @@ public class Users {
                 ", address='" + address + '\'' +
                 ", phone='" + phone + '\'' +
                 ", email='" + email + '\'' +
-                ", group_id=" + groupId +
+                ", groupId=" + groupId +
                 ", password='" + password + '\'' +
                 ", groups=" + groups +
                 '}' + '\n';
