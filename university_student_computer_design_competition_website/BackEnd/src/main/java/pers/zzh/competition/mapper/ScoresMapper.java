@@ -1,9 +1,9 @@
-package pers.zzh.competition.dao;
+package pers.zzh.competition.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import pers.zzh.competition.entity.Scores;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
-public interface ScoresDao extends BaseMapper<Scores> {
+public interface ScoresMapper extends BaseMapper<Scores> {
 }
