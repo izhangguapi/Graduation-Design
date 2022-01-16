@@ -1,7 +1,0 @@
-{
-  "usingComponents": {
-  },
-  "navigationBarTitleText": "未加入", 
-  "enablePullDownRefresh": true,
-  "backgroundTextStyle": "dark"
-}

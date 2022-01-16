@@ -1,0 +1,22 @@
+# 服务器端口
+server:
+  port: 80
+
+spring:
+  main:
+    banner-mode: 'off' # 禁止控制台打印出banner
+  datasource: # 数据库配置
+    druid:
+      driver-class-name: org.mariadb.jdbc.Driver
+      url: jdbc:mariadb://localhost:3306/website?characterEncoding=utf-8&useSSL=false&useTimezone=true&serverTimezone=GMT%2B8
+      username: root
+      password: 995716
+      test-while-idle: false # 取消空闲时测试连接的有效性
+
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: auto # 全局默认主键类型
+  configuration:
+    # MP日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

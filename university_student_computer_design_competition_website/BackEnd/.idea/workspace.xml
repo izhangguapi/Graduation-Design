@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a2f4faf0-13b2-49c4-9432-ccd98a80af67" name="变更" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/common/entity/Login.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/utils/Result.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FrontEnd/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FrontEnd/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FrontEnd/babel.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FrontEnd/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FrontEnd/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FrontEnd/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FrontEnd/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FrontEnd/src/App.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FrontEnd/src/assets/image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FrontEnd/src/assets/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FrontEnd/src/element/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FrontEnd/src/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FrontEnd/src/router/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FrontEnd/src/store/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FrontEnd/src/utils/api.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FrontEnd/src/views/FindMain.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FrontEnd/src/views/HomeMain.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Container.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FrontEnd/src/views/layout/GeneralFooter.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FrontEnd/src/views/layout/GeneralHeader.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Home.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FrontEnd/src/views/layout/NavBar.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FrontEnd/src/views/layout/UserInfo.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FrontEnd/src/views/login.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FrontEnd/src/views/register.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FrontEnd/src/views/success.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FrontEnd/vue.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../campus-activity-management-system-master/前端Web代码/src/views/client/layout/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../campus-activity-management-system-master/前端Web代码/src/views/client/layout/Header.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../campus-activity-management-system-master/前端Web代码/src/views/client/layout/Navbar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../campus-activity-management-system-master/前端Web代码/src/views/client/layout/Navbar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../campus-activity-management-system-master/前端Web代码/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../campus-activity-management-system-master/前端Web代码/vue.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/controller/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/controller/UsersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/dao/ContestsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/mapper/ContestsMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/dao/GroupsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/mapper/GroupsMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/dao/MessagesDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/mapper/MessagesMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/dao/ScoresDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/mapper/ScoresMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/dao/UsersDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/mapper/UsersMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/dto/LoginDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/impl/GroupsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/impl/GroupsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/impl/UsersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/impl/UsersServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pers/zzh/competition/ApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pers/zzh/competition/ApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../毕业设计进度表.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../毕业设计进度表.xlsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectId" id="23VcMYs4u6fTGImS8ZHX8E8aHbP" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../FrontEnd" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="项目" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.35950413" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/pers/zzh/competition" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="pers.zzh.competition.utils" />
+      <recent name="pers.zzh.competition.dto" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.BackEndApplication">
+    <configuration name="ApplicationTests.testGetBy0" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BackEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pers.zzh.competition.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pers.zzh.competition" />
+      <option name="MAIN_CLASS_NAME" value="pers.zzh.competition.ApplicationTests" />
+      <option name="METHOD_NAME" value="testGetBy0" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApplicationTests.testGetPage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BackEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pers.zzh.competition.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pers.zzh.competition" />
+      <option name="MAIN_CLASS_NAME" value="pers.zzh.competition.ApplicationTests" />
+      <option name="METHOD_NAME" value="testGetPage" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UsersServiceTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BackEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pers.zzh.competition.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pers.zzh.competition" />
+      <option name="MAIN_CLASS_NAME" value="pers.zzh.competition.UsersServiceTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UsersServiceTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BackEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pers.zzh.competition.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pers.zzh.competition" />
+      <option name="MAIN_CLASS_NAME" value="pers.zzh.competition.UsersServiceTest" />
+      <option name="METHOD_NAME" value="test1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UsersServiceTest.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BackEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pers.zzh.competition.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pers.zzh.competition" />
+      <option name="MAIN_CLASS_NAME" value="pers.zzh.competition.UsersServiceTest" />
+      <option name="METHOD_NAME" value="test2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BackEndApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="BackEnd" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="pers.zzh.competition.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ApplicationTests.testGetBy0" />
+        <item itemvalue="JUnit.ApplicationTests.testGetPage" />
+        <item itemvalue="JUnit.UsersServiceTest.test2" />
+        <item itemvalue="JUnit.UsersServiceTest.test" />
+        <item itemvalue="JUnit.UsersServiceTest.test1" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="a2f4faf0-13b2-49c4-9432-ccd98a80af67" name="变更" comment="" />
+      <created>1641822651215</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1641822651215</updated>
+      <workItem from="1641822652538" duration="1099000" />
+      <workItem from="1641826188555" duration="572000" />
+      <workItem from="1641901020063" duration="6200000" />
+      <workItem from="1641961625976" duration="29625000" />
+      <workItem from="1642006997887" duration="492000" />
+      <workItem from="1642047570298" duration="9825000" />
+      <workItem from="1642090255220" duration="47000" />
+      <workItem from="1642125562622" duration="1201000" />
+      <workItem from="1642309434870" duration="616000" />
+      <workItem from="1642323839358" duration="14044000" />
+      <workItem from="1642351825116" duration="328000" />
+      <workItem from="1642352173641" duration="812000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
