@@ -1,7 +1,7 @@
 <template>
 	<header class="head">
 		<span class="logo">
-			<img src="https://www.yishuzi.cn/image.png?fsize=30&font=cmll.ttf&text=mineCampus&mirror=no&color=f49bc1&vcolor=6ccff7&bgcolor=fff&alpha=no&output=png&spacing=4&shadow=no&transparent=no&icon=no&iconic=&top_spacing=5&left_spacing=6&icon_size=48">
+			<img src="" alt="">
 		</span>
 
 		<Navbar></Navbar>
@@ -37,7 +37,7 @@ export default {
 	components: { Navbar },
 	data() {
 		return {
-			userName: ''
+			userName: '张瓜皮'
 		};
 	},
 	computed: {

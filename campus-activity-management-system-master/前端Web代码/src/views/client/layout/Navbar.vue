@@ -1,11 +1,3 @@
-<!--
- * @Author: your name
- * @Date: 2021-09-01 19:47:09
- * @LastEditTime: 2021-09-06 08:57:05
- * @LastEditors: your name
- * @Description: In User Settings Edit
- * @FilePath: \front-end\src\views\client\layout\Navbar.vue
--->
 <template>
 	<Menu class='client-nav' mode="horizontal" :active-name=activeItem>
 		<template v-for="(item, index) in menu">

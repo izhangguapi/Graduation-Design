@@ -1,10 +1,12 @@
 <template>
-$END$
+  <div>
+    w
+  </div>
 </template>
 
 <script>
 export default {
-name: "register"
+  name: "register"
 }
 </script>
 

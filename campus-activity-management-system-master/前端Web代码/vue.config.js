@@ -4,12 +4,12 @@ module.exports = {
   productionSourceMap: false,
   devServer: {
     open: true,
-    port: 8080,
+    port: 8090,
     https: false,
     hotOnly: false,
     proxy: {
       '/api': {
-        target: 'http://127.0.0.1:3000',
+        target: 'http://localhost:3000',
         changeOrigin: true,
         ws: true,
         pathRewrite: {

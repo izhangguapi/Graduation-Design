@@ -9,7 +9,7 @@ import org.assertj.core.util.Strings;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import pers.zzh.competition.dao.*;
+import pers.zzh.competition.mapper.*;
 import pers.zzh.competition.entity.*;
 
 import java.util.Map;
@@ -19,15 +19,15 @@ class ApplicationTests {
 
 
     @Autowired
-    private UsersDao usersDao;
+    private UsersMapper usersDao;
     @Autowired
-    private GroupsDao groupsDao;
+    private GroupsMapper groupsDao;
     @Autowired
-    private ScoresDao scoresDao;
+    private ScoresMapper scoresDao;
     @Autowired
-    private MessagesDao messagesDao;
+    private MessagesMapper messagesDao;
     @Autowired
-    private ContestsDao contestsDao;
+    private ContestsMapper contestsMapper;
     @Test
     void testGetBy0() {
         LambdaQueryWrapper<Users> lqw = new LambdaQueryWrapper<>();

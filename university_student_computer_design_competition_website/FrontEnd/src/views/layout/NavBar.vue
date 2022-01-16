@@ -1,8 +1,7 @@
 <template>
-  <el-menu :default-active="this.$route.path" :router="true" class="el-menu-demo" mode="horizontal">
-
-      <el-menu-item v-for="(item,i) in navList" :key="i" :index="item.path">{{ item.name }}</el-menu-item>
-
+  <el-menu :default-active="this.$route.path" :router="true" mode="horizontal">
+      <el-menu-item v-for="(item,i) in navBarList" :key="i" :index="item.path">
+        <i :class="item.icon"></i>{{ item.title }}</el-menu-item>
   </el-menu>
 </template>
 
@@ -11,20 +10,14 @@
 export default {
   data(){
     return{
-      navList:[
-        {path:'/home', name:'主页'},
-        {path:'/find',name:'发现'}
+      navBarList:[
+        {path:'/home', title: '首页',icon: 'el-icon-s-home'},
+        {path:'/find',title: '发现',icon: 'el-icon-s-opportunity'}
       ]
     }
   },
-  methods: {
-    handleSelect(key, keyPath) {
-      console.log(key, keyPath);
-    }
-  },
-  // 监听属性
-  computed: {
-
+  mounted() {
+    console.log(this.$router.options.routes);
   }
 }
 </script>

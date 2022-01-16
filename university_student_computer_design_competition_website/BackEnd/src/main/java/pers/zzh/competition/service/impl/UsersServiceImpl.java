@@ -5,7 +5,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 
 import org.springframework.stereotype.Service;
-import pers.zzh.competition.dao.UsersDao;
+import pers.zzh.competition.mapper.UsersMapper;
 import pers.zzh.competition.entity.Users;
 import pers.zzh.competition.service.UsersService;
 
@@ -17,7 +17,7 @@ import java.util.Map;
  * @since 2022-1-11
  */
 @Service
-public class UsersServiceImpl extends ServiceImpl<UsersDao, Users> implements UsersService {
+public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users> implements UsersService {
 
     /**
      * 分页链表查询

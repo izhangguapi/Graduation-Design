@@ -1,16 +1,18 @@
 package pers.zzh.competition.controller;
 
-
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-
+import com.wf.captcha.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import pers.zzh.competition.entity.Users;
+import pers.zzh.competition.common.entity.Login;
+
 import pers.zzh.competition.service.UsersService;
+import pers.zzh.competition.utils.Result;
 
 
-import java.util.List;
-import java.util.Map;
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 
 /**
  * 前端控制器 - users表的操作
@@ -18,30 +20,96 @@ import java.util.Map;
  * @since 2022-1-12
  */
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/api")
 public class UsersController {
 
     @Autowired
     private UsersService usersService;
 
-    @GetMapping
-    public List<Users> getAll() {
-        return usersService.list();
+    /**
+     * 查询全部
+     * @return Result
+     */
+    @GetMapping("/users")
+    public Result getAll() {
+        return new Result(200,"查询成功",usersService.list());
     }
 
+    /**
+     * 分页链表查询
+     * @param currentPage 第几页
+     * @param pageSize 分页大小
+     * @return Result
+     */
     @GetMapping("{currentPage}/{pageSize}")
-    public Page<Map<String, Object>> getAll(@PathVariable int currentPage, @PathVariable int pageSize) {
-        return usersService.selectListPage(currentPage, pageSize);
+    public Result getAll(@PathVariable int currentPage, @PathVariable int pageSize) {
+        return new Result(200,"查询成功",usersService.selectListPage(currentPage, pageSize));
     }
 
     /**
      * 登录
-     * @param users 类
-     * @return
+     * @param login 类
+     * @return 字符串
      */
     @PostMapping("/login")
-    public String login(@RequestBody Users users) {
-        return usersService.login(users.getPhone(), users.getEmail(),users.getPassword());
+    public Result login(@RequestBody Login login, HttpSession session) {
+        // 定义session存入的验证码
+        String sessionCaptcha;
+        //异常处理，赋值，发生异常返回验证码错误信息
+        try {
+            sessionCaptcha = session.getAttribute(login.getDatetime()).toString();
+        }catch (Exception e){
+            System.out.println("验证码失效,请刷新！");
+            return new Result(2002,"验证码已失效，请刷新！",null);
+        }
+        // 删除session存入的验证码
+        session.removeAttribute(login.getDatetime());
+        // 获取用户输入的验证码
+        String userCaptcha = login.getCaptcha();
+
+        System.out.println("用户输入："+login.getDatetime()+"-"+userCaptcha);
+        // 判断session存入的验证码是否跟用户输入的一样
+        if (sessionCaptcha.equalsIgnoreCase(userCaptcha)){
+            return new Result(200,"登录成功成功",usersService.login(login.getPhone(), login.getEmail(),login.getPassword()));
+        }else {
+            System.out.println("验证码错误");
+            return new Result(201,"验证码错误",null);
+        }
+
+//
+
+    }
+    /**
+     * 生成验证码
+     *
+     * @throws Exception 123
+     */
+    @GetMapping("/captcha")
+    public void getCode(@RequestParam("dateTime") String dateTime,HttpServletResponse response, HttpSession session) throws Exception {
+        ServletOutputStream outputStream = response.getOutputStream();
+        //算术验证码 数字加减乘除. 建议2位运算就行:captcha.setLen(2);
+//        ArithmeticCaptcha captcha = new ArithmeticCaptcha(120, 40);
+        // 中文验证码
+//        ChineseCaptcha captcha = new ChineseCaptcha(120, 40);
+        // 英文与数字验证码
+//        SpecCaptcha captcha = new SpecCaptcha(120, 40);
+        //英文与数字动态验证码
+        GifCaptcha captcha = new GifCaptcha(120, 40);
+        // 中文动态验证码
+//        ChineseGifCaptcha captcha = new ChineseGifCaptcha(120, 40);
+        // 几位数运算，默认是两位
+        captcha.setLen(4);
+        //输出图片
+        captcha.out(outputStream);
+        // 获取运算的结果并打印
+        System.out.println("用户获取："+dateTime+"-"+captcha.text());
+
+        // 比较字母，忽略大小写
+        //equalsIgnoreCase()
+        // 将时间戳作为key，验证码作为value存入session，设置过期时间为30秒
+        session.setAttribute(dateTime, captcha.text());
+        session.setMaxInactiveInterval(30);
+
     }
 
 }
