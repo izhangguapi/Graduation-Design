@@ -18,15 +18,17 @@ use `website`;
 DROP TABLE IF EXISTS `groups`;
 CREATE TABLE `groups` (
 	`group_id` INT NOT NULL AUTO_INCREMENT COMMENT '组id',
-	`group_name` VARCHAR(10) NOT NULL COMMENT '组名',
-	`encoding` CHAR(5) NULL COMMENT '组编码',
+	`group_name` VARCHAR(10) NOT NULL UNIQUE KEY COMMENT '组名',
+	`encoding` CHAR(5) UNIQUE KEY COMMENT '组编码',
 	PRIMARY KEY (`group_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1;
 -- 插入数据
-INSERT INTO 'groups' VALUES (DEFAULT,'管理员',NULL);
-INSERT INTO 'groups' VALUES (DEFAULT,'学生',NULL);
-INSERT INTO 'groups' VALUES (DEFAULT,'计算机设计','YVN1U');
-INSERT INTO 'groups' VALUES (DEFAULT,'算法设计','OY5TT');
+
+INSERT INTO `groups` VALUES (DEFAULT,'管理员','admin');
+INSERT INTO `groups` VALUES (DEFAULT,'学生','xs');
+INSERT INTO `groups` VALUES (DEFAULT,'老师','ls');
+INSERT INTO `groups` VALUES (DEFAULT,'计算机设计','YVN1U');
+INSERT INTO `groups` VALUES (DEFAULT,'算法设计','OY5TT');
 
 -- ----------------------------
 -- 创建用户表:  `users`
@@ -39,8 +41,8 @@ CREATE TABLE `users` (
 	`birthday` DATE COMMENT '出生日期',
 	`school` VARCHAR(20) COMMENT '学校',
 	`address` VARCHAR(50) COMMENT '地址',
-	`phone` CHAR(11) COMMENT '手机号',
-	`email` CHAR(100) COMMENT '邮箱',
+	`phone` CHAR(11) UNIQUE KEY COMMENT  '手机号',
+	`email` CHAR(100) UNIQUE KEY COMMENT '邮箱',
 	`group_id` INT COMMENT '用户组（用户组.组id）',
 	`password` CHAR(32) NOT NULL COMMENT '密码',
 	PRIMARY KEY (`user_id`),
@@ -69,7 +71,7 @@ INSERT INTO users VALUES (DEFAULT,'6',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'6');
 DROP TABLE IF EXISTS `contests`;
 CREATE TABLE `contests` (
 	`contest_id` INT NOT NULL AUTO_INCREMENT COMMENT '比赛id',
-	`contest_title` varchar(150) NOT NULL COMMENT '比赛标题',
+	`contest_title` varchar(150) NOT NULL UNIQUE KEY COMMENT '比赛标题',
 	`contest_text` longtext NOT NULL COMMENT '比赛内容',
 	`promulgator` INT NOT NULL COMMENT '发布人（组.组id）',
 	`group_id` INT NOT NULL COMMENT '所属组（用户.用户id）',

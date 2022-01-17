@@ -21,6 +21,8 @@ SELECT user_id, name, sex, birthday, school, address, phone, email, users.group_
 
 SELECT COUNT(*) FROM users INNER JOIN groups ON users.group_id = groups.group_id;
 
+SELECT * FROM groups WHERE encoding = 'YVN1U' AND group_id NOT IN ('1','2','3');
+
 SELECT * FROM users LIMIT 10,5
 
 SELECT * FROM users u inner join groups g ON u.group_id = g.group_id order by user_id LIMIT 5
