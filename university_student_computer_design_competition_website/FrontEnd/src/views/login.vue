@@ -1,8 +1,8 @@
 <template>
   <div>
     <el-form :rules="rules" ref="loginForm" :model="loginForm" class="loginContainer">
-      <h3 style="text-align: center;">登录</h3>
-      <el-tabs tab-position="top" style="height: 100px;" stretch :before-leave='leaveTab'>
+      <h3 style="text-align: center">登录</h3>
+      <el-tabs tab-position="top" style="height: 100px" stretch :before-leave="leaveTab">
         <el-tab-pane label="手机号登录">
           <el-form-item prop="phone">
             <el-input tpye="text" v-model="loginForm.phone" placeholder="请输入手机号"></el-input>
@@ -18,9 +18,9 @@
         <el-input tpye="text" v-model="loginForm.password" placeholder="请输入密码"></el-input>
       </el-form-item>
       <el-form-item prop="captcha">
-        <el-input tpye="text" v-model="loginForm.captcha" placeholder="点击图片更换验证码" style="width: 60%;"></el-input>
-        <img :src="'/api/captcha?dateTime='+loginForm.datetime" @click="updateCaptcha" alt="验证码" style="float: right;cursor: pointer;" />
-
+        <el-input tpye="text" v-model="loginForm.captcha" placeholder="点击图片更换验证码" style="width: 60%"></el-input>
+        <img :src="'/api/captcha?dateTime=' + loginForm.datetime" @click="updateCaptcha" alt="验证码"
+             style="float: right; cursor: pointer"/>
       </el-form-item>
       <el-form-item style="margin-bottom: 0">
         <el-link :underline="false" class="rememberMe">
@@ -30,55 +30,41 @@
       </el-form-item>
       <el-form-item>
         <el-button type="primary" style="width: 48%" @click="login" round>登录</el-button>
-        <el-button type="success" style="width: 48%;float: right" @click="goToRegisterPage" round>注册</el-button>
+        <el-button type="success" style="width: 48%; float: right" @click="goToRegisterPage" round>注册</el-button>
       </el-form-item>
     </el-form>
+    <div class="img">
+      <img src="https://i.loli.net/2019/04/23/5cbf0a3fe48e9.png" alt=""/>
+    </div>
   </div>
 </template>
 
 <script>
-import {getRequest, postRequest} from "@/utils/api";
-import axios from "axios";
+import {postRequest} from "@/utils/api";
 
 export default {
   name: "Login",
   data() {
     return {
       loginForm: {
-        phone: '13886961359',
-        email: '',
-        password: '13886961359',
-        datetime:'',
-        captcha: ''
+        phone: "13886961359",
+        email: "",
+        password: "13886961359",
+        datetime: "",
+        captcha: "",
       },
       rules: {
-        password: [{required: true, message: '密码不能为空', trigger: 'blur'}],
-        captcha: [{required: true, message: '验证码不能为空', trigger: 'blur'}],
-      }
-    }
+        password: [{required: true, message: "密码不能为空", trigger: "blur"},],
+        captcha: [{required: true, message: "验证码不能为空", trigger: "blur"},],
+      },
+    };
   },
-  // computed:{
-  //   captchaUrl:{
-  //     return: '/api/captcha?dateTime='+new Date().getTime()
-  //   }
-  // },
-  // watch:{
-  //   'loginForm.datetime':{
-  //     immediate: true,
-  //     handler(){
-  //       this.loginForm.datetime = new Date().getTime();
-  //       this.captchaUrl =
-  //       console.log(1);
-  //     }
-  //   }
-  // },
   mounted() {
+    // 页面启动给datetime赋值时间戳
     this.loginForm.datetime = new Date().getTime();
   },
   methods: {
-    /**
-     * 点击更换验证码（将来更换验证方式）
-     */
+    // 点击更换验证码（将来更换验证方式）
     updateCaptcha() {
       this.loginForm.datetime = new Date().getTime();
     },
@@ -87,39 +73,39 @@ export default {
      * @param activeName 切换标签后的新值
      */
     leaveTab(activeName) {
-      if (activeName === '0') {
+      if (activeName === "0") {
         delete this.rules.email;
-        this.rules.phone = [{required: true, message: '手机号不能为空', trigger: 'blur'}];
-        this.loginForm.phone = '';
+        this.rules.phone = [
+          {required: true, message: "手机号不能为空", trigger: "blur"},
+        ];
+        this.loginForm.phone = "";
       } else {
         delete this.rules.phone;
-        this.rules.email = [{required: true, message: '邮箱不能为空', trigger: 'blur'}];
-        this.loginForm.email = '';
+        this.rules.email = [
+          {required: true, message: "邮箱不能为空", trigger: "blur"},
+        ];
+        this.loginForm.email = "";
       }
-      this.loginForm.password = '';
+      this.loginForm.password = "";
     },
-    /**
-     * 登录点击事件
-     */
+    //登录点击事件
     login() {
       this.$refs.loginForm.validate((valid) => {
         if (valid) {
-          this.$message.success('校验成功。');
-          postRequest('/login', this.loginForm).then(resp => {
-            alert(resp)
-          })
+          this.$message.success("校验成功。");
+          postRequest("/login", this.loginForm).then((resp) => {
+            alert(resp);
+          });
         } else {
-          this.$message.error('请输入完整！');
+          this.$message.error("请输入完整！");
         }
       });
     },
-    /**
-     * 跳转注册页面
-     */
+    //跳转注册页面
     goToRegisterPage() {
       this.$router.push("/register");
-    },
-  }
+    }
+  },
 };
 </script>
 <style>
@@ -145,5 +131,10 @@ export default {
 
 .el-tabs {
   margin-bottom: 22px;
+}
+
+.img {
+  margin-top: -150px;
+  text-align: center;
 }
 </style>

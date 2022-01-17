@@ -21,10 +21,20 @@ import {
     Link,
     Checkbox,
     Button,
-    Image,
-    Message
+    //Image,
+    Select,
+    Option,
+    Steps,
+    Step,
+    DatePicker,
+    RadioGroup,
+    Radio,
+
+    Message,
+    MessageBox
 } from 'element-ui';
-import Vue from "vue";
+
+
 
 const element = {
     install: function (Vue) {
@@ -50,9 +60,17 @@ const element = {
         Vue.use(Link);
         Vue.use(Checkbox);
         Vue.use(Button);
-        Vue.use(Image);
-        Vue.prototype.$message = Message;
+        //Vue.use(Image);
+        Vue.use(Select);
+        Vue.use(Option);
+        Vue.use(Steps);
+        Vue.use(Step);
+        Vue.use(DatePicker);
+        Vue.use(RadioGroup);
+        Vue.use(Radio);
 
+        Vue.prototype.$message = Message;
+        Vue.prototype.$prompt = MessageBox.prompt;
     }
 }
 export default element

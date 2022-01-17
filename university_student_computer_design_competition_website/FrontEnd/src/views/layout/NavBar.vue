@@ -1,5 +1,5 @@
 <template>
-  <el-menu :default-active="this.$route.path" :router="true" mode="horizontal">
+  <el-menu :default-active="this.$route.path" route mode="horizontal">
       <el-menu-item v-for="(item,i) in navBarList" :key="i" :index="item.path">
         <i :class="item.icon"></i>{{ item.title }}</el-menu-item>
   </el-menu>

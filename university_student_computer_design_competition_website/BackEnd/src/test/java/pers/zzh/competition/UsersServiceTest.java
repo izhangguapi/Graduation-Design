@@ -19,6 +19,11 @@ public class UsersServiceTest {
     private UsersService usersService;
     @Autowired
     private GroupsService groupsService;
+
+    @Test
+    void Groups(){
+        System.out.println(groupsService.selectEncoding("YVN1U"));
+    }
     @Test
     void test(){
         //添加测试
@@ -52,4 +57,6 @@ public class UsersServiceTest {
         list.add(18);
         System.out.println(usersService.removeByIds(list));
     }
+
+
 }

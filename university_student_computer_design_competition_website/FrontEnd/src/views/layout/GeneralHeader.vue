@@ -41,7 +41,7 @@ export default {
 .el-header {
   box-shadow: 0 1px 3px rgba(50, 50, 50, 0.5);
 
-  .el-row, .el-col {
+  .el-row{
     height: 100%;
   }
 

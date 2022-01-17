@@ -10,18 +10,22 @@ import router from './router';
 import store from './store';
 // 按需求引入Element组件库
 import element from './element/index';
+// 应用 element
+Vue.use(element);
 
 // 完整引入Element组件库和样式
 // import ElementUI from 'element-ui';
 // import 'element-ui/lib/theme-chalk/index.css';
+// 应用ElementUI
+// Vue.use(ElementUI);
+
+//引入fontawesome图标
+import 'font-awesome/css/font-awesome.min.css'
 
 // 关闭Vue生产提示
 Vue.config.productionTip = false;
-// 应用 element
-Vue.use(element);
 
-// 应用ElementUI
-//Vue.use(ElementUI);
+
 
 // 创建vue实例对象---vm
 new Vue({

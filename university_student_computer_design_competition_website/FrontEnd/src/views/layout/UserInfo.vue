@@ -54,12 +54,11 @@ export default {
     margin-right: 30px;
   }
 
-  .avatar {
-    margin: 0;
-    height: 44px;
-    cursor: pointer;
-
-  }
+  //.avatar {
+  //  margin: 0;
+  //  height: 44px;
+  //  cursor: pointer;
+  //}
 
 }
 </style>

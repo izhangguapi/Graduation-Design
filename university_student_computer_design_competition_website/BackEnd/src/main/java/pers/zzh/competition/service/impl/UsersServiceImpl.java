@@ -9,6 +9,7 @@ import pers.zzh.competition.mapper.UsersMapper;
 import pers.zzh.competition.entity.Users;
 import pers.zzh.competition.service.UsersService;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -19,13 +20,7 @@ import java.util.Map;
 @Service
 public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users> implements UsersService {
 
-    /**
-     * 分页链表查询
-     *
-     * @param currentPage 第几页
-     * @param pageSize    分几页
-     * @return 列表
-     */
+    // 页链表查询
     @Override
     public Page<Map<String, Object>> selectListPage(int currentPage, int pageSize) {
         //新建分页
@@ -34,28 +29,15 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users> implements
         return page.setRecords(baseMapper.selectAllUsersAndGroups(page));
     }
 
-    /**
-     * 登录功能（账号为手机号或邮箱）
-     * @param phone 手机号
-     * @param email 邮箱
-     * @param password 密码
-     * @return 布尔值
-     */
+    // 登录功能（账号为手机号或邮箱）
     @Override
-    public String login(String phone, String email, String password) {
+    public List<Users> login(String phone, String email, String password) {
         QueryWrapper<Users> qw = new QueryWrapper<>();
-        //qw.eq("phone",phone).or().eq("email",email);
         qw.and(Wrapper -> Wrapper.eq("phone",phone).or().eq("email",email));
         qw.eq("password",password);
         System.out.println("打印phone："+phone);
         System.out.println("打印email："+email);
         System.out.println("打印password："+password);
-        String a = "";
-        if (baseMapper.selectList(qw).isEmpty()){
-            a="登陆失败！！！";
-        }else {
-            a="登陆成功。。。";
-        }
-        return a;
+        return baseMapper.selectList(qw);
     }
 }
