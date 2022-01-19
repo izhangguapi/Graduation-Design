@@ -9,6 +9,8 @@ import java.util.Date;
 
 @Data
 public class Result {
+    // 逻辑判断
+    private Boolean flag;
     // 响应码，200是正常，非200表示异常
     private int code;
     // 响应消息
@@ -22,7 +24,11 @@ public class Result {
     private Date time = new Date();
 */
 
-    public Result(){}
+    public Result(Integer code, String msg,Boolean flag) {
+        this.code = code;
+        this.msg = msg;
+        this.flag = flag;
+    }
 
 //    public Result(Integer code, String msg, Object data) {
 //        this.code = code;
@@ -35,8 +41,6 @@ public class Result {
         this.msg = msg;
         this.data = data;
     }
-
-
     /**
      * 枚举类
      */

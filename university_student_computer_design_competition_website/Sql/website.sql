@@ -36,20 +36,20 @@ INSERT INTO `groups` VALUES (DEFAULT,'算法设计','OY5TT');
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
 	`user_id` INT NOT NULL AUTO_INCREMENT COMMENT '用户id',
-	`name` VARCHAR(10) NOT NULL COMMENT '姓名',
+	`name` VARCHAR(10) COMMENT '姓名',
 	`sex` TINYINT(1) COMMENT '性别',
 	`birthday` DATE COMMENT '出生日期',
 	`school` VARCHAR(20) COMMENT '学校',
 	`address` VARCHAR(50) COMMENT '地址',
-	`phone` CHAR(11) UNIQUE KEY COMMENT  '手机号',
-	`email` CHAR(100) UNIQUE KEY COMMENT '邮箱',
+	`phone` CHAR(11) NOT NULL UNIQUE KEY COMMENT  '手机号',
+	`email` CHAR(100) NOT NULL UNIQUE KEY COMMENT '邮箱',
 	`group_id` INT COMMENT '用户组（用户组.组id）',
 	`password` CHAR(32) NOT NULL COMMENT '密码',
 	PRIMARY KEY (`user_id`),
 	CONSTRAINT `users_1` FOREIGN KEY (`group_id`) REFERENCES `groups` (`group_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1;
 -- 插入数据
-INSERT INTO users VALUES (DEFAULT,'admin',NULL,NULL,NULL,NULL,NULL,NULL,'1','admin');
+INSERT INTO users VALUES (DEFAULT,'admin',NULL,NULL,NULL,NULL,'admin','admin@zhangguapi.com','1','admin');
 INSERT INTO users VALUES (DEFAULT,'张瓜皮皮','1','1999-11-20','西南财经大学'	,'天门','13886961359','13886961359@qq.com','3','13886961359');
 INSERT INTO users VALUES (DEFAULT,'小江云子','0','1999-07-29','西安交通大学'	,'黄石','18453887612','18453887612@qq.com','3','18453887612');
 INSERT INTO users VALUES (DEFAULT,'德隆东墙','1','2000-04-05','武汉设计工程学院','抚顺','13866039800','13866039800@qq.com','4','13866039800');
@@ -63,7 +63,6 @@ INSERT INTO users VALUES (DEFAULT,'小周同学','1','2000-02-15','武汉城市�
 INSERT INTO users VALUES (DEFAULT,'小吴同学','1','1998-10-08','华中师范大学'	,'西安','14912959902','14912959902@qq.com','2','14912959902');
 INSERT INTO users VALUES (DEFAULT,'小郑同学','0','2002-04-16','复旦大学'		,'南通','15089652824','15089652824@qq.com','2','15089652824');
 INSERT INTO users VALUES (DEFAULT,'小王同学','0','2003-09-09','哈尔滨工业大学'	,'惠州','15939648850','15939648850@qq.com','2','15939648850');
-INSERT INTO users VALUES (DEFAULT,'6',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'6');
 
 -- ----------------------------
 -- 创建比赛表:  `contests`

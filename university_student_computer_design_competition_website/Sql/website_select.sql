@@ -34,3 +34,10 @@ SELECT COUNT(*) FROM (SELECT users.* groups.group_name FROM users INNER JOIN gro
 SELECT user_id,name,sex,birthday,school,address,phone,email,group_id,password FROM users WHERE (phone = '' OR email = '13886961359@q.com') and password = '13886961359'
 -- 学生查询自己报名的比赛
 -- SELECT scores_id,contest_title,promulgator FROM scores inner join contests ON enter.contest_id = contests.contest_id WHERE contestant = 7
+
+SELECT COUNT(*) AS total FROM users INNER JOIN groups ON users.group_id = groups.group_id
+
+SELECT * FROM users inner join groups ON users.group_id = groups.group_id order by user_id LIMIT 5
+
+
+  INSERT INTO `groups` VALUES (DEFAULT,'asd','OY6TT')

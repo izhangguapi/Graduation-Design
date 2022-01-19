@@ -29,6 +29,8 @@ import {
     DatePicker,
     RadioGroup,
     Radio,
+    Popover,
+    Dialog,
 
     Message,
     MessageBox
@@ -68,6 +70,8 @@ const element = {
         Vue.use(DatePicker);
         Vue.use(RadioGroup);
         Vue.use(Radio);
+        Vue.use(Popover);
+        Vue.use(Dialog);
 
         Vue.prototype.$message = Message;
         Vue.prototype.$prompt = MessageBox.prompt;

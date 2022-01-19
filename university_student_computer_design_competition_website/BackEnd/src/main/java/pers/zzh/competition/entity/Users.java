@@ -17,24 +17,9 @@ public class Users {
     private String email;
     private Integer groupId;
     private String password;
-
+    //链表查询-组表字段
     @TableField(exist = false)
-    private Groups groups;
-
-    @Override
-    public String toString() {
-        return "Users{" +
-                "userId=" + userId +
-                ", name='" + name + '\'' +
-                ", sex=" + sex +
-                ", birthday='" + birthday + '\'' +
-                ", school='" + school + '\'' +
-                ", address='" + address + '\'' +
-                ", phone='" + phone + '\'' +
-                ", email='" + email + '\'' +
-                ", groupId=" + groupId +
-                ", password='" + password + '\'' +
-                ", groups=" + groups +
-                '}' + '\n';
-    }
+    private String groupName;
+    @TableField(exist = false)
+    private String encoding;
 }

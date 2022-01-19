@@ -1,96 +1,113 @@
 <template>
-  <div>
+  <div class="registerContainer">
     <!-- 注册表单 -->
-    <el-form :rules="rules" ref="registerForm" :model="registerForm" class="registerContainer">
+    <el-form :rules="rules" ref="registerForm" :model="registerForm" label-position="right" label-width="70px"
+             :validate-on-rule-change="false">
       <!-- logo-->
       <img src="../assets/image.png" alt=""/>
-      <el-tabs v-model="activeName" stretch @tab-click="handleClick">
+      <el-tabs v-model="activeSting" stretch>
         <!-- 第一步-->
-        <el-tab-pane label="注册账号" name="1" :disabled="disabled">
+        <el-tab-pane label="注册账号" name="0" disabled>
+          <!-- 姓名 -->
+          <el-form-item prop="name" label="姓名：">
+            <el-input prefix-icon="fa fa-user-graduate" v-model="registerForm.name" placeholder="请输入0-5位汉字"></el-input>
+          </el-form-item>
           <!-- 输入用户手机号 -->
-          <el-form-item prop="phone">
-            <el-input prefix-icon="fa fa-phone" v-model="registerForm.phone"></el-input>
+          <el-form-item prop="phone" label="电话：">
+            <el-input prefix-icon="fa-solid fa-phone" v-model="registerForm.phone" placeholder="请输入11位数字"></el-input>
           </el-form-item>
           <!-- 输入用户邮箱 -->
-          <el-form-item prop="email">
-            <el-input prefix-icon="fa fa-envelope-o" v-model="registerForm.email"></el-input>
+          <el-form-item prop="email" label="邮箱：">
+            <el-input prefix-icon="fa fa-envelope" v-model="registerForm.email" placeholder="请输入邮箱"></el-input>
           </el-form-item>
           <!-- 输入用户密码 -->
-          <el-form-item prop="password">
-            <el-input prefix-icon="fa fa-lock" v-model="registerForm.password" show-password></el-input>
+          <el-form-item prop="password" label="密码：">
+            <el-popover placement="top-start" width="200" trigger="hover"
+                        content="请输入6-16位密码，且至少包含一位数字和字母，可用特殊字符有$@!%*?&.">
+              <el-input prefix-icon="fa fa-unlock-keyhole" v-model="registerForm.password" show-password
+                        placeholder="请输入6-16位密码" slot="reference"></el-input>
+            </el-popover>
           </el-form-item>
         </el-tab-pane>
-
         <!-- 第二步-->
-        <el-tab-pane label="输入信息" name="2" :disabled="disabled">
-          <!-- 姓名 -->
-          <el-form-item prop="name">
-            <el-input prefix-icon="fa fa-user-o" v-model="registerForm.name"></el-input>
+        <el-tab-pane label="输入信息" name="1" disabled>
+          <!-- 学校 -->
+          <el-form-item prop="school" label="学校：">
+            <el-input prefix-icon="fa fa-university" v-model="registerForm.school"></el-input>
           </el-form-item>
           <!-- 性别 -->
-          <el-form-item prop="sex">
+          <el-form-item prop="sex" label="性别：">
             <el-radio class="radioL" v-model="registerForm.sex" label="1" border>男</el-radio>
             <el-radio class="radioR" v-model="registerForm.sex" label="0" border>女</el-radio>
           </el-form-item>
           <!-- 出生年月日 -->
-          <el-form-item prop="birthday">
+          <el-form-item prop="birthday" label="生日：">
             <el-date-picker v-model="registerForm.birthday" type="date" placeholder="选择日期" format="yyyy 年 MM 月 dd 日"
-                            value-format="yyyy-MM-dd" style="width: 100%"></el-date-picker>
-          </el-form-item>
-          <!-- 学校 -->
-          <el-form-item prop="school">
-            <el-input prefix-icon="fa fa-university" v-model="registerForm.school"></el-input>
+                            prefix-icon="fa fa-calendar-days" value-format="yyyy-MM-dd"
+                            style="width: 100%"></el-date-picker>
           </el-form-item>
           <!-- 地址 -->
-          <el-form-item prop="address">
+          <el-form-item prop="address" label="地址：">
             <el-input prefix-icon="fa fa-map-marker" v-model="registerForm.address"></el-input>
           </el-form-item>
         </el-tab-pane>
         <!-- 第三步-->
-        <el-tab-pane label="选择身份" name="3" style="text-align: center;" disabled>
+        <el-tab-pane name="2" disabled style="text-align: center;" label="选择身份">
           <!-- 选择用户身份 -->
-          <el-form-item>
-            <el-select v-model="registerForm.groupId" placeholder="请选身份" style="width: 100%">
-              <el-option v-for="item in groups" :key="item.value" :label="item.groupName"
-                         :value="item.value"></el-option>
-            </el-select>
-          </el-form-item>
-          <el-button @click="submitForm" class="submit" style="margin-bottom: 50px">提&nbsp;&nbsp;&nbsp;&nbsp;交
+          <el-select placeholder="请选身份" style="width: 100%;margin: 20px auto 30px auto" v-model="selectIdentity">
+            <el-option key="1" label="学生" :value="1"></el-option>
+            <el-option key="2" label="老师" :value="2" @click.native="teacher"></el-option>
+          </el-select>
+          <el-button @click="submitForm" type="success" style="margin-bottom: 50px;" round>提&nbsp;&nbsp;&nbsp;&nbsp;交
           </el-button>
         </el-tab-pane>
       </el-tabs>
       <el-steps :active="active" align-center>
-        <el-step title="步骤 1"></el-step>
-        <el-step title="步骤 2"></el-step>
-        <el-step title="步骤 3"></el-step>
+        <el-step title="第一步"></el-step>
+        <el-step title="第二步"></el-step>
+        <el-step title="完成"></el-step>
       </el-steps>
       <div class="btn">
-        <el-button v-if="active!==2" @click="next" class="lastBtn">下一步</el-button>
+        <el-button v-if="active!==2 && active!==3" @click="next()" type="primary" round>下一步</el-button>
       </div>
       <el-row>
         <el-link type="primary" @click="goToLoginPage" style="float:right;padding: 10px 0 5px 0;">已有账号，点击登录</el-link>
       </el-row>
+      <!--对话框-->
+      <el-dialog title="加入组或者创建组" :visible.sync="outerVisible" center width="20%">
+        <div style="text-align: center">
+          <el-button type="primary" @click="joinGroup" round>加入组</el-button>
+          <el-button type="primary" @click="innerVisible = true" round>创建组</el-button>
+        </div>
+        <el-dialog width="30%" title="创建组" :visible.sync="innerVisible" append-to-body>
+          <el-form-item prop="address" label="名称：">
+            <el-input prefix-icon="fa fa-map-marker" v-model="groups.groupName"></el-input>
+          </el-form-item>
+          <el-form-item prop="address" label="编码：">
+            <el-input prefix-icon="fa fa-map-marker" v-model="groups.encoding"></el-input>
+          </el-form-item>
+          <span slot="footer" class="dialog-footer">
+            <el-button type="danger" @click="innerVisible = false" round>取消</el-button>
+            <el-button type="primary" @click="addGroup" round>确定</el-button>
+          </span>
+        </el-dialog>
+      </el-dialog>
+      <!--对话框结束-->
     </el-form>
   </div>
-
-  <!--  <div>-->
-
-
-  <!--  </div>-->
 </template>
 
 <script>
-import {getRequest, postRequest} from "@/utils/api";
-import el from "element-ui/src/locale/lang/el";
-import {Message} from "element-ui";
+import {getRequest, postRequest, putRequest} from "@/utils/api";
 
 export default {
   name: "register",
+  // 数据
   data() {
     return {
-      activeName: '3',//控制tabs
-      active: 0,//控制步骤
-      disabled: false,//设置标签页的禁用或启用
+      // activeName: '1',//控制tabs
+      active: 2,//控制步骤 默认0
+      selectIdentity: "",// 选择身份
       registerForm: {//提交的表单信息
         phone: '',
         email: '',
@@ -102,132 +119,205 @@ export default {
         address: '',
         groupId: '',
       },
-      rules: {
-        phone: [{required: true, message: "电话不能为空", trigger: "blur"},],
-        email: [{required: true, message: "邮箱不能为空", trigger: "blur"},],
-        password: [{required: true, message: "密码不能为空", trigger: "blur"},],
+      groups: {
+        groupName: '',
+        encoding: ''
       },
-      value: '',//默认选择学生
-      groups: [//多选框选项
-        {groupName: "学生", value: 0},
-        {groupName: "老师", value: 1}
-      ]
+      outerVisible: false,// 控制第一层弹出框显示关闭
+      innerVisible: false,// 控制创建组弹出框显示关闭
+      rules: {},//form表单校验
     };
   },
+  // 监视属性
   watch: {
-    // 点击步骤按钮，标签页步骤跟着联动
-    active() {
-      this.activeName = this.active + 1 + "";
-      //控制提交按钮的禁用
-      switch (this.active) {
-        case 0:
-          this.rules = {
-            group: [{required: true, message: "身份不能为空", trigger: "blur"},],
-            phone: [{required: true, message: "电话不能为空", trigger: "blur"},],
-            email: [{required: true, message: "邮箱不能为空", trigger: "blur"},],
-            password: [{required: true, message: "密码不能为空", trigger: "blur"},],
-          };
-          break;
-        case 1:
-          this.rules.name = [{required: true, message: "姓名不能为空", trigger: "blur"},];
-          this.rules.sex = [{required: true, message: "性别不能为空", trigger: "blur"},];
-          this.rules.birthday = [{required: true, message: "生日不能为空", trigger: "blur"},];
-          this.rules.school = [{required: true, message: "学校不能为空", trigger: "blur"},];
-          this.rules.address = [{required: true, message: "地址不能为空", trigger: "blur"},];
-          break;
-        default:
-          break;
-      }
-    },
-    'registerForm.groupId': {
+    // 根据页面动态设置表单校验规则
+    active: {
       handler() {
-        if (this.registerForm.groupId) {
-          this.$prompt('请输入5为组编码', '加入或创建组', {
-            confirmButtonText: '确定',
-            cancelButtonText: '取消',
-            inputPattern: /^[0-9A-Za-z]{5}$/,
-            inputErrorMessage: '编码格式不正确'
-          }).then(({value}) => {
-            //去数据库搜索输入的编码是否存在 groupId JSON.stringify(
-            getRequest("/api/encoding/" + value.toUpperCase()).then((resp) => {
-              console.log(resp.data.data)
-              if (resp.data.data) {
-                //拿到组id，更新数据库 resp.data.data[0].groupId
-                this.$message({type: 'success', message: '加入组'});
+        switch (this.active) {
+          case 0:
+            // 定义姓名的格式
+            const name = (rule, value, callback) => {
+              if (value) {
+                let rgx = /^[\u4e00-\u9fa5_a-zA-Z0-9-]{2,12}$/;
+                if (value.match(rgx) == null) {
+                  return callback(new Error('请输入2-12位汉字、字母、数字'))
+                } else {
+                  callback();
+                }
+              }
+            };
+            // 定义手机号的格式
+            const phone = (rule, value, callback) => {
+              if (value) {
+                let rgx = /^[1]+[0-9]{10}$/;
+                if (value.match(rgx) == null) {
+                  return callback(new Error('请检查输入格式'))
+                } else {
+                  callback();
+                }
+              }
+            };
+            // 定义邮箱的格式
+            const email = (rule, value, callback) => {
+              if (value) {
+                let rgx = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+                if (value.match(rgx) == null) {
+                  return callback(new Error('请检查邮箱的格式'))
+                } else {
+                  callback();
+                }
+              }
+            };
+            // 定义密码的格式
+            const password = (rule, value, callback) => {
+              if (value) {
+                //         (?=.*\\d.*)(?=.*[a-zA-Z].*)
+                let rgx = /^(?=.*\d)(?=.*[a-zA-Z])[A-Za-z\d$@!%*?&.]{6,16}$/;
+                if (value.match(rgx) == null) {
+                  return callback(new Error('请检查密码格式'))
+                } else {
+                  callback();
+                }
+              }
+            };
+            // 设置form表单第一步校验规则
+            this.rules = {
+              name: [{required: true, message: "姓名不能为空", trigger: "blur"},
+                {validator: name}],
+              phone: [{required: true, message: "电话不能为空", trigger: "blur"},
+                {validator: phone}],
+              email: [{required: true, message: "邮箱不能为空", trigger: "blur"},
+                {validator: email}],
+              password: [{required: true, message: "密码不能为空", trigger: "blur"},
+                {validator: password}]
+            };
+            break;
+          case 1:
+            // 设置form表单第二步校验规则
+            this.rules = { // 设置第二步分的form表单校验
+              school: [{required: true, message: "学校不能为空", trigger: "blur"},],
+              sex: [{required: true, message: "性别不能为空", trigger: "blur"},],
+              birthday: [{required: true, message: "生日不能为空", trigger: "blur"},],
+              address: [{required: true, message: "地址不能为空", trigger: "blur"},]
+            };
+            break
+        }
+      },
+      immediate: true
+    },
+    // 监视选择选择的身份，如果选择为老师则弹出对话框
+    // 'registerForm.groupId': {
+    //   handler() {
+    //       // this.outerVisible = true;
+    //     }
+    //   }
+    // }
+  },
+  // 方法
+  methods: {
+    // 下一步
+    next() {
+      // 表单校验
+      this.$refs.registerForm.validate((valid) => {
+        if (valid) { // 校验成功
+          // 判断当前是第几步
+          if (this.active === 0) { // 第一步
+            //查询输入的手机号或者邮箱是否存在如果存在则清空手机号和邮箱，否则进入下一步
+            postRequest("/registerVerify", this.registerForm).then((resp) => {
+              if (resp) {
+                // Message.success(resp.data.msg)
+                this.active++;
               } else {
-                this.$message({type: 'success', message: '创建组'});
+                // Message.error(resp.data.msg)
+                this.registerForm.phone = '';
+                this.registerForm.email = '';
               }
             });
-
-          }).catch(() => {
-            this.$message({
-              type: 'info',
-              message: '取消输入'
-            });
-          });
-        }
-
-      }
-    }
-  },
-  methods: {
-    handleClick() { // 点击标签页，步骤跟着联动
-      this.active = Number(this.activeName) - 1;
-    },
-    next() { // 下一步
-      this.$refs.registerForm.validate((valid) => {
-        if (valid) {
-          this.$message.success("校验成功。");
-          if (++this.active > 2) this.active = 2;
-        } else {
+          } else {
+            this.active++;
+          }
+        } else { // 校验失败
           this.$message.error("请输入完整再进行下一步吧！");
         }
       });
     },
+    // 提交表单
     submitForm() {
-
-      // this.$refs[formName].validate(async (valid) => {
-      //   if (!valid) return console.log("error valid");
-      //   this.$http
-      //       .post("/users/register", this.form)
-      //       .then((result) => {
-      //         console.log(result);
-      //         if (result.data.code !== 200)
-      //           return this.$message.error("注册失败");
-      //         this.$message.success("注册成功");
-      //         // window.sessionStorage.setItem('token', result.data.token)
-      //         this.$router.push("/users/login");
-      //       })
-      //       .catch((error) => {
-      //         // 【务必注意】这里的error输出的不是一个对象【error.response才是一个对象】
-      //         console.log(error);
-      //         if (error.response) {
-      //           // 请求已发出，但服务器响应的状态码不在 2xx 范围内
-      //           console.log(error.response.data);
-      //           console.log(error.response.status);
-      //           console.log(error.response.headers);
-      //         } else {
-      //           // Something happened in setting up the request that triggered an Error
-      //           console.log("Error", error.message);
-      //         }
-      //         console.log(error.config);
-      //       });
-      // });
+      // 第三步输入完成进行判断
+      // console.log(this.selectIdentity+"-"+this.selectIdentity === '2')
+      // console.log(this.registerForm.groupId+"-"+this.registerForm.groupId === '')
+      if (this.selectIdentity === 2 && this.registerForm.groupId === '') {
+        this.$message.error("请选择加入组或是创建组")
+      } else {
+        this.$message.success("注册成功")
+      }
     },
+    // 跳转到登录
     goToLoginPage() {
       this.$router.push("/login");
     },
+    teacher() {
+      this.outerVisible = true;
+    },
+    // 添加组
+    addGroup() {
+      postRequest("", this.groups)
+      this.innerVisible = false
+    },
+    // 加入组
+    joinGroup() {
+      this.$prompt('请输入5为组编码', '加入或创建组', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        inputPattern: /^[0-9A-Za-z]{5}$/,
+        inputErrorMessage: '编码格式不正确',
+        roundButton: true
+      }).then(({value}) => {
+        //去数据库搜索输入的编码是否存在 groupId JSON.stringify(
+        getRequest("/api/encoding/" + value.toUpperCase()).then((resp) => {
+          console.log(resp)
+          if (resp.data.data) {
+            this.$message({type: 'success', message: '加入组'});
+          } else {
+            console.log(resp.data.groupId)
+            this.$message({type: 'warning', message: '暂无该组，请创建'});
+            this.groups.encoding = value.toUpperCase();
+            this.innerVisible = true;
+          }
+        });
+      }).catch(() => {
+        this.$message({
+          type: 'info',
+          message: '取消输入'
+        });
+      });
+    }
   },
+  // 计算属性
+  computed: {
+    activeSting: {
+      get() {
+        let active = this.active;
+        if (this.active === 3) {
+          active -= 1;
+        }
+        return active.toString();
+      },
+      set(newValue) {
+        return newValue;
+      }
+    }
+  }
 };
 
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 .registerContainer {
   border-radius: 15px;
   background-clip: padding-box;
   margin: 200px auto;
-  width: 350px;
+  width: 400px;
   padding: 15px 35px;
   background: #fff;
   border: 1px solid #eeeeee;
@@ -242,14 +332,13 @@ export default {
 .radioL {
   margin-right: 10px;
   text-align: center;
-  width: 165px;
+  width: 155px;
 }
 
 .radioR {
   margin-left: 10px;
   margin-right: 0;
   text-align: center;
-  width: 165px;
+  width: 155px;
 }
-
 </style>

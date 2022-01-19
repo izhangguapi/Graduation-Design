@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import pers.zzh.competition.mapper.*;
 import pers.zzh.competition.entity.*;
+import pers.zzh.competition.service.GroupsService;
 
 import java.util.Map;
 
@@ -35,8 +36,10 @@ class ApplicationTests {
         lqw.eq(Users::getPassword,"13886961359");
         System.out.println(usersDao.selectList(lqw));
     }
+    @Test
+    void testGetPhone() {
 
-
+    }
 
     @Test
     void testGetBy() {
@@ -73,21 +76,33 @@ class ApplicationTests {
     @Test
     void contextLoads() {
         //分页链表查询users和group，配合dao层的接口，主要用于管理员操作
-        Page<Map<String,Object>> page =new Page<Map<String,Object>>(4,4);
-        System.out.println(usersDao.selectAllUsersAndGroups(page));
-        System.out.println("总共可以分为"+page.getPages()+"页");
-        System.out.println("当前是第"+page.getCurrent()+"页");
-        System.out.println("每页"+page.getSize()+"条数据");
-        System.out.println("数据一共"+page.getTotal()+"条");
+//        Page<Map<String,Object>> page =new Page<Map<String,Object>>(4,4);
+//        System.out.println(usersDao.selectAllUsersAndGroups(page));
+//        System.out.println("总共可以分为"+page.getPages()+"页");
+//        System.out.println("当前是第"+page.getCurrent()+"页");
+//        System.out.println("每页"+page.getSize()+"条数据");
+//        System.out.println("数据一共"+page.getTotal()+"条");
+
+        Page<Users> page = new Page<>(0,5);
+        QueryWrapper<Users> qw = new QueryWrapper<>();
+        qw.select("*");
+        qw.last("inner join groups ON users.group_id = groups.group_id order by user_id;");
+        // SELECT * FROM users inner join groups ON users.group_id = groups.group_id order by user_id
+        //返回结果
+        System.out.println("数据："+usersDao.selectPage(page,qw).toString());
     }
+
+    private GroupsService groupsService;
     @Test
     void testInsert() {
         //添加一条数据
-        Users users = new Users();
-        users.setPassword("123456");
-        users.setGroupId(3);
-        users.setName("test");
-        System.out.println(usersDao.insert(users));
+        Groups groups = new Groups();
+        groups.setEncoding("125sz");
+        groups.setGroupName("asfg");
+        QueryWrapper<Users> qw = new QueryWrapper<>();
+        qw.last(";SELECT LAST_INSERT_ID();");
+
+//        System.out.println(groupsDao.insert());
     }
     @Test
     void testUpData() {
