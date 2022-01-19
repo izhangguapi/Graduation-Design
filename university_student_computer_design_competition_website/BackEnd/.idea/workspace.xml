@@ -5,32 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2f4faf0-13b2-49c4-9432-ccd98a80af67" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/../FrontEnd/src/assets/logo.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/controller/GroupsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/controller/GroupsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/controller/UsersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/mapper/GroupsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/mapper/GroupsMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/GroupsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/GroupsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/UsersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/UsersService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/impl/GroupsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/impl/GroupsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/impl/UsersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/impl/UsersServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pers/zzh/competition/ApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pers/zzh/competition/ApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/utils/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/utils/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/FindMain.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/FindMain.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/HomeMain.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/HomeMain.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Container.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Container.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/layout/GeneralFooter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/layout/GeneralFooter.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/layout/GeneralHeader.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/layout/GeneralHeader.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/layout/NavBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/layout/NavBar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/layout/UserInfo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/layout/UserInfo.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/register.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../~$毕业设计进度表.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../开题答辩材料/答辩/开题报告书.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../开题答辩材料/答辩/开题报告书.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../毕业设计进度表.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../毕业设计进度表.xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -225,6 +201,7 @@
       <workItem from="1642416613148" duration="6859000" />
       <workItem from="1642479512925" duration="18733000" />
       <workItem from="1642563134694" duration="12469000" />
+      <workItem from="1642590432483" duration="4000" />
     </task>
     <servers />
   </component>
