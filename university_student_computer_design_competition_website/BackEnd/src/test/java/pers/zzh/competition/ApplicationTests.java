@@ -97,11 +97,12 @@ class ApplicationTests {
     void testInsert() {
         //添加一条数据
         Groups groups = new Groups();
-        groups.setEncoding("125sz");
-        groups.setGroupName("asfg");
-        QueryWrapper<Users> qw = new QueryWrapper<>();
-        qw.last(";SELECT LAST_INSERT_ID();");
-
+        groups.setEncoding("12544");
+        groups.setGroupName("4245d");
+//        QueryWrapper<Users> qw = new QueryWrapper<>();
+//        qw.last(";SELECT LAST_INSERT_ID();");
+        System.out.println(groupsDao.insertGroupGetId(groups));
+        System.out.println("插入后："+groups.getGroupId());
 //        System.out.println(groupsDao.insert());
     }
     @Test

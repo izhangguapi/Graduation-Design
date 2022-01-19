@@ -6,10 +6,10 @@
 
 
 <style lang='less'>
-.app-main {
-	width: 100%;
-	padding: 0 4%;
-	min-height: 730px;
-	background: #f4f4f4;
+.el-main {
+  position: relative;
+  width: 100%;
+  padding: 80px 5% 20px;
+  min-height: 800px;
 }
 </style>

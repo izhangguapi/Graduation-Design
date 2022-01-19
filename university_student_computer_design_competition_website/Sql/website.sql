@@ -23,7 +23,6 @@ CREATE TABLE `groups` (
 	PRIMARY KEY (`group_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1;
 -- 插入数据
-
 INSERT INTO `groups` VALUES (DEFAULT,'管理员','admin');
 INSERT INTO `groups` VALUES (DEFAULT,'学生','xs');
 INSERT INTO `groups` VALUES (DEFAULT,'老师','ls');

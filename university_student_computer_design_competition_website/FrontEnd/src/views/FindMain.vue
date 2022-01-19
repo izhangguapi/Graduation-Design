@@ -1,5 +1,5 @@
 <template>
-<div>发现的中间布局</div>
+<div>发现的布局</div>
 </template>
 
 <script>

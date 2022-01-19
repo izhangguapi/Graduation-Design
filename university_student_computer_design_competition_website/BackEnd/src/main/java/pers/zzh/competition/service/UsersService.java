@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 import pers.zzh.competition.common.entity.Login;
+import pers.zzh.competition.entity.Groups;
 import pers.zzh.competition.entity.Users;
 
 import java.util.List;
@@ -36,7 +37,7 @@ public interface UsersService extends IService<Users> {
      * @param users 对象
      * @return true或false
      */
-    Boolean insertUsers(Users users);
+    int insertUsers(Users users);
 
     Boolean selectPhoneEmail(Login phoneAndEmail);
 

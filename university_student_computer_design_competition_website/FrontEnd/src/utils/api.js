@@ -52,7 +52,7 @@ export function postRequest(url, parameter) {
 //delete请求，用来删除数据库信息
 export function deleteRequest(url, parameter) {
     return axios({
-        url: url,
+        url: `${base}${url}`,
         method: 'delete',
         data: parameter
     })
@@ -61,7 +61,7 @@ export function deleteRequest(url, parameter) {
 //put请求用来更新数据库
 export function putRequest(url, parameter) {
     return axios({
-        url: url,
+        url: `${base}${url}`,
         method: 'put',
         data: parameter
     })
@@ -70,7 +70,7 @@ export function putRequest(url, parameter) {
 //get请求，用来查询数据库
 export function getRequest(url, parameter) {
     return axios({
-        url: url,
+        url: `${base}${url}`,
         method: 'get',
         params: parameter
     })

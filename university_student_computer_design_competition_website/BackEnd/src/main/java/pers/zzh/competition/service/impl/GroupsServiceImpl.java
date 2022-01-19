@@ -22,9 +22,17 @@ public class GroupsServiceImpl extends ServiceImpl<GroupsMapper, Groups> impleme
         return baseMapper.selectList(qw);
     }
 
-    //添加组
+    // 插入数据并返回id
     @Override
-    public int insertGroup(Groups groups) {
-        return baseMapper.insert(groups);
+    public int insertGroupGetId(Groups groups) {
+        int num;
+        try {
+            baseMapper.insertGroupGetId(groups);
+            num =  groups.getGroupId();
+        }catch (Exception e){
+            num = 0;
+        }
+        return num;
+
     }
 }

@@ -39,5 +39,8 @@ SELECT COUNT(*) AS total FROM users INNER JOIN groups ON users.group_id = groups
 
 SELECT * FROM users inner join groups ON users.group_id = groups.group_id order by user_id LIMIT 5
 
+INSERT INTO `groups` VALUES (DEFAULT,'asd','OY6TT');SELECT LAST_INSERT_ID();
 
-  INSERT INTO `groups` VALUES (DEFAULT,'asd','OY6TT')
+INSERT INTO `groups` VALUES ('1','352');
+
+INSERT INTO groups(group_name,encoding) VALUES ('141','31542');

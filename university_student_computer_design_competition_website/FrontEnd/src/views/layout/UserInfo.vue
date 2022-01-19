@@ -1,7 +1,7 @@
 <template>
   <div class="user-info">
     <el-badge :value="msg" :max="99" :hidden="hidden" class="item">
-      <el-button size="small">消息</el-button>
+      <el-button size="small" icon="fa fa-bell">消息</el-button>
     </el-badge>
     <el-dropdown>
       <div class="el-dropdown-link">
@@ -41,10 +41,9 @@ export default {
 <style lang="less" scoped>
 // 用户
 .user-info {
-
-  height: 100%;
+  height:48px;
   background-clip: content-box;
-  padding: 0 10px;
+  padding: 6px 10px;
   display: flex;
   align-items: center;
   justify-content: flex-end;

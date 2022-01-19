@@ -20,10 +20,6 @@ public interface GroupsService extends IService<Groups> {
      */
     List<Groups> selectEncoding(String encoding);
 
-    /**
-     * 添加组
-     * @param //groups 组对象
-     * @return int类型
-     */
-    int insertGroup(Groups groups);
+    // 添加组并返回id
+    int insertGroupGetId(Groups groups);
 }

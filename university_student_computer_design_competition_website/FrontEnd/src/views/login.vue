@@ -24,7 +24,7 @@
       </el-form-item>
       <el-form-item style="margin-bottom: 0">
         <el-link :underline="false" class="rememberMe">
-          <el-checkbox>保持登录</el-checkbox>
+          <el-checkbox v-model="checked">保持登录</el-checkbox>
         </el-link>
         <el-link href="https://zhangguapi.com" target="_blank" :underline="false" class="forgot">忘记密码？</el-link>
       </el-form-item>
@@ -46,6 +46,7 @@ export default {
   name: "Login",
   data() {
     return {
+      checked:true,
       loginForm: {
         phone: "13886961359",
         email: "",
@@ -62,6 +63,11 @@ export default {
   mounted() {
     // 页面启动给datetime赋值时间戳
     this.loginForm.datetime = new Date().getTime();
+    // 判断是否保存了账号信息
+    if (localStorage.uid){
+      this.$message.success("自动登录成功")
+      this.$router.push("/home");
+    }
   },
   methods: {
     // 点击更换验证码（将来更换验证方式）
@@ -92,9 +98,17 @@ export default {
     login() {
       this.$refs.loginForm.validate((valid) => {
         if (valid) {
-          this.$message.success("校验成功。");
           postRequest("/login", this.loginForm).then((resp) => {
-            alert(resp);
+            if (this.checked){
+              localStorage.setItem("uid", resp.data.data[0].userId);
+              localStorage.setItem("name", resp.data.data[0].name);
+              localStorage.setItem("gid", resp.data.data[0].groupId);
+            }else {
+              sessionStorage.setItem("uid", resp.data.data[0].userId)
+              sessionStorage.setItem("name", resp.data.data[0].name);
+              sessionStorage.setItem("gid", resp.data.data[0].groupId);
+            }
+            this.$router.push("/home");
           });
         } else {
           this.$message.error("请输入完整！");

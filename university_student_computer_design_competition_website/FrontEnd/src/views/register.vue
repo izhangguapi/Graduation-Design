@@ -37,8 +37,8 @@
           </el-form-item>
           <!-- 性别 -->
           <el-form-item prop="sex" label="性别：">
-            <el-radio class="radioL" v-model="registerForm.sex" label="1" border>男</el-radio>
-            <el-radio class="radioR" v-model="registerForm.sex" label="0" border>女</el-radio>
+            <el-radio class="radioL" v-model="registerForm.sex" label="true" border>男</el-radio>
+            <el-radio class="radioR" v-model="registerForm.sex" label="false" border>女</el-radio>
           </el-form-item>
           <!-- 出生年月日 -->
           <el-form-item prop="birthday" label="生日：">
@@ -54,12 +54,11 @@
         <!-- 第三步-->
         <el-tab-pane name="2" disabled style="text-align: center;" label="选择身份">
           <!-- 选择用户身份 -->
-          <el-select placeholder="请选身份" style="width: 100%;margin: 20px auto 30px auto" v-model="selectIdentity">
-            <el-option key="1" label="学生" :value="1"></el-option>
+          <el-select placeholder="请选身份" :disabled="selectDisabled" style="width: 100%;margin: 20px auto 30px auto"
+                     v-model="selectIdentity">
+            <el-option key="1" label="学生" :value="1" @click.native="student"></el-option>
             <el-option key="2" label="老师" :value="2" @click.native="teacher"></el-option>
           </el-select>
-          <el-button @click="submitForm" type="success" style="margin-bottom: 50px;" round>提&nbsp;&nbsp;&nbsp;&nbsp;交
-          </el-button>
         </el-tab-pane>
       </el-tabs>
       <el-steps :active="active" align-center>
@@ -68,7 +67,8 @@
         <el-step title="完成"></el-step>
       </el-steps>
       <div class="btn">
-        <el-button v-if="active!==2 && active!==3" @click="next()" type="primary" round>下一步</el-button>
+        <el-button v-if="active < 2" @click="next()" type="primary" round>下一步</el-button>
+        <el-button v-if="active === 3" @click="submitForm" type="success" round>提&nbsp;&nbsp;&nbsp;&nbsp;交</el-button>
       </div>
       <el-row>
         <el-link type="primary" @click="goToLoginPage" style="float:right;padding: 10px 0 5px 0;">已有账号，点击登录</el-link>
@@ -80,10 +80,10 @@
           <el-button type="primary" @click="innerVisible = true" round>创建组</el-button>
         </div>
         <el-dialog width="30%" title="创建组" :visible.sync="innerVisible" append-to-body>
-          <el-form-item prop="address" label="名称：">
+          <el-form-item prop="gName" label="名称：">
             <el-input prefix-icon="fa fa-map-marker" v-model="groups.groupName"></el-input>
           </el-form-item>
-          <el-form-item prop="address" label="编码：">
+          <el-form-item prop="encoding" label="编码：">
             <el-input prefix-icon="fa fa-map-marker" v-model="groups.encoding"></el-input>
           </el-form-item>
           <span slot="footer" class="dialog-footer">
@@ -106,7 +106,7 @@ export default {
   data() {
     return {
       // activeName: '1',//控制tabs
-      active: 2,//控制步骤 默认0
+      active: 0,//控制步骤 默认0
       selectIdentity: "",// 选择身份
       registerForm: {//提交的表单信息
         phone: '',
@@ -123,8 +123,9 @@ export default {
         groupName: '',
         encoding: ''
       },
-      outerVisible: false,// 控制第一层弹出框显示关闭
-      innerVisible: false,// 控制创建组弹出框显示关闭
+      outerVisible: false,// 控制外层选择加入创建弹出框显示关闭
+      innerVisible: false,// 控制内层创建组弹出框显示关闭
+      selectDisabled: false,// 控制选择身份的禁用与开启
       rules: {},//form表单校验
     };
   },
@@ -243,26 +244,50 @@ export default {
     },
     // 提交表单
     submitForm() {
-      // 第三步输入完成进行判断
-      // console.log(this.selectIdentity+"-"+this.selectIdentity === '2')
-      // console.log(this.registerForm.groupId+"-"+this.registerForm.groupId === '')
-      if (this.selectIdentity === 2 && this.registerForm.groupId === '') {
-        this.$message.error("请选择加入组或是创建组")
-      } else {
-        this.$message.success("注册成功")
-      }
+      // 第三步输入完成进行判断/register
+      postRequest("/register", this.registerForm).then((resp) => {
+        if (resp) {
+          // 登录成功将信息存入session
+          sessionStorage.setItem("uid", resp.data.data)
+          sessionStorage.setItem("name", this.registerForm.name);
+          sessionStorage.setItem("gid", this.registerForm.groupId);
+          this.$router.push("/home");
+        } else {
+          this.active = 0;
+        }
+      });
     },
     // 跳转到登录
     goToLoginPage() {
       this.$router.push("/login");
     },
+    // 选择学生
+    student() {
+      this.registerForm.groupId = 2;
+      this.active = 3;
+    },
+    // 选择老师
     teacher() {
+      this.active = 2;
+      this.selectIdentity = '';
       this.outerVisible = true;
     },
-    // 添加组
+    // 创建组
     addGroup() {
-      postRequest("", this.groups)
-      this.innerVisible = false
+      this.groups.encoding = this.groups.encoding.toUpperCase();
+      postRequest("/addGroup", this.groups).then((resp) => {
+        if (resp) {
+          this.registerForm.groupId = resp.data.data;
+          this.innerVisible = false;
+          this.outerVisible = false;
+          this.selectDisabled = true;
+          this.active = 3;
+          this.selectIdentity = 2;
+        } else {
+          this.selectIdentity = 0;
+        }
+      });
+
     },
     // 加入组
     joinGroup() {
@@ -274,10 +299,15 @@ export default {
         roundButton: true
       }).then(({value}) => {
         //去数据库搜索输入的编码是否存在 groupId JSON.stringify(
-        getRequest("/api/encoding/" + value.toUpperCase()).then((resp) => {
+        getRequest("/encoding/" + value.toUpperCase()).then((resp) => {
           console.log(resp)
           if (resp.data.data) {
-            this.$message({type: 'success', message: '加入组'});
+            this.$message({type: 'success', message: '加入组成功'});
+            this.registerForm.groupId = resp.data.data[0].groupId;
+            this.innerVisible = false;
+            this.outerVisible = false;
+            this.selectDisabled = true;
+            this.active = 3;
           } else {
             console.log(resp.data.groupId)
             this.$message({type: 'warning', message: '暂无该组，请创建'});

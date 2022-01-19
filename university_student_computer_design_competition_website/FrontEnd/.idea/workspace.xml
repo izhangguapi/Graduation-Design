@@ -5,26 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b94a5a1-4c3a-4d58-ac73-0b46223b2154" name="变更" comment="">
+      <change afterPath="$PROJECT_DIR$/src/assets/logo.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/controller/GroupsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/controller/GroupsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/controller/UsersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/entity/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/entity/Users.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/mapper/GroupsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/mapper/GroupsMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/mapper/UsersMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/mapper/UsersMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/service/GroupsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/service/GroupsService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/service/UsersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/service/UsersService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/service/impl/GroupsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/service/impl/GroupsServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/service/impl/UsersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/service/impl/UsersServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/utils/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/utils/Result.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BackEnd/src/test/java/pers/zzh/competition/ApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/test/java/pers/zzh/competition/ApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/element/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/element/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/FindMain.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/FindMain.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/HomeMain.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/HomeMain.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/layout/Container.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/layout/Container.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/layout/GeneralFooter.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/layout/GeneralFooter.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/layout/GeneralHeader.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/layout/GeneralHeader.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/layout/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/layout/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/layout/NavBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/layout/NavBar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/layout/UserInfo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/layout/UserInfo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/login.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/register.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../~$设计构想.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../设计构想.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../设计构想.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../~$毕业设计进度表.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../开题答辩材料/答辩/开题报告书.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../开题答辩材料/答辩/开题报告书.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../毕业设计进度表.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../毕业设计进度表.xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +52,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -63,12 +78,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/views/Home" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/assets" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="项目" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.appearance" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
@@ -76,12 +94,13 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets" />
       <recent name="$PROJECT_DIR$/src/views/Home" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets" />
       <recent name="$PROJECT_DIR$/src/views/Home" />
       <recent name="$PROJECT_DIR$/src/views" />
-      <recent name="$PROJECT_DIR$/src/assets" />
       <recent name="$PROJECT_DIR$/src/components" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
@@ -119,6 +138,7 @@
       <workItem from="1642390882032" duration="1173000" />
       <workItem from="1642393221404" duration="29986000" />
       <workItem from="1642479520976" duration="30679000" />
+      <workItem from="1642563133910" duration="22071000" />
     </task>
     <servers />
   </component>

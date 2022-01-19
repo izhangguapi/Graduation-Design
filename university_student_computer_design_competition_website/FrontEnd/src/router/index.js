@@ -23,9 +23,6 @@ const router = new VueRouter({
         }
     }, {
         path: '/home',
-        meta:{
-            icon: 'el-icon-s-home'
-        },
         component: () => import('@/views/layout/Home'),
         children: [{
             name: '首页',
@@ -34,9 +31,6 @@ const router = new VueRouter({
         }]
     }, {
         path: '/find',
-        meta:{
-            icon: 'el-icon-s-opportunity'
-        },
         component: () => import('@/views/layout/Home'),
         children: [{
             name: '发现',

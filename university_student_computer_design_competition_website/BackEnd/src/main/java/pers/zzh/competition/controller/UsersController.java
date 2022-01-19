@@ -54,23 +54,24 @@ public class UsersController {
         try {
             sessionCaptcha = session.getAttribute(login.getDatetime()).toString();
         } catch (Exception e) {
-            System.out.println("验证码失效,请刷新！");
-            return new Result(2002, "验证码已失效，请刷新！", null);
+            return new Result(201, "验证码已失效，请刷新！", null);
         }
         // 删除session存入的验证码
         session.removeAttribute(login.getDatetime());
         // 获取用户输入的验证码
         String userCaptcha = login.getCaptcha();
-
-        System.out.println("用户输入：" + login.getDatetime() + "-" + userCaptcha);
+//
+//        System.out.println("用户输入：" + login.getDatetime() + "-" + userCaptcha);
         // 判断session存入的验证码是否跟用户输入的一样(比较字母，忽略大小写.equalsIgnoreCase())
         if (sessionCaptcha.equalsIgnoreCase(userCaptcha)) {
-            return new Result(200, "登录成功成功", usersService.selectPhoneEmailPassword(login.getPhone(), login.getEmail(), login.getPassword()));
+            List<Users> list = usersService.selectPhoneEmailPassword(login.getPhone(), login.getEmail(), login.getPassword());
+            return list.isEmpty()
+                    ? new Result(201, "密码错误", null)
+                    : new Result(200, "登录成功", list);
         } else {
             return new Result(201, "验证码错误", null);
         }
     }
-
     // 生成验证码
     @GetMapping("/captcha")
     public void getCode(@RequestParam("dateTime") String dateTime, HttpServletResponse response, HttpSession session) throws Exception {
@@ -100,7 +101,7 @@ public class UsersController {
     // 查询手机号和邮箱是否存在
     @PostMapping("/registerVerify")
     public Result registerVerify(@RequestBody Login phoneEmail) {
-      return usersService.selectPhoneEmail(phoneEmail)
+        return usersService.selectPhoneEmail(phoneEmail)
                 ? new Result(200, "验证成功", true)
                 : new Result(201, "手机号或邮箱存在，请重新输入", false);
     }
@@ -108,8 +109,10 @@ public class UsersController {
     // 注册
     @PostMapping("/register")
     public Result register(@RequestBody Users users) {
-        return usersService.insertUsers(users)
-                ? new Result(200, "注册成功", null)
-                : new Result(201, "注册失败", null);
+        int num = usersService.insertUsers(users);
+        if (num != 0) {
+            return new Result(200, "注册成功", num);
+        } else
+            return new Result(201, "注册失败", null);
     }
 }

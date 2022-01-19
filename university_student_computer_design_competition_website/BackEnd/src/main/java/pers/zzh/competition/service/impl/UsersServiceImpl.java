@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 
+import org.apache.ibatis.annotations.Options;
 import org.springframework.stereotype.Service;
 import pers.zzh.competition.common.entity.Login;
 import pers.zzh.competition.mapper.UsersMapper;
@@ -45,18 +46,18 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users> implements
 
     // 注册功能
     @Override
-    public Boolean insertUsers(Users users) {
+    @Options(useGeneratedKeys = true,keyProperty = "groupId",keyColumn = "groupId")
+    public int insertUsers(Users users) {
         try {
             baseMapper.insert(users);
         }catch (Exception e){
-            return false;
+            return 0;
         }
-        return true;
+        return users.getUserId();
     }
 
     // 查询手机号和邮箱是否存在
     @Override
-
     public Boolean selectPhoneEmail(Login phoneAndEmail) {
         QueryWrapper<Users> qw = new QueryWrapper<>();
         qw.select("*").eq("phone",phoneAndEmail.getPhone())
