@@ -1,7 +1,7 @@
 package pers.zzh.competition.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.wf.captcha.*;
+import com.wf.captcha.GifCaptcha;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pers.zzh.competition.common.entity.Login;

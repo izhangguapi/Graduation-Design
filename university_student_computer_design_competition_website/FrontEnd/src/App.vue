@@ -6,6 +6,9 @@
 <style>
 body{
   margin: 0;
-  background-color: #f4f4f4;;
+  background-color: #f4f4f4;
+}
+::-webkit-scrollbar {
+  display: none; /* Chrome Safari */
 }
 </style>
