@@ -29,7 +29,7 @@
         <el-link href="https://zhangguapi.com" target="_blank" :underline="false" class="forgot">忘记密码？</el-link>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" style="width: 48%" @click="index" round>登录</el-button>
+        <el-button type="primary" style="width: 48%" @click="login" round>登录</el-button>
         <el-button type="success" style="width: 48%; float: right" @click="goToRegisterPage" round>注册</el-button>
       </el-form-item>
     </el-form>
@@ -48,9 +48,9 @@ export default {
     return {
       checked:true,
       loginForm: {
-        phone: "13886961359",
+        phone: "",
         email: "",
-        password: "13886961359",
+        password: "",
         datetime: "",
         captcha: "",
       },
@@ -69,7 +69,7 @@ export default {
       this.$router.push("/home");
     }
   },
-  methods: {
+  methods:{
     // 点击更换验证码（将来更换验证方式）
     updateCaptcha() {
       this.loginForm.datetime = new Date().getTime();

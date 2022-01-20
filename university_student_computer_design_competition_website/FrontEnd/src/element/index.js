@@ -31,6 +31,9 @@ import {
     Radio,
     Popover,
     Dialog,
+    Carousel,
+    CarouselItem,
+    Card,
 
     Message,
     MessageBox
@@ -72,6 +75,9 @@ const element = {
         Vue.use(Radio);
         Vue.use(Popover);
         Vue.use(Dialog);
+        Vue.use(Carousel);
+        Vue.use(CarouselItem);
+        Vue.use(Card);
 
         Vue.prototype.$message = Message;
         Vue.prototype.$prompt = MessageBox.prompt;

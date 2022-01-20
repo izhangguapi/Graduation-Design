@@ -20,6 +20,16 @@ export default {
   },
   mounted() {
     console.log(this.$router.options.routes);
+    let i;
+    for (i in this.$router.options.routes){
+      console.log(this.$router.options.routes[i].meta)
+    }
+    // let arr = ['a', 'b', 'c', 'd', 'e']
+    // for (let i = 0; i < arr.length; i++) {
+    //   console.log(i, ' => ', arr[i])
+    // }
+
+    console.log(this.$route.path);
   }
 }
 </script>

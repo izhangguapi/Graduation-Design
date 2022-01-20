@@ -1,13 +1,12 @@
 <template>
   <el-container direction="vertical">
     <!--顶部-->
-      <Header></Header>
+    <Header></Header>
     <!--中间-->
-      <Main></Main>
+    <Main></Main>
     <!--底部-->
-      <Footer></Footer>
+    <Footer></Footer>
   </el-container>
-
 </template>
 
 <script>
@@ -16,10 +15,9 @@ import Main from "./Main";
 import Footer from './Footer'
 
 export default {
-  components: {Header, Main, Footer},
+  components: {Header, Main, Footer}
 }
 </script>
 
 <style scoped>
-
 </style>

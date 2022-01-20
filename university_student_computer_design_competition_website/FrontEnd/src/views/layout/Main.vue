@@ -1,13 +1,14 @@
 <template>
   <el-main>
-    <router-view></router-view>
+    <transition name="fade" mode="out-in">
+      <router-view>
+      </router-view>
+    </transition>
   </el-main>
 </template>
 
-
 <style lang='less'>
 .el-main {
-  position: relative;
   width: 100%;
   padding: 80px 5% 20px;
   min-height: 800px;

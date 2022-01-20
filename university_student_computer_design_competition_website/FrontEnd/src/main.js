@@ -31,15 +31,6 @@ import '@fortawesome/fontawesome-free/css/all.min.css'
 // 关闭Vue生产提示
 Vue.config.productionTip = false;
 
-/* 路由发生变化修改页面title */
-router.beforeEach((to, from, next) => {
-  console.log(to);
-  if (to.name) {
-    document.title = to.name
-  }
-  next()
-})
-
 // 创建vue实例对象---vm
 new Vue({
   router,

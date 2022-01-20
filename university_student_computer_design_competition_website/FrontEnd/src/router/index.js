@@ -7,15 +7,21 @@ const router = new VueRouter({
     base: '/',
     mode: 'history',
     routes: [{
-        name: '登录',
+        name: 'login',
         path: '/login',
+        meta: {
+            title: '登录'
+        },
         component: () => import('@/views/Login'),
     }, {
-        name: '注册',
+        name: 'register',
         path: '/register',
+        meta: {
+            title: '注册'
+        },
         component: () => import('@/views/Register')
     }, {
-        name: '主页面',
+        name: 'index', // 主要布局
         path: '/',
         component: () => import('@/views/layout'),
         redirect: {
@@ -25,35 +31,54 @@ const router = new VueRouter({
         path: '/home',
         component: () => import('@/views/layout'),
         children: [{
-            name: '首页',
+            name: 'home',
             path: '',
+            meta: {
+                title: '首页',
+            },
             component: () => import('@/views/Home')
         }]
     }, {
         path: '/find',
         component: () => import('@/views/layout'),
         children: [{
-            name: '发现',
+            name: 'find',
             path: '',
+            meta: {
+                title: '发现',
+            },
             component: () => import('@/views/Find')
         }]
     }, {
         path: '/publish',
         component: () => import('@/views/layout'),
         children: [{
-            name: '发布',
+            name: 'publish',
             path: '',
+            meta: {
+                title: '发布',
+            },
             component: () => import('@/views/Publish')
         }]
     }, {
         path: '/mine',
         component: () => import('@/views/layout'),
         children: [{
-            name: '个人中心',
+            name: 'mine',
             path: '',
+            meta: {
+                title: '个人中心'
+            },
             component: () => import('@/views/Mine')
         }]
     }]
 })
-
+/* 路由发生变化修改页面title */
+router.beforeEach((to, from, next) => {
+    console.log(to);
+    if (to.meta.title) {
+        document.title = to.meta.title
+    }
+    next()
+})
 export default router
