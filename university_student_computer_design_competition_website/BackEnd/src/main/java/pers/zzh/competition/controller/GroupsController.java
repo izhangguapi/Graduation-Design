@@ -1,7 +1,5 @@
 package pers.zzh.competition.controller;
 
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pers.zzh.competition.entity.Groups;
@@ -29,5 +27,18 @@ public class GroupsController {
     public Result addGroup(@RequestBody Groups groups) {
         int num =  groupsService.insertGroupGetId(groups);
         return num == 0 ?  new Result(201,"创建失败，组名或是编码已存在。",null) :  new Result(200,"创建成功",num);
+    }
+
+    // 查询单个组
+    @GetMapping("/group/{id}")
+    public Result getGroupName(@PathVariable String id) {
+        Groups groups = groupsService.getGroupName(id);
+        String name;
+        try {
+            name = groups.getGroupName();
+        }catch (Exception e){
+            name = "";
+        }
+        return name.equals("") ?  new Result(201,"获取用户组失败",null) :  new Result(200,"成功获取用户组",name);
     }
 }

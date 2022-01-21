@@ -38,7 +38,15 @@ class ApplicationTests {
     }
     @Test
     void testGetPhone() {
-
+//        Contests contests = new Contests();
+//        contests.setContestTitle("测试sad");
+//        contests.setContestText("## 请输入比赛内容\nasas\nasfg\nas\ng\naasg");
+//        contests.setPromulgator(3);
+//        contests.setGroupId(4);
+//        contests.setStartTime("2022-01-21 08:00:00");
+//        contests.setEndTime("2022-01-21 08:00:00");
+//        contestsMapper.insert(contests);
+        System.out.println("我直接好家伙\\n测试\\\n");
     }
 
     @Test
@@ -92,7 +100,6 @@ class ApplicationTests {
         System.out.println("数据："+usersDao.selectPage(page,qw).toString());
     }
 
-    private GroupsService groupsService;
     @Test
     void testInsert() {
         //添加一条数据
@@ -101,8 +108,8 @@ class ApplicationTests {
         groups.setGroupName("4245d");
 //        QueryWrapper<Users> qw = new QueryWrapper<>();
 //        qw.last(";SELECT LAST_INSERT_ID();");
-        System.out.println(groupsDao.insertGroupGetId(groups));
-        System.out.println("插入后："+groups.getGroupId());
+        System.out.println(groupsDao.insert(groups));
+        //System.out.println("插入后："+groups.getGroupId());
 //        System.out.println(groupsDao.insert());
     }
     @Test

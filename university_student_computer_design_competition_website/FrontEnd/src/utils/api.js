@@ -1,5 +1,6 @@
 import axios from 'axios'
 import {Message} from "element-ui";
+// 测试后台服务器是否正常运行
 
 //响应拦截器
 // axios.interceptors.response.use(res => {
@@ -12,11 +13,12 @@ import {Message} from "element-ui";
 //     return Promise.reject(err)
 // })
 axios.interceptors.response.use(success => {
+    //console.log(success)
     switch (success.data.code) {
         case 100:
             return success;
         case 200:
-            Message.success(success.data.msg);
+            //Message.success(success.data.msg);
             return success;
         case 201:
             Message.error(success.data.msg);
@@ -26,20 +28,17 @@ axios.interceptors.response.use(success => {
             return null;
     }
 }, error => {
-    Message.error(error.data.msg);
+    switch (error.response.status) {
+        case 500:
+            Message.error("内部服务器错误！！！");
+            break;
+        default:
+            Message.error("未知错误！！！");
+            break;
+    }
 })
-
+// url前缀
 let base = '/api';
-//
-// //传送json格式的get请求
-// export const getRequest = (url, params) => {
-//     return axios({
-//         method: 'post',
-//         url: `${base}${url}`,
-//         data: params
-//     })
-//
-// }
 //post请求，用来增添数据到数据库
 export function postRequest(url, parameter) {
     return axios({
@@ -48,7 +47,6 @@ export function postRequest(url, parameter) {
         data: parameter
     })
 }
-
 //delete请求，用来删除数据库信息
 export function deleteRequest(url, parameter) {
     return axios({
@@ -57,7 +55,6 @@ export function deleteRequest(url, parameter) {
         data: parameter
     })
 }
-
 //put请求用来更新数据库
 export function putRequest(url, parameter) {
     return axios({
@@ -66,7 +63,6 @@ export function putRequest(url, parameter) {
         data: parameter
     })
 }
-
 //get请求，用来查询数据库
 export function getRequest(url, parameter) {
     return axios({

@@ -36,6 +36,7 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users> implements
     @Override
     public List<Users> selectPhoneEmailPassword(String phone, String email, String password) {
         QueryWrapper<Users> qw = new QueryWrapper<>();
+        qw.select("user_id,name,group_id");
         qw.and(Wrapper -> Wrapper.eq("phone",phone).or().eq("email",email));
         qw.eq("password",password);
         System.out.println("打印phone："+phone);

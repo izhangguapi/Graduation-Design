@@ -10,7 +10,10 @@
 <style lang='less'>
 .el-main {
   width: 100%;
-  padding: 80px 5% 20px;
+  padding-top: 80px;
   min-height: 800px;
+}
+.el-card:hover{
+  box-shadow: 0 2px 12px 0 rgb(255 100 100 / 80%);
 }
 </style>

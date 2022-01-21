@@ -136,61 +136,61 @@ export default {
       handler() {
         switch (this.active) {
           case 0:
-            // 定义姓名的格式
-            const name = (rule, value, callback) => {
-              if (value) {
-                let rgx = /^[\u4e00-\u9fa5_a-zA-Z0-9-]{2,12}$/;
-                if (value.match(rgx) == null) {
-                  return callback(new Error('请输入2-12位汉字、字母、数字'))
-                } else {
-                  callback();
-                }
-              }
-            };
-            // 定义手机号的格式
-            const phone = (rule, value, callback) => {
-              if (value) {
-                let rgx = /^[1]+[0-9]{10}$/;
-                if (value.match(rgx) == null) {
-                  return callback(new Error('请检查输入格式'))
-                } else {
-                  callback();
-                }
-              }
-            };
-            // 定义邮箱的格式
-            const email = (rule, value, callback) => {
-              if (value) {
-                let rgx = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
-                if (value.match(rgx) == null) {
-                  return callback(new Error('请检查邮箱的格式'))
-                } else {
-                  callback();
-                }
-              }
-            };
-            // 定义密码的格式
-            const password = (rule, value, callback) => {
-              if (value) {
-                //         (?=.*\\d.*)(?=.*[a-zA-Z].*)
-                let rgx = /^(?=.*\d)(?=.*[a-zA-Z])[A-Za-z\d$@!%*?&.]{6,16}$/;
-                if (value.match(rgx) == null) {
-                  return callback(new Error('请检查密码格式'))
-                } else {
-                  callback();
-                }
-              }
-            };
+            // // 定义姓名的格式
+            // const name = (rule, value, callback) => {
+            //   if (value) {
+            //     let rgx = /^[\u4e00-\u9fa5_a-zA-Z0-9-]{2,12}$/;
+            //     if (value.match(rgx) == null) {
+            //       return callback(new Error('请输入2-12位汉字、字母、数字'))
+            //     } else {
+            //       callback();
+            //     }
+            //   }
+            // };
+            // // 定义手机号的格式
+            // const phone = (rule, value, callback) => {
+            //   if (value) {
+            //     let rgx = /^[1]+[0-9]{10}$/;
+            //     if (value.match(rgx) == null) {
+            //       return callback(new Error('请检查输入格式'))
+            //     } else {
+            //       callback();
+            //     }
+            //   }
+            // };
+            // // 定义邮箱的格式
+            // const email = (rule, value, callback) => {
+            //   if (value) {
+            //     let rgx = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+            //     if (value.match(rgx) == null) {
+            //       return callback(new Error('请检查邮箱的格式'))
+            //     } else {
+            //       callback();
+            //     }
+            //   }
+            // };
+            // // 定义密码的格式
+            // const password = (rule, value, callback) => {
+            //   if (value) {
+            //     //         (?=.*\\d.*)(?=.*[a-zA-Z].*)
+            //     let rgx = /^(?=.*\d)(?=.*[a-zA-Z])[A-Za-z\d$@!%*?&.]{6,16}$/;
+            //     if (value.match(rgx) == null) {
+            //       return callback(new Error('请检查密码格式'))
+            //     } else {
+            //       callback();
+            //     }
+            //   }
+            // };
             // 设置form表单第一步校验规则
             this.rules = {
               name: [{required: true, message: "姓名不能为空", trigger: "blur"},
-                {validator: name}],
+                {pattern:/^[\u4e00-\u9fa5_a-zA-Z0-9-]{1,12}$/,message: "请输入1-12位汉字、字母、数字"}],
               phone: [{required: true, message: "电话不能为空", trigger: "blur"},
-                {validator: phone}],
+                {pattern: /^[1]+[0-9]{10}$/,message: "请检查手机号的格式"}],
               email: [{required: true, message: "邮箱不能为空", trigger: "blur"},
-                {validator: email}],
+                {pattern: /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/,message: "请检查邮箱的格式"}],
               password: [{required: true, message: "密码不能为空", trigger: "blur"},
-                {validator: password}]
+                {pattern: /^(?=.*\d)(?=.*[a-zA-Z])[A-Za-z\d$@!%*?&.]{6,16}$/,message: "请检查密码格式"}]
             };
             break;
           case 1:

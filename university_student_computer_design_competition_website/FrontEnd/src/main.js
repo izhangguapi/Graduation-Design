@@ -22,11 +22,11 @@ Vue.use(element);
 //引入fontawesome图标
 // import 'font-awesome/css/font-awesome.min.css'
 import '@fortawesome/fontawesome-free/css/all.min.css'
+
 // import  '@fortawesome/fontawesome-free/css/fontawesome.min.css'
 // import  '@fortawesome/fontawesome-free/css/solid.min.css'
 // import  '@fortawesome/fontawesome-free/css/regular.min.css'
 // import  '@fortawesome/fontawesome-free/css/brands.min.css'
-
 
 // 关闭Vue生产提示
 Vue.config.productionTip = false;

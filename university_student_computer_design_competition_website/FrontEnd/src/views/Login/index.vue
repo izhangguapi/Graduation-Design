@@ -19,7 +19,7 @@
       </el-form-item>
       <el-form-item prop="captcha">
         <el-input tpye="text" v-model="loginForm.captcha" placeholder="点击图片更换验证码" style="width: 60%"></el-input>
-        <img :src="'/api/captcha?dateTime=' + loginForm.datetime" @click="updateCaptcha" alt="验证码"
+        <img :src="captcha" @click="updateCaptcha" alt="验证码"
              style="float: right; cursor: pointer"/>
       </el-form-item>
       <el-form-item style="margin-bottom: 0">
@@ -40,7 +40,8 @@
 </template>
 
 <script>
-import {postRequest} from "@/utils/api";
+import {getRequest, postRequest} from "@/utils/api";
+import {login} from "@/utils/login";
 
 export default {
   name: "Login",
@@ -63,10 +64,12 @@ export default {
   mounted() {
     // 页面启动给datetime赋值时间戳
     this.loginForm.datetime = new Date().getTime();
-    // 判断是否保存了账号信息
-    if (localStorage.uid){
-      this.$message.success("自动登录成功")
-      this.$router.push("/home");
+    // 判断是否存在登录信息
+    login();
+  },
+  computed:{
+    captcha(){
+      return  '/api/captcha?dateTime=' + this.loginForm.datetime;
     }
   },
   methods:{
@@ -109,6 +112,8 @@ export default {
               sessionStorage.setItem("gid", resp.data.data[0].groupId);
             }
             this.$router.push("/home");
+          }).catch((error)=>{
+            console.log(error)
           });
         } else {
           this.$message.error("请输入完整！");

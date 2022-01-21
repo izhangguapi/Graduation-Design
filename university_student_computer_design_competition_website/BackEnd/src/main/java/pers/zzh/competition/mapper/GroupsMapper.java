@@ -9,7 +9,7 @@ import pers.zzh.competition.entity.Groups;
 
 @Mapper
 public interface GroupsMapper extends BaseMapper<Groups> {
-    @Insert("INSERT INTO groups VALUES (DEFAULT,#{groupName},#{encoding})")
-    @Options(useGeneratedKeys = true,keyProperty = "groupId",keyColumn = "groupId")
-    int insertGroupGetId(Groups groups);
+//    @Insert("INSERT INTO groups VALUES (DEFAULT,#{groupName},#{encoding})")
+//    @Options(useGeneratedKeys = true,keyProperty = "groupId",keyColumn = "groupId")
+//    int insertGroupGetId(Groups groups);
 }

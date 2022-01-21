@@ -5,6 +5,13 @@
     </transition>
   </div>
 </template>
+
+<script>
+export default {
+
+}
+</script>
+
 <style>
 body{
   margin: 0;
@@ -21,4 +28,5 @@ body{
 .fade-enter, .fade-leave-to{
   opacity: 0;
 }
+
 </style>
