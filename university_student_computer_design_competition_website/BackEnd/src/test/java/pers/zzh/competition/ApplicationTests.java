@@ -18,7 +18,6 @@ import java.util.Map;
 @SpringBootTest
 class ApplicationTests {
 
-
     @Autowired
     private UsersMapper usersDao;
     @Autowired
@@ -46,7 +45,12 @@ class ApplicationTests {
 //        contests.setStartTime("2022-01-21 08:00:00");
 //        contests.setEndTime("2022-01-21 08:00:00");
 //        contestsMapper.insert(contests);
-        System.out.println("我直接好家伙\\n测试\\\n");
+        //System.out.println("我直接好家伙\\n测试\\\n");
+//        String test="1,测试啊啊。\n "+ "2,对对对 ";
+//        test.replace
+//        System.out.println("=================>>>>>>>>>>>>>>>"+test);
+        //hrEffPfmcePlaneePo.setWorkContent(test); //存入数据库。
+        // hrEffPfmcePlaneeDao.create(hrEffPfmcePlaneePo);
     }
 
     @Test

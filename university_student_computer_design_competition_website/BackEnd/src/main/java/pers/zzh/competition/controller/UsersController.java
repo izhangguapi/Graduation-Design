@@ -2,7 +2,6 @@ package pers.zzh.competition.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.wf.captcha.GifCaptcha;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pers.zzh.competition.common.entity.Login;
 
@@ -11,9 +10,11 @@ import pers.zzh.competition.service.UsersService;
 import pers.zzh.competition.utils.Result;
 
 
+import javax.annotation.Resource;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -27,7 +28,7 @@ import java.util.List;
 @RequestMapping("/api")
 public class UsersController {
 
-    @Autowired
+    @Resource
     private UsersService usersService;
 
     // 查询users表的全部
@@ -41,7 +42,7 @@ public class UsersController {
     public Result getAll(@PathVariable int currentPage, @PathVariable int pageSize) {
         Page<Users> list = usersService.selectListPage(currentPage, pageSize);
         return list.getRecords().isEmpty()
-                ? new Result(200, "查询失败", null)
+                ? new Result(200, "查询失败", Collections.emptyMap())
                 : new Result(200, "查询成功", usersService.selectListPage(currentPage, pageSize));
     }
 
@@ -54,7 +55,7 @@ public class UsersController {
         try {
             sessionCaptcha = session.getAttribute(login.getDatetime()).toString();
         } catch (Exception e) {
-            return new Result(201, "验证码已失效，请刷新！", null);
+            return new Result(201, "验证码已失效，请刷新！", Collections.emptyMap());
         }
         // 删除session存入的验证码
         session.removeAttribute(login.getDatetime());
@@ -66,10 +67,10 @@ public class UsersController {
         if (sessionCaptcha.equalsIgnoreCase(userCaptcha)) {
             List<Users> list = usersService.selectPhoneEmailPassword(login.getPhone(), login.getEmail(), login.getPassword());
             return list.isEmpty()
-                    ? new Result(201, "密码错误", null)
+                    ? new Result(201, "密码错误", Collections.emptyMap())
                     : new Result(200, "登录成功", list);
         } else {
-            return new Result(201, "验证码错误", null);
+            return new Result(201, "验证码错误", Collections.emptyMap());
         }
     }
     // 生成验证码
@@ -113,6 +114,6 @@ public class UsersController {
         if (num != 0) {
             return new Result(200, "注册成功", num);
         } else
-            return new Result(201, "注册失败", null);
+            return new Result(201, "注册失败", Collections.emptyMap());
     }
 }

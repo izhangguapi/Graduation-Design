@@ -17,11 +17,6 @@ export default {
         {path:'/mine',title: '个人中心',icon: 'fa fa-graduation-cap'},
       ]
     }
-  },
-  mounted() {
-    console.log(this.$router.options.routes);
-
-    console.log(this.$route.path);
   }
 }
 </script>

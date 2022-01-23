@@ -13,4 +13,6 @@ import pers.zzh.competition.entity.Contests;
 public interface ContestsService extends IService<Contests> {
 
     int insertContests(Contests contests);
+
+    Contests selectContestsOne(String id);
 }

@@ -23,49 +23,19 @@ public class Result {
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date time = new Date();
 */
-
     public Result(Integer code, String msg,Boolean flag) {
         this.code = code;
         this.msg = msg;
         this.flag = flag;
     }
-
-//    public Result(Integer code, String msg, Object data) {
-//        this.code = code;
-//        this.msg = msg;
-//        this.data = data;
-//    }
-
     public Result(Integer code, String msg, Object data) {
         this.code = code;
         this.msg = msg;
         this.data = data;
     }
-    /**
-     * 枚举类
-     */
-//    private enum ResultEnum {
-//        /**
-//         * 成功
-//         */
-//        SUCCESS(200),
-//        /**
-//         * 失败
-//         */
-//        FAIL(400),
-//        /**
-//         * 接口不存在
-//         */
-//        NOT_FOUND(404),
-//        /**
-//         * 服务器内部错误
-//         */
-//        INTERNAL_SERVER_ERROR(500);
-//        public int code;
-//
-//        ResultEnum(int code) {
-//            this.code = code;
-//        }
-//    }
-
+    public Result(Integer code, Object data) {
+        this.code = code;
+        this.msg = msg;
+        this.data = data;
+    }
 }

@@ -48,6 +48,13 @@ const router = new VueRouter({
                 title: '发现',
             },
             component: () => import('@/views/Find')
+        }, {
+            name: 'find-detail',
+            path: ':contestId',
+            meta: {
+                title: '详情',
+            },
+            component: () => import('@/views/Find/Detail')
         }]
     }, {
         path: '/publish',
@@ -71,11 +78,18 @@ const router = new VueRouter({
             },
             component: () => import('@/views/Mine')
         }]
+    }, {
+        name: '404',
+        path: '/404',
+        component: () => import('@/views/404')
+    }, {
+        path: '*',    // 此处需特别注意至于最底部
+        redirect: '/404'
     }]
 })
 /* 路由发生变化修改页面title */
 router.beforeEach((to, from, next) => {
-    console.log(to);
+    // console.log(to);
     if (to.meta.title) {
         document.title = to.meta.title
     }

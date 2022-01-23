@@ -2,48 +2,31 @@
   <div>
     <!--跑马灯-->
     <el-row :gutter="20">
-      <el-col :span="18" :offset="3">
-        <el-carousel type="card">
-          <el-carousel-item v-for="(item,i) in carouselImages" :key="i">
-            <img class="carouselImg" :src="item.url" :alt="item.link" />
-          </el-carousel-item>
-        </el-carousel>
+      <el-col :span="16" :offset="4">
+        <Banner></Banner>
       </el-col>
     </el-row>
     <el-row :gutter="20">
       <!--左侧卡片-->
-      <el-col :span="8" :offset="6">
-        <el-card>
-          <div slot="header" class="clearfix">
-            <span>比赛</span>
-          </div>
-          <div v-for="o in 4" :key="o" class="text item">
-            {{ '列表内容 ' + o }}
-          </div>
-          <el-input></el-input>
-        </el-card>
+      <el-col :span="12" :offset="4">
+        <competitionList></competitionList>
       </el-col>
       <!--右侧公告通知-->
       <el-col :span="4">
-        <el-card>
-          <div slot="header" class="clearfix">
-            <span>公告通知</span>
-          </div>
-          <div v-for="i in 5" :key="i" class="text item">
-            {{ '列表内容 ' + i }}
-          </div>
-          <router-link class="more-link" :to="{name: 'find'}">
-            查看更多...
-          </router-link>
-        </el-card>
+        <AnnouncementList></AnnouncementList>
       </el-col>
     </el-row>
   </div>
 </template>
 
 <script>
+import competitionList from "./CompetitionList";
+import AnnouncementList from "./AnnouncementList";
+import Banner from "./Banner";
+
 export default {
   name: "Home",
+  components: {Banner, competitionList, AnnouncementList},
   data() {
     return {
       carouselImages: [
@@ -55,21 +38,18 @@ export default {
       ],
     }
   }
+
 }
 </script>
 <style scoped>
-.carouselImg {
-  width: 100%;
-  height: 100%;
-}
-
 .more-link {
-  padding-top:10px;
+  padding-top: 10px;
   display: block;
   text-align: center;
   font-size: 16px;
   letter-spacing: 3px;
   font-weight: 500;
   color: #659fdc;
+  text-decoration:none;
 }
 </style>

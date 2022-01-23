@@ -34,6 +34,8 @@ import {
     Carousel,
     CarouselItem,
     Card,
+    Result,
+    PageHeader,
 
     Message,
     MessageBox
@@ -78,6 +80,8 @@ const element = {
         Vue.use(Carousel);
         Vue.use(CarouselItem);
         Vue.use(Card);
+        Vue.use(Result);
+        Vue.use(PageHeader);
 
         Vue.prototype.$message = Message;
         Vue.prototype.$prompt = MessageBox.prompt;

@@ -16,7 +16,7 @@
       <el-row :gutter="20">
         <!--左侧编辑内容-->
         <el-col :span="12" :offset="4">
-          <mdEditor v-model="contestForm.contestText" :ishljs="true" style="min-height: 600px"/>
+          <mdEditor v-model="contestForm.text" :ishljs="true" style="min-height: 600px"/>
         </el-col>
         <!--右侧输入其他信息-->
         <el-col :span="4">
@@ -70,7 +70,8 @@ export default {
     return {
       contestForm: {
         contestTitle: '',
-        contestText: '## 请输入比赛内容\n',
+        contestText: '',
+        text:'## 请输入比赛内容\n',
         name:'',
         promulgator: '',
         groupId: '',
@@ -105,10 +106,16 @@ export default {
   methods: {
     // 提交
     submitForm() {
+      this.contestForm.contestText = this.contestForm.text.replace(/\n/ig, "<br>");
       this.$refs.contestForm.validate((valid) => {
         if (valid) {
           postRequest("/addContests",this.contestForm).then((resp)=>{
-            this.$message.success(resp.data.msg)
+            this.$confirm(resp.data.msg, '信息', {
+              confirmButtonText: '确定',
+              type: 'success',
+              center: true
+            })
+            this.$router.push("/home");
           })
         } else {
           this.$message.error("请修改错误项！")
