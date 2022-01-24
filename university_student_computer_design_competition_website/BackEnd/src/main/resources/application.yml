@@ -12,6 +12,10 @@ spring:
       username: root
       password: root
       test-while-idle: false # 取消空闲时测试连接的有效性
+#  jackson:
+#    date-format: yyyy-MM-dd HH:mm:ss
+#    time-zone: GMT+8
+#    default-property-inclusion: non_empty
 
 mybatis-plus:
   global-config:

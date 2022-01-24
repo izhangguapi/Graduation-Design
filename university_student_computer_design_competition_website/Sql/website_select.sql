@@ -44,3 +44,5 @@ INSERT INTO `groups` VALUES (DEFAULT,'asd','OY6TT');SELECT LAST_INSERT_ID();
 INSERT INTO `groups` VALUES ('1','352');
 
 INSERT INTO groups(group_name,encoding) VALUES ('141','31542');
+
+SELECT name,group_name,contest_title,contest_text,start_time,end_time FROM contests c,groups g,users u WHERE c.promulgator=u.user_id AND c.group_id=g.group_id AND contest_id='2'

@@ -53,6 +53,7 @@ const router = new VueRouter({
             path: ':contestId',
             meta: {
                 title: '详情',
+                activeMenu:'/find'
             },
             component: () => import('@/views/Find/Detail')
         }]

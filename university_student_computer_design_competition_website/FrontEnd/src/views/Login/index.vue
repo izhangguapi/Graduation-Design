@@ -47,7 +47,7 @@ export default {
   name: "Login",
   data() {
     return {
-      checked:true,
+      checked: true,
       loginForm: {
         phone: "",
         email: "",
@@ -67,12 +67,12 @@ export default {
     // 判断是否存在登录信息
     login();
   },
-  computed:{
-    captcha(){
-      return  '/api/captcha?dateTime=' + this.loginForm.datetime;
+  computed: {
+    captcha() {
+      return '/api/captcha?dateTime=' + this.loginForm.datetime;
     }
   },
-  methods:{
+  methods: {
     // 点击更换验证码（将来更换验证方式）
     updateCaptcha() {
       this.loginForm.datetime = new Date().getTime();
@@ -82,37 +82,39 @@ export default {
      * @param activeName 切换标签后的新值
      */
     leaveTab(activeName) {
-      if (activeName === "0") {
-        delete this.rules.email;
-        this.rules.phone = [
-          {required: true, message: "手机号不能为空", trigger: "blur"},
-        ];
-        this.loginForm.phone = "";
-      } else {
-        delete this.rules.phone;
-        this.rules.email = [
-          {required: true, message: "邮箱不能为空", trigger: "blur"},
-        ];
-        this.loginForm.email = "";
+      // alert(activeName)
+      switch (activeName) {
+        case '0':
+          delete this.rules.email;
+          this.rules.phone = [{required: true, message: "手机号不能为空", trigger: "blur"},];
+          this.loginForm.phone = "";
+          break;
+        case '1':
+          delete this.rules.phone;
+          this.rules.email = [{required: true, message: "邮箱不能为空", trigger: "blur"},];
+          this.loginForm.email = "";
+          break;
       }
       this.loginForm.password = "";
+
+
     },
     //登录点击事件
     login() {
       this.$refs.loginForm.validate((valid) => {
         if (valid) {
           postRequest("/login", this.loginForm).then((resp) => {
-            if (this.checked){
+            if (this.checked) {
               localStorage.setItem("uid", resp.data.data[0].userId);
               localStorage.setItem("name", resp.data.data[0].name);
               localStorage.setItem("gid", resp.data.data[0].groupId);
-            }else {
+            } else {
               sessionStorage.setItem("uid", resp.data.data[0].userId)
               sessionStorage.setItem("name", resp.data.data[0].name);
               sessionStorage.setItem("gid", resp.data.data[0].groupId);
             }
             this.$router.push("/home");
-          }).catch((error)=>{
+          }).catch((error) => {
             console.log(error)
           });
         } else {

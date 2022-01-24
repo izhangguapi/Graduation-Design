@@ -10,12 +10,12 @@
         </el-link>
       </div>
       <el-dropdown-menu slot="dropdown">
-        <el-dropdown-item @click="goToPersonalPage">个人中心</el-dropdown-item>
-        <el-dropdown-item divided>发布比赛</el-dropdown-item>
-        <el-dropdown-item >发布消息</el-dropdown-item>
-        <el-dropdown-item >发布评分</el-dropdown-item>
-        <el-dropdown-item>后台管理</el-dropdown-item>
-        <el-dropdown-item divided>退出登录</el-dropdown-item>
+        <el-dropdown-item @click.native="goToMine">个人中心</el-dropdown-item>
+        <!--<el-dropdown-item divided>发布比赛</el-dropdown-item>-->
+        <!--<el-dropdown-item>发布消息</el-dropdown-item>-->
+        <!--<el-dropdown-item>发布评分</el-dropdown-item>-->
+        <!--<el-dropdown-item>后台管理</el-dropdown-item>-->
+        <el-dropdown-item divided @click.native="logOut">退出登录</el-dropdown-item>
       </el-dropdown-menu>
     </el-dropdown>
   </div>
@@ -31,8 +31,13 @@ export default {
     }
   },
   methods: {
-    goToPersonalPage() {
-      // this.$router.push("/Personal");
+    goToMine() {
+      this.$router.push("/mine");
+    },
+    logOut(){
+      sessionStorage.clear();
+      localStorage.clear();
+      this.$router.push("/login");
     }
   }
 }
@@ -41,7 +46,7 @@ export default {
 <style lang="less" scoped>
 // 用户
 .user-info {
-  height:48px;
+  height: 48px;
   background-clip: content-box;
   padding: 6px 10px;
   display: flex;
@@ -52,12 +57,5 @@ export default {
     margin-top: 10px;
     margin-right: 30px;
   }
-
-  //.avatar {
-  //  margin: 0;
-  //  height: 44px;
-  //  cursor: pointer;
-  //}
-
 }
 </style>

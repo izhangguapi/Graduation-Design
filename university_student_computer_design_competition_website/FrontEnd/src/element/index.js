@@ -36,6 +36,8 @@ import {
     Card,
     Result,
     PageHeader,
+    Timeline,
+    TimelineItem,
 
     Message,
     MessageBox
@@ -82,6 +84,8 @@ const element = {
         Vue.use(Card);
         Vue.use(Result);
         Vue.use(PageHeader);
+        Vue.use(Timeline);
+        Vue.use(TimelineItem);
 
         Vue.prototype.$message = Message;
         Vue.prototype.$prompt = MessageBox.prompt;

@@ -2,6 +2,7 @@ package pers.zzh.competition.entity;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 @Data
@@ -12,6 +13,8 @@ public class Contests {
     private String contestText;
     private Integer promulgator;
     private Integer groupId;
+    private String regStartTime;
+    private String regEndTime;
     private String startTime;
     private String endTime;
 
@@ -20,17 +23,4 @@ public class Contests {
 
     @TableField(exist = false)
     private String groupName;
-
-    @Override
-    public String toString() {
-        return "Contests{" +
-                "contest_id=" + contestId +
-                ", contest_title='" + contestTitle + '\'' +
-                ", contest_text='" + contestText + '\'' +
-                ", promulgator=" + promulgator +
-                ", group_id=" + groupId +
-                ", start_time='" + startTime + '\'' +
-                ", end_time='" + endTime + '\'' +
-                '}' + '\n';
-    }
 }

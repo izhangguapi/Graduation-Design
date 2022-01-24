@@ -51,6 +51,14 @@ class ApplicationTests {
 //        System.out.println("=================>>>>>>>>>>>>>>>"+test);
         //hrEffPfmcePlaneePo.setWorkContent(test); //存入数据库。
         // hrEffPfmcePlaneeDao.create(hrEffPfmcePlaneePo);
+
+        int cid = 7;
+        int uid = 7;
+        QueryWrapper<Scores> qw = new QueryWrapper<>();
+        qw.eq("contest_id",cid).eq("contestant",uid);
+        if (scoresDao.selectCount(qw) == 0){
+
+        }
     }
 
     @Test
