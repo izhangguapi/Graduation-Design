@@ -6,13 +6,13 @@
       </div>
       <div class="list">
         <el-row>
-          <el-col v-for="(item,i) in lists" :span="9" :key="item.contestId" :offset="2" style="margin-bottom: 30px">
+          <el-col v-for="(item) in lists" :span="9" :key="item.contestId" :offset="2" style="margin-bottom: 30px">
             <el-card :body-style="{ padding: '0' }">
               <router-link :to="{ name: 'find-detail', params: {contestId: item.contestId,name:item.name} }">
                 <img :src="item.url" class="image" alt="">
               </router-link>
               <div style="padding: 14px;">
-                <span>{{ item.name }}</span>
+                <span style="text-overflow: ellipsis;text-overflow: ellipsis;">{{ item.name }}</span>
                 <div class="bottom clearfix">
                   <time class="time">{{ currentDate }}-{{ currentDate }}</time>
                   <el-button type="text" class="button">操作按钮</el-button>
@@ -30,6 +30,8 @@
 </template>
 
 <script>
+import {getRequest} from "@/utils/api";
+
 export default {
   name: "competitionList",
   data() {
@@ -37,30 +39,31 @@ export default {
       currentDate: '2021-06-01',
       lists: [{
         contestId: '1',
-        name: '比赛1',
-        url: 'https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png'
+        name: '2021年度全国大学生算法设计编程挑战赛',
+        url: 'https://pic.imgdb.cn/item/61e95d082ab3f51d918ed3d2.png'
       }, {
         contestId: '2',
-        name: '比赛2',
-        url: 'https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png'
+        name: '2021年度阿里巴巴人工智能对抗算法竞赛',
+        url: 'https://pic.imgdb.cn/item/61e95d082ab3f51d918ed3d2.png'
       }, {
         contestId: '3',
-        name: '比赛3',
-        url: 'https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png'
+        name: '2021年度中国国际艺术博览会设计视觉形象设计大赛',
+        url: 'https://pic.imgdb.cn/item/61e95d082ab3f51d918ed3d2.png'
       }, {
         contestId: '4',
-        name: '比赛4',
-        url: 'https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png'
+        name: '2022年度世界大学生超级计算机竞赛',
+        url: 'https://pic.imgdb.cn/item/61e95d082ab3f51d918ed3d2.png'
       }, {
         contestId: '5',
-        name: '比赛5',
-        url: 'https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png'
+        name: '2022年度中国高校计算机大赛-网络技术挑战赛',
+        url: 'https://pic.imgdb.cn/item/61e95d082ab3f51d918ed3d2.png'
       }],
     }
   },
   mounted() {
-
-
+    getRequest("/Scores").then((resp) => {
+      console.log(resp.data);
+    });
   },
 }
 </script>
@@ -94,7 +97,7 @@ export default {
 
 .image {
   width: 100%;
-  height: 200px;
+  height: auto;
   display: block;
 }
 

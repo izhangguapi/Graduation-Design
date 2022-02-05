@@ -3,12 +3,11 @@ package pers.zzh.competition.controller;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.wf.captcha.GifCaptcha;
 import org.springframework.web.bind.annotation.*;
-import pers.zzh.competition.common.entity.Login;
 
+import pers.zzh.competition.common.entity.Login;
 import pers.zzh.competition.entity.Users;
 import pers.zzh.competition.service.UsersService;
 import pers.zzh.competition.utils.Result;
-
 
 import javax.annotation.Resource;
 import javax.servlet.ServletOutputStream;

@@ -5,52 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2f4faf0-13b2-49c4-9432-ccd98a80af67" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/controller/ScoresController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/ScoresService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/impl/ScoresServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/entity/Contests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/entity/Contests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/mapper/ContestsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/mapper/ContestsMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pers/zzh/competition/ApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pers/zzh/competition/ApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/babel-loader/02d2fd741c0b39ed8d7807be6a41d14b.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/babel-loader/02d2fd741c0b39ed8d7807be6a41d14b.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/babel-loader/4256024cb36350c7c898eec0f3ab4977.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/babel-loader/4256024cb36350c7c898eec0f3ab4977.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/babel-loader/67c9a3772af8f86761c9f694289619bc.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/babel-loader/67c9a3772af8f86761c9f694289619bc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/babel-loader/90c42d5fb4f6c1287ec9a721d5de562e.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/babel-loader/90c42d5fb4f6c1287ec9a721d5de562e.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/babel-loader/d94621199b24882ac82f414d1efec584.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/babel-loader/d94621199b24882ac82f414d1efec584.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/babel-loader/e9b37ee940ce26c038e1f922512d0222.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/babel-loader/e9b37ee940ce26c038e1f922512d0222.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/babel-loader/edfeb583dc82721a923917a55fbee729.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/babel-loader/edfeb583dc82721a923917a55fbee729.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/vue-loader/0d1286a3d25152f94807fa9033025fd2.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/vue-loader/0d1286a3d25152f94807fa9033025fd2.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/vue-loader/2475fe11bdbd48147618880a7df96059.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/vue-loader/2475fe11bdbd48147618880a7df96059.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/vue-loader/279650481aa545f2c4593884bc751717.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/vue-loader/279650481aa545f2c4593884bc751717.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/vue-loader/41e3754f0eea8fcec72d9b2a835e68ce.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/vue-loader/41e3754f0eea8fcec72d9b2a835e68ce.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/vue-loader/430c6e57cf450f7e893bcd5cb42c2bdf.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/vue-loader/430c6e57cf450f7e893bcd5cb42c2bdf.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/vue-loader/47f7d017034235cbe2bab703e1092b12.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/vue-loader/47f7d017034235cbe2bab703e1092b12.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/vue-loader/77efe6d0e0fcc8294a1088ed1ca3e891.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/vue-loader/77efe6d0e0fcc8294a1088ed1ca3e891.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/vue-loader/7fc2e29f59a3025104267ba6d7a97ac8.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/vue-loader/7fc2e29f59a3025104267ba6d7a97ac8.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/vue-loader/82cbdaa2c48ae82c547239a146108c66.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/vue-loader/82cbdaa2c48ae82c547239a146108c66.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/vue-loader/84444853a8d045aefb05ec5ed51220e6.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/vue-loader/84444853a8d045aefb05ec5ed51220e6.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/vue-loader/95ada4876f634acce1ac6516f7451f0f.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/vue-loader/95ada4876f634acce1ac6516f7451f0f.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/vue-loader/aa2de9c24612a8e4f612f8b10472405a.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/vue-loader/aa2de9c24612a8e4f612f8b10472405a.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/vue-loader/adfd39ca7f0dc1e964b8e60f99336fdf.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/vue-loader/adfd39ca7f0dc1e964b8e60f99336fdf.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/vue-loader/c8378c344b10909928ab80b7e8856903.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/vue-loader/c8378c344b10909928ab80b7e8856903.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/vue-loader/d140c1ba31078d235ddb5c20cbf83959.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/vue-loader/d140c1ba31078d235ddb5c20cbf83959.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/vue-loader/d31b514d10266952f8f7f5d8fa3ae010.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/vue-loader/d31b514d10266952f8f7f5d8fa3ae010.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/vue-loader/d73edc024d9c0e08ce989785fd490994.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/vue-loader/d73edc024d9c0e08ce989785fd490994.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/vue-loader/d7b702f0886439ab582b841cf5cb60d6.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/vue-loader/d7b702f0886439ab582b841cf5cb60d6.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/vue-loader/d8734f103ca162e4be60e743df3259d5.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/vue-loader/d8734f103ca162e4be60e743df3259d5.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/vue-loader/ea80cfd9420068e89bdabfc30569a7da.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/vue-loader/ea80cfd9420068e89bdabfc30569a7da.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/vue-loader/f0b82ce929c7ed99286211132cf5f67b.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/node_modules/.cache/vue-loader/f0b82ce929c7ed99286211132cf5f67b.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/element/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/element/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/controller/ContestsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/controller/ContestsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/controller/ScoresController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/controller/ScoresController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/controller/UsersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/ContestsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/ContestsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/ScoresService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/ScoresService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/impl/ContestsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/impl/ContestsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/impl/ScoresServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/impl/ScoresServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FrontEnd/src/utils/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/utils/login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/Find/Detail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/Find/Detail.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/Login/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/Login/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/Publish/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/Publish/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Header/NavBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Header/NavBar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/Home/Banner.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/Home/Banner.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/Home/CompetitionList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/Home/CompetitionList.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Header/UserInfo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Header/UserInfo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/layout/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/layout/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sql/website.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../Sql/website.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Sql/website_select.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../Sql/website_select.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../毕业设计进度表.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../毕业设计进度表.xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,10 +76,10 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="项目" />
+    <property name="project.structure.last.edited" value="模块" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.35950413" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="http.proxy" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -255,6 +224,16 @@
       <workItem from="1642846377131" duration="3361000" />
       <workItem from="1642931359913" duration="8340000" />
       <workItem from="1642998121142" duration="9600000" />
+      <workItem from="1643130756434" duration="530000" />
+      <workItem from="1643132087693" duration="297000" />
+      <workItem from="1643180257837" duration="1633000" />
+      <workItem from="1643182888189" duration="1183000" />
+      <workItem from="1643185979381" duration="134000" />
+      <workItem from="1643186124493" duration="1322000" />
+      <workItem from="1643806870995" duration="3487000" />
+      <workItem from="1643971476992" duration="104000" />
+      <workItem from="1643971636729" duration="475000" />
+      <workItem from="1644053942591" duration="5456000" />
     </task>
     <servers />
   </component>

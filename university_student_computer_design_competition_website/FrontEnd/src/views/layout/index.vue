@@ -17,11 +17,6 @@ import {login} from "@/utils/login";
 
 export default {
   components: {Header, Main, Footer},
-  mounted() {
-    // 判断是否存在登录信息
-    login();
-  }
-
 }
 </script>
 

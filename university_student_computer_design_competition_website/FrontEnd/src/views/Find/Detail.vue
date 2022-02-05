@@ -7,8 +7,6 @@
         </button>
       </el-col>
     </el-row>
-
-
     <el-row :gutter="20">
       <el-col :span="12" :offset="4">
         <!--左侧信息-->
@@ -41,8 +39,11 @@
           <div class="text item">
             所属组：<samp class="itemRight">{{ groupName }}</samp>
           </div>
-          <div style="text-align: center" v-if="btn">
+          <div style="text-align: center" v-if="btnHidden">
             <el-button type="primary" round @click="apply">立即报名</el-button>
+          </div>
+          <div style="text-align: center" v-else>
+            <el-button type="primary" round disabled>不可报名</el-button>
           </div>
         </el-card>
       </el-col>
@@ -63,72 +64,85 @@ export default {
   },
   data() {
     return {
-      btn: false,
+      btnHidden: false,
       contestTitle: '',
       contestText: '',
+      contestId:'',
       name: '',
       groupName: '',
       startTime: '',
       endTime: '',
       activities: [{
         content: '报名开始',
-        timestamp: '2018-04-12 20:46',
+        timestamp: '2022-02-22 22:22',
         size: 'large',
         type: 'primary'
       }, {
         content: '报名结束',
-        timestamp: '2018-04-03 20:46',
+        timestamp: '2022-02-22 22:22',
         size: 'large',
         type: 'success'
-
       }, {
         content: '比赛开始',
-        timestamp: '2018-04-03 20:46',
+        timestamp: '2022-02-22 22:22',
         size: 'large',
         type: 'warning'
-
       }, {
         content: '比赛结束',
-        timestamp: '2018-04-03 20:46',
+        timestamp: '2022-02-22 22:22',
         size: 'large',
         type: 'danger'
-
       }],
     }
   },
   mounted() {
-    if (sessionStorage.gid === '2') this.btn = true;
+    this.contestId = this.$route.params.contestId;
+    // 查询当前用户是否已报名此比赛
+    getRequest("/Scores/" + sessionStorage.uid + "/" + this.contestId).then((resp) => {
+      console.log(resp.data);
+      console.log(resp.data.data === 0);
+      // console.log("/Scores/" + sessionStorage.uid + "/" + this.contestId);
+      if (resp.data.data === 0) {
+        this.btnHidden = true;
+      }
+    });
     // 查询id为this.$route.params.contestId的比赛并显示
-    getRequest("/Contests/" + this.$route.params.contestId).then((resp) => {
+    getRequest("/Contests/" + this.contestId).then((resp) => {
       const data = resp.data.data;
       console.log(data);
       if (data) {
+        document.title = this.contestTitle = data.contestTitle;
         this.contestText = data.contestText.replace(/<br>/ig, "\n");
-        this.contestTitle = data.contestTitle;
         this.name = data.name;
         this.groupName = data.groupName;
         this.startTime = data.startTime;
         this.endTime = data.endTime;
-        document.title = data.contestTitle;
-        this.activities[0].timestamp = data.regStartTime.substring(0,19);
-        this.activities[1].timestamp = data.regEndTime.substring(0,19);
-        this.activities[2].timestamp = data.startTime.substring(0,19);
-        this.activities[3].timestamp = data.endTime.substring(0,19);
+        this.activities[0].timestamp = data.regStartTime.substring(0, 19);
+        this.activities[1].timestamp = data.regEndTime.substring(0, 19);
+        this.activities[2].timestamp = data.startTime.substring(0, 19);
+        this.activities[3].timestamp = data.endTime.substring(0, 19);
       } else {
         this.$message.error("未获取到此文章");
         this.$router.push("/404");
       }
     });
+    sessionStorage.gid === 2 ? this.btnHidden = true : this.btnHidden = false;
   }, methods: {
+    /**
+     * 点击返回
+     */
     goBack() {
       this.$router.go(-1);
     },
-    apply(){
-      getRequest("/addScores/" + sessionStorage.uid+"/"+this.$route.params.contestId).then((resp) => {
+    /**
+     * 点击报名按钮
+     */
+    apply() {
+      getRequest("/addScores/" + sessionStorage.uid + "/" + this.contestId).then((resp) => {
         console.log(resp.data);
-        if(resp.data.data === 1){
+        if (resp.data.data === 1) {
           this.$message.success("报名成功。")
-        }else {
+        } else {
           this.$message.error("报名失败！")
         }
       })

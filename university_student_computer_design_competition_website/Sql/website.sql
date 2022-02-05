@@ -25,7 +25,6 @@ CREATE TABLE `groups` (
 -- 插入数据
 INSERT INTO `groups` VALUES (DEFAULT,'管理员','admin');
 INSERT INTO `groups` VALUES (DEFAULT,'学生','xs');
-INSERT INTO `groups` VALUES (DEFAULT,'老师','ls');
 INSERT INTO `groups` VALUES (DEFAULT,'计算机设计','YVN1U');
 INSERT INTO `groups` VALUES (DEFAULT,'算法设计','OY5TT');
 
@@ -73,8 +72,10 @@ CREATE TABLE `contests` (
 	`contest_text` longtext NOT NULL COMMENT '比赛内容',
 	`promulgator` INT NOT NULL COMMENT '发布人（组.组id）',
 	`group_id` INT NOT NULL COMMENT '所属组（用户.用户id）',
-	`start_time` DATETIME NOT NULL COMMENT '开始时间',
-	`end_time` DATETIME NOT NULL COMMENT '截止时间',
+	`reg_start_time` DATETIME NOT NULL COMMENT '报名开始时间',
+	`reg_end_time` DATETIME NOT NULL COMMENT '报名结束时间',
+	`start_time` DATETIME NOT NULL COMMENT '比赛开始时间',
+	`end_time` DATETIME NOT NULL COMMENT '比赛截止时间',
 	PRIMARY KEY (`contest_id`),
 	CONSTRAINT `contests_1` FOREIGN KEY (`promulgator`) REFERENCES `users` (`user_id`),
 	CONSTRAINT `contests_2` FOREIGN KEY (`group_id`) REFERENCES `groups` (`group_id`)
@@ -82,22 +83,22 @@ CREATE TABLE `contests` (
 -- 插入数据
 INSERT INTO contests VALUES
 (DEFAULT,'2021年度全国大学生算法设计编程挑战赛','2021年度全国大学生算法设计编程挑战赛的内容',
-'2','3','2021-01-01 10:00:00','2021-02-01 23:59:59');
+'2','3','2021-01-01 10:00:00','2021-02-01 23:59:59','2021-03-01 10:00:00','2021-04-01 23:59:59');
 INSERT INTO contests VALUES
 (DEFAULT,'2021年度阿里巴巴人工智能对抗算法竞赛','2021年度阿里巴巴人工智能对抗算法竞赛的内容',
-'5','4','2021-08-01 10:00:00','2022-10-01 23:59:59');
+'5','4','2021-08-01 10:00:00','2022-10-01 23:59:59','2021-11-01 10:00:00','2022-11-11 23:59:59');
 INSERT INTO contests VALUES
 (DEFAULT,'2021年度中国国际艺术博览会设计视觉形象设计大赛','2021年度中国国际艺术博览会设计视觉形象设计大赛的内容',
-'6','4','2021-12-01 10:00:00','2022-02-01 23:59:59');
+'6','4','2021-12-01 10:00:00','2022-02-01 23:59:59','2022-02-10 10:00:00','2022-04-01 23:59:59');
 INSERT INTO contests VALUES
 (DEFAULT,'2022年度世界大学生超级计算机竞赛','2022年度世界大学生超级计算机竞赛',
-'3','4','2022-01-01 10:00:00','2022-03-01 23:59:59');
+'3','4','2022-01-01 10:00:00','2022-03-01 23:59:59','2022-03-02 10:00:00','2022-03-20 23:59:59');
 INSERT INTO contests VALUES
 (DEFAULT,'2022年度中国高校计算机大赛-网络技术挑战赛','2022年度中国高校计算机大赛-网络技术挑战赛的内容',
-'4','3','2022-02-01 10:00:00','2022-05-01 23:59:59');
+'4','3','2022-02-01 10:00:00','2022-05-01 23:59:59','2022-06-01 10:00:00','2022-07-01 23:59:59');
 INSERT INTO contests VALUES
 (DEFAULT,'ACM国际大学生程序设计竞赛','ACM国际大学生程序设计竞赛的内容',
-'2','3','2022-03-01 10:00:00','2022-03-20 23:59:59');
+'2','3','2022-03-01 10:00:00','2022-03-20 23:59:59','2022-04-04 10:00:00','2022-05-01 23:59:59');
 
 -- ----------------------------
 -- 创建消息表:  `messages`
@@ -137,7 +138,7 @@ CREATE TABLE `scores` (
 	`scores_id` INT NOT NULL AUTO_INCREMENT COMMENT '报名id',
 	`contest_id` INT NOT NULL COMMENT '比赛id（比赛.比赛id）',
 	`contestant` INT NOT NULL COMMENT '参赛者（用户.用户id）',
-	`state` TINYINT(1) NOT NULL COMMENT '评审状态（0或1）',
+	`state` TINYINT(1) NOT NULL DEFAULT(0) COMMENT '评审状态（0或1）',
 	`judge` INT COMMENT '评委（用户.用户id）',
 	`text` text COMMENT '评审内容',
 	`result` TINYINT(3) COMMENT '成绩',
