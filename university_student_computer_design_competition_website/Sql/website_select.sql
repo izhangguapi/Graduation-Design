@@ -48,5 +48,5 @@ INSERT INTO groups(group_name,encoding) VALUES ('141','31542');
 SELECT name,group_name,contest_title,contest_text,start_time,end_time FROM contests c,groups g,users u WHERE c.promulgator=u.user_id AND c.group_id=g.group_id AND contest_id='2'
 
 SELECT COUNT( * ) FROM scores WHERE (contest_id = 2 AND contestant = 11)
-
+SELECT COUNT( * ) FROM scores WHERE (contest_id = 5 AND contestant = 11)
 INSERT INTO scores  ( contest_id, contestant )  VALUES  ( '2', '11' )

@@ -5,20 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2f4faf0-13b2-49c4-9432-ccd98a80af67" name="变更" comment="">
+      <change afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HELP.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/controller/ContestsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/controller/ContestsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/controller/ScoresController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/controller/ScoresController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/controller/UsersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/ContestsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/ContestsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/ScoresService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/ScoresService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/impl/ContestsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/impl/ContestsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/impl/ScoresServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/impl/ScoresServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/utils/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/utils/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/Find/Detail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/Find/Detail.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/Home/Banner.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/Home/Banner.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/Home/CompetitionList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/Home/CompetitionList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Header/UserInfo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Header/UserInfo.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/layout/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/layout/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sql/website.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../Sql/website.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Sql/website_select.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../Sql/website_select.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -234,6 +223,7 @@
       <workItem from="1643971476992" duration="104000" />
       <workItem from="1643971636729" duration="475000" />
       <workItem from="1644053942591" duration="5456000" />
+      <workItem from="1644119887199" duration="775000" />
     </task>
     <servers />
   </component>

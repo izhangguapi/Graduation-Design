@@ -6,7 +6,6 @@ import pers.zzh.competition.service.ContestsService;
 import pers.zzh.competition.utils.Result;
 
 import javax.annotation.Resource;
-import java.util.Collections;
 
 @RestController
 @RequestMapping("/api")
