@@ -38,7 +38,9 @@ import {
     PageHeader,
     Timeline,
     TimelineItem,
+    Tooltip,
 
+    InfiniteScroll,
     Message,
     MessageBox
 } from 'element-ui';
@@ -86,6 +88,8 @@ const element = {
         Vue.use(PageHeader);
         Vue.use(Timeline);
         Vue.use(TimelineItem);
+        Vue.use(Tooltip);
+        Vue.use(InfiniteScroll);
 
         Vue.prototype.$message = Message;
         Vue.prototype.$prompt = MessageBox.prompt;

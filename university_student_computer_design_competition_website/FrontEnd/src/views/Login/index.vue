@@ -65,7 +65,7 @@ export default {
     // 页面启动给datetime赋值时间戳
     this.loginForm.datetime = new Date().getTime();
     // 判断是否存在登录信息
-    login();
+    login(this.$route.path);
   },
   computed: {
     captcha() {

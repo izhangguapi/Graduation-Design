@@ -1,12 +1,20 @@
 <template>
     <div>
-      发现首页
+      <el-row :gutter="20">
+        <el-col :span="16" :offset="4">
+          <competitionList></competitionList>
+        </el-col>
+      </el-row>
     </div>
 </template>
 
 <script>
+import competitionList from "./CompetitionList";
+
+
 export default {
-  name: "Find"
+  name: "Find",
+  components: {competitionList},
 }
 </script>
 

@@ -1,6 +1,6 @@
 <template>
-  <el-carousel type="card" class="carousel">
-    <el-carousel-item class="carousel" v-for="(item,i) in carouselImages" :key="i">
+  <el-carousel type="card" style="height: auto;margin-bottom: 20px;">
+    <el-carousel-item style="height: auto;" v-for="(item,i) in carouselImages" :key="i">
       <img class="carouselImg" :src="item.url" :alt="item.link"/>
     </el-carousel-item>
   </el-carousel>
@@ -24,9 +24,6 @@ export default {
 </script>
 
 <style scoped>
-.carousel{
-  height: auto;
-}
 .carouselImg {
   width: 100%;
   height: auto;

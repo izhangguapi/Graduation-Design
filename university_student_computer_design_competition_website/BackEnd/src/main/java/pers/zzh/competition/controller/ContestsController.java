@@ -26,8 +26,9 @@ public class ContestsController {
         return new Result(200, contestsService.selectContestsOne(id));
     }
 
-    @GetMapping("/Contests")
-    public Result selectContests(){
-        return new Result(200, contestsService.selectContests());
+    // 查询一些数据
+    @GetMapping("/ContestsList/{num}")
+    public Result selectContests(@PathVariable int num){
+        return new Result(200, contestsService.selectContests(num));
     }
 }

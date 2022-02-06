@@ -17,5 +17,5 @@ public interface ContestsService extends IService<Contests> {
     Contests selectContestsOne(String id);
 
     //查询一条比赛数据
-    List<Contests> selectContests();
+    List<Contests> selectContests(int num);
 }

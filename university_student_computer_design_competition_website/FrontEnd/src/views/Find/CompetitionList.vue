@@ -1,0 +1,138 @@
+<template>
+  <div>
+    <el-card>
+      <template v-if="hidden">
+        <div slot="header" class="clearfix">
+          <span>比赛列表</span>
+        </div>
+      </template>
+      <div class="list">
+        <el-row>
+          <el-col v-for="item in lists" :span="9" :key="item.contestId" :offset="2" style="margin-bottom: 30px">
+            <el-card :body-style="{ padding: '0' }">
+              <router-link :to="{ name: 'find-detail', params: {contestId: item.contestId} }" tag="div">
+                <img :src="item.url" class="image" alt="" style="cursor:hand">
+              <div style="padding: 14px;">
+                <el-tooltip class="item" effect="dark" :content="item.contestTitle" placement="top">
+                  <span
+                      style="display:inline-block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100%;">{{
+                      item.contestTitle
+                    }}</span>
+                </el-tooltip>
+                <div class="bottom clearfix">
+                  <time class="time">{{ item.regStartTime }}至{{ item.regEndTime }}</time>
+                  {{ item.name }}
+                </div>
+              </div></router-link>
+            </el-card>
+          </el-col>
+        </el-row>
+      </div>
+      <template v-if="hidden">
+        <router-link class="more-link" :to="{path:'/find'}">
+          查看更多...
+        </router-link>
+      </template>
+      <template v-else>
+        <div style="text-align: center">
+          <el-link @click="load" type="primary" :underline="false">{{ loadingText }}</el-link>
+        </div>
+      </template>
+    </el-card>
+  </div>
+</template>
+
+<script>
+import {getRequest} from "@/utils/api";
+
+export default {
+  name: "competitionList",
+  data() {
+    return {
+      hidden: true,
+      loader: true,
+      loadingText: '加载更多',
+      page: 0,
+      lists: [],
+    }
+  },
+  // computed: {
+  //   noMore() {
+  //     return this.count >= 20
+  //   },
+  //   disabled() {
+  //     return this.loading || this.noMore
+  //   }
+  // },
+  mounted() {
+    //判断是否为find页面
+    if (this.$route.path === "/find") this.hidden = false
+    this.load()
+  },
+  methods: {
+    load() {
+      if (this.loader) {
+        //获取比赛
+        getRequest("/ContestsList/" + this.page).then((resp) => {
+          const data = resp.data.data;
+          console.log(data);
+          if (data.length !== 4) {
+            this.loader = false;
+            this.loadingText = "没有更多了";
+          } else {
+            this.page += 4;
+          }
+          for (let i = 0; i < data.length; i++) {
+            data[i].regEndTime = data[i].regEndTime.substring(0, 10);
+            data[i].regStartTime = data[i].regStartTime.substring(0, 10);
+            this.lists.push(data[i]);
+          }
+        });
+      }
+    }
+  }
+}
+</script>
+
+<style scoped>
+.more-link {
+  padding-top: 10px;
+  display: block;
+  text-align: center;
+  font-size: 16px;
+  letter-spacing: 3px;
+  font-weight: 500;
+  color: #659fdc;
+  text-decoration: none;
+}
+
+.time {
+  font-size: 13px;
+  color: #999;
+}
+
+.bottom {
+  margin-top: 13px;
+  line-height: 12px;
+}
+
+.button {
+  padding: 0;
+  float: right;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.clearfix:before, .clearfix:after {
+  display: table;
+  content: "";
+}
+
+.clearfix:after {
+  clear: both
+}
+</style>

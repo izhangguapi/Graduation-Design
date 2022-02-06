@@ -9,6 +9,10 @@
             <el-form-item label="比赛名称" prop="contestTitle">
               <el-input v-model="contestForm.contestTitle"></el-input>
             </el-form-item>
+            <el-form-item label="图片url" prop="url">
+              <el-input v-model="contestForm.url"
+                        placeholder="输入图片的地址，例如：https://pic.imgdb.cn/item/61e95e482ab3f51d91903853.jpg"></el-input>
+            </el-form-item>
           </el-card>
         </el-col>
       </el-row>
@@ -23,12 +27,12 @@
         <!--右侧输入其他信息-->
         <el-col :span="4">
           <el-card style="min-height: 600px">
-            <el-form-item label="报名开始时间" prop="startTime">
-              <el-date-picker v-model="contestForm.startTime" type="datetime" placeholder="选择日期时间"
+            <el-form-item label="报名开始时间" prop="regStartTime">
+              <el-date-picker v-model="contestForm.regStartTime" type="datetime" placeholder="选择日期时间"
                               default-time="08:00:00" value-format="yyyy-MM-dd HH:mm:ss"></el-date-picker>
             </el-form-item>
-            <el-form-item label="报名结束时间" prop="endTime">
-              <el-date-picker v-model="contestForm.endTime" type="datetime" placeholder="选择日期时间"
+            <el-form-item label="报名结束时间" prop="regEndTime">
+              <el-date-picker v-model="contestForm.regEndTime" type="datetime" placeholder="选择日期时间"
                               default-time="23:59:59" value-format="yyyy-MM-dd HH:mm:ss"></el-date-picker>
             </el-form-item>
             <el-form-item label="比赛开始时间" prop="startTime">
@@ -62,11 +66,29 @@ export default {
     'mdEditor': mdEditor.mavonEditor
   },
   data() {
+    const regEndTimeCheckout = (rule, value, callback) => {
+      if (value === '') {
+        callback(new Error('报名结束时间不能为空'));
+      } else if (value < this.contestForm.regStartTime) {
+        callback(new Error('报名结束时间不能小于报名开始时间'));
+      } else {
+        callback();
+      }
+    };
+    const startTimeCheckout = (rule, value, callback) => {
+      if (value === '') {
+        callback(new Error('报名结束时间不能为空'));
+      } else if (value < this.contestForm.regEndTime) {
+        callback(new Error('比赛开始时间不能小于报名结束时间'));
+      } else {
+        callback();
+      }
+    };
     const endTimeCheckout = (rule, value, callback) => {
       if (value === '') {
         callback(new Error('报名结束时间不能为空'));
       } else if (value < this.contestForm.startTime) {
-        callback(new Error('结束时间不能小于开始时间'));
+        callback(new Error('比赛结束时间不能小于比赛开始时间'));
       } else {
         callback();
       }
@@ -75,19 +97,23 @@ export default {
       contestForm: {
         contestTitle: '',
         contestText: '',
+        url: '',
         text: '## 请输入比赛内容\n',
         name: '',
         promulgator: '',
         groupId: '',
         groupName: '',
-        RegStartTime: '',
-        RegEndTime: '',
-        StartTime: '',
-        EndTime: '',
+        regStartTime: '',
+        regEndTime: '',
+        startTime: '',
+        endTime: '',
       },
       rules: {
         contestTitle: [{required: true, message: '请输入比赛名称', trigger: 'blur'}],
-        startTime: [{required: true, message: '请输入报名开始时间', trigger: 'blur'}],
+        url: [{required: true, message: '请输入图片地址', trigger: 'blur'}],
+        regStartTime: [{required: true, message: '报名开始时间不能为空', trigger: 'blur'}],
+        regEndTime: [{required: true, validator: regEndTimeCheckout, trigger: 'blur'}],
+        startTime: [{required: true, validator: startTimeCheckout, trigger: 'blur'}],
         endTime: [{required: true, validator: endTimeCheckout, trigger: 'blur'}]
       }
     };
@@ -116,12 +142,12 @@ export default {
       this.$refs.contestForm.validate((valid) => {
         if (valid) {
           postRequest("/addContests", this.contestForm).then((resp) => {
-            this.$confirm(resp.data.msg, '信息', {
-              confirmButtonText: '确定',
-              type: 'success',
-              center: true
-            })
-            this.$router.push("/home");
+            // console.log(resp);
+            if(resp){
+              // this.$confirm(resp.data.msg, '信息', {confirmButtonText: '确定', type: 'success', center: true})
+              this.$message.success(resp.data.msg);
+              this.$router.push("/home");
+            }
           })
         } else {
           this.$message.error("请修改错误项！")

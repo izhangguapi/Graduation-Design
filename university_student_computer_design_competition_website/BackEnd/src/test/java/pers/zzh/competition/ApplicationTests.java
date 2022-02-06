@@ -80,7 +80,7 @@ class ApplicationTests {
     @Test
     void testGetPage() {
         //分页查询users
-        IPage<Users> page = new Page<>(0,5);
+        IPage<Users> page = new Page<>(3,5);
         usersDao.selectPage(page,null);
         System.out.println("数据："+page.getRecords());
         System.out.println("总共可以分为"+page.getPages()+"页");

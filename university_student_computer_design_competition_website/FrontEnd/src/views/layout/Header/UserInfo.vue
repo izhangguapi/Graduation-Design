@@ -40,7 +40,7 @@ export default {
   },
   mounted() {
     // 判断是否存在登录信息
-    this.isLogin = login();
+    this.isLogin = login(this.$route.path);
   },
   methods: {
     goToLogin() {

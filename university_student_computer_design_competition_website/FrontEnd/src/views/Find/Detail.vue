@@ -99,13 +99,17 @@ export default {
     this.contestId = this.$route.params.contestId;
     // 查询当前用户是否已报名此比赛
     getRequest("/Scores/" + sessionStorage.uid + "/" + this.contestId).then((resp) => {
-      console.log(resp.data);
-      console.log(resp.data.data === 0);
+      // console.log(resp.data);
+      // console.log(resp.data.data === 0);
       // console.log("/Scores/" + sessionStorage.uid + "/" + this.contestId);
       if (resp.data.data === 0) {
         this.btnHidden = true;
       }
+      sessionStorage.gid === 2 ? this.btnHidden = true: this.btnHidden = false;
+      sessionStorage.gid === 2 ? console.log('是') : console.log("否");
     });
+
+
     // 查询id为this.$route.params.contestId的比赛并显示
     getRequest("/Contests/" + this.contestId).then((resp) => {
       const data = resp.data.data;
@@ -126,7 +130,6 @@ export default {
         this.$router.push("/404");
       }
     });
-    sessionStorage.gid === 2 ? this.btnHidden = true : this.btnHidden = false;
   }, methods: {
     /**
      * 点击返回
@@ -142,6 +145,7 @@ export default {
         console.log(resp.data);
         if (resp.data.data === 1) {
           this.$message.success("报名成功。")
+          this.btnHidden = false;
         } else {
           this.$message.error("报名失败！")
         }

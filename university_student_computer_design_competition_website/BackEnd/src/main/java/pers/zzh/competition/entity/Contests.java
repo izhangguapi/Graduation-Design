@@ -11,6 +11,7 @@ public class Contests {
     private Integer contestId;
     private String contestTitle;
     private String contestText;
+    private String url;
     private Integer promulgator;
     private Integer groupId;
     private String regStartTime;

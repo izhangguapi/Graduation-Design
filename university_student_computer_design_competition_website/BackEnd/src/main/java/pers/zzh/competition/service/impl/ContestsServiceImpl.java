@@ -29,15 +29,13 @@ public class ContestsServiceImpl extends ServiceImpl<ContestsMapper, Contests> i
     //查询一条比赛数据
     @Override
     public Contests selectContestsOne(String id) {
-        return baseMapper.selectID(id);
+        return baseMapper.selectContestsID(id);
     }
 
-    //查询一条比赛数据
+    //查询比赛数据
     @Override
-    public List<Contests> selectContests() {
-        QueryWrapper<Contests> qw = new QueryWrapper<>();
-        qw.select("");
-        return baseMapper.selectList(qw);
+    public List<Contests> selectContests(int num) {
+        return baseMapper.selectContestsList(num);
     }
 
 }

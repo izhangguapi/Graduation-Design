@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import competitionList from "./CompetitionList";
+import competitionList from "../Find/CompetitionList";
 import AnnouncementList from "./AnnouncementList";
 import Banner from "./Banner";
 
