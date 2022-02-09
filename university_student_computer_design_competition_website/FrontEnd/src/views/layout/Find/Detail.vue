@@ -3,7 +3,7 @@
     <el-row :gutter="20">
       <el-col :span="16" :offset="4">
         <!--返回上页-->
-        <button class="btn" @click="goBack" style="cursor: pointer;"><i class="fa fa-circle-arrow-left"></i>&nbsp;返回
+        <button class="btn" @click="$router.go(-1);" style="cursor: pointer;"><i class="fa fa-circle-arrow-left"></i>&nbsp;返回
         </button>
       </el-col>
     </el-row>
@@ -39,8 +39,11 @@
           <div class="text item">
             所属组：<samp class="itemRight">{{ groupName }}</samp>
           </div>
-          <div style="text-align: center" v-if="btnHidden">
-            <el-button type="primary" round @click="apply">立即报名</el-button>
+          <div style="text-align: center" v-if="btnSelect===1">
+            <el-button type="primary" round @click="submit">立即报名</el-button>
+          </div>
+          <div style="text-align: center" v-else-if="btnSelect===2">
+            <el-button type="primary" round @click="check">查看结果</el-button>
           </div>
           <div style="text-align: center" v-else>
             <el-button type="primary" round disabled>不可报名</el-button>
@@ -58,16 +61,15 @@ const mdEditor = require('mavon-editor')
 import 'mavon-editor/dist/css/index.css'
 
 export default {
-  name: "Main",
   components: {
     'mdEditor': mdEditor.mavonEditor
   },
   data() {
     return {
-      btnHidden: false,
+      btnSelect: 3,
       contestTitle: '',
       contestText: '',
-      contestId:'',
+      contestId: '',
       name: '',
       groupName: '',
       startTime: '',
@@ -102,14 +104,12 @@ export default {
       // console.log(resp.data);
       // console.log(resp.data.data === 0);
       // console.log("/Scores/" + sessionStorage.uid + "/" + this.contestId);
-      if (resp.data.data === 0) {
-        this.btnHidden = true;
+      if (sessionStorage.gid === '2') {
+        if (resp.data.data === 0) this.btnSelect = 1; else this.btnSelect = 2;
+      } else {
+        this.btnSelect = 3;
       }
-      sessionStorage.gid === 2 ? this.btnHidden = true: this.btnHidden = false;
-      sessionStorage.gid === 2 ? console.log('是') : console.log("否");
     });
-
-
     // 查询id为this.$route.params.contestId的比赛并显示
     getRequest("/Contests/" + this.contestId).then((resp) => {
       const data = resp.data.data;
@@ -126,31 +126,28 @@ export default {
         this.activities[2].timestamp = data.startTime.substring(0, 19);
         this.activities[3].timestamp = data.endTime.substring(0, 19);
       } else {
-        this.$message.error("未获取到此文章");
         this.$router.push("/404");
       }
     });
   }, methods: {
     /**
-     * 点击返回
-     */
-    goBack() {
-      this.$router.go(-1);
-    },
-    /**
      * 点击报名按钮
      */
-    apply() {
+    submit() {
       getRequest("/addScores/" + sessionStorage.uid + "/" + this.contestId).then((resp) => {
         console.log(resp.data);
         if (resp.data.data === 1) {
           this.$message.success("报名成功。")
-          this.btnHidden = false;
+          this.btnSelect = 2;
         } else {
           this.$message.error("报名失败！")
         }
       })
 
+    },
+    // 查看
+    check() {
+      alert("查看结果")
     }
   }
 }

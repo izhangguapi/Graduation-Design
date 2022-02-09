@@ -35,7 +35,9 @@ public class Result {
     }
     public Result(Integer code, Object data) {
         this.code = code;
-        this.msg = msg;
+        this.data = data;
+    }
+    public Result(Object data) {
         this.data = data;
     }
 }

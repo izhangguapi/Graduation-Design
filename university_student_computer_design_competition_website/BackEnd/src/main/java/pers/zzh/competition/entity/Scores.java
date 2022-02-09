@@ -1,10 +1,12 @@
 package pers.zzh.competition.entity;
 
-import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 
 @Data
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Scores {
     @TableId
     private Integer scoresId;
@@ -15,24 +17,5 @@ public class Scores {
     private String text;
     private Integer result;
 
-    @TableField(exist = false)
-    private Users Users;
-
-    @TableField(exist = false)
-    private Contests contests;
-
-    @Override
-    public String toString() {
-        return "Scores{" +
-                "scores_id=" + scoresId +
-                ", contest_id=" + contestId +
-                ", contestant=" + contestant +
-                ", state=" + state +
-                ", judge=" + judge +
-                ", text='" + text + '\'' +
-                ", result=" + result +
-                ", Users=" + Users +
-                ", contests=" + contests +
-                '}' + '\n';
-    }
+    private String contestTitle;
 }

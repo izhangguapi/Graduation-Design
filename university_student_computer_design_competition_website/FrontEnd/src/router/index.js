@@ -36,7 +36,7 @@ const router = new VueRouter({
             meta: {
                 title: '首页',
             },
-            component: () => import('@/views/Home')
+            component: () => import('@/views/layout/Home')
         }]
     }, {
         path: '/find',
@@ -47,15 +47,21 @@ const router = new VueRouter({
             meta: {
                 title: '发现',
             },
-            component: () => import('@/views/Find')
+            component: () => import('@/views/layout/Find')
         }, {
+            name: 'find-result',
+            path: 'result',
+            meta: {
+                title: '比赛结果'
+            },
+            component: () => import('@/views/layout/Find/Result')
+        },{
             name: 'find-detail',
             path: ':contestId',
             meta: {
-                title: '详情',
-                activeMenu:'/find'
+                title: '详情'
             },
-            component: () => import('@/views/Find/Detail')
+            component: () => import('@/views/layout/Find/Detail')
         }]
     }, {
         path: '/publish',
@@ -66,7 +72,7 @@ const router = new VueRouter({
             meta: {
                 title: '发布',
             },
-            component: () => import('@/views/Publish')
+            component: () => import('@/views/layout/Publish')
         }]
     }, {
         path: '/mine',
@@ -77,7 +83,7 @@ const router = new VueRouter({
             meta: {
                 title: '个人中心'
             },
-            component: () => import('@/views/Mine')
+            component: () => import('@/views/layout/Mine')
         }]
     }, {
         name: '404',

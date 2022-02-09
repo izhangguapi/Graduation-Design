@@ -2,9 +2,13 @@ package pers.zzh.competition.entity;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 
+import java.util.List;
+
 @Data
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Users {
     @TableId
     private Integer userId;
@@ -17,9 +21,8 @@ public class Users {
     private String email;
     private Integer groupId;
     private String password;
+
     //链表查询-组表字段
-    @TableField(exist = false)
     private String groupName;
-    @TableField(exist = false)
     private String encoding;
 }

@@ -103,15 +103,15 @@ export default {
     login() {
       this.$refs.loginForm.validate((valid) => {
         if (valid) {
-          postRequest("/login", this.loginForm).then((resp) => {
+          postRequest("/login", this.loginForm).then((res) => {
             if (this.checked) {
-              localStorage.setItem("uid", resp.data.data[0].userId);
-              localStorage.setItem("name", resp.data.data[0].name);
-              localStorage.setItem("gid", resp.data.data[0].groupId);
+              localStorage.setItem("uid", res.data.data[0].userId);
+              localStorage.setItem("name", res.data.data[0].name);
+              localStorage.setItem("gid", res.data.data[0].groupId);
             } else {
-              sessionStorage.setItem("uid", resp.data.data[0].userId)
-              sessionStorage.setItem("name", resp.data.data[0].name);
-              sessionStorage.setItem("gid", resp.data.data[0].groupId);
+              sessionStorage.setItem("uid", res.data.data[0].userId)
+              sessionStorage.setItem("name", res.data.data[0].name);
+              sessionStorage.setItem("gid", res.data.data[0].groupId);
             }
             this.$router.push("/home");
           }).catch((error) => {

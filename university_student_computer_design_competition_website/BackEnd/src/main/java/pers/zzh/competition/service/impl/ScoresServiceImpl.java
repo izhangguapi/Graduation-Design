@@ -28,4 +28,12 @@ public class ScoresServiceImpl extends ServiceImpl<ScoresMapper, Scores> impleme
         scores.setContestant(uid);
         return baseMapper.insert(scores);
     }
+
+    //查询
+    @Override
+    public List<Scores> selectScoresForUserId(int uid) {
+        QueryWrapper<Scores> qw = new QueryWrapper<>(); // 创建条件构造器
+        qw.select("scores_id,contest_title").last("inner join `contests` ON scores.contest_id = contests.contest_id WHERE contestant = "+uid);
+        return baseMapper.selectList(qw);
+    }
 }

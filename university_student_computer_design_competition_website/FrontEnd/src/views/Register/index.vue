@@ -98,7 +98,7 @@
 </template>
 
 <script>
-import {getRequest, postRequest, putRequest} from "@/utils/api";
+import {getRequest, postRequest} from "@/utils/api";
 
 export default {
   name: "register",

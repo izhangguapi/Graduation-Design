@@ -2,7 +2,6 @@ package pers.zzh.competition.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import org.apache.ibatis.annotations.Options;
 import org.springframework.stereotype.Service;
 import pers.zzh.competition.mapper.GroupsMapper;
 import pers.zzh.competition.entity.Groups;

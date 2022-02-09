@@ -70,6 +70,7 @@ CREATE TABLE `contests` (
 	`contest_id` INT NOT NULL AUTO_INCREMENT COMMENT '比赛id',
 	`contest_title` varchar(150) NOT NULL UNIQUE KEY COMMENT '比赛标题',
 	`contest_text` longtext NOT NULL COMMENT '比赛内容',
+	`url` longtext NOT NULL COMMENT '比赛宣传图',
 	`promulgator` INT NOT NULL COMMENT '发布人（组.组id）',
 	`group_id` INT NOT NULL COMMENT '所属组（用户.用户id）',
 	`reg_start_time` DATETIME NOT NULL COMMENT '报名开始时间',
@@ -82,22 +83,22 @@ CREATE TABLE `contests` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1;
 -- 插入数据
 INSERT INTO contests VALUES
-(DEFAULT,'2021年度全国大学生算法设计编程挑战赛','2021年度全国大学生算法设计编程挑战赛的内容',
+(DEFAULT,'2021年度全国大学生算法设计编程挑战赛','2021年度全国大学生算法设计编程挑战赛的内容','https://pic.imgdb.cn/item/61e95e482ab3f51d91903853.jpg',
 '2','3','2021-01-01 10:00:00','2021-02-01 23:59:59','2021-03-01 10:00:00','2021-04-01 23:59:59');
 INSERT INTO contests VALUES
-(DEFAULT,'2021年度阿里巴巴人工智能对抗算法竞赛','2021年度阿里巴巴人工智能对抗算法竞赛的内容',
+(DEFAULT,'2021年度阿里巴巴人工智能对抗算法竞赛','2021年度阿里巴巴人工智能对抗算法竞赛的内容','https://pic.imgdb.cn/item/61e95e482ab3f51d9190384d.jpg',
 '5','4','2021-08-01 10:00:00','2022-10-01 23:59:59','2021-11-01 10:00:00','2022-11-11 23:59:59');
 INSERT INTO contests VALUES
-(DEFAULT,'2021年度中国国际艺术博览会设计视觉形象设计大赛','2021年度中国国际艺术博览会设计视觉形象设计大赛的内容',
+(DEFAULT,'2021年度中国国际艺术博览会设计视觉形象设计大赛','2021年度中国国际艺术博览会设计视觉形象设计大赛的内容','https://pic.imgdb.cn/item/61e95e482ab3f51d91903848.jpg',
 '6','4','2021-12-01 10:00:00','2022-02-01 23:59:59','2022-02-10 10:00:00','2022-04-01 23:59:59');
 INSERT INTO contests VALUES
-(DEFAULT,'2022年度世界大学生超级计算机竞赛','2022年度世界大学生超级计算机竞赛',
+(DEFAULT,'2022年度世界大学生超级计算机竞赛','2022年度世界大学生超级计算机竞赛','https://pic.imgdb.cn/item/61e95e482ab3f51d91903844.gif',
 '3','4','2022-01-01 10:00:00','2022-03-01 23:59:59','2022-03-02 10:00:00','2022-03-20 23:59:59');
 INSERT INTO contests VALUES
-(DEFAULT,'2022年度中国高校计算机大赛-网络技术挑战赛','2022年度中国高校计算机大赛-网络技术挑战赛的内容',
+(DEFAULT,'2022年度中国高校计算机大赛-网络技术挑战赛','2022年度中国高校计算机大赛-网络技术挑战赛的内容','https://pic.imgdb.cn/item/61e95d082ab3f51d918ed3d2.png',
 '4','3','2022-02-01 10:00:00','2022-05-01 23:59:59','2022-06-01 10:00:00','2022-07-01 23:59:59');
 INSERT INTO contests VALUES
-(DEFAULT,'ACM国际大学生程序设计竞赛','ACM国际大学生程序设计竞赛的内容',
+(DEFAULT,'ACM国际大学生程序设计竞赛','ACM国际大学生程序设计竞赛的内容','https://pic.imgdb.cn/item/61e95e482ab3f51d9190384d.jpg',
 '2','3','2022-03-01 10:00:00','2022-03-20 23:59:59','2022-04-04 10:00:00','2022-05-01 23:59:59');
 
 -- ----------------------------

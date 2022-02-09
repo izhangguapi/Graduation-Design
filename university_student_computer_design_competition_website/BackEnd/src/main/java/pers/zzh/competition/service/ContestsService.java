@@ -18,4 +18,6 @@ public interface ContestsService extends IService<Contests> {
 
     //查询一条比赛数据
     List<Contests> selectContests(int num);
+
+
 }

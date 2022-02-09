@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-card>
+    <el-card shadow="never" class="box-card">
       <template v-if="hidden">
         <div slot="header" class="clearfix">
           <span>比赛列表</span>
@@ -19,9 +19,8 @@
                       item.contestTitle
                     }}</span>
                 </el-tooltip>
-                <div class="bottom clearfix">
+                <div>
                   <time class="time">{{ item.regStartTime }}至{{ item.regEndTime }}</time>
-                  {{ item.name }}
                 </div>
               </div></router-link>
             </el-card>
@@ -109,16 +108,6 @@ export default {
 .time {
   font-size: 13px;
   color: #999;
-}
-
-.bottom {
-  margin-top: 13px;
-  line-height: 12px;
-}
-
-.button {
-  padding: 0;
-  float: right;
 }
 
 .image {

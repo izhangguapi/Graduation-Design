@@ -39,6 +39,8 @@ import {
     Timeline,
     TimelineItem,
     Tooltip,
+    Descriptions,
+    DescriptionsItem,
 
     InfiniteScroll,
     Message,
@@ -89,6 +91,8 @@ const element = {
         Vue.use(Timeline);
         Vue.use(TimelineItem);
         Vue.use(Tooltip);
+        Vue.use(Descriptions);
+        Vue.use(DescriptionsItem);
         Vue.use(InfiniteScroll);
 
         Vue.prototype.$message = Message;

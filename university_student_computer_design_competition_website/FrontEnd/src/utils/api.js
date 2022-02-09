@@ -24,8 +24,7 @@ axios.interceptors.response.use(success => {
             Message.error(success.data.msg);
             return null;
         default:
-            Message.warning("未知信息！！！");
-            return null;
+            return success;
     }
 }, error => {
     switch (error.response.status) {

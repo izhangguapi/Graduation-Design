@@ -14,30 +14,16 @@ import java.util.List;
  * @since 2022-1-10
  */
 public interface UsersService extends IService<Users> {
-    /**
-     * 分页链表查询
-     * @param currentPage 第几页
-     * @param pageSize 分几页
-     * @return page列表
-     */
+    //分页链表查询
     Page<Users> selectListPage(int currentPage, int pageSize);
-
-    /**
-     * 登录功能（账号为手机号或邮箱）
-     * @param phone 手机号
-     * @param email 邮箱
-     * @param password 密码
-     * @return Users列表
-     */
+    //登录功能（账号为手机号或邮箱）
     List<Users> selectPhoneEmailPassword(String phone, String email, String password);
-
-    /**
-     * 注册
-     * @param users 对象
-     * @return true或false
-     */
+    // 注册
     int insertUsers(Users users);
-
+    // 修改个人资料
+    Boolean updateUser(Users users);
+    // 查询手机号和邮箱是否存在
     Boolean selectPhoneEmail(Login phoneAndEmail);
-
+    // 查询单个用户信息
+    Users selectById(int uid);
 }

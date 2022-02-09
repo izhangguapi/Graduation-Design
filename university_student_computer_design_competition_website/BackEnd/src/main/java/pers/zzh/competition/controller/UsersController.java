@@ -72,6 +72,7 @@ public class UsersController {
             return new Result(201, "验证码错误", Collections.emptyMap());
         }
     }
+
     // 生成验证码
     @GetMapping("/captcha")
     public void getCode(@RequestParam("dateTime") String dateTime, HttpServletResponse response, HttpSession session) throws Exception {
@@ -97,7 +98,6 @@ public class UsersController {
         session.setAttribute(dateTime, captcha.text());
         session.setMaxInactiveInterval(30);
     }
-
     // 查询手机号和邮箱是否存在
     @PostMapping("/registerVerify")
     public Result registerVerify(@RequestBody Login phoneEmail) {
@@ -105,14 +105,19 @@ public class UsersController {
                 ? new Result(200, "验证成功", true)
                 : new Result(201, "手机号或邮箱存在，请重新输入", false);
     }
-
     // 注册
     @PostMapping("/register")
     public Result register(@RequestBody Users users) {
-        int num = usersService.insertUsers(users);
-        if (num != 0) {
-            return new Result(200, "注册成功", num);
-        } else
-            return new Result(201, "注册失败", Collections.emptyMap());
+        return new Result(usersService.insertUsers(users));
+    }
+    // 查询单个用户信息
+    @GetMapping("/user/{uid}")
+    public Result mine(@PathVariable int uid) {
+        return new Result(usersService.selectById(uid));
+    }
+    // 修改个人资料
+    @PutMapping("/user/update")
+    public Result update(@RequestBody Users users) {
+        return new Result(usersService.updateUser(users));
     }
 }

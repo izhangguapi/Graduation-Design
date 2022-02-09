@@ -2,9 +2,11 @@ package pers.zzh.competition.entity;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 
 @Data
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Messages {
     @TableId
     private Integer messageId;
@@ -16,17 +18,4 @@ public class Messages {
 
     @TableField(exist = false)
     private Users Users;
-
-    @Override
-    public String toString() {
-        return "Messages{" +
-                "message_id=" + messageId +
-                ", recipient=" + recipient +
-                ", text='" + text + '\'' +
-                ", sender=" + sender +
-                ", time='" + time + '\'' +
-                ", state=" + state +
-                ", Users=" + Users +
-                '}' + '\n';
-    }
 }

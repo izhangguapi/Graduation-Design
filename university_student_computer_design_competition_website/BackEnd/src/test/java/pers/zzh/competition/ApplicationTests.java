@@ -139,5 +139,11 @@ class ApplicationTests {
         //删除一条数据
         System.out.println(usersDao.deleteById(15));
     }
+    @Test
+    void testDelete123() {
+        QueryWrapper<Scores> qw = new QueryWrapper<>(); // 创建条件构造器
+        qw.select("*").last("inner join `contests` ON scores.contest_id = contests.contest_id WHERE contestant = 7");
+        System.out.println(scoresDao.selectList(qw));
+    }
 
 }

@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 import pers.zzh.competition.entity.Contests;
+import pers.zzh.competition.entity.Users;
 import pers.zzh.competition.mapper.ContestsMapper;
 import pers.zzh.competition.service.ContestsService;
 
@@ -37,5 +38,7 @@ public class ContestsServiceImpl extends ServiceImpl<ContestsMapper, Contests> i
     public List<Contests> selectContests(int num) {
         return baseMapper.selectContestsList(num);
     }
+
+
 
 }
