@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import {getRequest, postRequest} from "@/utils/api";
+import {postRequest} from "@/utils/api";
 import {login} from "@/utils/login";
 
 export default {

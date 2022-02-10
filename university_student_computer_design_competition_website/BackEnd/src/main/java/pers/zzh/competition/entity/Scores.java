@@ -11,11 +11,13 @@ public class Scores {
     @TableId
     private Integer scoresId;
     private Integer contestId;
-    private Integer contestant;
+    private String contestant;
     private Boolean state;
-    private Integer judge;
+    private String judge;
     private String text;
     private Integer result;
-
+    //排名
+    private int ranking;
+    //比赛标题
     private String contestTitle;
 }

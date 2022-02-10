@@ -117,19 +117,19 @@ CREATE TABLE `messages` (
 	CONSTRAINT `messages_2` FOREIGN KEY (`sender`) REFERENCES `users` (`user_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1;
 -- 插入数据
-INSERT INTO messages VALUES (DEFAULT,'2','数据库测试','1','2021-10-10 10:10:10','0');
-INSERT INTO messages VALUES (DEFAULT,'3','数据库测试','1','2021-10-10 10:10:10','0');
-INSERT INTO messages VALUES (DEFAULT,'4','数据库测试','1','2021-10-10 10:10:10','0');
-INSERT INTO messages VALUES (DEFAULT,'5','数据库测试','1','2021-10-10 10:10:10','0');
-INSERT INTO messages VALUES (DEFAULT,'6','数据库测试','1','2021-10-10 10:10:10','0');
-INSERT INTO messages VALUES (DEFAULT,'7','数据库测试','1','2021-10-10 10:10:10','0');
-INSERT INTO messages VALUES (DEFAULT,'8','数据库测试','1','2021-10-10 10:10:10','0');
-INSERT INTO messages VALUES (DEFAULT,'9','数据库测试','1','2021-10-10 10:10:10','0');
-INSERT INTO messages VALUES (DEFAULT,'10','数据库测试','1','2021-10-10 10:10:10','0');
-INSERT INTO messages VALUES (DEFAULT,'11','数据库测试','1','2021-10-10 10:10:10','0');
-INSERT INTO messages VALUES (DEFAULT,'12','数据库测试','1','2021-10-10 10:10:10','0');
-INSERT INTO messages VALUES (DEFAULT,'13','数据库测试','1','2021-10-10 10:10:10','0');
-INSERT INTO messages VALUES (DEFAULT,'14','数据库测试','1','2021-10-10 10:10:10','0');
+INSERT INTO messages VALUES (DEFAULT,'2','测试消息','1','2021-10-10 10:10:10','0');
+INSERT INTO messages VALUES (DEFAULT,'3','测试消息','1','2021-10-10 10:10:10','0');
+INSERT INTO messages VALUES (DEFAULT,'4','测试消息','1','2021-10-10 10:10:10','0');
+INSERT INTO messages VALUES (DEFAULT,'5','测试消息','1','2021-10-10 10:10:10','0');
+INSERT INTO messages VALUES (DEFAULT,'6','测试消息','1','2021-10-10 10:10:10','0');
+INSERT INTO messages VALUES (DEFAULT,'7','测试消息','1','2021-10-10 10:10:10','0');
+INSERT INTO messages VALUES (DEFAULT,'8','测试消息','1','2021-10-10 10:10:10','0');
+INSERT INTO messages VALUES (DEFAULT,'9','测试消息','1','2021-10-10 10:10:10','0');
+INSERT INTO messages VALUES (DEFAULT,'10','测试消息','1','2021-10-10 10:10:10','0');
+INSERT INTO messages VALUES (DEFAULT,'11','测试消息','1','2021-10-10 10:10:10','0');
+INSERT INTO messages VALUES (DEFAULT,'12','测试消息','1','2021-10-10 10:10:10','0');
+INSERT INTO messages VALUES (DEFAULT,'13','测试消息','1','2021-10-10 10:10:10','0');
+INSERT INTO messages VALUES (DEFAULT,'14','测试消息','1','2021-10-10 10:10:10','0');
 
 -- ----------------------------
 -- 创建报名评分表:  `scores `

@@ -9,6 +9,10 @@ import java.util.List;
 public interface ScoresService extends IService<Scores> {
 
     long selectScores(int uid, int cid);
-    int insertScores(int uid,int cid);
-    List<Scores> selectScoresForUserId(int uid);
+    int insertScores(String uid,int cid);
+    List<Scores> selectForContest(int uid);
+    List<Scores> selectForContestNot(int uid);
+    Scores selectScoresForId(int sid);
+
+
 }

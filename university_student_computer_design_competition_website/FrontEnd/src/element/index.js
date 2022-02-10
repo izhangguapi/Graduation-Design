@@ -41,8 +41,9 @@ import {
     Tooltip,
     Descriptions,
     DescriptionsItem,
+    Notification,
 
-    InfiniteScroll,
+
     Message,
     MessageBox
 } from 'element-ui';
@@ -93,10 +94,13 @@ const element = {
         Vue.use(Tooltip);
         Vue.use(Descriptions);
         Vue.use(DescriptionsItem);
-        Vue.use(InfiniteScroll);
 
         Vue.prototype.$message = Message;
+        Vue.prototype.$msgbox = MessageBox;
+        Vue.prototype.$alert = MessageBox.alert;
+        Vue.prototype.$confirm = MessageBox.confirm;
         Vue.prototype.$prompt = MessageBox.prompt;
+        Vue.prototype.$notify = Notification;
     }
 }
 export default element

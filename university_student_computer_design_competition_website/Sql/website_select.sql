@@ -2,19 +2,49 @@ USE website;
 
 -- 清除表数据
 truncate table `users`;
-truncate table `contests`;
 
 -- 查询数据
-SELECT * FROM `groups`;
-SELECT * FROM `users`;
-SELECT * FROM `contests`;
-SELECT * FROM `messages`;
-SELECT * FROM `scores`;
+SELECT * FROM groups;
+SELECT * FROM users;
+SELECT * FROM contests;
+SELECT * FROM messages;
+SELECT * FROM scores;
 
 SELECT scores.contest_id as '好家伙' FROM `scores` inner join `contests` ON scores.contest_id = contests.contest_id  WHERE contestant = 12;
 
+SELECT users.name as contestant FROM `scores` 
+SELECT scores_id,state,scores.contest_id,name FROM `scores` 
+SELECT * FROM `scores` 
+left join `users`  ON scores.contestant,scores.judge = users.user_id AS '1' AND scores.judge=users.user_id AS '2'
+-- inner join`contests`ON scores.contest_id =contests.contest_id  
+WHERE scores_id = 34 GROUP BY scores_id;
 
-SELECT * FROM `scores` inner join `users`  ON scores.contestant = users.user_id inner join`contests`ON scores.contest_id =contests.contest_id  WHERE scores_id = 34 GROUP BY scores_id;
+SELECT * FROM scores WHERE contest_id = 1 ORDER BY result DESC
+
+select * from scores where contest_id = 5
+select count(result) ranking from scores where result > 78 AND contest_id = 3
+select count(*) ranking from scores where result IS NULL AND contest_id = 5
+
+select contest_title from scores inner join contests ON scores.contest_id = contests.contest_id WHERE result IS NOT NULL AND contestant = 7
+
+SELECT scores_id,text,result,u1.`name` 'contestant',u2.`name` 'judge',c.contest_title
+ FROM scores 
+ INNER JOIN users u1 ON u1.user_id=scores.contestant
+ INNER JOIN users u2 ON u2.user_id=scores.judge
+ INNER JOIN contests c ON c.contest_id=scores.contest_id
+ WHERE scores_id = 34
+
+SELECT scores_id,scores.contest_id,text,result,u1.`name` 'contestant',u2.`name` 'judge',c.contest_title 
+FROM scores 
+INNER JOIN users u1 ON u1.user_id=scores.contestant 
+INNER JOIN users u2 ON u2.user_id=scores.judge 
+INNER JOIN contests c ON c.contest_id=scores.contest_id 
+WHERE scores_id = 15
+
+SELECT * FROM (scores s,users u,contests c) 
+WHERE s.contestant=u.user_id 
+AND s.judge=u.user_id
+AND scores_id = 1
 
 SELECT   scores_id,contest_title   FROM scores           inner join `contests` ON scores.contest_id = contests.contest_id WHERE contestant = 7
 SELECT * FROM scores WHERE (user_id = 7)

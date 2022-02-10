@@ -15,7 +15,7 @@ public class ScoresController {
 
     //报名
     @GetMapping("/addScores/{uid}/{cid}")
-    public Result addScores(@PathVariable int uid,@PathVariable int cid) {
+    public Result addScores(@PathVariable String uid,@PathVariable int cid) {
         return new Result(200, "验证成功", service.insertScores(uid,cid));
     }
 
@@ -25,9 +25,19 @@ public class ScoresController {
         return new Result(200, "验证成功", service.selectScores(uid,cid));
     }
 
-    //查询用户报名的所有比赛
-    @GetMapping("/contests/user/{uid}")
-    public Result selectContestsForUserId(@PathVariable int uid){
-        return new Result(200, service.selectScoresForUserId(uid));
+    //查询用户报名且评审完成的所有比赛
+    @GetMapping("/scores/contest/{uid}")
+    public Result selectForContest(@PathVariable int uid){
+        return new Result(200, service.selectForContest(uid));
+    }
+    //查询用户报名且评审未完成的所有比赛
+    @GetMapping("/scores/contestNot/{uid}")
+    public Result selectForContestNot(@PathVariable int uid){
+        return new Result(200, service.selectForContestNot(uid));
+    }
+    //查询比赛结果
+    @GetMapping("/scores/{sid}")
+    public Result selectScoresForId(@PathVariable int sid){
+        return new Result(200, service.selectScoresForId(sid));
     }
 }

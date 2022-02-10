@@ -36,7 +36,7 @@ const router = new VueRouter({
             meta: {
                 title: '首页',
             },
-            component: () => import('@/views/layout/Home')
+            component: () => import('@/views/layout/Main/Home')
         }]
     }, {
         path: '/find',
@@ -47,21 +47,21 @@ const router = new VueRouter({
             meta: {
                 title: '发现',
             },
-            component: () => import('@/views/layout/Find')
+            component: () => import('@/views/layout/Main/Find')
         }, {
             name: 'find-result',
             path: 'result',
             meta: {
                 title: '比赛结果'
             },
-            component: () => import('@/views/layout/Find/Result')
+            component: () => import('@/views/layout/Main/Find/Result')
         },{
             name: 'find-detail',
             path: ':contestId',
             meta: {
                 title: '详情'
             },
-            component: () => import('@/views/layout/Find/Detail')
+            component: () => import('@/views/layout/Main/Find/Detail')
         }]
     }, {
         path: '/publish',
@@ -72,7 +72,7 @@ const router = new VueRouter({
             meta: {
                 title: '发布',
             },
-            component: () => import('@/views/layout/Publish')
+            component: () => import('@/views/layout/Main/Publish')
         }]
     }, {
         path: '/mine',
@@ -83,7 +83,7 @@ const router = new VueRouter({
             meta: {
                 title: '个人中心'
             },
-            component: () => import('@/views/layout/Mine')
+            component: () => import('@/views/layout/Main/Mine')
         }]
     }, {
         name: '404',
@@ -94,6 +94,15 @@ const router = new VueRouter({
         redirect: '/404'
     }]
 })
+
+//路由导航冗余报错（路由重复）
+//获取原型对象上的push函数
+const VueRouterPush = VueRouter.prototype.push
+//修改原型对象中的push方法
+VueRouter.prototype.push = function push (to) {
+    return VueRouterPush.call(this, to).catch(err => err)
+}
+
 /* 路由发生变化修改页面title */
 router.beforeEach((to, from, next) => {
     // console.log(to);
