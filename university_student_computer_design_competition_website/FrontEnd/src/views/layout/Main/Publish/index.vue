@@ -55,10 +55,10 @@
 </template>
 
 <script>
-import {getRequest, postRequest} from "@/utils/api";
+import {postRequest} from "@/utils/api";
 
-const mdEditor = require('mavon-editor')
 import 'mavon-editor/dist/css/index.css'
+const mdEditor = require('mavon-editor')
 
 export default {
   name: "index",
@@ -99,14 +99,12 @@ export default {
         contestText: '',
         url: '',
         text: '## 请输入比赛内容\n',
-        name: '',
-        promulgator: '',
-        groupId: '',
-        groupName: '',
+        promulgator: 0,
+        groupId: 0,
         regStartTime: '',
         regEndTime: '',
         startTime: '',
-        endTime: '',
+        endTime: ''
       },
       rules: {
         contestTitle: [{required: true, message: '请输入比赛名称', trigger: 'blur'}],
@@ -119,21 +117,16 @@ export default {
     };
   },
   mounted() {
-    // 页面启动给datetime赋值时间戳
+    //页面启动给datetime赋值时间戳
     const gid = sessionStorage.gid;
-    if (gid === "") {
+    const uid = sessionStorage.uid;
+
+    if (gid === "" && uid === "") {
       this.$message.error("获取用户组失败！");
     } else {
-      getRequest("/group/" + gid).then((resp) => {
-        this.contestForm.promulgator = sessionStorage.uid;
-        this.contestForm.name = sessionStorage.name;
-        this.contestForm.groupId = gid;
-        this.contestForm.groupName = resp.data.data;
-      })
-
+      this.contestForm.groupId = gid;
+      this.contestForm.promulgator = uid;
     }
-
-
   },
   methods: {
     // 提交

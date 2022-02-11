@@ -7,6 +7,13 @@ const router = new VueRouter({
     base: '/',
     mode: 'history',
     routes: [{
+        name: 'test',
+        path: '/test',
+        meta: {
+            title: '测试'
+        },
+        component: () => import('@/views/test'),
+    },{
         name: 'login',
         path: '/login',
         meta: {
@@ -55,7 +62,7 @@ const router = new VueRouter({
                 title: '比赛结果'
             },
             component: () => import('@/views/layout/Main/Find/Result')
-        },{
+        }, {
             name: 'find-detail',
             path: ':contestId',
             meta: {
@@ -86,6 +93,24 @@ const router = new VueRouter({
             component: () => import('@/views/layout/Main/Mine')
         }]
     }, {
+        path: '/announcement',
+        component: () => import('@/views/layout'),
+        children: [{
+            name: 'announcement',
+            path: '',
+            meta: {
+                title: '公告中心',
+            },
+            component: () => import('@/views/layout/Main/Announcements')
+        },{
+            name: 'announcement-detail',
+            path: ':messageId',
+            meta: {
+                title: '公告内容',
+            },
+            component: () => import('@/views/layout/Main/Announcements/Detail')
+        }]
+    }, {
         name: '404',
         path: '/404',
         component: () => import('@/views/404')
@@ -99,7 +124,7 @@ const router = new VueRouter({
 //获取原型对象上的push函数
 const VueRouterPush = VueRouter.prototype.push
 //修改原型对象中的push方法
-VueRouter.prototype.push = function push (to) {
+VueRouter.prototype.push = function push(to) {
     return VueRouterPush.call(this, to).catch(err => err)
 }
 

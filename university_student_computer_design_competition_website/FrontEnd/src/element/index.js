@@ -41,9 +41,11 @@ import {
     Tooltip,
     Descriptions,
     DescriptionsItem,
+    Table,
+    TableColumn,
+    Pagination,
+
     Notification,
-
-
     Message,
     MessageBox
 } from 'element-ui';
@@ -94,6 +96,9 @@ const element = {
         Vue.use(Tooltip);
         Vue.use(Descriptions);
         Vue.use(DescriptionsItem);
+        Vue.use(Table);
+        Vue.use(TableColumn);
+        Vue.use(Pagination);
 
         Vue.prototype.$message = Message;
         Vue.prototype.$msgbox = MessageBox;

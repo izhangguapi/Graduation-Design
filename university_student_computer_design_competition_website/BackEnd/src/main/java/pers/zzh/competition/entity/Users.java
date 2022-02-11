@@ -1,11 +1,11 @@
 package pers.zzh.competition.entity;
 
-import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 
-import java.util.List;
+import java.util.Date;
 
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -14,7 +14,8 @@ public class Users {
     private Integer userId;
     private String name;
     private Boolean sex;
-    private String birthday;
+    @JsonFormat(pattern = "yyyy-MM-dd",timezone = "GMT+8")
+    private Date birthday;
     private String school;
     private String address;
     private String phone;

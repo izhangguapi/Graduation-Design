@@ -13,7 +13,7 @@
       </el-col>
       <!--右侧公告通知-->
       <el-col :span="4">
-        <AnnouncementList></AnnouncementList>
+        <AnnouncementsList></AnnouncementsList>
       </el-col>
     </el-row>
   </div>
@@ -21,12 +21,12 @@
 
 <script>
 import competitionList from "../Find/CompetitionList";
-import AnnouncementList from "./AnnouncementList";
+import AnnouncementsList from "./AnnouncementsList";
 import Banner from "./Banner";
 
 export default {
   name: "Home",
-  components: {Banner, competitionList, AnnouncementList},
+  components: {Banner, competitionList, AnnouncementsList},
   data() {
     return {
       carouselImages: [

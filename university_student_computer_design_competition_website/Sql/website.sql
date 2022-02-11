@@ -108,28 +108,61 @@ DROP TABLE IF EXISTS `messages`;
 CREATE TABLE `messages` (
 	`message_id` INT NOT NULL AUTO_INCREMENT COMMENT '消息id',
 	`recipient` INT NOT NULL COMMENT '接收人（用户.用户id）',
+	`title` varchar(20) NOT NULL COMMENT '消息标题',
 	`text` text NOT NULL COMMENT '消息内容',
 	`sender` INT NOT NULL COMMENT '发布人（用户.用户id）',
 	`time` DATETIME NOT NULL DEFAULT(now()) COMMENT '发布时间',
-	`state` TINYINT(1) NOT NULL DEFAULT(0) COMMENT '消息读取状态',
+	`state` TINYINT(1) DEFAULT(0) COMMENT '消息读取状态',
 	PRIMARY KEY (`message_id`),
 	CONSTRAINT `messages_1` FOREIGN KEY (`recipient`) REFERENCES `users` (`user_id`),
 	CONSTRAINT `messages_2` FOREIGN KEY (`sender`) REFERENCES `users` (`user_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1;
 -- 插入数据
-INSERT INTO messages VALUES (DEFAULT,'2','测试消息','1','2021-10-10 10:10:10','0');
-INSERT INTO messages VALUES (DEFAULT,'3','测试消息','1','2021-10-10 10:10:10','0');
-INSERT INTO messages VALUES (DEFAULT,'4','测试消息','1','2021-10-10 10:10:10','0');
-INSERT INTO messages VALUES (DEFAULT,'5','测试消息','1','2021-10-10 10:10:10','0');
-INSERT INTO messages VALUES (DEFAULT,'6','测试消息','1','2021-10-10 10:10:10','0');
-INSERT INTO messages VALUES (DEFAULT,'7','测试消息','1','2021-10-10 10:10:10','0');
-INSERT INTO messages VALUES (DEFAULT,'8','测试消息','1','2021-10-10 10:10:10','0');
-INSERT INTO messages VALUES (DEFAULT,'9','测试消息','1','2021-10-10 10:10:10','0');
-INSERT INTO messages VALUES (DEFAULT,'10','测试消息','1','2021-10-10 10:10:10','0');
-INSERT INTO messages VALUES (DEFAULT,'11','测试消息','1','2021-10-10 10:10:10','0');
-INSERT INTO messages VALUES (DEFAULT,'12','测试消息','1','2021-10-10 10:10:10','0');
-INSERT INTO messages VALUES (DEFAULT,'13','测试消息','1','2021-10-10 10:10:10','0');
-INSERT INTO messages VALUES (DEFAULT,'14','测试消息','1','2021-10-10 10:10:10','0');
+INSERT INTO messages VALUES (DEFAULT,'1','测试公告01','这是一条测试公告01','1','2021-10-11 10:10:10',null);
+INSERT INTO messages VALUES (DEFAULT,'1','测试公告02','这是一条测试公告02','1','2021-10-12 10:10:11',null);
+INSERT INTO messages VALUES (DEFAULT,'1','测试公告03','这是一条测试公告03','1','2021-10-13 10:10:12',null);
+INSERT INTO messages VALUES (DEFAULT,'1','测试公告04','这是一条测试公告04','1','2021-10-14 10:10:13',null);
+INSERT INTO messages VALUES (DEFAULT,'1','测试公告05','这是一条测试公告05','1','2021-10-15 10:10:14',null);
+INSERT INTO messages VALUES (DEFAULT,'1','测试公告06','这是一条测试公告06','1','2021-10-15 10:10:15',null);
+INSERT INTO messages VALUES (DEFAULT,'1','测试公告07','这是一条测试公告07','1','2021-10-15 10:10:16',null);
+INSERT INTO messages VALUES (DEFAULT,'1','测试公告08','这是一条测试公告08','1','2021-10-15 10:10:17',null);
+INSERT INTO messages VALUES (DEFAULT,'1','测试公告09','这是一条测试公告09','1','2021-10-15 10:10:18',null);
+INSERT INTO messages VALUES (DEFAULT,'1','测试公告10','这是一条测试公告10','1','2021-10-15 10:10:19',null);
+INSERT INTO messages VALUES (DEFAULT,'1','测试公告11','这是一条测试公告11','1','2021-10-15 10:11:10',null);
+INSERT INTO messages VALUES (DEFAULT,'1','测试公告12','这是一条测试公告12','1','2021-10-15 10:12:10',null);
+INSERT INTO messages VALUES (DEFAULT,'1','测试公告13','这是一条测试公告13','1','2021-10-15 10:13:10',null);
+INSERT INTO messages VALUES (DEFAULT,'1','测试公告14','这是一条测试公告14','1','2021-10-15 10:14:10',null);
+INSERT INTO messages VALUES (DEFAULT,'1','测试公告15','这是一条测试公告15','1','2021-10-15 10:15:10',null);
+INSERT INTO messages VALUES (DEFAULT,'1','测试公告16','这是一条测试公告16','1','2021-10-15 10:16:10',null);
+INSERT INTO messages VALUES (DEFAULT,'1','测试公告17','这是一条测试公告17','1','2021-10-15 10:17:10',null);
+INSERT INTO messages VALUES (DEFAULT,'1','测试公告18','这是一条测试公告18','1','2021-10-15 10:18:10',null);
+INSERT INTO messages VALUES (DEFAULT,'1','测试公告19','这是一条测试公告19','1','2021-10-15 10:19:10',null);
+INSERT INTO messages VALUES (DEFAULT,'1','测试公告20','这是一条测试公告20','1','2021-10-15 10:20:10',null);
+INSERT INTO messages VALUES (DEFAULT,'1','测试公告21','这是一条测试公告21','1','2021-10-15 10:21:10',null);
+INSERT INTO messages VALUES (DEFAULT,'1','测试公告22','这是一条测试公告22','1','2021-10-15 10:22:10',null);
+INSERT INTO messages VALUES (DEFAULT,'1','测试公告23','这是一条测试公告23','1','2021-10-15 10:23:10',null);
+INSERT INTO messages VALUES (DEFAULT,'1','测试公告24','这是一条测试公告24','1','2021-10-15 10:24:10',null);
+INSERT INTO messages VALUES (DEFAULT,'1','测试公告25','这是一条测试公告25','1','2021-10-15 10:25:10',null);
+INSERT INTO messages VALUES (DEFAULT,'1','测试公告26','这是一条测试公告26','1','2021-10-15 10:26:10',null);
+INSERT INTO messages VALUES (DEFAULT,'1','测试公告27','这是一条测试公告27','1','2021-10-15 10:27:10',null);
+INSERT INTO messages VALUES (DEFAULT,'1','测试公告28','这是一条测试公告28','1','2021-10-15 10:28:10',null);
+INSERT INTO messages VALUES (DEFAULT,'1','测试公告29','这是一条测试公告29','1','2021-10-15 10:29:10',null);
+INSERT INTO messages VALUES (DEFAULT,'1','测试公告30','这是一条测试公告30','1','2021-10-15 10:30:10',null);
+INSERT INTO messages VALUES (DEFAULT,'1','网站正式运营','本网站正式开始运营啦！','1','2021-12-10 10:10:10',null);
+INSERT INTO messages VALUES (DEFAULT,'1','发布比赛规范','禁止发布谩骂、包含人身攻击的比赛！','1','2022-01-10 10:10:10',null);
+INSERT INTO messages VALUES (DEFAULT,'2','测试消息','这是一条测试消息','1','2021-10-10 10:10:11','0');
+INSERT INTO messages VALUES (DEFAULT,'3','测试消息','这是一条测试消息','1','2021-10-10 10:10:12','0');
+INSERT INTO messages VALUES (DEFAULT,'4','测试消息','这是一条测试消息','1','2021-10-10 10:10:13','0');
+INSERT INTO messages VALUES (DEFAULT,'5','测试消息','这是一条测试消息','1','2021-10-10 10:10:14','0');
+INSERT INTO messages VALUES (DEFAULT,'6','测试消息','这是一条测试消息','1','2021-10-10 10:10:15','0');
+INSERT INTO messages VALUES (DEFAULT,'7','测试消息','这是一条测试消息','1','2021-10-10 10:10:16','0');
+INSERT INTO messages VALUES (DEFAULT,'8','测试消息','这是一条测试消息','1','2021-10-10 10:10:17','0');
+INSERT INTO messages VALUES (DEFAULT,'9','测试消息','这是一条测试消息','1','2021-10-10 10:10:18','0');
+INSERT INTO messages VALUES (DEFAULT,'10','测试消息','这是一条测试消息','1','2021-10-10 10:10:19','0');
+INSERT INTO messages VALUES (DEFAULT,'11','测试消息','这是一条测试消息','1','2021-10-10 10:10:20','0');
+INSERT INTO messages VALUES (DEFAULT,'12','测试消息','这是一条测试消息','1','2021-10-10 10:10:21','0');
+INSERT INTO messages VALUES (DEFAULT,'13','测试消息','这是一条测试消息','1','2021-10-10 10:10:22','0');
+INSERT INTO messages VALUES (DEFAULT,'14','测试消息','这是一条测试消息','1','2021-10-10 10:10:23','0');
 
 -- ----------------------------
 -- 创建报名评分表:  `scores `

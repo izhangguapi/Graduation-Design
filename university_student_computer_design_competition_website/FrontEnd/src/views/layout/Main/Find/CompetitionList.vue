@@ -86,8 +86,6 @@ export default {
             this.page += 4;
           }
           for (let i = 0; i < data.length; i++) {
-            data[i].regEndTime = data[i].regEndTime.substring(0, 10);
-            data[i].regStartTime = data[i].regStartTime.substring(0, 10);
             this.lists.push(data[i]);
           }
         });

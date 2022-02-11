@@ -2,6 +2,7 @@ package pers.zzh.competition.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.wf.captcha.GifCaptcha;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import pers.zzh.competition.common.entity.Login;
@@ -9,13 +10,11 @@ import pers.zzh.competition.entity.Users;
 import pers.zzh.competition.service.UsersService;
 import pers.zzh.competition.utils.Result;
 
-import javax.annotation.Resource;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.Collections;
 import java.util.List;
-
 
 /**
  * 前端控制器 - users表的操作
@@ -24,25 +23,25 @@ import java.util.List;
  * @since 2022-1-12
  */
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api")
 public class UsersController {
 
-    @Resource
-    private UsersService usersService;
+    final UsersService service;
 
     // 查询users表的全部
     @GetMapping("/users")
     public Result getAll() {
-        return new Result(200, "查询成功", usersService.list());
+        return new Result(200, "查询成功", service.list());
     }
 
     // 分页链表查询users
     @GetMapping("/users/{currentPage}/{pageSize}")
     public Result getAll(@PathVariable int currentPage, @PathVariable int pageSize) {
-        Page<Users> list = usersService.selectListPage(currentPage, pageSize);
+        Page<Users> list = service.selectListPage(currentPage, pageSize);
         return list.getRecords().isEmpty()
                 ? new Result(200, "查询失败", Collections.emptyMap())
-                : new Result(200, "查询成功", usersService.selectListPage(currentPage, pageSize));
+                : new Result(200, "查询成功", service.selectListPage(currentPage, pageSize));
     }
 
     // 登录
@@ -64,7 +63,7 @@ public class UsersController {
 //        System.out.println("用户输入：" + login.getDatetime() + "-" + userCaptcha);
         // 判断session存入的验证码是否跟用户输入的一样(比较字母，忽略大小写.equalsIgnoreCase())
         if (sessionCaptcha.equalsIgnoreCase(userCaptcha)) {
-            List<Users> list = usersService.selectPhoneEmailPassword(login.getPhone(), login.getEmail(), login.getPassword());
+            List<Users> list = service.selectPhoneEmailPassword(login.getPhone(), login.getEmail(), login.getPassword());
             return list.isEmpty()
                     ? new Result(201, "密码错误", Collections.emptyMap())
                     : new Result(200, "登录成功", list);
@@ -101,23 +100,23 @@ public class UsersController {
     // 查询手机号和邮箱是否存在
     @PostMapping("/registerVerify")
     public Result registerVerify(@RequestBody Login phoneEmail) {
-        return usersService.selectPhoneEmail(phoneEmail)
+        return service.selectPhoneEmail(phoneEmail)
                 ? new Result(200, "验证成功", true)
                 : new Result(201, "手机号或邮箱存在，请重新输入", false);
     }
     // 注册
     @PostMapping("/register")
     public Result register(@RequestBody Users users) {
-        return new Result(usersService.insertUsers(users));
+        return new Result(service.insertUsers(users));
     }
     // 查询单个用户信息
     @GetMapping("/user/{uid}")
     public Result mine(@PathVariable int uid) {
-        return new Result(usersService.selectById(uid));
+        return new Result(service.selectById(uid));
     }
     // 修改个人资料
     @PutMapping("/user/update")
     public Result update(@RequestBody Users users) {
-        return new Result(usersService.updateUser(users));
+        return new Result(service.updateUser(users));
     }
 }

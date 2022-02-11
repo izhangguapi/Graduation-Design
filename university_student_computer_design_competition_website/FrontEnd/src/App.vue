@@ -1,22 +1,21 @@
 <template>
   <div id="app">
     <transition name="fade" mode="out-in">
-    <router-view/>
+      <router-view/>
     </transition>
   </div>
 </template>
 
 <script>
-export default {
-
-}
+export default {}
 </script>
 
 <style>
-body{
+body {
   margin: 0;
   background-color: #f4f4f4;
 }
+
 ::-webkit-scrollbar {
   display: none; /* Chrome Safari */
 }
@@ -25,7 +24,7 @@ body{
   transition: opacity 0.5s;
 }
 
-.fade-enter, .fade-leave-to{
+.fade-enter, .fade-leave-to {
   opacity: 0;
 }
 

@@ -16,8 +16,7 @@
           </div>
           <el-divider></el-divider>
           <mdEditor v-model="contestText" :ishljs="true" :subfield="false" :toolbars="{}" defaultOpen="preview"
-                    style="min-height: 600px" :toolbarsFlag="false">
-          </mdEditor>
+                    style="min-height: 600px" :toolbarsFlag="false"/>
         </el-card>
       </el-col>
       <!--右侧信息-->
@@ -68,7 +67,7 @@ export default {
     return {
       btnSelect: 3,
       contestTitle: '',
-      contestText: '',
+      contestText: '测试',
       contestId: '',
       name: '',
       groupName: '',
@@ -121,10 +120,10 @@ export default {
         this.groupName = data.groupName;
         this.startTime = data.startTime;
         this.endTime = data.endTime;
-        this.activities[0].timestamp = data.regStartTime.substring(0, 19);
-        this.activities[1].timestamp = data.regEndTime.substring(0, 19);
-        this.activities[2].timestamp = data.startTime.substring(0, 19);
-        this.activities[3].timestamp = data.endTime.substring(0, 19);
+        this.activities[0].timestamp = data.regStartTime;
+        this.activities[1].timestamp = data.regEndTime;
+        this.activities[2].timestamp = data.startTime;
+        this.activities[3].timestamp = data.endTime;
       } else {
         this.$router.push("/404");
       }

@@ -1,18 +1,18 @@
 package pers.zzh.competition.controller;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import pers.zzh.competition.entity.Contests;
 import pers.zzh.competition.service.ContestsService;
 import pers.zzh.competition.utils.Result;
 
-import javax.annotation.Resource;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api")
 public class ContestsController {
 
-    @Resource
-    private ContestsService service;
+    final ContestsService service;
 
     // 添加组并反回组id
     @PostMapping("/addContests")

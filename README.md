@@ -13,13 +13,15 @@
 ### 开发环境
 操作系统：macOS 12.0.1
 
-前端框架：@vue/cli 4.5.15
+前端框架：vue-cli 4.5.15
 
 JavaScript运行环境：node.js 16.13.1
 
 包管理工具：npm 8.3.0
 
 后端框架：Spring Boot 2.6.3
+
+Java开发工具包：JDK 11
 
 数据库：MariaDB 10.6.4
 
