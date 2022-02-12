@@ -2,11 +2,9 @@ package pers.zzh.competition.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pers.zzh.competition.entity.Messages;
+import pers.zzh.competition.entity.Users;
 import pers.zzh.competition.service.MessagesService;
 import pers.zzh.competition.utils.Result;
 
@@ -43,5 +41,11 @@ public class MessagesController {
     @GetMapping("/messages/recipient/{id}")
     public Result selectMessagesByRecipient(@PathVariable int id) {
         return new Result(service.selectMessagesByRecipient(id));
+    }
+
+    // 未读变已读
+    @PutMapping("/messages/state")
+    public void upDataMessagesState(@RequestBody Messages messages) {
+        service.upDataMessagesState(messages);
     }
 }

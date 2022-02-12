@@ -57,36 +57,27 @@
 
 <script>
 import {login} from "@/utils/login";
-import {getRequest} from "@/utils/api";
+import {getRequest, putRequest} from "@/utils/api";
 
 export default {
   name: "UserInfo",
   data() {
     return {
-      unread: 5, //右上角未读消息数量
+      unread: 0, //右上角未读消息数量
+      badgeHidden : true,
       isLogin: false, // 根据用户是否登录控制显示右上角列表选项
       drawer: false,
       data: []
     }
   },
-  computed: {
-    // 判断未读消息如果为0则隐藏小红圈
-    badgeHidden() {
-      if (this.unread === 0) {
-        return true;
-      }
-    }, //控制小圆圈是否显示，如果msg为0则值为true
-  },
   mounted() {
     // 判断是否存在登录信息
     this.isLogin = login(this.$route.path);
     // 获取未读消息
-    this.loadMessage();
+    this.load()
   },
   methods: {
-    // 加载消息
-    loadMessage() {
-      this.data=[];
+    load(){
       getRequest("/messages/recipient/" + sessionStorage.uid).then((res => {
         const data = res.data.data;
         let unread = 0;
@@ -95,9 +86,10 @@ export default {
             unread++;
           }
         }
+        this.badgeHidden = unread === 0;
         this.unread = unread;
         this.data = data;
-      }))
+      }));
     },
     // 退出登录
     logOut() {
@@ -107,18 +99,16 @@ export default {
     },
     // 点击表格一列进行跳转
     clickTable(row) {
-      this.loadMessage();
+      let id = row.messageId;
+      // 隐藏抽屉
       this.drawer = false;
-      this.$router.push({name: 'messages-detail', params: {messageId: row.messageId}});
-    },
-    // // 已读消息更改样式
-    // tableRowClass({row}){
-    //   if (row.state) {
-    //     return {'background-color':'#f9f9f9'};
-    //   } else{
-    //     return {'background-color':'#fff'};
-    //   }
-    // }
+      // 跳转页面
+      this.$router.push({name: 'messages-detail', params: {messageId: id}});
+      // 未读变已读
+      putRequest("/messages/state",{messageId:id,state:true});
+      // 修改data数据
+      this.load();
+    }
   }
 }
 </script>

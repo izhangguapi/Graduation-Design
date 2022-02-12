@@ -34,11 +34,6 @@ public class MessagesServiceImpl extends ServiceImpl<MessagesMapper, Messages> i
     // id查询公告
     @Override
     public Messages selectAnnouncementById(int id) {
-        Messages messages = new Messages();
-        messages.setMessageId(id);
-        messages.setState(true);
-        baseMapper.updateById(messages);
-
         QueryWrapper<Messages> qw = new QueryWrapper<>();
         qw.select("recipient,title,text,time,sender,state,`name`").last("INNER JOIN users ON messages.sender = users.user_id WHERE message_id = "+id);
         return baseMapper.selectOne(qw);
@@ -51,4 +46,11 @@ public class MessagesServiceImpl extends ServiceImpl<MessagesMapper, Messages> i
         qw.select("message_id,title,time,state,`name`").last("INNER JOIN users ON messages.sender = users.user_id WHERE recipient = "+id+" ORDER BY state,time DESC");
         return baseMapper.selectList(qw);
     }
+
+    // 未读变已读
+    @Override
+    public void upDataMessagesState(Messages messages) {
+        baseMapper.updateById(messages);
+    }
+
 }

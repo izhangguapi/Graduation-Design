@@ -20,6 +20,8 @@ INNER JOIN users  ON scores.contestant,scores.judge = users.user_id
  
  UPDATE  messages SET state=TRUE  WHERE message_id  = 33
  
+ UPDATE  messages SET state=FALSE  WHERE recipient = 2
+ 
 UPDATE  messages SET state=TRUE  WHERE message_id IN(
 SELECT message_id,recipient,title,text,sender,time,state,`name` FROM messages
  INNER JOIN users  ON messages.recipient=users.user_id

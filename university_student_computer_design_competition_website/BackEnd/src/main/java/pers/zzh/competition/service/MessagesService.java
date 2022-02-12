@@ -18,4 +18,6 @@ public interface MessagesService extends IService<Messages> {
 
     // 查询用户收到的消息
     List<Messages> selectMessagesByRecipient(int id);
+    // 未读变已读
+    void upDataMessagesState(Messages messages);
 }

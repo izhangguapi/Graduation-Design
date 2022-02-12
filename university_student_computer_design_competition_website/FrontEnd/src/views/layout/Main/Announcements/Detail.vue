@@ -26,37 +26,34 @@ export default {
   name: "Announcement",
   data() {
     return {
-      id:0,
       title: '',
       time: '',
       text: '',
       name: '',
     }
   },
-  watch:{
-    $route(to,from){
-      console.log(to);
-      this.id = to.params.messageId;
-      return this.id;
+  watch: {
+    $route() {
+      this.load();
     }
   },
   mounted() {
-    getRequest("/messages/announcement/" + this.$route.params.messageId).then((res) => {
-      const data = res.data.data;
-      console.log(data);
-      console.log(data.recipient);
-      console.log(sessionStorage.uid);
-      if (data.recipient === 1 || data.recipient.toString() === sessionStorage.uid) {
-        this.title = data.title;
-        this.time = data.time;
-        this.text = data.text;
-        this.name = data.name;
-      } else {
-        this.$message.error("消息查询失败！");
-      }
-
-
-    })
+    this.load();
+  },
+  methods: {
+    load() {
+      getRequest("/messages/announcement/" + this.$route.params.messageId).then((res) => {
+        const data = res.data.data;
+        if (data.recipient === 1 || data.recipient.toString() === sessionStorage.uid) {
+          this.title = data.title;
+          this.time = data.time;
+          this.text = data.text;
+          this.name = data.name;
+        } else {
+          this.$message.error("消息查询失败！");
+        }
+      })
+    }
   }
 }
 </script>
@@ -75,7 +72,7 @@ export default {
   color: #909399
 }
 
-.text ,.name{
+.text, .name {
   font-size: 15px;
   color: #606266
 }
