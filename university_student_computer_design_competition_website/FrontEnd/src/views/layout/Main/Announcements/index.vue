@@ -33,7 +33,7 @@ export default {
   },
   methods: {
     clickTable(row) {
-      this.$router.push({name: 'announcement-detail', params: {messageId: row.messageId}})
+      this.$router.push({name: 'messages-detail', params: {messageId: row.messageId}})
     },
     page(current){
       getRequest("/messages/announcementPage/"+current).then((res) => {

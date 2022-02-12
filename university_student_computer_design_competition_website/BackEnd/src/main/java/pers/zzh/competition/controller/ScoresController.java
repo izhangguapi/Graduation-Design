@@ -20,7 +20,7 @@ public class ScoresController {
     }
 
     //查询是否已报名
-    @GetMapping("/Scores/{uid}/{cid}")
+    @GetMapping("/scores/{uid}/{cid}")
     public Result selectScores(@PathVariable int uid,@PathVariable int cid) {
         return new Result(200, "验证成功", service.selectScores(uid,cid));
     }

@@ -17,7 +17,7 @@ public interface UsersService extends IService<Users> {
     //分页链表查询
     Page<Users> selectListPage(int currentPage, int pageSize);
     //登录功能（账号为手机号或邮箱）
-    List<Users> selectPhoneEmailPassword(String phone, String email, String password);
+    Users selectPhoneEmailPassword(String phone, String email, String password);
     // 注册
     int insertUsers(Users users);
     // 修改个人资料

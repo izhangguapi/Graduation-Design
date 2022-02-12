@@ -18,7 +18,10 @@ public class Messages {
     private String title;
     private String text;
     private Integer sender;
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date time;
     private Boolean state;
+    //  链表查询-用户表字段：姓名
+    @TableField(exist = false)
+    private String name;
 }

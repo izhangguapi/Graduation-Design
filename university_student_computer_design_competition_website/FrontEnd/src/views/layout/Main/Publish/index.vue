@@ -7,16 +7,16 @@
         <el-col :span="16" :offset="4">
           <el-card shadow="never">
             <el-form-item label="比赛名称" prop="contestTitle">
-              <el-input v-model="contestForm.contestTitle"></el-input>
+              <el-input v-model="contestForm.contestTitle" maxlength="50" show-word-limit
+                        placeholder="输入比赛名称"></el-input>
             </el-form-item>
             <el-form-item label="图片url" prop="url">
-              <el-input v-model="contestForm.url"
+              <el-input v-model="contestForm.url" maxlength="255" show-word-limit
                         placeholder="输入图片的地址，例如：https://pic.imgdb.cn/item/61e95e482ab3f51d91903853.jpg"></el-input>
             </el-form-item>
           </el-card>
         </el-col>
       </el-row>
-
       <el-row :gutter="20">
         <!--左侧编辑内容-->
         <el-col :span="12" :offset="4">
@@ -58,6 +58,7 @@
 import {postRequest} from "@/utils/api";
 
 import 'mavon-editor/dist/css/index.css'
+
 const mdEditor = require('mavon-editor')
 
 export default {
@@ -117,12 +118,13 @@ export default {
     };
   },
   mounted() {
-    //页面启动给datetime赋值时间戳
     const gid = sessionStorage.gid;
     const uid = sessionStorage.uid;
-
-    if (gid === "" && uid === "") {
-      this.$message.error("获取用户组失败！");
+    if (gid === '' && uid === '') {
+      this.$message.error("获取用户组失败！请重新登录。");
+    } else if (gid === '2') {
+      this.$message.info("暂不支持学生发布比赛！");
+      this.$router.go(-1);
     } else {
       this.contestForm.groupId = gid;
       this.contestForm.promulgator = uid;
@@ -136,7 +138,7 @@ export default {
         if (valid) {
           postRequest("/addContests", this.contestForm).then((resp) => {
             // console.log(resp);
-            if(resp){
+            if (resp) {
               // this.$confirm(resp.data.msg, '信息', {confirmButtonText: '确定', type: 'success', center: true})
               this.$message.success(resp.data.msg);
               this.$router.push("/home");

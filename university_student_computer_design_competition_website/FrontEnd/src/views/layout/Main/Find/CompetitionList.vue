@@ -76,7 +76,7 @@ export default {
     load() {
       if (this.loader) {
         //获取比赛
-        getRequest("/ContestsList/" + this.page).then((resp) => {
+        getRequest("/contestsList/" + this.page).then((resp) => {
           const data = resp.data.data;
           console.log(data);
           if (data.length !== 4) {

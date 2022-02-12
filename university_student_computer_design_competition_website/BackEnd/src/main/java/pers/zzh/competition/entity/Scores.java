@@ -18,6 +18,6 @@ public class Scores {
     private Integer result;
     //排名
     private int ranking;
-    //比赛标题
+    // 链表查询-比赛表字段：比赛标题
     private String contestTitle;
 }

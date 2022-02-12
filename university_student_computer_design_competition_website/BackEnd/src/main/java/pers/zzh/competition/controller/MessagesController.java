@@ -38,4 +38,10 @@ public class MessagesController {
     public Result selectAnnouncementById(@PathVariable int id) {
         return new Result(service.selectAnnouncementById(id));
     }
+
+    // 查询用户收到的消息
+    @GetMapping("/messages/recipient/{id}")
+    public Result selectMessagesByRecipient(@PathVariable int id) {
+        return new Result(service.selectMessagesByRecipient(id));
+    }
 }

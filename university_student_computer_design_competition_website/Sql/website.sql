@@ -47,20 +47,20 @@ CREATE TABLE `users` (
 	CONSTRAINT `users_1` FOREIGN KEY (`group_id`) REFERENCES `groups` (`group_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1;
 -- 插入数据
-INSERT INTO users VALUES (DEFAULT,'admin',NULL,NULL,NULL,NULL,'admin','admin@zhangguapi.com','1','admin');
+INSERT INTO users VALUES (DEFAULT,'管理员',NULL,NULL,NULL,NULL,'admin','admin@zhangguapi.com','1','admin');
 INSERT INTO users VALUES (DEFAULT,'张瓜皮皮','1','1999-11-20','西南财经大学'	,'天门','13886961359','13886961359@qq.com','3','13886961359');
 INSERT INTO users VALUES (DEFAULT,'小江云子','0','1999-07-29','西安交通大学'	,'黄石','18453887612','18453887612@qq.com','3','18453887612');
 INSERT INTO users VALUES (DEFAULT,'德隆东墙','1','2000-04-05','武汉设计工程学院','抚顺','13866039800','13866039800@qq.com','4','13866039800');
 INSERT INTO users VALUES (DEFAULT,'五号五号','1','1999-12-12','中国人民公安大学','吉林','13027048577','13027048577@qq.com','4','13027048577');
 INSERT INTO users VALUES (DEFAULT,'阿兽涛受','1','2000-12-24','武汉首义学院'	,'南宁','17247196444','17247196444@qq.com','4','17247196444');
-INSERT INTO users VALUES (DEFAULT,'小赵同学','0','1998-05-10','武汉科技大学'	,'鄂州','13704131948','13704131948@qq.com','2','13704131948');
-INSERT INTO users VALUES (DEFAULT,'小钱同学','1','2002-01-16','华中科技大学'	,'仙桃','13742968739','13742968739@qq.com','2','13742968739');
-INSERT INTO users VALUES (DEFAULT,'小孙同学','0','2002-12-30','电子科技大学'	,'成都','15319493760','15319493760@qq.com','2','15319493760');
-INSERT INTO users VALUES (DEFAULT,'小李同学','1','2001-10-10','北京大学'		,'青海','18282876997','18282876997@qq.com','2','18282876997');
-INSERT INTO users VALUES (DEFAULT,'小周同学','1','2000-02-15','武汉城市学院'	,'辽阳','14984342228','14984342228@qq.com','2','14984342228');
-INSERT INTO users VALUES (DEFAULT,'小吴同学','1','1998-10-08','华中师范大学'	,'西安','14912959902','14912959902@qq.com','2','14912959902');
-INSERT INTO users VALUES (DEFAULT,'小郑同学','0','2002-04-16','复旦大学'		,'南通','15089652824','15089652824@qq.com','2','15089652824');
-INSERT INTO users VALUES (DEFAULT,'小王同学','0','2003-09-09','哈尔滨工业大学'	,'惠州','15939648850','15939648850@qq.com','2','15939648850');
+INSERT INTO users VALUES (DEFAULT,'赵同学','0','1998-05-10','武汉科技大学'	,'鄂州','13704131948','13704131948@qq.com','2','13704131948');
+INSERT INTO users VALUES (DEFAULT,'钱同学','1','2002-01-16','华中科技大学'	,'仙桃','13742968739','13742968739@qq.com','2','13742968739');
+INSERT INTO users VALUES (DEFAULT,'孙同学','0','2002-12-30','电子科技大学'	,'成都','15319493760','15319493760@qq.com','2','15319493760');
+INSERT INTO users VALUES (DEFAULT,'李同学','1','2001-10-10','北京大学'		,'青海','18282876997','18282876997@qq.com','2','18282876997');
+INSERT INTO users VALUES (DEFAULT,'周同学','1','2000-02-15','武汉城市学院'	,'辽阳','14984342228','14984342228@qq.com','2','14984342228');
+INSERT INTO users VALUES (DEFAULT,'吴同学','1','1998-10-08','华中师范大学'	,'西安','14912959902','14912959902@qq.com','2','14912959902');
+INSERT INTO users VALUES (DEFAULT,'郑同学','0','2002-04-16','复旦大学'		,'南通','15089652824','15089652824@qq.com','2','15089652824');
+INSERT INTO users VALUES (DEFAULT,'王同学','0','2003-09-09','哈尔滨工业大学'	,'惠州','15939648850','15939648850@qq.com','2','15939648850');
 
 -- ----------------------------
 -- 创建比赛表:  `contests`
@@ -68,9 +68,9 @@ INSERT INTO users VALUES (DEFAULT,'小王同学','0','2003-09-09','哈尔滨工�
 DROP TABLE IF EXISTS `contests`;
 CREATE TABLE `contests` (
 	`contest_id` INT NOT NULL AUTO_INCREMENT COMMENT '比赛id',
-	`contest_title` varchar(150) NOT NULL UNIQUE KEY COMMENT '比赛标题',
+	`contest_title` varchar(50) NOT NULL UNIQUE KEY COMMENT '比赛标题',
 	`contest_text` longtext NOT NULL COMMENT '比赛内容',
-	`url` longtext NOT NULL COMMENT '比赛宣传图',
+	`url` varchar(255) NOT NULL COMMENT '比赛宣传图',
 	`promulgator` INT NOT NULL COMMENT '发布人（组.组id）',
 	`group_id` INT NOT NULL COMMENT '所属组（用户.用户id）',
 	`reg_start_time` DATETIME NOT NULL COMMENT '报名开始时间',
@@ -112,7 +112,7 @@ CREATE TABLE `messages` (
 	`text` text NOT NULL COMMENT '消息内容',
 	`sender` INT NOT NULL COMMENT '发布人（用户.用户id）',
 	`time` DATETIME NOT NULL DEFAULT(now()) COMMENT '发布时间',
-	`state` TINYINT(1) DEFAULT(0) COMMENT '消息读取状态',
+	`state` TINYINT(1) DEFAULT(FALSE) COMMENT '消息读取状态',
 	PRIMARY KEY (`message_id`),
 	CONSTRAINT `messages_1` FOREIGN KEY (`recipient`) REFERENCES `users` (`user_id`),
 	CONSTRAINT `messages_2` FOREIGN KEY (`sender`) REFERENCES `users` (`user_id`)
@@ -150,19 +150,24 @@ INSERT INTO messages VALUES (DEFAULT,'1','测试公告29','这是一条测试公
 INSERT INTO messages VALUES (DEFAULT,'1','测试公告30','这是一条测试公告30','1','2021-10-15 10:30:10',null);
 INSERT INTO messages VALUES (DEFAULT,'1','网站正式运营','本网站正式开始运营啦！','1','2021-12-10 10:10:10',null);
 INSERT INTO messages VALUES (DEFAULT,'1','发布比赛规范','禁止发布谩骂、包含人身攻击的比赛！','1','2022-01-10 10:10:10',null);
-INSERT INTO messages VALUES (DEFAULT,'2','测试消息','这是一条测试消息','1','2021-10-10 10:10:11','0');
-INSERT INTO messages VALUES (DEFAULT,'3','测试消息','这是一条测试消息','1','2021-10-10 10:10:12','0');
-INSERT INTO messages VALUES (DEFAULT,'4','测试消息','这是一条测试消息','1','2021-10-10 10:10:13','0');
-INSERT INTO messages VALUES (DEFAULT,'5','测试消息','这是一条测试消息','1','2021-10-10 10:10:14','0');
-INSERT INTO messages VALUES (DEFAULT,'6','测试消息','这是一条测试消息','1','2021-10-10 10:10:15','0');
-INSERT INTO messages VALUES (DEFAULT,'7','测试消息','这是一条测试消息','1','2021-10-10 10:10:16','0');
-INSERT INTO messages VALUES (DEFAULT,'8','测试消息','这是一条测试消息','1','2021-10-10 10:10:17','0');
-INSERT INTO messages VALUES (DEFAULT,'9','测试消息','这是一条测试消息','1','2021-10-10 10:10:18','0');
-INSERT INTO messages VALUES (DEFAULT,'10','测试消息','这是一条测试消息','1','2021-10-10 10:10:19','0');
-INSERT INTO messages VALUES (DEFAULT,'11','测试消息','这是一条测试消息','1','2021-10-10 10:10:20','0');
-INSERT INTO messages VALUES (DEFAULT,'12','测试消息','这是一条测试消息','1','2021-10-10 10:10:21','0');
-INSERT INTO messages VALUES (DEFAULT,'13','测试消息','这是一条测试消息','1','2021-10-10 10:10:22','0');
-INSERT INTO messages VALUES (DEFAULT,'14','测试消息','这是一条测试消息','1','2021-10-10 10:10:23','0');
+INSERT INTO messages VALUES (DEFAULT,'2','管理员发送的测试消息1','这是一条管理员发送的测试消息1','1','2021-10-10 10:10:01','0');
+INSERT INTO messages VALUES (DEFAULT,'2','管理员发送的测试消息2','这是一条管理员发送的测试消息2','3','2021-10-10 10:10:02','0');
+INSERT INTO messages VALUES (DEFAULT,'2','管理员发送的测试消息3','这是一条管理员发送的测试消息3','4','2021-10-10 10:10:03','0');
+INSERT INTO messages VALUES (DEFAULT,'2','管理员发送的测试消息4','这是一条管理员发送的测试消息4','5','2021-10-10 10:10:04','0');
+INSERT INTO messages VALUES (DEFAULT,'2','管理员发送的测试消息5','这是一条管理员发送的测试消息5','6','2021-10-10 10:10:05','0');
+INSERT INTO messages VALUES (DEFAULT,'2','管理员发送的测试消息6','这是一条管理员发送的测试消息6','7','2021-10-10 10:10:06','0');
+INSERT INTO messages VALUES (DEFAULT,'3','管理员发送的测试消息','这是一条管理员发送的测试消息','1','2021-10-10 10:10:12','0');
+INSERT INTO messages VALUES (DEFAULT,'4','管理员发送的测试消息','这是一条管理员发送的测试消息','1','2021-10-10 10:10:13','0');
+INSERT INTO messages VALUES (DEFAULT,'5','管理员发送的测试消息','这是一条管理员发送的测试消息','1','2021-10-10 10:10:14','0');
+INSERT INTO messages VALUES (DEFAULT,'6','管理员发送的测试消息','这是一条管理员发送的测试消息','1','2021-10-10 10:10:15','0');
+INSERT INTO messages VALUES (DEFAULT,'7','管理员发送的测试消息','这是一条管理员发送的测试消息','1','2021-10-10 10:10:16','0');
+INSERT INTO messages VALUES (DEFAULT,'8','管理员发送的测试消息','这是一条管理员发送的测试消息','1','2021-10-10 10:10:17','0');
+INSERT INTO messages VALUES (DEFAULT,'9','管理员发送的测试消息','这是一条管理员发送的测试消息','1','2021-10-10 10:10:18','0');
+INSERT INTO messages VALUES (DEFAULT,'10','管理员发送的测试消息','这是一条管理员发送的测试消息','1','2021-10-10 10:10:19','0');
+INSERT INTO messages VALUES (DEFAULT,'11','管理员发送的测试消息','这是一条管理员发送的测试消息','1','2021-10-10 10:10:20','0');
+INSERT INTO messages VALUES (DEFAULT,'12','管理员发送的测试消息','这是一条管理员发送的测试消息','1','2021-10-10 10:10:21','0');
+INSERT INTO messages VALUES (DEFAULT,'13','管理员发送的测试消息','这是一条管理员发送的测试消息','1','2021-10-10 10:10:22','0');
+INSERT INTO messages VALUES (DEFAULT,'14','管理员发送的测试消息','这是一条管理员发送的测试消息','1','2021-10-10 10:10:23','0');
 
 -- ----------------------------
 -- 创建报名评分表:  `scores `

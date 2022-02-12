@@ -99,7 +99,7 @@ export default {
   mounted() {
     this.contestId = this.$route.params.contestId;
     // 查询当前用户是否已报名此比赛
-    getRequest("/Scores/" + sessionStorage.uid + "/" + this.contestId).then((resp) => {
+    getRequest("/scores/" + sessionStorage.uid + "/" + this.contestId).then((resp) => {
       // console.log(resp.data);
       // console.log(resp.data.data === 0);
       // console.log("/Scores/" + sessionStorage.uid + "/" + this.contestId);
@@ -110,7 +110,7 @@ export default {
       }
     });
     // 查询id为this.$route.params.contestId的比赛并显示
-    getRequest("/Contests/" + this.contestId).then((resp) => {
+    getRequest("/contests/" + this.contestId).then((resp) => {
       const data = resp.data.data;
       console.log(data);
       if (data) {

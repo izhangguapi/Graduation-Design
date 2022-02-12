@@ -5,7 +5,7 @@
         <span>公告通知</span>
       </div>
       <div v-for="item in list" :key="item.messageId" class="text item">
-        <el-link @click="$router.push({name:'announcement-detail',params: {messageId:item.messageId}})">
+        <el-link @click="$router.push({name:'messages-detail',params: {messageId:item.messageId}})">
           {{ item.title }}
         </el-link>
       </div>
@@ -28,7 +28,6 @@ export default {
   },
   mounted() {
     getRequest("/messages/announcement").then((res) => {
-      console.log(res.data.data);
       this.list = res.data.data;
     });
   }

@@ -2,10 +2,11 @@
   <el-card class="box-card" shadow="never" style="height: 500px">
     <el-descriptions title="用户信息" :column="1" border :labelStyle="{'text-align': 'center'}">
       <template slot="extra" v-if="inputDisabled">
-        <el-button type="success" @click="update" size="small" round>修改信息</el-button>
+        <el-button type="primary" @click="update" size="small" round>修改信息</el-button>
       </template>
       <template slot="extra" v-else>
-        <el-button type="primary" @click="submit" size="small" round>保存修改</el-button>
+        <el-button type="success" @click="submit" size="small" round>保存修改</el-button>
+        <el-button type="danger" @click="cancel" size="small" round>取消修改</el-button>
       </template>
       <el-descriptions-item label="姓名">
         <input :disabled="inputDisabled" v-model="fromData.name"></input>
@@ -91,6 +92,9 @@ export default {
           }
         });
       }
+    },
+    cancel(){
+      this.inputDisabled = true;
     }
   }
 }

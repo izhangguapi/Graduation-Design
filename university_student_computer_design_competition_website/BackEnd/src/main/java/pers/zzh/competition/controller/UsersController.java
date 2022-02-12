@@ -63,10 +63,10 @@ public class UsersController {
 //        System.out.println("用户输入：" + login.getDatetime() + "-" + userCaptcha);
         // 判断session存入的验证码是否跟用户输入的一样(比较字母，忽略大小写.equalsIgnoreCase())
         if (sessionCaptcha.equalsIgnoreCase(userCaptcha)) {
-            List<Users> list = service.selectPhoneEmailPassword(login.getPhone(), login.getEmail(), login.getPassword());
-            return list.isEmpty()
+            Users users = service.selectPhoneEmailPassword(login.getPhone(), login.getEmail(), login.getPassword());
+            return users == null
                     ? new Result(201, "密码错误", Collections.emptyMap())
-                    : new Result(200, "登录成功", list);
+                    : new Result(200, "登录成功", users);
         } else {
             return new Result(201, "验证码错误", Collections.emptyMap());
         }

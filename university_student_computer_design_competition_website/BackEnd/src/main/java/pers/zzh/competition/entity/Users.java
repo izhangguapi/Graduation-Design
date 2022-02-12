@@ -14,7 +14,7 @@ public class Users {
     private Integer userId;
     private String name;
     private Boolean sex;
-    @JsonFormat(pattern = "yyyy-MM-dd",timezone = "GMT+8")
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     private Date birthday;
     private String school;
     private String address;
@@ -22,8 +22,7 @@ public class Users {
     private String email;
     private Integer groupId;
     private String password;
-
-    //链表查询-组表字段
+    // 链表查询-组表字段：组名、组编码
     private String groupName;
     private String encoding;
 }

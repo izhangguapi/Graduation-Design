@@ -34,15 +34,12 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users> implements
 
     // 登录功能（账号为手机号或邮箱）
     @Override
-    public List<Users> selectPhoneEmailPassword(String phone, String email, String password) {
+    public Users selectPhoneEmailPassword(String phone, String email, String password) {
         QueryWrapper<Users> qw = new QueryWrapper<>();
         qw.select("user_id,name,group_id");
         qw.and(Wrapper -> Wrapper.eq("phone", phone).or().eq("email", email));
         qw.eq("password", password);
-        System.out.println("打印phone：" + phone);
-        System.out.println("打印email：" + email);
-        System.out.println("打印password：" + password);
-        return baseMapper.selectList(qw);
+        return baseMapper.selectOne(qw);
     }
 
     // 注册功能

@@ -102,21 +102,28 @@ const router = new VueRouter({
                 title: '公告中心',
             },
             component: () => import('@/views/layout/Main/Announcements')
-        },{
-            name: 'announcement-detail',
+        }]
+    }, {
+        path: '/messages',
+        component: () => import('@/views/layout'),
+        children: [{
+            name: 'messages-detail',
             path: ':messageId',
             meta: {
-                title: '公告内容',
+                title: '内容',
             },
             component: () => import('@/views/layout/Main/Announcements/Detail')
         }]
-    }, {
-        name: '404',
+    } ,{
+        name: 'NotFound',
         path: '/404',
         component: () => import('@/views/404')
     }, {
         path: '*',    // 此处需特别注意至于最底部
-        redirect: '/404'
+        redirect: '/404',
+        meta: {
+            title: '公告内容',
+        },
     }]
 })
 

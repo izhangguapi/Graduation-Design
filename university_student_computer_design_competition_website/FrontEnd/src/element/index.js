@@ -44,6 +44,8 @@ import {
     Table,
     TableColumn,
     Pagination,
+    Drawer,
+    Tag,
 
     Notification,
     Message,
@@ -99,6 +101,9 @@ const element = {
         Vue.use(Table);
         Vue.use(TableColumn);
         Vue.use(Pagination);
+        Vue.use(Drawer);
+        Vue.use(Tag);
+
 
         Vue.prototype.$message = Message;
         Vue.prototype.$msgbox = MessageBox;

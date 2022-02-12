@@ -7,15 +7,23 @@ truncate table `users`;
 SELECT * FROM groups;
 SELECT * FROM users;
 SELECT * FROM contests;
-SELECT * FROM messages ORDER BY time;
+SELECT * FROM messages;
 SELECT * FROM scores;
 
-
+SELECT message_id,title,time,state,`name` FROM messages INNER JOIN users ON messages.sender = users.user_id WHERE recipient = 2 ORDER BY state,time DESC
+ 
 
 SELECT message_id,title,time FROM messages WHERE recipient=1 ORDER BY time DESC
-SELECT COUNT(*) FROM messages WHERE recipient=1 ORDER BY time DESC
-
-
+SELECT COUNT(*) FROM messages
+INNER JOIN users  ON scores.contestant,scores.judge = users.user_id
+ WHERE recipient=2 ORDER BY time DESC
+ 
+ UPDATE  messages SET state=TRUE  WHERE message_id  = 33
+ 
+UPDATE  messages SET state=TRUE  WHERE message_id IN(
+SELECT message_id,recipient,title,text,sender,time,state,`name` FROM messages
+ INNER JOIN users  ON messages.recipient=users.user_id
+ WHERE message_id=31);
 
 SELECT message_id,title FROM messages WHERE recipient=1 ORDER BY time DESC LIMIT 5;
 

@@ -104,14 +104,16 @@ export default {
       this.$refs.loginForm.validate((valid) => {
         if (valid) {
           postRequest("/login", this.loginForm).then((res) => {
+            const data = res.data.data;
+            console.log(data);
             if (this.checked) {
-              localStorage.setItem("uid", res.data.data[0].userId);
-              localStorage.setItem("name", res.data.data[0].name);
-              localStorage.setItem("gid", res.data.data[0].groupId);
+              localStorage.setItem("uid", data.userId);
+              localStorage.setItem("name", data.name);
+              localStorage.setItem("gid", data.groupId);
             } else {
-              sessionStorage.setItem("uid", res.data.data[0].userId)
-              sessionStorage.setItem("name", res.data.data[0].name);
-              sessionStorage.setItem("gid", res.data.data[0].groupId);
+              sessionStorage.setItem("uid", data.userId)
+              sessionStorage.setItem("name", data.name);
+              sessionStorage.setItem("gid", data.groupId);
             }
             this.$router.push("/home");
           }).catch((error) => {

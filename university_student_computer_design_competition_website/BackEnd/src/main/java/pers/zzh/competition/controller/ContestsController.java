@@ -22,13 +22,13 @@ public class ContestsController {
     }
 
     // 根据id查询一条数据
-    @GetMapping("/Contests/{id}")
+    @GetMapping("/contests/{id}")
     public Result selectContestsOne(@PathVariable String id){
         return new Result(200, service.selectContestsOne(id));
     }
 
     // 查询一些数据
-    @GetMapping("/ContestsList/{num}")
+    @GetMapping("/contestsList/{num}")
     public Result selectContests(@PathVariable int num){
         return new Result(200, service.selectContests(num));
     }
