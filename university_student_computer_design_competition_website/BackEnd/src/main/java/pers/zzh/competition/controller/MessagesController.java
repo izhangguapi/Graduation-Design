@@ -18,6 +18,12 @@ public class MessagesController {
 
     final MessagesService service;
 
+    // 报名成功后新增消息
+    @PostMapping("/messages/insert")
+    public Result insertMessage(@RequestBody Messages messages) {
+        return new Result( service.insertMessage(messages));
+    }
+
     // 首页查询公告
     @GetMapping("/messages/announcement")
     public Result selectAnnouncement() {

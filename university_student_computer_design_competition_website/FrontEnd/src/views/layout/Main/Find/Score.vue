@@ -5,9 +5,9 @@
         <el-card>
           <el-descriptions :column="3" :title="contestTitle" border :contentStyle="{'text-align': 'center'}"
                            :labelStyle="{'text-align': 'center'}">
-            <el-descriptions-item label="参赛人姓名">{{ contestant }}
+            <el-descriptions-item label="参赛人">{{ contestant }}
             </el-descriptions-item>
-            <el-descriptions-item label="评审人姓名">{{ judge }}
+            <el-descriptions-item label="评审人">{{ judge }}
             </el-descriptions-item>
             <el-descriptions-item label="排名" :contentStyle="{'color':color,'text-align': 'center'}">{{ ranking }}
             </el-descriptions-item>

@@ -12,10 +12,15 @@
         <input :disabled="inputDisabled" v-model="fromData.name"></input>
       </el-descriptions-item>
       <el-descriptions-item label="用户组" :contentStyle="{backgroundColor:inputDisabled?'#fff':'#fafafa'}">
-        <input disabled v-model="groupName" :style="{backgroundColor:inputDisabled?'#fff':'#fafafa'}"></input>
+        <div :style="{backgroundColor:inputDisabled?'#fff':'#fafafa'}">
+          {{ groupName }}
+          <el-button type="danger" @click="upDateGroup" size="small" round v-if="groupName!=='学生'">
+            修改用户组
+          </el-button>
+        </div>
       </el-descriptions-item>
       <el-descriptions-item label="性别" :contentStyle="{backgroundColor:inputDisabled?'#fff':'#fafafa'}">
-        <input disabled v-model="sex" :style="{backgroundColor:inputDisabled?'#fff':'#fafafa'}"></input>
+        <div :style="{backgroundColor:inputDisabled?'#fff':'#fafafa'}"> {{ sex }}</div>
       </el-descriptions-item>
       <el-descriptions-item label="出生日期">
         <el-date-picker :disabled="inputDisabled" v-model="fromData.birthday" type="date"
@@ -25,10 +30,10 @@
         <input :disabled="inputDisabled" v-model="fromData.school"></input>
       </el-descriptions-item>
       <el-descriptions-item label="手机号" :contentStyle="{backgroundColor:inputDisabled?'#fff':'#fafafa'}">
-        <input disabled v-model="phone" :style="{backgroundColor:inputDisabled?'#fff':'#fafafa'}"></input>
+        <div :style="{backgroundColor:inputDisabled?'#fff':'#fafafa'}"> {{ phone }}</div>
       </el-descriptions-item>
       <el-descriptions-item label="邮箱" :contentStyle="{backgroundColor:inputDisabled?'#fff':'#fafafa'}">
-        <input disabled v-model="email" :style="{backgroundColor:inputDisabled?'#fff':'#fafafa'}"></input>
+        <div :style="{backgroundColor:inputDisabled?'#fff':'#fafafa'}"> {{ email }}</div>
       </el-descriptions-item>
       <el-descriptions-item label="地址">
         <textarea :disabled="inputDisabled" v-model="fromData.address"></textarea>
@@ -52,7 +57,7 @@ export default {
         school: '',
         address: ''
       },
-      sex:'',
+      sex: '',
       groupName: '',
       phone: '',
       email: ''
@@ -65,7 +70,7 @@ export default {
       console.log(data);
       if (data) {
         this.fromData.name = data.name;
-        data.sex  ? this.sex = '男' : this.sex = '女';
+        data.sex ? this.sex = '男' : this.sex = '女';
         this.fromData.birthday = data.birthday;
         this.fromData.school = data.school;
         this.fromData.address = data.address;
@@ -80,21 +85,24 @@ export default {
       this.inputDisabled = false;
     },
     submit() {
-      if (this.fromData.name.trim() ==='' || this.fromData.birthday.trim() ==='' || this.fromData.address.trim()===''  || this.fromData.school.trim()==='' ){
+      if (this.fromData.name.trim() === '' || this.fromData.birthday.trim() === '' || this.fromData.address.trim() === '' || this.fromData.school.trim() === '') {
         this.$message.error("不允许为空");
-      }else{
+      } else {
         putRequest("/user/update", this.fromData).then((res) => {
-          if (res.data.data){
+          if (res.data.data) {
             this.$message.success("修改成功");
             this.inputDisabled = true;
-          }else {
+          } else {
             this.$message.error("修改失败");
           }
         });
       }
     },
-    cancel(){
+    cancel() {
       this.inputDisabled = true;
+    },
+    upDateGroup() {
+      alert("修改用户组");
     }
   }
 }

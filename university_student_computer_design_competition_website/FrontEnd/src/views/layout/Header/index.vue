@@ -9,28 +9,33 @@
       </el-col>
       <el-col :span="6">
         <div class="search">
-          <input placeholder="活动搜索..."/>
-          <i class="fa fa-magnifying-glass"></i>
+          <input v-model="search" placeholder="活动搜索..." @keyup.enter="press"/>
+          <i class="fa fa-magnifying-glass" @click="$router.push({name: 'search', params: {search: search}})"></i>
         </div>
       </el-col>
       <el-col :span="4" :pull="1">
         <UserInfo></UserInfo>
       </el-col>
     </el-row>
-
   </el-header>
 </template>
 
 <script>
 import NavBar from "@/views/layout/Header/NavBar";
 import UserInfo from "@/views/layout/Header/UserInfo";
+import {getRequest} from "@/utils/api";
 
 export default {
-  name: "GeneralHeader",
+  name: "Header",
   components: {NavBar, UserInfo},
   data() {
     return {
-      input: ''
+      search: ''
+    }
+  },
+  methods:{
+    press(){
+      this.$router.push({name: 'search', params: {search: this.search}})
     }
   }
 }

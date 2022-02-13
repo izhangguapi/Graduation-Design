@@ -11,7 +11,9 @@
             <div class="title">{{ title }}</div>
             <div class="time">{{ time }}</div>
             <div class="text">{{ text }}</div>
-            <div class="name" style="float: right">{{ name }}</div>
+            <div class="name">
+              <el-tag type="success">{{ name }}</el-tag>
+            </div>
           </div>
         </el-card>
       </el-col>
@@ -75,5 +77,10 @@ export default {
 .text, .name {
   font-size: 15px;
   color: #606266
+}
+
+.name {
+  float: right;
+  margin: 20px 0;
 }
 </style>

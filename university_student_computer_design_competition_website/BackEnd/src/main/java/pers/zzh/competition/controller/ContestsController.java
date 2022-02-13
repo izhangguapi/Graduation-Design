@@ -6,7 +6,6 @@ import pers.zzh.competition.entity.Contests;
 import pers.zzh.competition.service.ContestsService;
 import pers.zzh.competition.utils.Result;
 
-
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api")
@@ -23,16 +22,19 @@ public class ContestsController {
 
     // 根据id查询一条数据
     @GetMapping("/contests/{id}")
-    public Result selectContestsOne(@PathVariable String id){
+    public Result selectContestsOne(@PathVariable String id) {
         return new Result(200, service.selectContestsOne(id));
     }
 
     // 查询一些数据
     @GetMapping("/contestsList/{num}")
-    public Result selectContests(@PathVariable int num){
+    public Result selectContests(@PathVariable int num) {
         return new Result(200, service.selectContests(num));
     }
 
-
-
+    // 查询一些数据
+    @GetMapping("/search")
+    public Result selectContests(@RequestParam("s") String s) {
+        return new Result(service.selectContestsLike(s));
+    }
 }

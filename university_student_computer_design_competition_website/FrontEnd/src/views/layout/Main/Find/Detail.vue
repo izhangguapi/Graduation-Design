@@ -38,14 +38,11 @@
           <div class="text item">
             所属组：<samp class="itemRight">{{ groupName }}</samp>
           </div>
-          <div style="text-align: center" v-if="btnSelect===1">
-            <el-button type="primary" round @click="submit">立即报名</el-button>
-          </div>
-          <div style="text-align: center" v-else-if="btnSelect===2">
-            <el-button type="primary" round @click="check">查看结果</el-button>
+          <div style="text-align: center" v-if="btnHidden">
+            <el-button type="primary" round @click="submit">{{btnText}}</el-button>
           </div>
           <div style="text-align: center" v-else>
-            <el-button type="primary" round disabled>不可报名</el-button>
+            <el-button type="danger" round disabled>{{ btnText }}</el-button>
           </div>
         </el-card>
       </el-col>
@@ -54,25 +51,26 @@
 </template>
 
 <script>
-import {getRequest} from "@/utils/api";
+import {getRequest, postRequest} from "@/utils/api";
 
 const mdEditor = require('mavon-editor')
 import 'mavon-editor/dist/css/index.css'
 
 export default {
+  inject:['reload'],                                 //注入App里的reload方法
   components: {
     'mdEditor': mdEditor.mavonEditor
   },
   data() {
     return {
-      btnSelect: 3,
+      btnHidden: false,
+      btnText:'不可报名',
+      promulgator: 0,
       contestTitle: '',
-      contestText: '测试',
+      contestText: '',
       contestId: '',
       name: '',
       groupName: '',
-      startTime: '',
-      endTime: '',
       activities: [{
         content: '报名开始',
         timestamp: '2022-02-22 22:22',
@@ -99,36 +97,44 @@ export default {
   mounted() {
     this.contestId = this.$route.params.contestId;
     // 查询当前用户是否已报名此比赛
-    getRequest("/scores/" + sessionStorage.uid + "/" + this.contestId).then((resp) => {
-      // console.log(resp.data);
-      // console.log(resp.data.data === 0);
-      // console.log("/Scores/" + sessionStorage.uid + "/" + this.contestId);
+    getRequest("/scores/" + sessionStorage.uid + "/" + this.contestId).then((res) => {
+      console.log(res.data);
       if (sessionStorage.gid === '2') {
-        if (resp.data.data === 0) this.btnSelect = 1; else this.btnSelect = 2;
+        if (res.data.data === 0){
+          this.btnHidden = true;
+          this.btnText='立即报名';
+        }else{
+          this.btnHidden = false;
+          this.btnText='已报名';
+        }
       } else {
-        this.btnSelect = 3;
+        this.btnHidden = false;
       }
     });
     // 查询id为this.$route.params.contestId的比赛并显示
-    getRequest("/contests/" + this.contestId).then((resp) => {
-      const data = resp.data.data;
+    getRequest("/contests/" + this.contestId).then((res) => {
+      const data = res.data.data;
       console.log(data);
       if (data) {
         document.title = this.contestTitle = data.contestTitle;
         this.contestText = data.contestText.replace(/<br>/ig, "\n");
         this.name = data.name;
         this.groupName = data.groupName;
-        this.startTime = data.startTime;
-        this.endTime = data.endTime;
+        this.promulgator = data.promulgator;
         this.activities[0].timestamp = data.regStartTime;
         this.activities[1].timestamp = data.regEndTime;
+        if (new Date() > new Date(data.regEndTime)) {
+          this.btnText='报名时间已过'
+          this.btnHidden = false;
+        }
         this.activities[2].timestamp = data.startTime;
         this.activities[3].timestamp = data.endTime;
       } else {
         this.$router.push("/404");
       }
     });
-  }, methods: {
+  },
+  methods: {
     /**
      * 点击报名按钮
      */
@@ -137,16 +143,23 @@ export default {
         console.log(resp.data);
         if (resp.data.data === 1) {
           this.$message.success("报名成功。")
-          this.btnSelect = 2;
+          this.btnHidden = false;
+          // 发送一条消息给报名用户
+          const obj = {
+            recipient: Number(sessionStorage.uid),
+            title: '报名成功通知',
+            text: '恭喜你成功报名比赛：' + this.contestTitle,
+            sender: this.promulgator
+          };
+          postRequest("/messages/insert", obj).then((res) => {
+            if (res.data.data===1){
+              this.reload();
+            }
+          })
         } else {
           this.$message.error("报名失败！")
         }
       })
-
-    },
-    // 查看
-    check() {
-      alert("查看结果")
     }
   }
 }

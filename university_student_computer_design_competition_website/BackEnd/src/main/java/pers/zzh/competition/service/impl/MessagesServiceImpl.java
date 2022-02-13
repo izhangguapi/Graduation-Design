@@ -14,6 +14,12 @@ import java.util.List;
 @Service
 public class MessagesServiceImpl extends ServiceImpl<MessagesMapper, Messages> implements MessagesService {
 
+    // 报名成功后新增消息
+    @Override
+    public int insertMessage(Messages messages) {
+        return baseMapper.insert(messages);
+    }
+
     // 首页查询公告
     @Override
     public List<Messages> selectAnnouncement() {
@@ -35,7 +41,7 @@ public class MessagesServiceImpl extends ServiceImpl<MessagesMapper, Messages> i
     @Override
     public Messages selectAnnouncementById(int id) {
         QueryWrapper<Messages> qw = new QueryWrapper<>();
-        qw.select("recipient,title,text,time,sender,state,`name`").last("INNER JOIN users ON messages.sender = users.user_id WHERE message_id = "+id);
+        qw.select("recipient,title,text,time,sender,state,`name`").last("INNER JOIN users ON messages.sender = users.user_id WHERE message_id = " + id);
         return baseMapper.selectOne(qw);
     }
 
@@ -43,7 +49,7 @@ public class MessagesServiceImpl extends ServiceImpl<MessagesMapper, Messages> i
     @Override
     public List<Messages> selectMessagesByRecipient(int id) {
         QueryWrapper<Messages> qw = new QueryWrapper<>();
-        qw.select("message_id,title,time,state,`name`").last("INNER JOIN users ON messages.sender = users.user_id WHERE recipient = "+id+" ORDER BY state,time DESC");
+        qw.select("message_id,title,time,state,`name`").last("INNER JOIN users ON messages.sender = users.user_id WHERE recipient = " + id + " ORDER BY state,time DESC");
         return baseMapper.selectList(qw);
     }
 

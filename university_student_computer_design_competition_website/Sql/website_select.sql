@@ -10,17 +10,33 @@ SELECT * FROM contests;
 SELECT * FROM messages;
 SELECT * FROM scores;
 
+
+SELECT * FROM contests c,groups g,users u WHERE c.promulgator=u.user_id AND c.group_id=g.group_id AND contest_id=1
+
+SELECT * FROM contests
+ INNER JOIN groups g ON contests.group_id=g.group_id
+ INNER JOIN users u ON contests.promulgator=u.user_id
+ WHERE  contest_id=1
+ AND  AND 
+
 SELECT message_id,title,time,state,`name` FROM messages INNER JOIN users ON messages.sender = users.user_id WHERE recipient = 2 ORDER BY state,time DESC
  
+SELECT * FROM contests WHERE group_id = 3
+
+SELECT * FROM contests WHERE contest_title LIKE '%年度%'
+
+SELECT contest_id,contest_title,reg_end_time FROM contests WHERE (contest_title LIKE '%2022%') ORDER BY reg_end_time DESC
+
+/messages/insert
 
 SELECT message_id,title,time FROM messages WHERE recipient=1 ORDER BY time DESC
 SELECT COUNT(*) FROM messages
 INNER JOIN users  ON scores.contestant,scores.judge = users.user_id
  WHERE recipient=2 ORDER BY time DESC
  
- UPDATE  messages SET state=TRUE  WHERE message_id  = 33
+UPDATE  messages SET state=TRUE  WHERE message_id  = 33
  
- UPDATE  messages SET state=FALSE  WHERE recipient = 2
+UPDATE  messages SET state=FALSE  WHERE recipient = 2
  
 UPDATE  messages SET state=TRUE  WHERE message_id IN(
 SELECT message_id,recipient,title,text,sender,time,state,`name` FROM messages

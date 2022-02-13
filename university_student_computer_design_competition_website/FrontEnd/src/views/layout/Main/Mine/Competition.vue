@@ -5,7 +5,7 @@
         <span>已评审的比赛</span>
       </div>
       <div v-for="item in contests" :key="item.scoresId" class="text item">
-        <el-link @click="$router.push({name:'find-result',params: {scoresId:item.scoresId}})">{{ item.contestTitle }}
+        <el-link @click="$router.push({name:'find-score',params: {scoresId:item.scoresId}})">{{ item.contestTitle }}
         </el-link>
       </div>
       <div v-if="contests.length===0 && contestsUnfinished.length===0" class="text item">

@@ -1,5 +1,6 @@
 package pers.zzh.competition.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -23,6 +24,8 @@ public class Users {
     private Integer groupId;
     private String password;
     // 链表查询-组表字段：组名、组编码
+    @TableField(exist = false)
     private String groupName;
+    @TableField(exist = false)
     private String encoding;
 }

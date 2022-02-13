@@ -1,5 +1,6 @@
 package pers.zzh.competition.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -17,7 +18,9 @@ public class Scores {
     private String text;
     private Integer result;
     //排名
+    @TableField(exist = false)
     private int ranking;
     // 链表查询-比赛表字段：比赛标题
+    @TableField(exist = false)
     private String contestTitle;
 }
