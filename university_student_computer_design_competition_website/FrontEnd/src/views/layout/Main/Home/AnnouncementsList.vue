@@ -2,7 +2,7 @@
   <div>
     <el-card shadow="never">
       <div slot="header" class="clearfix">
-        <span>公告通知</span>
+        <span style="line-height: 28px;font-size: 20px">公告通知</span>
       </div>
       <div v-for="item in list" :key="item.messageId" class="text item">
         <el-link @click="$router.push({name:'messages-detail',params: {messageId:item.messageId}})">

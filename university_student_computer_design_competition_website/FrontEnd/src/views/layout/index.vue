@@ -15,6 +15,7 @@ import Main from "./Main";
 import Footer from './Footer'
 
 export default {
+  name:'Layout',
   components: {Header, Main, Footer},
 }
 </script>

@@ -91,19 +91,26 @@ const router = new VueRouter({
                     },
                     component: () => import('@/views/layout/Main/Publish/Competition')
                 }, {
+                    name: 'publish-select',
+                    path: 'select',
+                    meta: {
+                        title: '管理比赛'
+                    },
+                    component: () => import('@/views/layout/Main/Publish/MessageOrScore')
+                },{
                     name: 'publish-message',
                     path: 'message',
                     meta: {
-                        title: '发布消息'
+                        title: '发送消息'
                     },
-                    component: () => import('@/views/layout/Main/Publish/Message')
+                    component: () => import('@/views/layout/Main/Publish/MessageOrScore/Message')
                 },{
                     name: 'publish-score',
                     path: 'score',
                     meta: {
                         title: '评审比赛'
                     },
-                    component: () => import('@/views/layout/Main/Publish/Score')
+                    component: () => import('@/views/layout/Main/Publish/MessageOrScore/Score')
                 }]
             }]
         },

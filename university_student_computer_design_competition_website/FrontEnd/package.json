@@ -15,7 +15,7 @@
     "element-ui": "^2.15.6",
     "less-loader": "^7.3.0",
     "mavon-editor": "^2.10.4",
-    "vue": "^2.6.11",
+    "vue": "^2.6.14",
     "vue-router": "^3.2.0",
     "vuex": "^3.4.0"
   },

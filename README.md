@@ -13,7 +13,7 @@
 ### 开发环境
 操作系统：macOS 12.0.1
 
-前端框架：vue-cli 4.5.15
+前端框架：vue 2.6.14/@vue-cli 4.5.15
 
 JavaScript运行环境：node.js 16.13.1
 

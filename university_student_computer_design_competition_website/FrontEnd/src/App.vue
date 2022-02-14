@@ -30,7 +30,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less">
 body {
   margin: 0;
   background-color: #f4f4f4;
@@ -41,7 +41,7 @@ body {
 }
 
 .fade-enter-active, .fade-leave-active {
-  transition: opacity 0.5s;
+  transition: opacity 0.3s;
 }
 
 .fade-enter, .fade-leave-to {

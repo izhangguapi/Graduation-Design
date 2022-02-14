@@ -86,7 +86,7 @@ export default {
         let unread = 0;
         for (let i = 0; i < data.length; i++) {
           if (!data[i].state) {
-            console.log(data[i].state);
+            // console.log(data[i].state);
             unread++;
           }
         }

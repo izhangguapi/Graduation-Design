@@ -32,9 +32,15 @@ public class ContestsController {
         return new Result(200, service.selectContests(num));
     }
 
-    // 查询一些数据
+    // 搜索功能
     @GetMapping("/search")
     public Result selectContests(@RequestParam("s") String s) {
         return new Result(service.selectContestsLike(s));
+    }
+
+    // 根据组id查询
+    @GetMapping("/contests/gid")
+    public Result selectContestsByGid(@RequestParam("gid") String gid) {
+        return new Result(service.selectContestsByGid(gid));
     }
 }

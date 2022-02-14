@@ -3,7 +3,7 @@
     <el-card shadow="never" class="box-card">
       <template v-if="hidden">
         <div slot="header" class="clearfix">
-          <span>比赛列表</span>
+          <span style="line-height: 28px;font-size: 20px">比赛列表</span>
         </div>
       </template>
       <div class="list">

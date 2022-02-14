@@ -11,7 +11,6 @@ import java.util.Collections;
 import java.util.List;
 
 
-
 @Service
 public class ScoresServiceImpl extends ServiceImpl<ScoresMapper, Scores> implements ScoresService {
 
@@ -50,7 +49,7 @@ public class ScoresServiceImpl extends ServiceImpl<ScoresMapper, Scores> impleme
 
     //查询分数基本信息
     @Override
-    public Scores selectScoresForId(int sid) {
+    public Scores selectScoresById(int sid) {
         QueryWrapper<Scores> qw = new QueryWrapper<>();
         qw.select("scores_id,scores.contest_id,text,result,u1.`name` 'contestant',u2.`name` 'judge',c.contest_title")
                 .last("INNER JOIN users u1 ON u1.user_id=scores.contestant\n" +
@@ -70,5 +69,15 @@ public class ScoresServiceImpl extends ServiceImpl<ScoresMapper, Scores> impleme
         }
         System.out.println(scores);
         return scores;
+    }
+
+    //查询该比赛报名人
+    @Override
+    public List<Scores> selectScoresByCid(String cid) {
+        QueryWrapper<Scores> qw = new QueryWrapper<>();
+        qw.select("scores_id,user_id,`name`,school,phone,state")
+                .last("INNER JOIN users ON scores.contestant=users.user_id\n" +
+                        "WHERE contest_id = " + cid + " ORDER BY state");
+        return baseMapper.selectList(qw);
     }
 }

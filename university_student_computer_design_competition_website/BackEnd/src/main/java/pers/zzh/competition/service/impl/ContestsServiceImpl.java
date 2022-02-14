@@ -11,6 +11,8 @@ import java.util.List;
 
 @Service
 public class ContestsServiceImpl extends ServiceImpl<ContestsMapper, Contests> implements ContestsService {
+
+
     // 添加比赛
     @Override
     public int insertContests(Contests contests) {
@@ -50,6 +52,16 @@ public class ContestsServiceImpl extends ServiceImpl<ContestsMapper, Contests> i
         QueryWrapper<Contests> qw = new QueryWrapper<>();
         qw.select("contest_id,contest_title,reg_end_time")
                 .like("contest_title", s).orderByDesc("reg_end_time");
+        return baseMapper.selectList(qw);
+    }
+
+    // 根据组id查询
+    @Override
+    public List<Contests> selectContestsByGid(String gid) {
+        QueryWrapper<Contests> qw = new QueryWrapper<>();
+        qw.select("contests.contest_id,contest_title,COUNT(contest_title) number")
+                .last(" INNER JOIN scores ON contests.contest_id=scores.contest_id\n" +
+                        " WHERE group_id = "+gid+" GROUP BY contest_title");
         return baseMapper.selectList(qw);
     }
 }

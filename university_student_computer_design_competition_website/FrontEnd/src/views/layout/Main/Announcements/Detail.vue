@@ -4,7 +4,7 @@
       <el-col :span="12" :offset="6">
         <el-card shadow="never" class="box-card">
           <div slot="header" class="clearfix">
-            <span>公告详情</span>
+            <span style="line-height: 28px;font-size: 20px">公告详情</span>
             <el-button @click="$router.go(-1)" type="primary" round style="float: right;" size="mini">返回</el-button>
           </div>
           <div style="padding: 20px 20%">

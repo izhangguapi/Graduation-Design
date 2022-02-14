@@ -62,7 +62,7 @@ import 'mavon-editor/dist/css/index.css'
 const mdEditor = require('mavon-editor')
 
 export default {
-  name: "index",
+  name: "Competition",
   components: {
     'mdEditor': mdEditor.mavonEditor
   },

@@ -19,4 +19,6 @@ public interface ContestsService extends IService<Contests> {
 
     // 搜索
     List<Contests> selectContestsLike(String s);
+    // 根据组id查询
+    List<Contests>  selectContestsByGid(String gid);
 }

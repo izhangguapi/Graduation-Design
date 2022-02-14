@@ -5,7 +5,6 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -33,4 +32,7 @@ public class Contests {
     //  链表查询-组表字段：组名
     @TableField(exist = false)
     private String groupName;
+    //  链表查询-自定义字段：数量
+    @TableField(exist = false)
+    private String number;
 }

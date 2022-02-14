@@ -4,7 +4,7 @@
       <el-col :span="12" :offset="6">
         <el-card shadow="never" class="box-card">
           <div slot="header" class="clearfix">
-            <span>搜索结果</span>
+            <span style="line-height: 28px;font-size: 20px">搜索结果</span>
           </div>
           <el-table :data="data" :current-row-key="data.contestId" fit @row-click="clickTable">
             <el-table-column prop="contestTitle" label="标题" resizable align="center"></el-table-column>

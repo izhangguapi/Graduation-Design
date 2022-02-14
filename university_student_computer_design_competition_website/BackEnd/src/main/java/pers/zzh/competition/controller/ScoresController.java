@@ -37,7 +37,19 @@ public class ScoresController {
     }
     //查询比赛结果
     @GetMapping("/scores/{sid}")
-    public Result selectScoresForId(@PathVariable int sid){
-        return new Result(200, service.selectScoresForId(sid));
+    public Result selectScoresById(@PathVariable int sid){
+        return new Result(200, service.selectScoresById(sid));
     }
+
+    //查询该比赛报名人
+    @GetMapping("/scores/users")
+    public Result selectScoresByCid(@RequestParam("cid") String cid){
+//        return new Result(cid);
+        return new Result(200, service.selectScoresByCid(cid));
+    }
+
+//    @GetMapping("/contests/gid")
+//    public Result selectContestsByGid(@RequestParam("gid") String gid) {
+//        return new Result(service.selectContestsByGid(gid));
+//    }
 }
