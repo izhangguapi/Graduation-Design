@@ -14,7 +14,7 @@
             <el-descriptions-item label="评语">{{ text }}</el-descriptions-item>
           </el-descriptions>
           <div style="text-align: center;font-size: 30px;font-weight: bold;margin-top: 20px;">
-            分数：{{ result }}
+            得分：{{ result }}
           </div>
         </el-card>
       </el-col>
@@ -54,7 +54,7 @@ export default {
           this.result = data.result;
           this.text = data.text;
           this.contestTitle = data.contestTitle;
-          if (data.ranking === 0) {
+          if (data.ranking===undefined) {
             this.ranking = '未知';
             this.$notify.info({
               title: '排名未更新',

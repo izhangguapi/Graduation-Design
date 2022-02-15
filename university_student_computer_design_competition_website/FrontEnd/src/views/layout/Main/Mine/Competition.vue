@@ -9,7 +9,7 @@
         </el-link>
       </div>
       <div v-if="contests.length===0 && contestsUnfinished.length===0" class="text item">
-        <el-link>你还没有报名任何比赛哦</el-link>
+        <el-link>您还没有报名任何比赛哦</el-link>
       </div>
     </el-card>
     <el-card class="box-card" shadow="never">
@@ -20,7 +20,7 @@
         <el-link @click="$message.info('该比赛还未进行评审！')">{{ item.contestTitle }}</el-link>
       </div>
       <div v-if="contests.length===0 && contestsUnfinished.length===0" class="text item">
-        <el-link>你还没有报名任何比赛哦</el-link>
+        <el-link>您还没有报名任何比赛哦</el-link>
       </div>
     </el-card>
   </div>
@@ -28,6 +28,7 @@
 
 <script>
 import {getRequest} from "@/utils/api";
+import {login} from "@/utils/login";
 
 export default {
   name: "Competition",
@@ -38,20 +39,22 @@ export default {
     }
   },
   mounted() {
-    getRequest("/scores/contest/" + sessionStorage.uid).then((res) => {
-      const data = res.data.data;
-      console.log(data);
-      if (data) {
-        this.contests = data;
-      }
-    });
-    getRequest("/scores/contestNot/" + sessionStorage.uid).then((res) => {
-      const data = res.data.data;
-      console.log(data);
-      if (data) {
-        this.contestsUnfinished = data;
-      }
-    });
+
+      getRequest("/scores/contest/" + sessionStorage.uid).then((res) => {
+        const data = res.data.data;
+        console.log(data);
+        if (data) {
+          this.contests = data;
+        }
+      });
+      getRequest("/scores/contestNot/" + sessionStorage.uid).then((res) => {
+        const data = res.data.data;
+        console.log(data);
+        if (data) {
+          this.contestsUnfinished = data;
+        }
+      });
+
   },
   methods: {}
 }

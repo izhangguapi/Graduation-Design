@@ -117,14 +117,14 @@ export default {
       console.log(data);
       if (data) {
         document.title = this.contestTitle = data.contestTitle;
-        this.contestText = data.contestText.replace(/<br>/ig, "\n");
+        this.contestText = data.contestText;
         this.name = data.name;
         this.groupName = data.groupName;
         this.promulgator = data.promulgator;
         this.activities[0].timestamp = data.regStartTime;
         this.activities[1].timestamp = data.regEndTime;
         if (new Date() > new Date(data.regEndTime)) {
-          this.btnText='报名时间已过'
+          this.btnText='报名时间已过';
           this.btnHidden = false;
         }
         this.activities[2].timestamp = data.startTime;
@@ -148,7 +148,7 @@ export default {
           const obj = {
             recipient: Number(sessionStorage.uid),
             title: '报名成功通知',
-            text: '恭喜你成功报名比赛：' + this.contestTitle,
+            text: '恭喜您成功报名比赛：' + this.contestTitle,
             sender: this.promulgator
           };
           postRequest("/messages/insert", obj).then((res) => {

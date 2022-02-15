@@ -26,7 +26,8 @@ export default {
       this.$message.warning("此功能暂未对学生开发！");
       this.$router.go(-1);
     }
-    this.activeName = this.$route.path.split("/")[2] === "" ? "competition" : "select";
+    this.activeName = this.$route.path.split("/").length === 2 ? "competition" : "select";
+    console.log(this.$route.path.split("/").length);
   },
   methods: {
     handleClick(tab) {

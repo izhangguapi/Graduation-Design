@@ -1,7 +1,8 @@
 <template>
-  <div>
+  <div v-if="login">
     <el-row :gutter="20">
       <el-col :span="10" :offset="5">
+
         <Information></Information>
       </el-col>
       <el-col :span="4">
@@ -14,10 +15,21 @@
 <script>
 import Information from "@/views/layout/Main/Mine/Information";
 import Competition from "@/views/layout/Main/Mine/Competition";
+import {login} from "@/utils/login";
 
 export default {
   name: "index",
   components: {Information, Competition},
+  data(){
+    return{
+      login:false,
+    }
+  },
+  mounted() {
+    if (login()){
+      this.login = true;
+    }
+  }
 }
 </script>
 

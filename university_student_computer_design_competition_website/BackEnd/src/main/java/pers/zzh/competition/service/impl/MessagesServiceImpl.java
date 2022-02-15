@@ -14,7 +14,7 @@ import java.util.List;
 @Service
 public class MessagesServiceImpl extends ServiceImpl<MessagesMapper, Messages> implements MessagesService {
 
-    // 报名成功后新增消息
+    // 新增消息
     @Override
     public int insertMessage(Messages messages) {
         return baseMapper.insert(messages);

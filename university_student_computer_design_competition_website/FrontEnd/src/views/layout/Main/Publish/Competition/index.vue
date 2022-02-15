@@ -130,7 +130,7 @@ export default {
   methods: {
     // 提交
     submitForm() {
-      this.contestForm.contestText = this.contestForm.text.replace(/\n/ig, "<br>");
+      this.contestForm.contestText = this.contestForm.text; // .replace(/\n/ig, "<br>")
       this.$refs.contestForm.validate((valid) => {
         if (valid) {
           postRequest("/addContests", this.contestForm).then((resp) => {

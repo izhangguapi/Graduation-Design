@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import {getRequest} from "@/utils/api";
+import {getRequest, putRequest} from "@/utils/api";
 
 export default {
   name: "Announcement",
@@ -36,14 +36,15 @@ export default {
   },
   watch: {
     $route() {
-      this.load();
+      this.announcementLoading();
     }
   },
   mounted() {
-    this.load();
+    putRequest("/messages/state",{messageId:this.$route.params.messageId,state:true});
+    this.announcementLoading();
   },
   methods: {
-    load() {
+    announcementLoading() {
       getRequest("/messages/announcement/" + this.$route.params.messageId).then((res) => {
         const data = res.data.data;
         if (data.recipient === 1 || data.recipient.toString() === sessionStorage.uid) {
@@ -74,12 +75,15 @@ export default {
   color: #909399
 }
 
-.text, .name {
+.text {
   font-size: 15px;
-  color: #606266
+  color: #606266;
+  white-space: pre-wrap;
 }
 
 .name {
+  font-size: 15px;
+  color: #606266;
   float: right;
   margin: 20px 0;
 }

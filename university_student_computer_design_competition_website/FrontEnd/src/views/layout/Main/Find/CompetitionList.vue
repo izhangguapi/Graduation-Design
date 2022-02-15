@@ -38,7 +38,7 @@
       </template>
       <template v-else>
         <div style="text-align: center">
-          <el-link @click="load" type="primary" :underline="false">{{ loadingText }}</el-link>
+          <el-link @click="competitionListLoading" type="primary" :underline="false">{{ loadingText }}</el-link>
         </div>
       </template>
     </el-card>
@@ -49,7 +49,7 @@
 import {getRequest} from "@/utils/api";
 
 export default {
-  name: "competitionList",
+  name: "CompetitionList",
   data() {
     return {
       hidden: true,
@@ -70,10 +70,10 @@ export default {
   mounted() {
     //判断是否为find页面
     if (this.$route.path === "/find") this.hidden = false
-    this.load()
+    this.competitionListLoading()
   },
   methods: {
-    load() {
+    competitionListLoading() {
       if (this.loader) {
         //获取比赛
         getRequest("/contestsList/" + this.page).then((resp) => {

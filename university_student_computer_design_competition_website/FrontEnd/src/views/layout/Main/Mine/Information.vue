@@ -44,6 +44,7 @@
 
 <script>
 import {getRequest, putRequest} from "@/utils/api";
+import {login} from "@/utils/login";
 
 export default {
   name: "information",
@@ -64,21 +65,21 @@ export default {
     }
   },
   mounted() {
-    const uid = this.fromData.userId = sessionStorage.uid;
-    getRequest("/user/" + uid).then((res) => {
-      const data = res.data.data;
-      console.log(data);
-      if (data) {
-        this.fromData.name = data.name;
-        data.sex ? this.sex = '男' : this.sex = '女';
-        this.fromData.birthday = data.birthday;
-        this.fromData.school = data.school;
-        this.fromData.address = data.address;
-        this.phone = data.phone;
-        this.email = data.email;
-        this.groupName = data.groupName;
-      }
-    });
+      const uid = this.fromData.userId = sessionStorage.uid;
+      getRequest("/user/" + uid).then((res) => {
+        const data = res.data.data;
+        console.log(data);
+        if (data) {
+          this.fromData.name = data.name;
+          data.sex ? this.sex = '男' : this.sex = '女';
+          this.fromData.birthday = data.birthday;
+          this.fromData.school = data.school;
+          this.fromData.address = data.address;
+          this.phone = data.phone;
+          this.email = data.email;
+          this.groupName = data.groupName;
+        }
+      });
   },
   methods: {
     update() {

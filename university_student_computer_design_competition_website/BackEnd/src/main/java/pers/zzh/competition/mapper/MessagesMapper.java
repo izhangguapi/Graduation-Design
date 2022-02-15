@@ -8,6 +8,4 @@ import java.util.List;
 
 @Mapper
 public interface MessagesMapper extends BaseMapper<Messages> {
-    // 批量插入
-    boolean insertBatch(List<Messages> entityList);
 }

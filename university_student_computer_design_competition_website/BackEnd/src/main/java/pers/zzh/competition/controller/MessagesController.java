@@ -18,10 +18,10 @@ public class MessagesController {
 
     final MessagesService service;
 
-    // 报名成功后新增消息
+    // 新增消息
     @PostMapping("/messages/insert")
     public Result insertMessage(@RequestBody Messages messages) {
-        return new Result( service.insertMessage(messages));
+        return new Result(service.insertMessage(messages));
     }
 
     // 首页查询公告
@@ -53,5 +53,11 @@ public class MessagesController {
     @PutMapping("/messages/state")
     public void upDataMessagesState(@RequestBody Messages messages) {
         service.upDataMessagesState(messages);
+    }
+
+    // 发送消息
+    @PostMapping("/messages/save")
+    public Result upDataMessagesSave(@RequestBody List<Messages> messages) {
+        return new Result(service.saveBatch(messages));
     }
 }

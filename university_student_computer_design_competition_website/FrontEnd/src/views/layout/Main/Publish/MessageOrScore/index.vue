@@ -12,7 +12,10 @@
             <el-table-column fixed="right" label="评审操作" width="100%" align="center">
               <template v-slot="scope">
                 <el-button type="text" size="small"
-                           @click="$router.push({name: 'publish-message', params: {contestId: scope.row.contestId}})">发送消息
+                           @click="$router.push({name: 'publish-message', params: {
+                             contestId: scope.row.contestId,
+                             contestTitle:scope.row.contestTitle
+                           }})">发送消息
                 </el-button>
               </template>
             </el-table-column>

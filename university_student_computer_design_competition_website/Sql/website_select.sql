@@ -10,6 +10,28 @@ SELECT * FROM contests;
 SELECT * FROM messages;
 SELECT * FROM scores;
 
+SELECT * FROM scores WHERE scores_id = 25
+
+
+-- 发消息
+
+-- 评审
+SELECT scores_id,user_id,`name`,school,phone,state FROM scores 
+INNER JOIN users ON scores.contestant=users.user_id
+WHERE contest_id = 5 ORDER BY state;
+
+SELECT *FROM scores 
+INNER JOIN users ON scores.contestant=users.user_id
+WHERE contest_id = 1;
+
+-- 根据组id查询比赛列表
+SELECT * FROM contests WHERE group_id = 3
+
+-- contest_title,COUNT(contest_title)
+SELECT contests.contest_id,contest_title,COUNT(contest_title) number
+ FROM contests
+ INNER JOIN scores ON contests.contest_id=scores.contest_id
+ WHERE group_id = 3 GROUP BY contest_title
 
 SELECT * FROM contests c,groups g,users u WHERE c.promulgator=u.user_id AND c.group_id=g.group_id AND contest_id=1
 

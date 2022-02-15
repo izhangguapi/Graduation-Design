@@ -1,7 +1,7 @@
 <template>
   <div class="user-info">
     <el-badge :value="unread" :max="99" :hidden="badgeHidden" class="item">
-      <el-button size="small" icon="fa fa-bell" @click="drawer = true">消息</el-button>
+      <el-button size="small" icon="fa fa-bell" @click="drawerControl">消息</el-button>
     </el-badge>
     <el-dropdown>
       <div class="el-dropdown-link">
@@ -74,26 +74,29 @@ export default {
     // 判断是否存在登录信息
     this.isLogin = login(this.$route.path);
     // 获取未读消息
-    this.load()
+    this.userInfoLoading()
   },
   methods: {
-    fatherMethod() {
-      console.log('测试');
+    drawerControl() {
+      this.userInfoLoading();
+      this.drawer = true;
     },
-    load(){
-      getRequest("/messages/recipient/" + sessionStorage.uid).then((res => {
-        const data = res.data.data;
-        let unread = 0;
-        for (let i = 0; i < data.length; i++) {
-          if (!data[i].state) {
-            // console.log(data[i].state);
-            unread++;
+    userInfoLoading(){
+      if(sessionStorage.uid){
+        getRequest("/messages/recipient/" + sessionStorage.uid).then((res => {
+          const data = res.data.data;
+          let unread = 0;
+          for (let i = 0; i < data.length; i++) {
+            if (!data[i].state) {
+              // console.log(data[i].state);
+              unread++;
+            }
           }
-        }
-        this.badgeHidden = unread === 0;
-        this.unread = unread;
-        this.data = data;
-      }));
+          this.badgeHidden = unread === 0;
+          this.unread = unread;
+          this.data = data;
+        }));
+      }
     },
     // 退出登录
     logOut() {
@@ -111,7 +114,7 @@ export default {
       // 未读变已读
       putRequest("/messages/state",{messageId:id,state:true});
       // 修改data数据
-      this.load();
+      this.userInfoLoading();
     }
   }
 }

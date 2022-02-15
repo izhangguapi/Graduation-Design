@@ -17,18 +17,18 @@ export default {
   },
   mounted() {
     const gid = sessionStorage.gid;
-    if (gid === '2') {
+    if (gid === '2' || gid === undefined) {
       this.navBarList = [
         {path: '/home', title: '首页', icon: 'fa fa-house-chimney'},
         {path: '/find', title: '发现', icon: 'fa fa-infinity'},
-        {path: '/mine', title: '个人中心', icon: 'fa fa-graduation-cap'},
+        {path: '/mine', title: '个人中心', icon: 'fa fa-graduation-cap'}
       ];
     } else {
       this.navBarList = [
         {path: '/home', title: '首页', icon: 'fa fa-house-chimney'},
         {path: '/find', title: '发现', icon: 'fa fa-infinity'},
         {path: '/publish', title: '发布', icon: 'fa fa-flag'},
-        {path: '/mine', title: '个人中心', icon: 'fa fa-graduation-cap'},
+        {path: '/mine', title: '个人中心', icon: 'fa fa-graduation-cap'}
       ];
     }
     // console.log(this.$route.path)

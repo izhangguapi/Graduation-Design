@@ -4,8 +4,10 @@
       <el-col :span="12" :offset="4">
         <el-card>
           <div slot="header" class="clearfix">
-            <span style="line-height: 28px;font-size: 20px">若要发送消息请先选中</span>
-            <el-button style="float: right" size="mini" type="primary" round @click="$router.go(-1);">返回</el-button>
+            <span style="line-height: 28px;font-size: 20px">发送消息请先选中</span>
+            <el-button style="float: right" size="mini" type="primary" round @click="$router.push('/publish/select')">
+              返回
+            </el-button>
           </div>
           <el-table :data="data" @selection-change="handleSelectionChange" fit>
             <el-table-column type="selection"></el-table-column>
@@ -21,8 +23,7 @@
             </el-table-column>
             <el-table-column fixed="right" label="操作" width="100%" align="center">
               <template v-slot="scope">
-                <el-button type="text" size="small"
-                           @click="$router.push({name: 'publish-score', params: {scoresId: scope.row.scoresId}})">
+                <el-button type="text" size="small" @click="go(scope.row)">
                   {{ scope.row.state ? '查看' : '评审' }}
                 </el-button>
               </template>
@@ -36,11 +37,11 @@
             <span style="line-height: 28px;font-size: 20px">发送消息</span>
           </div>
           <el-form label-position="top">
-            <el-form-item label="标题">
+            <el-form-item label="标题" prop="title">
               <el-input placeholder="请输入标题" v-model="title" maxlength="20" show-word-limit
                         :rules="[{ required: true, message: '标题不能为空'}]"></el-input>
             </el-form-item>
-            <el-form-item label="内容">
+            <el-form-item label="内容" prop="text">
               <el-input type="textarea" :rows="5" placeholder="请输入内容" v-model="text"
                         :rules="[{ required: true, message: '内容不能为空'}]"></el-input>
             </el-form-item>
@@ -55,12 +56,15 @@
 </template>
 
 <script>
-import {getRequest} from "@/utils/api";
+import {getRequest, postRequest} from "@/utils/api";
 
 export default {
   name: "Message",
   data() {
     return {
+      params: {},
+      // contestId:'',
+      // contestTitle:'',
       data: [],
       multipleSelection: [],
       title: '',
@@ -68,36 +72,57 @@ export default {
     }
   },
   mounted() {
-    getRequest("/scores/users", {cid: this.$route.params.contestId}).then((res) => {
+    this.params = this.$route.params;
+    console.log(this.params);
+    getRequest("/scores/users", {cid: this.params.contestId}).then((res) => {
       this.data = res.data.data;
-      console.log(res.data.data)
+      // console.log(res.data.data)
     })
   },
   methods: {
     handleSelectionChange(val) {
       this.multipleSelection = [];
+      const sender = sessionStorage.uid;
       val.forEach((val) => {
-        this.multipleSelection.push({userId: val.userId});
+        this.multipleSelection.push({recipient: val.userId, sender: sender});
       });
+      // console.log(this.multipleSelection);
     },
     send() {
       let length = this.multipleSelection.length
-      if (length) {
+      if (length && this.title.trim() !== '' && this.text.trim() !== '') {
         for (let i = 0; i < length; i++) {
           this.$set(this.multipleSelection[i], 'title', this.title);
           this.$set(this.multipleSelection[i], 'text', this.text);
         }
-        console.log(this.multipleSelection);
+        // console.log(this.multipleSelection);
+        postRequest("/messages/save", this.multipleSelection).then((res) => {
+          console.log(res.data.data);
+          if (res.data.data) {
+            this.$message.success("发送成功。")
+          } else {
+            this.$message.error("发送失败！")
+          }
+        });
       } else {
-        this.$message.warning("请在左侧选中需要发送的学生！")
+        this.$message.warning("请在左侧勾选学生或检测标题内容是否为空！")
       }
+    },
+    go(data) {
+      // console.log(data);
+      this.params.name = data.name;
+      this.params.scoresId = data.scoresId;
+      this.params.phone = data.phone;
+      this.params.school = data.school;
+      this.params.userId = data.userId;
+      this.params.state = data.state;
+      // console.log(this.params);
+      this.$router.push({name: 'publish-score', params: this.params})
     }
   }
 }
 </script>
 
 <style scoped>
-input.el-input__inner {
-  padding-right: 48px !important;
-}
+
 </style>
