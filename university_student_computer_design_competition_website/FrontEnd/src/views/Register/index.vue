@@ -81,10 +81,13 @@
         </div>
         <el-dialog width="30%" title="创建组" :visible.sync="innerVisible" append-to-body>
           <el-form-item prop="gName" label="名称：">
-            <el-input prefix-icon="fa fa-map-marker" v-model="groups.groupName"></el-input>
+            <el-input prefix-icon="fa fa-map-marker" v-model="groups.groupName" maxlength="10"
+                      show-word-limit placeholder="请输入组名称"></el-input>
           </el-form-item>
           <el-form-item prop="encoding" label="编码：">
-            <el-input prefix-icon="fa fa-map-marker" v-model="groups.encoding"></el-input>
+            <el-input prefix-icon="fa fa-map-marker" v-model="groups.encoding"  maxlength="5" show-word-limit
+                      onkeyup="value=value.replace(/[^\da-zA-Z]/g,'')"
+                      placeholder="请输入五位组编码"></el-input>
           </el-form-item>
           <span slot="footer" class="dialog-footer">
             <el-button type="danger" @click="innerVisible = false" round>取消</el-button>
@@ -184,13 +187,13 @@ export default {
             // 设置form表单第一步校验规则
             this.rules = {
               name: [{required: true, message: "姓名不能为空", trigger: "blur"},
-                {pattern:/^[\u4e00-\u9fa5_a-zA-Z0-9-]{1,12}$/,message: "请输入1-12位汉字、字母、数字"}],
+                {pattern: /^[\u4e00-\u9fa5_a-zA-Z0-9-]{1,12}$/, message: "请输入1-12位汉字、字母、数字"}],
               phone: [{required: true, message: "电话不能为空", trigger: "blur"},
-                {pattern: /^[1]+[0-9]{10}$/,message: "请检查手机号的格式"}],
+                {pattern: /^[1]+[0-9]{10}$/, message: "请检查手机号的格式"}],
               email: [{required: true, message: "邮箱不能为空", trigger: "blur"},
-                {pattern: /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/,message: "请检查邮箱的格式"}],
+                {pattern: /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/, message: "请检查邮箱的格式"}],
               password: [{required: true, message: "密码不能为空", trigger: "blur"},
-                {pattern: /^(?=.*\d)(?=.*[a-zA-Z])[A-Za-z\d$@!%*?&.]{6,16}$/,message: "请检查密码格式"}]
+                {pattern: /^(?=.*\d)(?=.*[a-zA-Z])[A-Za-z\d$@!%*?&.]{6,16}$/, message: "请检查密码格式"}]
             };
             break;
           case 1:
@@ -245,16 +248,17 @@ export default {
     // 提交表单
     submitForm() {
       // 第三步输入完成进行判断/register
-      postRequest("/register", this.registerForm).then((resp) => {
-        if (resp) {
-          // 登录成功将信息存入session
-          sessionStorage.setItem("uid", resp.data.data)
-          sessionStorage.setItem("name", this.registerForm.name);
-          sessionStorage.setItem("gid", this.registerForm.groupId);
-          this.$router.push("/home");
-        } else {
-          this.active = 0;
-        }
+      postRequest("/register", this.registerForm).then((res) => {
+        console.log(res.data)
+        // if (res.data.data) {
+        //   // 登录成功将信息存入session
+        //   sessionStorage.setItem("uid", res.data.data)
+        //   sessionStorage.setItem("name", this.registerForm.name);
+        //   sessionStorage.setItem("gid", this.registerForm.groupId);
+        //   this.$router.push("/home");
+        // } else {
+        //   this.active = 0;
+        // }
       });
     },
     // 跳转到登录

@@ -1,10 +1,8 @@
 package pers.zzh.competition.controller;
 
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import pers.zzh.competition.entity.Messages;
-import pers.zzh.competition.entity.Users;
 import pers.zzh.competition.service.MessagesService;
 import pers.zzh.competition.utils.Result;
 

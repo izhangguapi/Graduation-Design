@@ -37,7 +37,7 @@ export default {
     }
   },
   mounted() {
-    getRequest("/contests/gid", {gid: sessionStorage.gid}).then((res) => {
+    getRequest("/contests/gid", {gid: this.$store.state.gid}).then((res) => {
       this.data = res.data.data;
       console.log(this.data)
     })

@@ -72,7 +72,7 @@ export default {
   },
   mounted() {
     // 判断是否存在登录信息
-    this.isLogin = login(this.$route.path);
+    this.isLogin = this.$store.state.isLogin;
     // 获取未读消息
     this.userInfoLoading()
   },
@@ -82,8 +82,8 @@ export default {
       this.drawer = true;
     },
     userInfoLoading(){
-      if(sessionStorage.uid){
-        getRequest("/messages/recipient/" + sessionStorage.uid).then((res => {
+      if(this.$store.state.uid){
+        getRequest("/messages/recipient/" + this.$store.state.uid).then((res => {
           const data = res.data.data;
           let unread = 0;
           for (let i = 0; i < data.length; i++) {
@@ -100,7 +100,10 @@ export default {
     },
     // 退出登录
     logOut() {
-      sessionStorage.clear();
+      this.$store.state.isLogin = false;
+      this.$store.state.uid = false;
+      this.$store.state.name = false;
+      this.$store.state.gid = false;
       localStorage.clear();
       this.$router.push("/login");
     },

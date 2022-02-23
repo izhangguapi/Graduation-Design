@@ -11,7 +11,7 @@
 |  码云  |  https://gitee.com/zhangguapipi/Graduation_Design   |
 
 ### 开发环境
-操作系统：macOS 12.0.1
+操作系统：macOS 12.2.1
 
 前端框架：vue 2.6.14/@vue-cli 4.5.15
 

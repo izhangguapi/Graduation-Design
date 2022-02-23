@@ -22,7 +22,7 @@ export default {
     };
   },
   mounted() {
-    if (sessionStorage.gid === '2') {
+    if (this.$store.state.gid === '2') {
       this.$message.warning("此功能暂未对学生开发！");
       this.$router.go(-1);
     }

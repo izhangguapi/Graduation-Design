@@ -14,7 +14,6 @@ import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.Collections;
-import java.util.List;
 
 /**
  * 前端控制器 - users表的操作
@@ -59,7 +58,6 @@ public class UsersController {
         session.removeAttribute(login.getDatetime());
         // 获取用户输入的验证码
         String userCaptcha = login.getCaptcha();
-//
 //        System.out.println("用户输入：" + login.getDatetime() + "-" + userCaptcha);
         // 判断session存入的验证码是否跟用户输入的一样(比较字母，忽略大小写.equalsIgnoreCase())
         if (sessionCaptcha.equalsIgnoreCase(userCaptcha)) {
@@ -74,7 +72,7 @@ public class UsersController {
 
     // 生成验证码
     @GetMapping("/captcha")
-    public void getCode(@RequestParam("dateTime") String dateTime, HttpServletResponse response, HttpSession session) throws Exception {
+    public void getCaptcha(@RequestParam("dateTime") String dateTime, HttpServletResponse response, HttpSession session) throws Exception {
         ServletOutputStream outputStream = response.getOutputStream();
         // 算术验证码 数字加减乘除. 建议2位运算就行:captcha.setLen(2);
         // ArithmeticCaptcha captcha = new ArithmeticCaptcha(120, 40);

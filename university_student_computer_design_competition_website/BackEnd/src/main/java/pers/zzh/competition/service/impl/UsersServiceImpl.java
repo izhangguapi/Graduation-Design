@@ -11,8 +11,6 @@ import pers.zzh.competition.mapper.UsersMapper;
 import pers.zzh.competition.entity.Users;
 import pers.zzh.competition.service.UsersService;
 
-import java.util.List;
-
 /**
  * 业务逻辑实现类
  *
@@ -69,7 +67,7 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users> implements
     @Override
     public Boolean selectPhoneEmail(Login phoneAndEmail) {
         QueryWrapper<Users> qw = new QueryWrapper<>();
-        qw.select("name,sex,birthday,school,address,phone,phone,groupName").eq("phone", phoneAndEmail.getPhone())
+        qw.eq("phone", phoneAndEmail.getPhone())
                 .or().eq("email", phoneAndEmail.getEmail());
         return baseMapper.selectList(qw).isEmpty();
     }

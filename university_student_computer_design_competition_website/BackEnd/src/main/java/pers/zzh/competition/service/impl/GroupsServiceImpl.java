@@ -2,13 +2,13 @@ package pers.zzh.competition.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.apache.ibatis.annotations.Options;
 import org.springframework.stereotype.Service;
 import pers.zzh.competition.mapper.GroupsMapper;
 import pers.zzh.competition.entity.Groups;
 import pers.zzh.competition.service.GroupsService;
 
 import java.util.List;
-
 
 @Service
 public class GroupsServiceImpl extends ServiceImpl<GroupsMapper, Groups> implements GroupsService {
@@ -24,6 +24,7 @@ public class GroupsServiceImpl extends ServiceImpl<GroupsMapper, Groups> impleme
 
     // 插入数据并返回id
     @Override
+    @Options(useGeneratedKeys = true,keyProperty = "groupId",keyColumn = "groupId")
     public int insertGroupGetId(Groups groups) {
         int num;
         try {

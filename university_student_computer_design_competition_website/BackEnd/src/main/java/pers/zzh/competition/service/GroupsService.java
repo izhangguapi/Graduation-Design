@@ -21,7 +21,6 @@ public interface GroupsService extends IService<Groups> {
     List<Groups> selectEncoding(String encoding);
 
     // 添加组并返回id
-    @Options(useGeneratedKeys = true,keyProperty = "groupId",keyColumn = "groupId")
     int insertGroupGetId(Groups groups);
 
     Groups getGroupName(String id);

@@ -6,7 +6,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import pers.zzh.competition.common.entity.Login;
 import pers.zzh.competition.entity.Users;
 
-import java.util.List;
 
 /**
  * 业务接口

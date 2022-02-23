@@ -6,6 +6,7 @@ import Vue from 'vue';
 import App from './App.vue';
 // 引入路由
 import router from './router';
+// 引入store实例对象
 import store from './store';
 // 按需求引入Element组件库
 import element from './element/index';

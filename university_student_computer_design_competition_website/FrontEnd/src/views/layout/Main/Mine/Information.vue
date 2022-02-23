@@ -65,7 +65,8 @@ export default {
     }
   },
   mounted() {
-      const uid = this.fromData.userId = sessionStorage.uid;
+    console.log(this.$store.state.uid)
+      const uid = this.fromData.userId = this.$store.state.uid;
       getRequest("/user/" + uid).then((res) => {
         const data = res.data.data;
         console.log(data);

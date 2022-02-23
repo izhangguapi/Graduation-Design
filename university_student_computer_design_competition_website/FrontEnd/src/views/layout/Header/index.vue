@@ -23,7 +23,6 @@
 <script>
 import NavBar from "@/views/layout/Header/NavBar";
 import UserInfo from "@/views/layout/Header/UserInfo";
-import {getRequest} from "@/utils/api";
 
 export default {
   name: "Header",

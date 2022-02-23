@@ -1,12 +1,7 @@
 package pers.zzh.competition.utils;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
-import org.springframework.format.annotation.DateTimeFormat;
-
-import java.io.Serializable;
-import java.util.Date;
 
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -19,12 +14,11 @@ public class Result {
     private String msg;
     // 响应数据
     private Object data;
-/*
-    // 响应时间
-    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
-    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private Date time = new Date();
-*/
+
+   // 响应时间
+//    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
+//    private Date time = new Date();
+
     public Result(Integer code, String msg,Boolean flag) {
         this.code = code;
         this.msg = msg;

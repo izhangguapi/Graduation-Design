@@ -111,9 +111,12 @@ export default {
               localStorage.setItem("name", data.name);
               localStorage.setItem("gid", data.groupId);
             }
-            sessionStorage.setItem("uid", data.userId);
-            sessionStorage.setItem("name", data.name);
-            sessionStorage.setItem("gid", data.groupId);
+            this.$store.state.uid = data.userId;
+            this.$store.state.name = data.name;
+            this.$store.state.gid = data.groupId;
+            console.log(this.$store.state.uid);
+            console.log(this.$store.state.name);
+            console.log(this.$store.state.gid);
             this.$router.push("/home");
           }).catch((error) => {
             console.log(error)

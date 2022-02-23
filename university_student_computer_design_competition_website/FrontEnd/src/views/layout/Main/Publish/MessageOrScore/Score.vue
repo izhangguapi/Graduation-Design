@@ -113,7 +113,7 @@ export default {
         this.$message.error('评语不能为空！')
       } else {
         this.submitData.scoresId = this.data.scoresId;
-        this.submitData.judge = Number(sessionStorage.uid);
+        this.submitData.judge = Number(this.$store.state.uid);
         this.submitData.result = result;
         this.submitData.text = this.data.text;
         this.inputDisabled = !this.inputDisabled;
@@ -145,7 +145,7 @@ export default {
         recipient: this.data.userId,
         title: title,
         text: text,
-        sender: Number(sessionStorage.uid)
+        sender: Number(this.$store.state.uid)
       };
       postRequest("/messages/insert", obj);
     }

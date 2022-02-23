@@ -97,9 +97,9 @@ export default {
   mounted() {
     this.contestId = this.$route.params.contestId;
     // 查询当前用户是否已报名此比赛
-    getRequest("/scores/" + sessionStorage.uid + "/" + this.contestId).then((res) => {
+    getRequest("/scores/" + this.$store.state.uid + "/" + this.contestId).then((res) => {
       console.log(res.data);
-      if (sessionStorage.gid === '2') {
+      if (this.$store.state.gid === '2') {
         if (res.data.data === 0){
           this.btnHidden = true;
           this.btnText='立即报名';
@@ -139,14 +139,14 @@ export default {
      * 点击报名按钮
      */
     submit() {
-      getRequest("/addScores/" + sessionStorage.uid + "/" + this.contestId).then((resp) => {
+      getRequest("/addScores/" + this.$store.state.uid + "/" + this.contestId).then((resp) => {
         console.log(resp.data);
         if (resp.data.data === 1) {
           this.$message.success("报名成功。")
           this.btnHidden = false;
           // 发送一条消息给报名用户
           const obj = {
-            recipient: Number(sessionStorage.uid),
+            recipient: Number(this.$store.state.uid),
             title: '报名成功通知',
             text: '恭喜您成功报名比赛：' + this.contestTitle,
             sender: this.promulgator

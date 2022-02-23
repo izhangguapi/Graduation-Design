@@ -118,8 +118,8 @@ export default {
     };
   },
   mounted() {
-    const gid = sessionStorage.gid;
-    const uid = sessionStorage.uid;
+    const gid = this.$store.state.gid;
+    const uid = this.$store.state.uid;
     if (gid === '' && uid === '') {
       this.$message.error("获取用户组失败！请重新登录。");
     } else {

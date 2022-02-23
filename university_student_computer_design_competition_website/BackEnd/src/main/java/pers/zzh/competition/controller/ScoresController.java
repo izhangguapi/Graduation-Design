@@ -2,7 +2,6 @@ package pers.zzh.competition.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import pers.zzh.competition.entity.Messages;
 import pers.zzh.competition.entity.Scores;
 import pers.zzh.competition.service.ScoresService;
 import pers.zzh.competition.utils.Result;
@@ -53,9 +52,4 @@ public class ScoresController {
     public Result upDate(@RequestBody Scores scores) {
         return new Result(service.updateById(scores));
     }
-
-//    @GetMapping("/contests/gid")
-//    public Result selectContestsByGid(@RequestParam("gid") String gid) {
-//        return new Result(service.selectContestsByGid(gid));
-//    }
 }

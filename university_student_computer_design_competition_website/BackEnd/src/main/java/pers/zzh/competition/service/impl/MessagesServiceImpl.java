@@ -10,7 +10,6 @@ import pers.zzh.competition.service.MessagesService;
 
 import java.util.List;
 
-
 @Service
 public class MessagesServiceImpl extends ServiceImpl<MessagesMapper, Messages> implements MessagesService {
 

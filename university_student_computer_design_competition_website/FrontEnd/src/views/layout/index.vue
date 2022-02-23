@@ -13,10 +13,14 @@
 import Header from './Header';
 import Main from "./Main";
 import Footer from './Footer'
+import {login} from "@/utils/login";
 
 export default {
-  name:'Layout',
+  name: 'Layout',
   components: {Header, Main, Footer},
+  mounted() {
+    login(this.$route.path);
+  }
 }
 </script>
 

@@ -16,7 +16,8 @@ export default {
     }
   },
   mounted() {
-    const gid = sessionStorage.gid;
+    const gid = this.$store.state.gid;
+    console.log(this.$store.state.gid);
     if (gid === '2' || gid === undefined) {
       this.navBarList = [
         {path: '/home', title: '首页', icon: 'fa fa-house-chimney'},

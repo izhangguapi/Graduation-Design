@@ -7,9 +7,7 @@ import pers.zzh.competition.entity.Scores;
 import pers.zzh.competition.mapper.ScoresMapper;
 import pers.zzh.competition.service.ScoresService;
 
-import java.util.Collections;
 import java.util.List;
-
 
 @Service
 public class ScoresServiceImpl extends ServiceImpl<ScoresMapper, Scores> implements ScoresService {

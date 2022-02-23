@@ -82,7 +82,7 @@ export default {
   methods: {
     handleSelectionChange(val) {
       this.multipleSelection = [];
-      const sender = sessionStorage.uid;
+      const sender = this.$store.state.uid;
       val.forEach((val) => {
         this.multipleSelection.push({recipient: val.userId, sender: sender});
       });
