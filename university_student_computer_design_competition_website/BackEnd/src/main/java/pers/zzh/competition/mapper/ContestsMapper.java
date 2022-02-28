@@ -4,6 +4,9 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import pers.zzh.competition.entity.Contests;
 import org.apache.ibatis.annotations.Mapper;
 
+/**
+ * @author 张恣豪
+ */
 @Mapper
 public interface ContestsMapper extends BaseMapper<Contests> {
     /*

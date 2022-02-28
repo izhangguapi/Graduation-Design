@@ -8,6 +8,7 @@ import java.util.List;
 
 /**
  * 业务接口
+ *
  * @author 张恣豪
  * @since 2022-1-17
  */
@@ -15,13 +16,25 @@ public interface GroupsService extends IService<Groups> {
 
     /**
      * 根据组编码查询除id为1，2，3以外的组
+     *
      * @param encoding 组编码
      * @return Groups列表
      */
     List<Groups> selectEncoding(String encoding);
 
-    // 添加组并返回id
+    /**
+     * 添加组并返回id
+     *
+     * @param groups
+     * @return
+     */
     int insertGroupGetId(Groups groups);
 
+    /**
+     * 查询单个组
+     *
+     * @param id
+     * @return
+     */
     Groups getGroupName(String id);
 }

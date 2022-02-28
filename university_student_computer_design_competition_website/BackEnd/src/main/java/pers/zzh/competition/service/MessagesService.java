@@ -6,21 +6,54 @@ import pers.zzh.competition.entity.Messages;
 
 import java.util.List;
 
+/**
+ * @author 张恣豪
+ */
 public interface MessagesService extends IService<Messages> {
-    // 新增消息
+    /**
+     * 新增消息
+     *
+     * @param messages
+     * @return
+     */
     int insertMessage(Messages messages);
-    // 首页查询公告
+
+    /**
+     * 首页查询公告
+     *
+     * @return
+     */
     List<Messages> selectAnnouncement();
 
-    // 分页查询公告
+    /**
+     * 分页查询公告
+     *
+     * @param currentPage
+     * @return
+     */
     Page<Messages> selectAnnouncementPage(int currentPage);
 
-    // id查询公告
+    /**
+     * id查询公告
+     *
+     * @param id
+     * @return
+     */
     Messages selectAnnouncementById(int id);
 
-    // 查询用户收到的消息
+    /**
+     * 查询用户收到的消息
+     *
+     * @param id
+     * @return
+     */
     List<Messages> selectMessagesByRecipient(int id);
-    // 未读变已读
+
+    /**
+     * 未读变已读
+     *
+     * @param messages
+     */
     void upDataMessagesState(Messages messages);
 
 }

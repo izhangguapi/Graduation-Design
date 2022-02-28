@@ -48,19 +48,19 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1;
 -- 插入数据
 INSERT INTO users VALUES (DEFAULT,'管理员',NULL,NULL,NULL,NULL,'admin','admin@zhangguapi.com','1','admin');
-INSERT INTO users VALUES (DEFAULT,'张瓜皮皮','1','1999-11-20','西南财经大学'	,'天门','13886961359','13886961359@qq.com','3','13886961359');
-INSERT INTO users VALUES (DEFAULT,'小江云子','0','1999-07-29','西安交通大学'	,'黄石','18453887612','18453887612@qq.com','3','18453887612');
-INSERT INTO users VALUES (DEFAULT,'德隆东墙','1','2000-04-05','武汉设计工程学院','抚顺','13866039800','13866039800@qq.com','4','13866039800');
-INSERT INTO users VALUES (DEFAULT,'五号五号','1','1999-12-12','中国人民公安大学','吉林','13027048577','13027048577@qq.com','4','13027048577');
-INSERT INTO users VALUES (DEFAULT,'阿兽涛受','1','2000-12-24','武汉首义学院'	,'南宁','17247196444','17247196444@qq.com','4','17247196444');
-INSERT INTO users VALUES (DEFAULT,'赵同学','0','1998-05-10','武汉科技大学'	,'鄂州','13704131948','13704131948@qq.com','2','13704131948');
-INSERT INTO users VALUES (DEFAULT,'钱同学','1','2002-01-16','华中科技大学'	,'仙桃','13742968739','13742968739@qq.com','2','13742968739');
-INSERT INTO users VALUES (DEFAULT,'孙同学','0','2002-12-30','电子科技大学'	,'成都','15319493760','15319493760@qq.com','2','15319493760');
-INSERT INTO users VALUES (DEFAULT,'李同学','1','2001-10-10','北京大学'		,'青海','18282876997','18282876997@qq.com','2','18282876997');
-INSERT INTO users VALUES (DEFAULT,'周同学','1','2000-02-15','武汉城市学院'	,'辽阳','14984342228','14984342228@qq.com','2','14984342228');
-INSERT INTO users VALUES (DEFAULT,'吴同学','1','1998-10-08','华中师范大学'	,'西安','14912959902','14912959902@qq.com','2','14912959902');
-INSERT INTO users VALUES (DEFAULT,'郑同学','0','2002-04-16','复旦大学'		,'南通','15089652824','15089652824@qq.com','2','15089652824');
-INSERT INTO users VALUES (DEFAULT,'王同学','0','2003-09-09','哈尔滨工业大学'	,'惠州','15939648850','15939648850@qq.com','2','15939648850');
+INSERT INTO users VALUES (DEFAULT,'张瓜皮皮','1','1999-11-20','西南财经大学'	,'天门','13886961359','13886961359@qq.com','3','6437f31087031f66182bb91db6b66580');
+INSERT INTO users VALUES (DEFAULT,'小江云子','0','1999-07-29','西安交通大学'	,'黄石','18453887612','18453887612@qq.com','3','90de7daf04c2bbcffa9638257f3344ea');
+INSERT INTO users VALUES (DEFAULT,'德隆东墙','1','2000-04-05','武汉设计工程学院','抚顺','13866039800','13866039800@qq.com','4','561b74711257f80bd074356ffca50439');
+INSERT INTO users VALUES (DEFAULT,'五号五号','1','1999-12-12','中国人民公安大学','吉林','13027048577','13027048577@qq.com','4','6c7860b8a17546f8fbfc9611c67f8f1e');
+INSERT INTO users VALUES (DEFAULT,'阿兽涛受','1','2000-12-24','武汉首义学院'	,'南宁','17247196444','17247196444@qq.com','4','e5ca7cb2e466d6a3f4cf7d32a620664a');
+INSERT INTO users VALUES (DEFAULT,'赵同学','0','1998-05-10','武汉科技大学'	,'鄂州','13704131948','13704131948@qq.com','2','42304b9b0487a31df42097d135c73f9e');
+INSERT INTO users VALUES (DEFAULT,'钱同学','1','2002-01-16','华中科技大学'	,'仙桃','13742968739','13742968739@qq.com','2','17e42ba1f1cc5224098ba65dcdf11fe6');
+INSERT INTO users VALUES (DEFAULT,'孙同学','0','2002-12-30','电子科技大学'	,'成都','15319493760','15319493760@qq.com','2','93c9b76e1778ee063e54cb9331f95e36');
+INSERT INTO users VALUES (DEFAULT,'李同学','1','2001-10-10','北京大学'		,'青海','18282876997','18282876997@qq.com','2','7334261ed30a7b203cb7ee42f589e378');
+INSERT INTO users VALUES (DEFAULT,'周同学','1','2000-02-15','武汉城市学院'	,'辽阳','14984342228','14984342228@qq.com','2','3c64f0ce9febe9d87c5c8572da1d6852');
+INSERT INTO users VALUES (DEFAULT,'吴同学','1','1998-10-08','华中师范大学'	,'西安','14912959902','14912959902@qq.com','2','c22e024d74590c6e965c45fd4d88e34a');
+INSERT INTO users VALUES (DEFAULT,'郑同学','0','2002-04-16','复旦大学'		,'南通','15089652824','15089652824@qq.com','2','ab4dcba6bc27ef6db973f68fdb29dceb');
+INSERT INTO users VALUES (DEFAULT,'王同学','0','2003-09-09','哈尔滨工业大学'	,'惠州','15939648850','15939648850@qq.com','2','551447feaf16ab17436f5d5a89a7bf10');
 
 -- ----------------------------
 -- 创建比赛表:  `contests`

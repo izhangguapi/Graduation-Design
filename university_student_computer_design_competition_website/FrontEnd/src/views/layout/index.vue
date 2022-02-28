@@ -18,8 +18,8 @@ import {login} from "@/utils/login";
 export default {
   name: 'Layout',
   components: {Header, Main, Footer},
-  mounted() {
-    login(this.$route.path);
+  created() {
+    if (!this.$store.state.isLogin) login();
   }
 }
 </script>

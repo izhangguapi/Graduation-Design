@@ -8,6 +8,9 @@ import lombok.Data;
 
 import java.util.Date;
 
+/**
+ * @author 张恣豪
+ */
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Users {
@@ -23,7 +26,9 @@ public class Users {
     private String email;
     private Integer groupId;
     private String password;
-    // 链表查询-组表字段：组名、组编码
+    /**
+     * 链表查询-组表字段：组名、组编码
+     */
     @TableField(exist = false)
     private String groupName;
     @TableField(exist = false)

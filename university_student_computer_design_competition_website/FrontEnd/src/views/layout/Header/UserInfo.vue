@@ -34,7 +34,7 @@
         <el-table :data="data" :current-row-key="data.messageId" fit @row-click="clickTable">
           <el-table-column property="title" label="标题" align="center"></el-table-column>
           <el-table-column property="time" label="时间" align="center"></el-table-column>
-          <el-table-column property="name" label="其他" align="center" width="100%">
+          <el-table-column property="name" label="发布人" align="center" width="100%">
             <template v-slot="scope">
               <el-tag :type="scope.row.name === '管理员' ? 'danger' : ''" disable-transitions>
                 {{ scope.row.name }}
@@ -56,7 +56,6 @@
 </template>
 
 <script>
-import {login} from "@/utils/login";
 import {getRequest, putRequest} from "@/utils/api";
 
 export default {
@@ -65,16 +64,19 @@ export default {
     return {
       unread: 0, //右上角未读消息数量
       badgeHidden : true,
-      isLogin: false, // 根据用户是否登录控制显示右上角列表选项
       drawer: false,
       data: []
     }
   },
-  mounted() {
+  computed:{
     // 判断是否存在登录信息
-    this.isLogin = this.$store.state.isLogin;
+    isLogin(){
+      return this.$store.state.isLogin;
+    }
+  },
+  mounted() {
     // 获取未读消息
-    this.userInfoLoading()
+    this.userInfoLoading();
   },
   methods: {
     drawerControl() {
@@ -82,16 +84,18 @@ export default {
       this.drawer = true;
     },
     userInfoLoading(){
+      console.log("执行消息获取");
       if(this.$store.state.uid){
         getRequest("/messages/recipient/" + this.$store.state.uid).then((res => {
           const data = res.data.data;
+          console.log(data);
           let unread = 0;
           for (let i = 0; i < data.length; i++) {
             if (!data[i].state) {
-              // console.log(data[i].state);
               unread++;
             }
           }
+          console.log(unread);
           this.badgeHidden = unread === 0;
           this.unread = unread;
           this.data = data;

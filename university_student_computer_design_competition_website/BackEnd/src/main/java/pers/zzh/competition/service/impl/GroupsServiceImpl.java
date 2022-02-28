@@ -10,6 +10,9 @@ import pers.zzh.competition.service.GroupsService;
 
 import java.util.List;
 
+/**
+ * @author 张恣豪
+ */
 @Service
 public class GroupsServiceImpl extends ServiceImpl<GroupsMapper, Groups> implements GroupsService {
 
@@ -36,6 +39,11 @@ public class GroupsServiceImpl extends ServiceImpl<GroupsMapper, Groups> impleme
         return num;
     }
 
+    /**
+     * 查询单个组
+     * @param id
+     * @return
+     */
     @Override
     public Groups getGroupName(String id) {
         return baseMapper.selectById(id);

@@ -10,6 +10,11 @@ import router from './router';
 import store from './store';
 // 按需求引入Element组件库
 import element from './element/index';
+// 引入md5
+import md5 from 'js-md5';
+
+// 应用md5
+Vue.prototype.$md5 = md5;
 // 应用 element
 Vue.use(element);
 
@@ -27,8 +32,8 @@ Vue.config.productionTip = false;
 
 // 创建vue实例对象---vm
 new Vue({
-  router,
   store,
+  router,
   // 生成app节点，通过js渲染真实dom
   render: h => h(App)
 }).$mount('#app');// 手动挂载app组件到dom中

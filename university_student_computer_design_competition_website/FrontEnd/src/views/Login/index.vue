@@ -65,7 +65,9 @@ export default {
     // 页面启动给datetime赋值时间戳
     this.loginForm.datetime = new Date().getTime();
     // 判断是否存在登录信息
-    login(this.$route.path);
+    if (login()) {
+      this.$router.push("/home");
+    }
   },
   computed: {
     captcha() {
@@ -107,16 +109,14 @@ export default {
             const data = res.data.data;
             console.log(data);
             if (this.checked) {
-              localStorage.setItem("uid", data.userId);
-              localStorage.setItem("name", data.name);
-              localStorage.setItem("gid", data.groupId);
+              localStorage.setItem("phone", this.loginForm.phone);
+              localStorage.setItem("email", this.loginForm.email);
+              localStorage.setItem("password", this.$md5(this.loginForm.password));
             }
             this.$store.state.uid = data.userId;
             this.$store.state.name = data.name;
             this.$store.state.gid = data.groupId;
-            console.log(this.$store.state.uid);
-            console.log(this.$store.state.name);
-            console.log(this.$store.state.gid);
+            this.$store.state.isLogin = true;
             this.$router.push("/home");
           }).catch((error) => {
             console.log(error)
@@ -133,7 +133,7 @@ export default {
   },
 };
 </script>
-<style>
+<style scoped lang="less">
 .loginContainer {
   border-radius: 15px;
   background-clip: padding-box;

@@ -9,10 +9,19 @@ import pers.zzh.competition.service.ScoresService;
 
 import java.util.List;
 
+/**
+ * @author 张恣豪
+ */
 @Service
 public class ScoresServiceImpl extends ServiceImpl<ScoresMapper, Scores> implements ScoresService {
 
-    // 查询组
+    /**
+     * 查询组
+     *
+     * @param uid
+     * @param cid
+     * @return
+     */
     @Override
     public long selectScores(int uid, int cid) {
         QueryWrapper<Scores> qw = new QueryWrapper<>();
@@ -20,7 +29,12 @@ public class ScoresServiceImpl extends ServiceImpl<ScoresMapper, Scores> impleme
         return baseMapper.selectCount(qw);
     }
 
-    //添加比赛（报名）
+    /**
+     * 添加比赛（报名）
+     * @param uid
+     * @param cid
+     * @return
+     */
     @Override
     public int insertScores(String uid, int cid) {
         Scores scores = new Scores();
@@ -29,23 +43,37 @@ public class ScoresServiceImpl extends ServiceImpl<ScoresMapper, Scores> impleme
         return baseMapper.insert(scores);
     }
 
-    //查询用户报名且评审完成的所有比赛
+    /**
+     * 查询用户报名且评审完成的所有比赛
+     * @param uid
+     * @return
+     */
     @Override
     public List<Scores> selectForContest(int uid) {
-        QueryWrapper<Scores> qw = new QueryWrapper<>(); // 创建条件构造器
-        qw.select("scores_id,contest_title").last("inner join contests ON scores.contest_id = contests.contest_id WHERE result IS NOT NULL AND contestant = " + uid);
+        QueryWrapper<Scores> qw = new QueryWrapper<>();
+        qw.select("scores_id,contest_title")
+                .last("inner join contests ON scores.contest_id = contests.contest_id WHERE result IS NOT NULL AND contestant = " + uid);
         return baseMapper.selectList(qw);
     }
 
-    //查询用户报名且评审未完成的所有比赛
+    /**
+     * 查询用户报名且评审未完成的所有比赛
+     * @param uid
+     * @return
+     */
     @Override
     public List<Scores> selectForContestNot(int uid) {
-        QueryWrapper<Scores> qw = new QueryWrapper<>(); // 创建条件构造器
-        qw.select("contest_title").last("inner join contests ON scores.contest_id = contests.contest_id WHERE result IS NULL AND contestant = " + uid);
+        QueryWrapper<Scores> qw = new QueryWrapper<>();
+        qw.select("contest_title").
+                last("inner join contests ON scores.contest_id = contests.contest_id WHERE result IS NULL AND contestant = " + uid);
         return baseMapper.selectList(qw);
     }
 
-    //查询分数基本信息
+    /**
+     * 查询分数基本信息
+     * @param sid
+     * @return
+     */
     @Override
     public Scores selectScoresById(int sid) {
         QueryWrapper<Scores> qw = new QueryWrapper<>();
@@ -69,7 +97,11 @@ public class ScoresServiceImpl extends ServiceImpl<ScoresMapper, Scores> impleme
         return scores;
     }
 
-    //查询该比赛报名人
+    /**
+     * 查询该比赛报名人
+     * @param cid
+     * @return
+     */
     @Override
     public List<Scores> selectScoresByCid(String cid) {
         QueryWrapper<Scores> qw = new QueryWrapper<>();

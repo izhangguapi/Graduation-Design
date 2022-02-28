@@ -8,6 +8,9 @@ import lombok.Data;
 
 import java.util.Date;
 
+/**
+ * @author 张恣豪
+ */
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Contests {
@@ -26,13 +29,19 @@ public class Contests {
     private Date startTime;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date endTime;
-    //  链表查询-用户表字段：姓名
+    /**
+     * 链表查询-用户表字段：姓名
+     */
     @TableField(exist = false)
     private String name;
-    //  链表查询-组表字段：组名
+    /**
+     * 链表查询-组表字段：组名
+     */
     @TableField(exist = false)
     private String groupName;
-    //  链表查询-自定义字段：数量
+    /**
+     * 链表查询-自定义字段：数量
+     */
     @TableField(exist = false)
     private String number;
 }

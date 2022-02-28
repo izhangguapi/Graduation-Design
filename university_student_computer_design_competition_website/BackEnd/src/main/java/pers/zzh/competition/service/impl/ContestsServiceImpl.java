@@ -9,6 +9,9 @@ import pers.zzh.competition.service.ContestsService;
 
 import java.util.List;
 
+/**
+ * @author 张恣豪
+ */
 @Service
 public class ContestsServiceImpl extends ServiceImpl<ContestsMapper, Contests> implements ContestsService {
 

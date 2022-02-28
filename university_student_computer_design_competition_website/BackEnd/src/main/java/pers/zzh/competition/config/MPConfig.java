@@ -5,6 +5,9 @@ import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerIntercept
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * @author 张恣豪
+ */
 @Configuration
 public class MPConfig {
     @Bean

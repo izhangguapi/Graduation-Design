@@ -10,6 +10,9 @@ import pers.zzh.competition.service.MessagesService;
 
 import java.util.List;
 
+/**
+ * @author 张恣豪
+ */
 @Service
 public class MessagesServiceImpl extends ServiceImpl<MessagesMapper, Messages> implements MessagesService {
 

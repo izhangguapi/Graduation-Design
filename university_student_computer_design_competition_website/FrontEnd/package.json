@@ -13,6 +13,7 @@
     "axios": "^0.24.0",
     "core-js": "^3.6.5",
     "element-ui": "^2.15.6",
+    "js-md5": "^0.7.3",
     "less-loader": "^7.3.0",
     "mavon-editor": "^2.10.4",
     "vue": "^2.6.14",
