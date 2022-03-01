@@ -55,7 +55,7 @@
 </template>
 
 <script>
-import {postRequest} from "@/utils/api";
+import {getRequest, postRequest} from "@/utils/api";
 
 import 'mavon-editor/dist/css/index.css'
 
@@ -120,11 +120,25 @@ export default {
   mounted() {
     const gid = this.$store.state.gid;
     const uid = this.$store.state.uid;
-    if (gid === '' && uid === '') {
-      this.$message.error("获取用户组失败！请重新登录。");
-    } else {
+    console.log(gid,uid)
+    if (gid && uid || gid !== undefined && uid !== undefined) {
       this.contestForm.groupId = gid;
       this.contestForm.promulgator = uid;
+      getRequest("/contests/" + this.contestId).then((res) => {
+        const data = res.data.data;
+        console.log(data);
+        // if (data) {
+        //   document.title = this.contestTitle = data.contestTitle;
+        //   this.contestText = data.contestText;
+        //   this.name = data.name;
+        //   this.regStartTime = data.regStartTime;
+        //   this.regEndTime = data.regEndTime;
+        //   this.startTime = data.startTime;
+        //   this.endTime = data.endTime;
+        // } else {
+        //   this.$router.push("/404");
+        // }
+      });
     }
   },
   methods: {

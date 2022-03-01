@@ -78,40 +78,36 @@ const router = new VueRouter({
             }]
         },
         {
-            path: '/publish',
+            path: '/management',
             component: () => import('@/views/layout'),
             children: [{
+                name: 'management',
                 path: '',
-                component: () => import('@/views/layout/Main/Publish'),
-                children: [{
-                    name: 'publish-competition',
-                    path: '',
-                    meta: {
-                        title: '发布比赛'
-                    },
-                    component: () => import('@/views/layout/Main/Publish/Competition')
-                }, {
-                    name: 'publish-select',
-                    path: 'select',
-                    meta: {
-                        title: '管理比赛'
-                    },
-                    component: () => import('@/views/layout/Main/Publish/MessageOrScore')
-                },{
-                    name: 'publish-message',
-                    path: 'message',
-                    meta: {
-                        title: '发送消息'
-                    },
-                    component: () => import('@/views/layout/Main/Publish/MessageOrScore/Message')
-                },{
-                    name: 'publish-score',
-                    path: 'score',
-                    meta: {
-                        title: '评审比赛'
-                    },
-                    component: () => import('@/views/layout/Main/Publish/MessageOrScore/Score')
-                }]
+                meta: {
+                    title: '管理比赛'
+                },
+                component: () => import('@/views/layout/Main/Management')
+            }, {
+                name: 'management-competition',
+                path: 'competition',
+                meta: {
+                    title: '发布或修改比赛'
+                },
+                component: () => import('@/views/layout/Main/Management/Competition')
+            }, {
+                name: 'management-message',
+                path: 'message',
+                meta: {
+                    title: '发送消息'
+                },
+                component: () => import('@/views/layout/Main/Management/Message/')
+            }, {
+                name: 'management-score',
+                path: 'score',
+                meta: {
+                    title: '评审比赛'
+                },
+                component: () => import('@/views/layout/Main/Management/Score')
             }]
         },
         {

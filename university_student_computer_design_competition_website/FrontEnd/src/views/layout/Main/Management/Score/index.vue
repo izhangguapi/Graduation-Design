@@ -6,7 +6,7 @@
           <div slot="header" class="clearfix">
             <span style="line-height: 28px;font-size: 20px">{{ this.data.contestTitle }}</span>
             <el-button style="float: right" size="mini" type="primary" round
-                       @click="$router.push({name: 'publish-message', params: {contestId:data.contestId,contestTitle:data.contestTitle}})">
+                       @click="$router.push({name: 'management-message', params: {contestId:data.contestId,contestTitle:data.contestTitle}})">
               返回
             </el-button>
           </div>

@@ -78,7 +78,6 @@ export default {
         //获取比赛
         getRequest("/contestsList/" + this.page).then((resp) => {
           const data = resp.data.data;
-          console.log(data);
           if (data.length !== 4) {
             this.loader = false;
             this.loadingText = "没有更多了";

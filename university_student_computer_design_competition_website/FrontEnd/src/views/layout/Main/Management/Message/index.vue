@@ -5,7 +5,7 @@
         <el-card>
           <div slot="header" class="clearfix">
             <span style="line-height: 28px;font-size: 20px">发送消息请先选中</span>
-            <el-button style="float: right" size="mini" type="primary" round @click="$router.push('/publish/select')">
+            <el-button style="float: right" size="mini" type="primary" round @click="$router.push('/management')">
               返回
             </el-button>
           </div>
@@ -73,10 +73,8 @@ export default {
   },
   mounted() {
     this.params = this.$route.params;
-    console.log(this.params);
     getRequest("/scores/users", {cid: this.params.contestId}).then((res) => {
       this.data = res.data.data;
-      // console.log(res.data.data)
     })
   },
   methods: {
@@ -86,7 +84,6 @@ export default {
       val.forEach((val) => {
         this.multipleSelection.push({recipient: val.userId, sender: sender});
       });
-      // console.log(this.multipleSelection);
     },
     send() {
       let length = this.multipleSelection.length
@@ -117,7 +114,7 @@ export default {
       this.params.userId = data.userId;
       this.params.state = data.state;
       // console.log(this.params);
-      this.$router.push({name: 'publish-score', params: this.params})
+      this.$router.push({name: 'management-score', params: this.params})
     }
   }
 }

@@ -40,7 +40,6 @@ export default {
       this.search = to.params.search;
     },
     search() {
-      console.log(this.search);
       this.loading(this.search);
     }
   },

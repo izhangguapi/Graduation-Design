@@ -10,26 +10,26 @@
 
 export default {
   name: "NavBar",
+  data() {
+    return {
+      navBarList: [{path: '/home', title: '首页', icon: 'fa fa-house-chimney'},
+        {path: '/find', title: '发现', icon: 'fa fa-infinity'},
+        {path: '/management', title: '管理', icon: 'fa fa-flag'},
+        {path: '/mine', title: '个人中心', icon: 'fa fa-graduation-cap'}]
+    }
+  },
   computed: {
     activeMenu() {
-      const path = this.$route.path.split("/");
-      return "/" + path[1];
-    },
-    navBarList(){
-      const gid = this.$store.state.gid;
-      if (gid === '2' || gid === undefined) {
-        return [
-          {path: '/home', title: '首页', icon: 'fa fa-house-chimney'},
-          {path: '/find', title: '发现', icon: 'fa fa-infinity'},
-          {path: '/mine', title: '个人中心', icon: 'fa fa-graduation-cap'}
-        ];
-      } else {
-        return [
-          {path: '/home', title: '首页', icon: 'fa fa-house-chimney'},
-          {path: '/find', title: '发现', icon: 'fa fa-infinity'},
-          {path: '/publish', title: '发布', icon: 'fa fa-flag'},
-          {path: '/mine', title: '个人中心', icon: 'fa fa-graduation-cap'}
-        ];
+      console.log("/" + this.$route.path.split("/")[1]);
+      return "/" + this.$route.path.split("/")[1];
+    }
+  },
+  watch: {
+    "$store.state.gid"() {
+      let gid = this.$store.state.gid;
+      console.log(gid);
+      if (gid === 2 || gid === undefined || !gid) {
+        this.navBarList.splice(2, 1);
       }
     }
   }

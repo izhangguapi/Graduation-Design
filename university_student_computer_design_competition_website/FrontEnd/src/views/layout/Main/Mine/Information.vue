@@ -65,11 +65,9 @@ export default {
     }
   },
   mounted() {
-    console.log(this.$store.state.uid)
       const uid = this.fromData.userId = this.$store.state.uid;
       getRequest("/user/" + uid).then((res) => {
         const data = res.data.data;
-        console.log(data);
         if (data) {
           this.fromData.name = data.name;
           data.sex ? this.sex = '男' : this.sex = '女';

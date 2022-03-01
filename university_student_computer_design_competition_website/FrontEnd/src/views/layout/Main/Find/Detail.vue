@@ -98,7 +98,6 @@ export default {
     this.contestId = this.$route.params.contestId;
     // 查询当前用户是否已报名此比赛
     getRequest("/scores/" + this.$store.state.uid + "/" + this.contestId).then((res) => {
-      console.log(res.data);
       if (this.$store.state.gid === '2') {
         if (res.data.data === 0){
           this.btnHidden = true;
@@ -114,7 +113,6 @@ export default {
     // 查询id为this.$route.params.contestId的比赛并显示
     getRequest("/contests/" + this.contestId).then((res) => {
       const data = res.data.data;
-      console.log(data);
       if (data) {
         document.title = this.contestTitle = data.contestTitle;
         this.contestText = data.contestText;
@@ -140,7 +138,6 @@ export default {
      */
     submit() {
       getRequest("/addScores/" + this.$store.state.uid + "/" + this.contestId).then((resp) => {
-        console.log(resp.data);
         if (resp.data.data === 1) {
           this.$message.success("报名成功。")
           this.btnHidden = false;

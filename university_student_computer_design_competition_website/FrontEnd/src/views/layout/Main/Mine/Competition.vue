@@ -41,19 +41,16 @@ export default {
   mounted() {
       getRequest("/scores/contest/" + this.$store.state.uid).then((res) => {
         const data = res.data.data;
-        console.log(data);
         if (data) {
           this.contests = data;
         }
       });
       getRequest("/scores/contestNot/" + this.$store.state.uid).then((res) => {
         const data = res.data.data;
-        console.log(data);
         if (data) {
           this.contestsUnfinished = data;
         }
       });
-
   },
   methods: {}
 }

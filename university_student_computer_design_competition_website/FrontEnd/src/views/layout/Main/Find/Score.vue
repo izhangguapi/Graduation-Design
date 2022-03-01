@@ -45,7 +45,6 @@ export default {
     if (id) {
       getRequest("/scores/" + id).then((res) => {
         let data = res.data.data
-        console.log(data);
         if (data) {
           this.contestId = data.contestId;
           this.contestTitle = data.contestTitle;

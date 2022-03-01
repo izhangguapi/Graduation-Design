@@ -25,12 +25,7 @@
     </el-dropdown>
     <!--消息抽屉-->
     <div>
-      <el-drawer
-          :append-to-body="true"
-          :modal-append-to-body="false"
-          :visible.sync="drawer"
-          direction="rtl"
-          size="50%">
+      <el-drawer :append-to-body="true" :modal-append-to-body="false" :visible.sync="drawer" direction="rtl" size="45%">
         <el-table :data="data" :current-row-key="data.messageId" fit @row-click="clickTable">
           <el-table-column property="title" label="标题" align="center"></el-table-column>
           <el-table-column property="time" label="时间" align="center"></el-table-column>
@@ -63,39 +58,34 @@ export default {
   data() {
     return {
       unread: 0, //右上角未读消息数量
-      badgeHidden : true,
+      badgeHidden: true,
       drawer: false,
       data: []
     }
   },
-  computed:{
+  computed: {
     // 判断是否存在登录信息
-    isLogin(){
+    isLogin() {
+      // 获取未读消息
+      this.getMessages();
       return this.$store.state.isLogin;
     }
   },
-  mounted() {
-    // 获取未读消息
-    this.userInfoLoading();
-  },
   methods: {
     drawerControl() {
-      this.userInfoLoading();
+      this.getMessages();
       this.drawer = true;
     },
-    userInfoLoading(){
-      console.log("执行消息获取");
-      if(this.$store.state.uid){
+    getMessages() {
+      if (this.$store.state.uid) {
         getRequest("/messages/recipient/" + this.$store.state.uid).then((res => {
           const data = res.data.data;
-          console.log(data);
           let unread = 0;
           for (let i = 0; i < data.length; i++) {
             if (!data[i].state) {
               unread++;
             }
           }
-          console.log(unread);
           this.badgeHidden = unread === 0;
           this.unread = unread;
           this.data = data;
@@ -119,9 +109,9 @@ export default {
       // 跳转页面
       this.$router.push({name: 'messages-detail', params: {messageId: id}});
       // 未读变已读
-      putRequest("/messages/state",{messageId:id,state:true});
+      putRequest("/messages/state", {messageId: id, state: true});
       // 修改data数据
-      this.userInfoLoading();
+      this.getMessages();
     }
   }
 }

@@ -38,7 +38,6 @@ export default {
     page(current){
       getRequest("/messages/announcementPage/"+current).then((res) => {
         const data = res.data.data;
-        console.log(data);
         this.total = data.total;
         this.data = data.records;
       })
