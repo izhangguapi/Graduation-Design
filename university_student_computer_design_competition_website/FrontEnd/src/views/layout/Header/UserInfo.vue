@@ -12,6 +12,7 @@
       <el-dropdown-menu slot="dropdown">
         <template v-if="isLogin">
           <el-dropdown-item @click.native="$router.push('/mine')">个人中心</el-dropdown-item>
+          <el-dropdown-item @click.native="changePassword">修改密码</el-dropdown-item>
           <!--<el-dropdown-item divided>发布比赛</el-dropdown-item>-->
           <!--<el-dropdown-item>发布消息</el-dropdown-item>-->
           <!--<el-dropdown-item>发布评分</el-dropdown-item>-->
@@ -26,24 +27,34 @@
     <!--消息抽屉-->
     <div>
       <el-drawer :append-to-body="true" :modal-append-to-body="false" :visible.sync="drawer" direction="rtl" size="45%">
-        <el-table :data="data" :current-row-key="data.messageId" fit @row-click="clickTable">
-          <el-table-column property="title" label="标题" align="center"></el-table-column>
-          <el-table-column property="time" label="时间" align="center"></el-table-column>
-          <el-table-column property="name" label="发布人" align="center" width="100%">
-            <template v-slot="scope">
-              <el-tag :type="scope.row.name === '管理员' ? 'danger' : ''" disable-transitions>
-                {{ scope.row.name }}
-              </el-tag>
-            </template>
-          </el-table-column>
-          <el-table-column property="name" label="状态" align="center" width="100%">
-            <template v-slot="scope">
-              <el-tag :type="scope.row.state ? 'info' : 'warning'" disable-transitions>
-                {{ scope.row.state ? '已读' : '未读' }}
-              </el-tag>
-            </template>
-          </el-table-column>
-        </el-table>
+        <div class="box-card" style="padding: 20px">
+          <div>
+            <span style="line-height: 28px;font-size: 20px">消息列表</span>
+            <el-button style="float: right;margin-left: 10px;" type="danger" size="mini" round @click="deleteMessage">删除</el-button>
+            <el-button style="float: right;" type="warning" size="mini" round @click="deleteMessageRead">删除已读</el-button>
+          </div>
+          <el-table :data="data" :current-row-key="data.messageId" fit @row-click="clickTable" @selection-change="handleSelectionChange">
+            <el-table-column type="selection"></el-table-column>
+            <el-table-column property="title" label="标题" align="center"></el-table-column>
+            <el-table-column property="time" label="时间" align="center"></el-table-column>
+            <el-table-column property="name" label="发布人" align="center" width="100%">
+              <template v-slot="scope">
+                <el-tag :type="scope.row.name === '管理员' ? 'danger' : ''" disable-transitions>
+                  {{ scope.row.name }}
+                </el-tag>
+              </template>
+            </el-table-column>
+            <el-table-column property="name" label="状态" align="center" width="100%">
+              <template v-slot="scope">
+                <el-tag :type="scope.row.state ? 'info' : 'warning'" disable-transitions>
+                  {{ scope.row.state ? '已读' : '未读' }}
+                </el-tag>
+              </template>
+            </el-table-column>
+          </el-table>
+        </div>
+
+
       </el-drawer>
     </div>
   </div>
@@ -51,7 +62,7 @@
 </template>
 
 <script>
-import {getRequest, putRequest} from "@/utils/api";
+import {deleteRequest, getRequest, putRequest} from "@/utils/api";
 
 export default {
   name: "UserInfo",
@@ -60,7 +71,8 @@ export default {
       unread: 0, //右上角未读消息数量
       badgeHidden: true,
       drawer: false,
-      data: []
+      data: [],
+      multipleSelection:[]
     }
   },
   computed: {
@@ -112,6 +124,42 @@ export default {
       putRequest("/messages/state", {messageId: id, state: true});
       // 修改data数据
       this.getMessages();
+    },
+    changePassword() {
+      alert("修改密码");
+    },
+    handleSelectionChange(val) {
+      this.multipleSelection = [];
+      val.forEach((val) => {
+        this.multipleSelection.push({messageId: val.messageId});
+      })
+
+    },
+    deleteMessage(){
+      console.log(this.multipleSelection);
+      if (this.multipleSelection.length !== 0){
+        deleteRequest("/deleteMessage",this.multipleSelection).then((res)=>{
+          if (res.data.data){
+            this.$message.success("删除成功。")
+          }else {
+            this.$message.error("删除失败！")
+          }
+          this.getMessages();
+        })
+      }else {
+        this.$message.warning("请选中后再删除！")
+      }
+    },
+    deleteMessageRead(){
+      getRequest("/deleteMessageRead",{uid: this.$store.state.uid}).then((res)=>{
+        if (res.data.data === 0){
+          this.$message.warning("暂无已读消息。")
+        }else {
+          this.$message.success("已读消息删除成功。")
+        }
+        this.getMessages();
+      })
+
     }
   }
 }

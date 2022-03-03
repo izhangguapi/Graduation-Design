@@ -15,11 +15,6 @@ import {Message} from "element-ui";
 axios.interceptors.response.use(success => {
     //console.log(success)
     switch (success.data.code) {
-        case 100:
-            return success;
-        case 200:
-            //Message.success(success.data.msg);
-            return success;
         case 201:
             Message.error(success.data.msg);
             return null;

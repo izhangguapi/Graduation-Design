@@ -7,6 +7,9 @@ import pers.zzh.competition.service.ScoresService;
 import pers.zzh.competition.utils.Result;
 
 
+/**
+ * @author 张恣豪
+ */
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api")

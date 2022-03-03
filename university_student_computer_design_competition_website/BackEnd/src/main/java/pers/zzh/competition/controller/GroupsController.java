@@ -10,6 +10,9 @@ import pers.zzh.competition.utils.Result;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * @author 张恣豪
+ */
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api")
@@ -53,6 +56,6 @@ public class GroupsController {
         }catch (Exception e){
             name = "";
         }
-        return name.equals("") ?  new Result(201,"获取用户组失败",Collections.emptyMap()) :  new Result(200,"成功获取用户组",name);
+        return "".equals(name) ?  new Result(201,"获取用户组失败",Collections.emptyMap()) :  new Result(200,"成功获取用户组",name);
     }
 }

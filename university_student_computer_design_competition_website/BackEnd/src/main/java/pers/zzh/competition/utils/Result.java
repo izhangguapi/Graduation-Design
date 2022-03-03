@@ -13,7 +13,7 @@ public class Result {
     /**
      * 响应码，200是正常
      */
-    private int code;
+    private Integer code;
     /**
      * 响应消息
      */

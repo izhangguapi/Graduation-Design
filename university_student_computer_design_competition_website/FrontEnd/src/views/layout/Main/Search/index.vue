@@ -47,8 +47,8 @@ export default {
     this.search = this.$route.params.search;
   },
   methods: {
-    loading(s) {
-      getRequest("/search?s="+s).then((res)=>{
+    loading(query) {
+      getRequest("/search?query="+query).then((res)=>{
         this.data = res.data.data;
       })
     },

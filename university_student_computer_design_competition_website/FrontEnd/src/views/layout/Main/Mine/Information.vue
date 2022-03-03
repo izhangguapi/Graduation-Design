@@ -2,6 +2,7 @@
   <el-card class="box-card" shadow="never" style="height: 500px">
     <el-descriptions title="用户信息" :column="1" border :labelStyle="{'text-align': 'center'}">
       <template slot="extra" v-if="inputDisabled">
+        <el-button type="warning" @click="upDateGroup" size="small" round> 修改用户组</el-button>
         <el-button type="primary" @click="update" size="small" round>修改信息</el-button>
       </template>
       <template slot="extra" v-else>
@@ -14,9 +15,6 @@
       <el-descriptions-item label="用户组" :contentStyle="{backgroundColor:inputDisabled?'#fff':'#fafafa'}">
         <div :style="{backgroundColor:inputDisabled?'#fff':'#fafafa'}">
           {{ groupName }}
-          <el-button type="danger" @click="upDateGroup" size="small" round v-if="groupName!=='学生'">
-            修改用户组
-          </el-button>
         </div>
       </el-descriptions-item>
       <el-descriptions-item label="性别" :contentStyle="{backgroundColor:inputDisabled?'#fff':'#fafafa'}">
@@ -44,7 +42,6 @@
 
 <script>
 import {getRequest, putRequest} from "@/utils/api";
-import {login} from "@/utils/login";
 
 export default {
   name: "information",
@@ -65,20 +62,20 @@ export default {
     }
   },
   mounted() {
-      const uid = this.fromData.userId = this.$store.state.uid;
-      getRequest("/user/" + uid).then((res) => {
-        const data = res.data.data;
-        if (data) {
-          this.fromData.name = data.name;
-          data.sex ? this.sex = '男' : this.sex = '女';
-          this.fromData.birthday = data.birthday;
-          this.fromData.school = data.school;
-          this.fromData.address = data.address;
-          this.phone = data.phone;
-          this.email = data.email;
-          this.groupName = data.groupName;
-        }
-      });
+    const uid = this.fromData.userId = this.$store.state.uid;
+    getRequest("/user/" + uid).then((res) => {
+      const data = res.data.data;
+      if (data) {
+        this.fromData.name = data.name;
+        data.sex ? this.sex = '男' : this.sex = '女';
+        this.fromData.birthday = data.birthday;
+        this.fromData.school = data.school;
+        this.fromData.address = data.address;
+        this.phone = data.phone;
+        this.email = data.email;
+        this.groupName = data.groupName;
+      }
+    });
   },
   methods: {
     update() {

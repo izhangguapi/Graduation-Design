@@ -6,6 +6,9 @@ import pers.zzh.competition.entity.Contests;
 import pers.zzh.competition.service.ContestsService;
 import pers.zzh.competition.utils.Result;
 
+/**
+ * @author 张恣豪
+ */
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api")
@@ -14,18 +17,31 @@ public class ContestsController {
     final ContestsService service;
 
     /**
-     * 添加组并反回组id
+     * 添加比赛
+     *
      * @param contests
      * @return
      */
     @PostMapping("/addContests")
-    public Result addGroup(@RequestBody Contests contests) {
-        int num = service.insertContests(contests);
-        return num == 0 ? new Result(201, "发布失败！", false) : new Result(200, "发布成功。", num);
+    public Result addContests(@RequestBody Contests contests) {
+        return new Result(service.save(contests));
     }
 
     /**
+     * 修改比赛
+     *
+     * @param contests
+     * @return
+     */
+    @PutMapping("/updateContests")
+    public Result updateContests(@RequestBody Contests contests) {
+        return new Result( service.updateById(contests));
+    }
+
+
+    /**
      * 根据id查询一条数据
+     *
      * @param id
      * @return
      */
@@ -36,26 +52,31 @@ public class ContestsController {
 
     /**
      * 查询一些数据
+     *
      * @param num
      * @return
      */
     @GetMapping("/contestsList/{num}")
     public Result selectContests(@PathVariable int num) {
-        return new Result(200, service.selectContests(num));
+//        return new Result( service.selectContests(num));
+        return new         Result(200, "查询成功", service.selectContests(num));
+
     }
 
     /**
      * 搜索功能
+     *
      * @param s
      * @return
      */
     @GetMapping("/search")
-    public Result selectContests(@RequestParam("s") String s) {
-        return new Result(service.selectContestsLike(s));
+    public Result selectContests(@RequestParam("query") String query) {
+        return new Result(service.selectContestsLike(query));
     }
 
     /**
      * 根据组id查询
+     *
      * @param gid
      * @return
      */

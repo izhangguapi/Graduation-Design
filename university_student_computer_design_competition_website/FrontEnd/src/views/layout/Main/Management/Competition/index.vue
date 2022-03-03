@@ -21,7 +21,7 @@
         <!--左侧编辑内容-->
         <el-col :span="12" :offset="4">
           <el-card shadow="never" :body-style="{ padding: '0'}">
-            <mdEditor v-model="contestForm.text" :ishljs="true" style="min-height: 600px"/>
+            <mdEditor v-model="contestForm.contestText" :ishljs="true" style="min-height: 600px"/>
           </el-card>
         </el-col>
         <!--右侧输入其他信息-->
@@ -45,7 +45,7 @@
             </el-form-item>
             <el-form-item style="float: right;padding-top: 60px">
               <el-button @click="resetForm('ruleForm')">重置</el-button>
-              <el-button type="primary" @click="submitForm">立即创建</el-button>
+              <el-button type="primary" @click="submitForm">{{ btnText }}</el-button>
             </el-form-item>
           </el-card>
         </el-col>
@@ -55,7 +55,7 @@
 </template>
 
 <script>
-import {getRequest, postRequest} from "@/utils/api";
+import {getRequest, postRequest, putRequest} from "@/utils/api";
 
 import 'mavon-editor/dist/css/index.css'
 
@@ -95,11 +95,12 @@ export default {
       }
     };
     return {
+      addOrUpdate: true,
+      btnText: '立即发布',
       contestForm: {
         contestTitle: '',
-        contestText: '',
+        contestText: '## 请输入比赛内容\n',
         url: '',
-        text: '## 请输入比赛内容\n',
         promulgator: 0,
         groupId: 0,
         regStartTime: '',
@@ -120,41 +121,64 @@ export default {
   mounted() {
     const gid = this.$store.state.gid;
     const uid = this.$store.state.uid;
-    console.log(gid,uid)
-    if (gid && uid || gid !== undefined && uid !== undefined) {
+    if (gid === undefined && uid === undefined) {
+      this.$message.error('获取用户信息失败！');
+      this.$router.push("/404");
+    } else {
       this.contestForm.groupId = gid;
       this.contestForm.promulgator = uid;
-      getRequest("/contests/" + this.contestId).then((res) => {
+    }
+    // 判断是否存在contestId，存在则是修改，否则是新增
+    if (this.$route.params.contestId) {
+      this.addOrUpdate = false;
+      this.btnText = '立即修改';
+      document.title = '修改比赛';
+      getRequest("/contests/" + this.$route.params.contestId).then((res) => {
         const data = res.data.data;
-        console.log(data);
-        // if (data) {
-        //   document.title = this.contestTitle = data.contestTitle;
-        //   this.contestText = data.contestText;
-        //   this.name = data.name;
-        //   this.regStartTime = data.regStartTime;
-        //   this.regEndTime = data.regEndTime;
-        //   this.startTime = data.startTime;
-        //   this.endTime = data.endTime;
-        // } else {
-        //   this.$router.push("/404");
-        // }
+        if (data) {
+          this.contestForm.contestTitle = data.contestTitle;
+          this.contestForm.contestId = this.$route.params.contestId;
+          this.contestForm.contestText = data.contestText;
+          this.contestForm.url = data.url;
+          this.contestForm.regStartTime = data.regStartTime;
+          this.contestForm.regEndTime = data.regEndTime;
+          this.contestForm.startTime = data.startTime;
+          this.contestForm.endTime = data.endTime;
+        } else {
+          this.$router.push("/404");
+        }
       });
+    } else {
+      document.title = '发布比赛';
     }
   },
   methods: {
     // 提交
     submitForm() {
-      this.contestForm.contestText = this.contestForm.text; // .replace(/\n/ig, "<br>")
       this.$refs.contestForm.validate((valid) => {
         if (valid) {
-          postRequest("/addContests", this.contestForm).then((resp) => {
-            // console.log(resp);
-            if (resp) {
-              // this.$confirm(resp.data.msg, '信息', {confirmButtonText: '确定', type: 'success', center: true})
-              this.$message.success(resp.data.msg);
-              this.$router.push("/home");
-            }
-          })
+          if (this.addOrUpdate) {
+            // 添加
+            postRequest("/addContests", this.contestForm).then((resp) => {
+              if (resp.data.data) {
+                this.$message.success('发布成功。');
+                this.$router.push("/management");
+              } else {
+                this.$message.error('发布失败！');
+              }
+            })
+          } else {
+            // 修改
+            putRequest("/updateContests", this.contestForm).then((resp) => {
+              console.log(resp.data.data);
+              if (resp.data.data) {
+                this.$message.success('修改成功。');
+                this.$router.push("/management");
+              } else {
+                this.$message.error('修改失败！');
+              }
+            })
+          }
         } else {
           this.$message.error("请修改错误项！")
           return false;

@@ -48,6 +48,7 @@ public class UsersController {
     @GetMapping("/users/{currentPage}/{pageSize}")
     public Result getAll(@PathVariable int currentPage, @PathVariable int pageSize) {
         Page<Users> list = service.selectListPage(currentPage, pageSize);
+
         return list.getRecords().isEmpty()
                 ? new Result(200, "查询失败", Collections.emptyMap())
                 : new Result(200, "查询成功", service.selectListPage(currentPage, pageSize));

@@ -47,7 +47,8 @@ export default {
     announcementLoading() {
       getRequest("/messages/announcement/" + this.$route.params.messageId).then((res) => {
         const data = res.data.data;
-        if (data.recipient === 1 || data.recipient.toString() === this.$store.state.uid) {
+        console.log(data);
+        if (data.recipient === 1 || data.recipient === this.$store.state.uid) {
           this.title = data.title;
           this.time = data.time;
           this.text = data.text;

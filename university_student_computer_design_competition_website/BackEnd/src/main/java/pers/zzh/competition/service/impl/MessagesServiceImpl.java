@@ -61,4 +61,16 @@ public class MessagesServiceImpl extends ServiceImpl<MessagesMapper, Messages> i
         baseMapper.updateById(messages);
     }
 
+    /**
+     * 删除已读消息
+     * @param uid
+     * @return
+     */
+    @Override
+    public Integer deleteMessageRead(String uid) {
+        QueryWrapper<Messages> qw = new QueryWrapper<>();
+        qw.and(wrapper -> wrapper.eq("recipient",uid).eq("state",true));
+        return baseMapper.delete(qw);
+    }
+
 }

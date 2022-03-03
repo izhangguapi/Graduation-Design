@@ -9,6 +9,9 @@ import pers.zzh.competition.utils.Result;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * @author 张恣豪
+ */
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api")
@@ -88,7 +91,29 @@ public class MessagesController {
      * @return
      */
     @PostMapping("/messages/save")
-    public Result upDataMessagesSave(@RequestBody List<Messages> messages) {
+    public Result addMessages(@RequestBody List<Messages> messages) {
         return new Result(service.saveBatch(messages));
+    }
+
+    /**
+     * 删除选中消息
+     *
+     * @param messages
+     * @return
+     */
+    @DeleteMapping("/deleteMessage")
+    public Result deleteMessage(@RequestBody List<Messages> messages) {
+        return new Result(service.removeBatchByIds(messages));
+    }
+
+    /**
+     * 删除已读消息
+     *
+     * @param uid
+     * @return
+     */
+    @GetMapping("/deleteMessageRead")
+    public Result deleteMessageRead(@RequestParam("uid") String uid) {
+        return new Result(service.deleteMessageRead(uid));
     }
 }

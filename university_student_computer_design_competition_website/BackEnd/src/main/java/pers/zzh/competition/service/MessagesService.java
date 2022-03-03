@@ -56,4 +56,10 @@ public interface MessagesService extends IService<Messages> {
      */
     void upDataMessagesState(Messages messages);
 
+    /**
+     * 删除已读消息
+     * @param uid
+     * @return
+     */
+    Integer deleteMessageRead(String uid);
 }

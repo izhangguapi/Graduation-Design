@@ -1,5 +1,6 @@
 package pers.zzh.competition.service;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.util.List;
@@ -17,7 +18,7 @@ public interface ContestsService extends IService<Contests> {
      * @param contests
      * @return
      */
-    int insertContests(Contests contests);
+//    int insertContests(Contests contests);
 
     /**
      * 根据id查询一条数据
@@ -33,15 +34,15 @@ public interface ContestsService extends IService<Contests> {
      * @param num
      * @return
      */
-    List<Contests> selectContests(int num);
+    Page<Contests> selectContests(int num);
 
     /**
      * 搜索
      *
-     * @param s
+     * @param query
      * @return
      */
-    List<Contests> selectContestsLike(String s);
+    List<Contests> selectContestsLike(String query);
 
     /**
      * 根据组id查询

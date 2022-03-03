@@ -55,7 +55,7 @@ export default {
       hidden: true,
       loader: true,
       loadingText: '加载更多',
-      page: 0,
+      page: 1,
       lists: [],
     }
   },
@@ -78,14 +78,15 @@ export default {
         //获取比赛
         getRequest("/contestsList/" + this.page).then((resp) => {
           const data = resp.data.data;
-          if (data.length !== 4) {
+          console.log(data);
+          if (this.page === data.pages) {
             this.loader = false;
             this.loadingText = "没有更多了";
           } else {
-            this.page += 4;
+            this.page++;
           }
-          for (let i = 0; i < data.length; i++) {
-            this.lists.push(data[i]);
+          for (let i = 0; i < data.records.length; i++) {
+            this.lists.push(data.records[i]);
           }
         });
       }

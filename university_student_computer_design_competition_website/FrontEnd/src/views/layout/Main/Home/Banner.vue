@@ -31,10 +31,6 @@ export default {
   },
   methods: {
     imgLoading() {
-      // this.count++;
-      // if (this.count === 1){
-      //
-      // }
       this.$nextTick(()=>{
         this.bannerHeight=this.$refs.image[0].height;
       });

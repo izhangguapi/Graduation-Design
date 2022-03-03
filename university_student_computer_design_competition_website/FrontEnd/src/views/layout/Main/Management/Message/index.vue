@@ -75,6 +75,7 @@ export default {
     this.params = this.$route.params;
     getRequest("/scores/users", {cid: this.params.contestId}).then((res) => {
       this.data = res.data.data;
+      console.log(res.data.data);
     })
   },
   methods: {

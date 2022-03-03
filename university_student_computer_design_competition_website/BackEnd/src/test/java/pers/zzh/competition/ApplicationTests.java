@@ -12,6 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import pers.zzh.competition.mapper.*;
 import pers.zzh.competition.entity.*;
 import pers.zzh.competition.service.GroupsService;
+import pers.zzh.competition.service.MessagesService;
 
 import java.util.Map;
 
@@ -145,5 +146,16 @@ class ApplicationTests {
         qw.select("*").last("inner join `contests` ON scores.contest_id = contests.contest_id WHERE contestant = 7");
         System.out.println(scoresDao.selectList(qw));
     }
+
+    private MessagesService service;
+
+//    @Test
+//    void testmessDelete() {
+//
+//        service.removeBatchByIds()
+//        QueryWrapper<Scores> qw = new QueryWrapper<>(); // 创建条件构造器
+//        qw.select("*").last("inner join `contests` ON scores.contest_id = contests.contest_id WHERE contestant = 7");
+//        System.out.println(scoresDao.selectList(qw));
+//    }
 
 }
