@@ -10,7 +10,7 @@
 -- ------------------------------
 DROP DATABASE IF EXISTS `website`;
 CREATE DATABASE `website` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-use `website`;
+USE `website`;
 
 -- ----------------------------
 -- 创建用户组表:  `groups`
@@ -120,7 +120,6 @@ CREATE TABLE `messages` (
 -- 插入数据
 
 INSERT INTO messages VALUES (DEFAULT,'1','测试公告01','这是一条测试公告01','1','2021-10-11 10:10:10',null);
-
 INSERT INTO messages VALUES (DEFAULT,'1','测试公告01','这是一条测试公告01','1','2021-10-11 10:10:10',null);
 INSERT INTO messages VALUES (DEFAULT,'1','测试公告02','这是一条测试公告02','1','2021-10-12 10:10:11',null);
 INSERT INTO messages VALUES (DEFAULT,'1','测试公告03','这是一条测试公告03','1','2021-10-13 10:10:12',null);

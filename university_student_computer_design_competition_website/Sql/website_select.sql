@@ -12,6 +12,12 @@ SELECT * FROM scores;
 
 SELECT * FROM scores WHERE scores_id = 25
 
+DELETE FROM messages WHERE recipient=2 AND state=TRUE;
+
+SELECT contests.contest_id,contest_title,COUNT(scores_id) number FROM contests LEFT JOIN scores ON contests.contest_id=scores.contest_id WHERE group_id = 3 GROUP BY contest_id
+SELECT contests.contest_id,contest_title FROM contests INNER JOIN scores ON contests.contest_id=scores.contest_id WHERE group_id = 3 GROUP BY contest_title
+
+SELECT * FROM contests LEFT JOIN scores ON contests.contest_id=scores.contest_id WHERE group_id = 3 GROUP BY contest_title
 
 -- 发消息
 
