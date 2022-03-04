@@ -1,6 +1,6 @@
 # 服务器端口
 server:
-  port: 80
+  port: 8090
 
 spring:
   main:

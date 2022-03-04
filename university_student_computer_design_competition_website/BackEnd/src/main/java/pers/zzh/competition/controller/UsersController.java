@@ -77,7 +77,6 @@ public class UsersController {
         String userCaptcha = login.getCaptcha();
         // 判断session存入的验证码是否跟用户输入的一样(比较字母，忽略大小写.equalsIgnoreCase())
         if (sessionCaptcha.equalsIgnoreCase(userCaptcha)) {
-
             Users users = service.selectPhoneEmailPassword(login.getPhone()
                     , login.getEmail()
                     , DigestUtils.md5DigestAsHex(login.getPassword().getBytes()));

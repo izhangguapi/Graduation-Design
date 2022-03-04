@@ -78,7 +78,7 @@ export default {
         //获取比赛
         getRequest("/contestsList/" + this.page).then((resp) => {
           const data = resp.data.data;
-          console.log(data);
+          console.log(data.pages);
           if (this.page === data.pages) {
             this.loader = false;
             this.loadingText = "没有更多了";

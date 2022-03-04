@@ -51,6 +51,7 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users> implements
         qw.select("user_id,name,group_id");
         qw.and(wrapper -> wrapper.eq("phone", phone).or().eq("email", email));
         qw.eq("password", password);
+
         return baseMapper.selectOne(qw);
     }
 

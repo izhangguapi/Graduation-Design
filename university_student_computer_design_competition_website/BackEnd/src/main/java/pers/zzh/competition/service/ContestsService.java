@@ -11,28 +11,19 @@ import pers.zzh.competition.entity.Contests;
  * @author 张恣豪
  */
 public interface ContestsService extends IService<Contests> {
-
-    /**
-     * 发布比赛
-     *
-     * @param contests
-     * @return
-     */
-//    int insertContests(Contests contests);
-
     /**
      * 根据id查询一条数据
      *
-     * @param id
-     * @return
+     * @param id 比赛id
+     * @return 一条数据
      */
     Contests selectContestsOne(String id);
 
     /**
-     * 查询一条比赛数据
+     * 分页查询比赛
      *
-     * @param num
-     * @return
+     * @param num 第几页
+     * @return 分页查询结果
      */
     Page<Contests> selectContests(int num);
 

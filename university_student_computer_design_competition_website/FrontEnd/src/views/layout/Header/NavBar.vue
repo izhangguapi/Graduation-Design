@@ -18,6 +18,18 @@ export default {
         {path: '/mine', title: '个人中心', icon: 'fa fa-graduation-cap'}]
     }
   },
+  mounted() {
+    this.loadingMenu();
+  },
+  methods:{
+    loadingMenu(){
+      let gid = this.$store.state.gid;
+      console.log(gid);
+      if (gid === 2 || gid === undefined || !gid) {
+        this.navBarList.splice(2, 1);
+      }
+    }
+  },
   computed: {
     activeMenu() {
       console.log("/" + this.$route.path.split("/")[1]);
@@ -26,11 +38,7 @@ export default {
   },
   watch: {
     "$store.state.gid"() {
-      let gid = this.$store.state.gid;
-      console.log(gid);
-      if (gid === 2 || gid === undefined || !gid) {
-        this.navBarList.splice(2, 1);
-      }
+      this.loadingMenu();
     }
   }
 }

@@ -15,9 +15,9 @@ import java.util.List;
  */
 @Service
 public class ContestsServiceImpl extends ServiceImpl<ContestsMapper, Contests> implements ContestsService {
-
     /**
      * 根据id查询一条数据
+     *
      * @param id 比赛id
      * @return 一条数据
      */
@@ -32,9 +32,10 @@ public class ContestsServiceImpl extends ServiceImpl<ContestsMapper, Contests> i
     }
 
     /**
-     * 查询比赛数据
-     * @param num 第几个开始
-     * @return 列表
+     * 分页查询比赛
+     *
+     * @param num 第几页
+     * @return 分页查询结果
      */
     @Override
     public Page<Contests> selectContests(int num) {
@@ -42,11 +43,12 @@ public class ContestsServiceImpl extends ServiceImpl<ContestsMapper, Contests> i
         QueryWrapper<Contests> qw = new QueryWrapper<>();
         qw.select("contest_id,contest_title,url,reg_start_time,reg_end_time")
                 .last(" c,users u WHERE c.promulgator=u.user_id");
-        return baseMapper.selectPage(page,qw);
+        return baseMapper.selectPage(page, qw);
     }
 
     /**
      * 搜索
+     *
      * @param query 搜索值
      * @return 搜索结果列表
      */
@@ -60,6 +62,7 @@ public class ContestsServiceImpl extends ServiceImpl<ContestsMapper, Contests> i
 
     /**
      * 根据组id查询
+     *
      * @param gid 组id
      * @return 列表
      */
@@ -68,7 +71,7 @@ public class ContestsServiceImpl extends ServiceImpl<ContestsMapper, Contests> i
         QueryWrapper<Contests> qw = new QueryWrapper<>();
         qw.select("contests.contest_id,contest_title,COUNT(scores_id) number")
                 .last(" LEFT JOIN scores ON contests.contest_id=scores.contest_id\n" +
-                        " WHERE group_id = "+gid+" GROUP BY contest_id");
+                        " WHERE group_id = " + gid + " GROUP BY contest_id");
         return baseMapper.selectList(qw);
     }
 }

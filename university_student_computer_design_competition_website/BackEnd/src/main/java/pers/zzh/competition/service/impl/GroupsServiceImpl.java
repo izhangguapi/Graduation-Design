@@ -15,17 +15,24 @@ import java.util.List;
  */
 @Service
 public class GroupsServiceImpl extends ServiceImpl<GroupsMapper, Groups> implements GroupsService {
-
-    // 查询组
+    /**
+     * 查询组
+     * @param encoding 组编码
+     * @return 组
+     */
     @Override
     public List<Groups> selectEncoding(String encoding) {
         QueryWrapper<Groups> qw = new QueryWrapper<>();
-        qw.eq("encoding",encoding);
-        qw.last(" AND group_id NOT IN ('1','2','3')");
+        qw.eq("encoding",encoding)
+                .last(" AND group_id NOT IN ('1','2')");
         return baseMapper.selectList(qw);
     }
 
-    // 插入数据并返回id
+    /**
+     * 添加组并返回id
+     * @param groups 对象
+     * @return 组id
+     */
     @Override
     @Options(useGeneratedKeys = true,keyProperty = "groupId",keyColumn = "groupId")
     public int insertGroupGetId(Groups groups) {

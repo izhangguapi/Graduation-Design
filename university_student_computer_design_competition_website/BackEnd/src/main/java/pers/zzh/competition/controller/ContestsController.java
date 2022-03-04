@@ -38,12 +38,11 @@ public class ContestsController {
         return new Result( service.updateById(contests));
     }
 
-
     /**
      * 根据id查询一条数据
      *
-     * @param id
-     * @return
+     * @param id 比赛id
+     * @return 一条数据
      */
     @GetMapping("/contests/{id}")
     public Result selectContestsOne(@PathVariable String id) {
@@ -51,22 +50,21 @@ public class ContestsController {
     }
 
     /**
-     * 查询一些数据
+     * 分页查询比赛
      *
-     * @param num
-     * @return
+     * @param num 第几页
+     * @return 分页查询结果
      */
     @GetMapping("/contestsList/{num}")
     public Result selectContests(@PathVariable int num) {
-//        return new Result( service.selectContests(num));
-        return new         Result(200, "查询成功", service.selectContests(num));
+        return new Result(service.selectContests(num));
 
     }
 
     /**
      * 搜索功能
      *
-     * @param s
+     * @param query
      * @return
      */
     @GetMapping("/search")

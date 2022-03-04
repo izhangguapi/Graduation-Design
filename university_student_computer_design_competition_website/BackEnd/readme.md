@@ -1,9 +1,11 @@
-# Getting Started
+# 后端代码
 
-### 可能出现的问题
-UsersController.java文件里面引用的import com.wf.captcha.GifCaptcha;报错：
+## 可能出现的问题
 
-由于`prm.xml`文件里面的这段代码需要下载的包，国内可能访问不到，导致找不到此包出现报错。
+1. UsersController.java文件里面引用的import com.wf.captcha.GifCaptcha报错
+
+由于`prm.xml`文件里面的这个包在国内下载不了，导致找不到此包出现报错。
+
 ```xml
 <!--验证码-->
 <dependency>
@@ -14,5 +16,6 @@ UsersController.java文件里面引用的import com.wf.captcha.GifCaptcha;报错
 ```
 
 解决方案：
+
 1. 需要科学上网挂上代理才能进行下载。
-2. 把上层目录`other`文件夹下的文件夹放在`.m2/repository/com/github`即可。
+2. 把上层目录`Other`文件夹下的文件夹放在本地仓库目录下即可，如果您没有修改maven的配置文件，请将文件放在`${user.home}/.m2/repository`目录下（`${user.home}`为你系统的用户文件夹）。

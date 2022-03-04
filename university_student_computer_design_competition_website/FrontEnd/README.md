@@ -5,7 +5,7 @@
 npm install
 ```
 
-### 开发
+### 开发测试
 ```
 npm run serve
 ```

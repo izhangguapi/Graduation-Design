@@ -11,10 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import pers.zzh.competition.mapper.*;
 import pers.zzh.competition.entity.*;
-import pers.zzh.competition.service.GroupsService;
 import pers.zzh.competition.service.MessagesService;
-
-import java.util.Map;
 
 @SpringBootTest
 class ApplicationTests {

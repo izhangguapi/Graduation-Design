@@ -24,7 +24,7 @@ CREATE TABLE `groups` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1;
 -- 插入数据
 INSERT INTO `groups` VALUES (DEFAULT,'管理员','admin');
-INSERT INTO `groups` VALUES (DEFAULT,'学生','xs');
+INSERT INTO `groups` VALUES (DEFAULT,'学生','stu');
 INSERT INTO `groups` VALUES (DEFAULT,'计算机设计','YVN1U');
 INSERT INTO `groups` VALUES (DEFAULT,'算法设计','OY5TT');
 
@@ -47,12 +47,12 @@ CREATE TABLE `users` (
 	CONSTRAINT `users_1` FOREIGN KEY (`group_id`) REFERENCES `groups` (`group_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1;
 -- 插入数据
-INSERT INTO users VALUES (DEFAULT,'管理员',NULL,NULL,NULL,NULL,'admin','admin@zhangguapi.com','1','admin');
+INSERT INTO users VALUES (DEFAULT,'管理员',NULL,NULL,NULL,NULL,'admin','admin@zhangguapi.com','1','21232f297a57a5a743894a0e4a801fc3');
 INSERT INTO users VALUES (DEFAULT,'张瓜皮皮','1','1999-11-20','西南财经大学'	,'天门','13886961359','13886961359@qq.com','3','6437f31087031f66182bb91db6b66580');
 INSERT INTO users VALUES (DEFAULT,'小江云子','0','1999-07-29','西安交通大学'	,'黄石','18453887612','18453887612@qq.com','3','90de7daf04c2bbcffa9638257f3344ea');
 INSERT INTO users VALUES (DEFAULT,'德隆东墙','1','2000-04-05','武汉设计工程学院','抚顺','13866039800','13866039800@qq.com','4','561b74711257f80bd074356ffca50439');
-INSERT INTO users VALUES (DEFAULT,'五号五号','1','1999-12-12','中国人民公安大学','吉林','13027048577','13027048577@qq.com','4','6c7860b8a17546f8fbfc9611c67f8f1e');
-INSERT INTO users VALUES (DEFAULT,'阿兽涛受','1','2000-12-24','武汉首义学院'	,'南宁','17247196444','17247196444@qq.com','4','e5ca7cb2e466d6a3f4cf7d32a620664a');
+INSERT INTO users VALUES (DEFAULT,'五号六号','1','1999-12-12','中国人民公安大学','吉林','13027048577','13027048577@qq.com','4','6c7860b8a17546f8fbfc9611c67f8f1e');
+INSERT INTO users VALUES (DEFAULT,'舒服阿寿','1','2000-12-24','武汉首义学院'	,'南宁','17247196444','17247196444@qq.com','4','e5ca7cb2e466d6a3f4cf7d32a620664a');
 INSERT INTO users VALUES (DEFAULT,'赵同学','0','1998-05-10','武汉科技大学'	,'鄂州','13704131948','13704131948@qq.com','2','42304b9b0487a31df42097d135c73f9e');
 INSERT INTO users VALUES (DEFAULT,'钱同学','1','2002-01-16','华中科技大学'	,'仙桃','13742968739','13742968739@qq.com','2','17e42ba1f1cc5224098ba65dcdf11fe6');
 INSERT INTO users VALUES (DEFAULT,'孙同学','0','2002-12-30','电子科技大学'	,'成都','15319493760','15319493760@qq.com','2','93c9b76e1778ee063e54cb9331f95e36');
@@ -83,22 +83,34 @@ CREATE TABLE `contests` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1;
 -- 插入数据
 INSERT INTO contests VALUES
-(DEFAULT,'2021年度全国大学生算法设计编程挑战赛','2021年度全国大学生算法设计编程挑战赛的内容','https://pic.imgdb.cn/item/61e95e482ab3f51d91903853.jpg',
+(DEFAULT,'2021年度全国大学生算法设计编程挑战赛',
+'# 2021年度全国大学生算法设计编程挑战赛\n报名开始时间：2021-01-01 10:00:00\n报名结束时间：2021-02-01 23:59:59\n\n**请同学们尽快报名**\n\n![测试图片](https://pic.imgdb.cn/item/5fb1289a0d550d58f52f5b1b.png)',
+'https://pic.imgdb.cn/item/61e95e482ab3f51d91903853.jpg',
 '2','3','2021-01-01 10:00:00','2021-02-01 23:59:59','2021-03-01 10:00:00','2021-04-01 23:59:59');
 INSERT INTO contests VALUES
-(DEFAULT,'2021年度阿里巴巴人工智能对抗算法竞赛','2021年度阿里巴巴人工智能对抗算法竞赛的内容','https://pic.imgdb.cn/item/61e95e482ab3f51d9190384d.jpg',
+(DEFAULT,'2021年度阿里巴巴人工智能对抗算法竞赛',
+'# 2021年度阿里巴巴人工智能对抗算法竞赛\n内容：\n1. 第一条\n2. 第二条\n3. 第三条',
+'https://pic.imgdb.cn/item/61e95e482ab3f51d9190384d.jpg',
 '5','4','2021-08-01 10:00:00','2022-10-01 23:59:59','2021-11-01 10:00:00','2022-11-11 23:59:59');
 INSERT INTO contests VALUES
-(DEFAULT,'2021年度中国国际艺术博览会设计视觉形象设计大赛','2021年度中国国际艺术博览会设计视觉形象设计大赛的内容','https://pic.imgdb.cn/item/61e95e482ab3f51d91903848.jpg',
+(DEFAULT,'2021年度中国国际艺术博览会设计视觉形象设计大赛',
+'# 2021年度中国国际艺术博览会设计视觉形象设计大赛\n内容：123',
+'https://pic.imgdb.cn/item/61e95e482ab3f51d91903848.jpg',
 '6','4','2021-12-01 10:00:00','2022-02-01 23:59:59','2022-02-10 10:00:00','2022-04-01 23:59:59');
 INSERT INTO contests VALUES
-(DEFAULT,'2022年度世界大学生超级计算机竞赛','2022年度世界大学生超级计算机竞赛','https://pic.imgdb.cn/item/61e95e482ab3f51d91903844.gif',
+(DEFAULT,'2022年度世界大学生超级计算机竞赛',
+'# 2022年度世界大学生超级计算机竞赛\n内容：456',
+'https://pic.imgdb.cn/item/61e95e482ab3f51d91903844.gif',
 '3','4','2022-01-01 10:00:00','2022-03-01 23:59:59','2022-03-02 10:00:00','2022-03-20 23:59:59');
 INSERT INTO contests VALUES
-(DEFAULT,'2022年度中国高校计算机大赛-网络技术挑战赛','2022年度中国高校计算机大赛-网络技术挑战赛的内容','https://pic.imgdb.cn/item/61e95d082ab3f51d918ed3d2.png',
+(DEFAULT,'2022年度中国高校计算机大赛-网络技术挑战赛',
+'# 2022年度中国高校计算机大赛-网络技术挑战赛\n内容：789',
+'https://pic.imgdb.cn/item/61e95d082ab3f51d918ed3d2.png',
 '4','3','2022-02-01 10:00:00','2022-05-01 23:59:59','2022-06-01 10:00:00','2022-07-01 23:59:59');
 INSERT INTO contests VALUES
-(DEFAULT,'ACM国际大学生程序设计竞赛','ACM国际大学生程序设计竞赛的内容','https://pic.imgdb.cn/item/61e95e482ab3f51d9190384d.jpg',
+(DEFAULT,'ACM国际大学生程序设计竞赛',
+'# ACM国际大学生程序设计竞赛\n内容：\n> 段落引用',
+'https://pic.imgdb.cn/item/61e95e482ab3f51d9190384d.jpg',
 '2','3','2022-03-01 10:00:00','2022-03-20 23:59:59','2022-04-04 10:00:00','2022-05-01 23:59:59');
 
 -- ----------------------------
