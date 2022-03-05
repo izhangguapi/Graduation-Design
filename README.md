@@ -18,9 +18,9 @@
 
 前端脚手架：Vue CLI 4.5.15
 
-JavaScript运行环境：Node.js 16.13.1
+JavaScript运行环境：Node.js 16.14.0
 
-包管理工具：npm 8.3.0
+包管理工具：npm 8.5.3
 
 后端框架：Spring Boot 2.6.3
 
