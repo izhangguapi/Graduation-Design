@@ -1,10 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import layout from '@/views/layout'
 
 Vue.use(VueRouter)
 
 const router = new VueRouter({
-    base: '/',
+    // base: '/',
     mode: 'history',
     routes: [
         {
@@ -31,17 +32,16 @@ const router = new VueRouter({
             },
             component: () => import('@/views/Register')
         },
+        // {
+        //     name: 'index', // 主要布局
+        //     path: '/',
+        //     redirect: {
+        //         path: '/home',
+        //     }
+        // },
         {
-            name: 'index', // 主要布局
             path: '/',
-            component: () => import('@/views/layout'),
-            redirect: {
-                path: '/home',
-            }
-        },
-        {
-            path: '/home',
-            component: () => import('@/views/layout'),
+            component: layout,
             children: [{
                 name: 'home',
                 path: '',
@@ -53,7 +53,7 @@ const router = new VueRouter({
         },
         {
             path: '/find',
-            component: () => import('@/views/layout'),
+            component: layout,
             children: [{
                 name: 'find',
                 path: '',
@@ -79,7 +79,7 @@ const router = new VueRouter({
         },
         {
             path: '/management',
-            component: () => import('@/views/layout'),
+            component: layout,
             children: [{
                 name: 'management',
                 path: '',
@@ -112,7 +112,7 @@ const router = new VueRouter({
         },
         {
             path: '/mine',
-            component: () => import('@/views/layout'),
+            component: layout,
             children: [{
                 name: 'mine',
                 path: '',
@@ -124,7 +124,7 @@ const router = new VueRouter({
         },
         {
             path: '/announcement',
-            component: () => import('@/views/layout'),
+            component: layout,
             children: [{
                 name: 'announcement',
                 path: '',
@@ -136,7 +136,7 @@ const router = new VueRouter({
         },
         {
             path: '/messages',
-            component: () => import('@/views/layout'),
+            component: layout,
             children: [{
                 name: 'messages-detail',
                 path: ':messageId',
@@ -148,7 +148,7 @@ const router = new VueRouter({
         },
         {
             path: '/search',
-            component: () => import('@/views/layout'),
+            component: layout,
             children: [{
                 name: 'search',
                 path: ':search',
@@ -169,7 +169,54 @@ const router = new VueRouter({
             meta: {
                 title: '公告内容',
             },
-        }
+        },
+        {
+            path: '/admin',
+            component: () => import('@/views/Admin'),
+            children: [{
+                name: 'admin',
+                path: '',
+                meta: {
+                    title: '后台管理',
+                },
+                component: () => import('@/views/Admin/Main')
+            }, {
+                name: 'groups',
+                path: 'groups',
+                meta: {
+                    title: '组管理',
+                },
+                component: () => import('@/views/Admin/Main/Groups')
+            }, {
+                name: 'users',
+                path: 'users',
+                meta: {
+                    title: '用户管理',
+                },
+                component: () => import('@/views/Admin/Main/Users')
+            }, {
+                name: 'contests',
+                path: 'contests',
+                meta: {
+                    title: '比赛管理',
+                },
+                component: () => import('@/views/Admin/Main/Contest')
+            }, {
+                name: 'messages',
+                path: 'messages',
+                meta: {
+                    title: '消息管理',
+                },
+                component: () => import('@/views/Admin/Main/Messages')
+            }, {
+                name: 'scores',
+                path: 'scores',
+                meta: {
+                    title: '报名评分管理',
+                },
+                component: () => import('@/views/Admin/Main/Scores')
+            }]
+        },
     ]
 })
 
@@ -184,8 +231,8 @@ VueRouter.prototype.push = function push(to) {
 /* 路由发生变化修改页面title */
 router.beforeEach((to, from, next) => {
     // console.log(to);
-    if (to.meta.title) {
-        document.title = to.meta.title
+    if (to.meta["title"]) {
+        document.title = to.meta["title"];
     }
     next()
 })

@@ -95,7 +95,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 .more-link {
   padding-top: 10px;
   display: block;

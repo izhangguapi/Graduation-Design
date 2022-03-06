@@ -10,9 +10,9 @@
 </template>
 
 <script>
-import Header from './Header';
-import Main from "./Main";
-import Footer from './Footer'
+import Header from '@/views/layout/Header';
+import Main from "@/views/layout/Main";
+import Footer from '@/views/layout/Footer'
 import {login} from "@/utils/login";
 
 export default {
@@ -23,6 +23,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-</style>

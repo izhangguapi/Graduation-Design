@@ -31,8 +31,14 @@ export default {
 </script>
 
 <style lang="less">
-body {
+//body {
+//  margin: 0;
+//  background-color: #f4f4f4;
+//}
+html,body,#app {
+  height: 100%;
   margin: 0;
+  padding: 0;
   background-color: #f4f4f4;
 }
 
@@ -47,5 +53,4 @@ body {
 .fade-enter, .fade-leave-to {
   opacity: 0;
 }
-
 </style>

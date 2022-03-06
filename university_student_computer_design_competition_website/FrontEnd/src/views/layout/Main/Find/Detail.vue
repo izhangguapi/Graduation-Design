@@ -162,7 +162,7 @@ export default {
 }
 </script>
 
-<style scoped lang="less">
+<style lang="less" scoped>
 .btn {
   padding: 5px;
   margin-bottom: 10px;

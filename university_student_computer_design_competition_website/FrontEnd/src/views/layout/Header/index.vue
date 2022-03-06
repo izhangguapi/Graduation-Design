@@ -39,7 +39,7 @@ export default {
   }
 }
 </script>
-<style lang="less">
+<style lang="less" scoped>
 .el-header {
   box-shadow: 0 1px 3px rgba(255, 100, 100, 0.5);
   background-color: #fff;

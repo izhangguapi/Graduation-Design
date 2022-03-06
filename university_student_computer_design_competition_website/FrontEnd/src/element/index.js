@@ -46,6 +46,10 @@ import {
     Pagination,
     Drawer,
     Tag,
+    Aside,
+    Submenu,
+    MenuItemGroup,
+
 
     Notification,
     Message,
@@ -103,6 +107,9 @@ const element = {
         Vue.use(Pagination);
         Vue.use(Drawer);
         Vue.use(Tag);
+        Vue.use(Aside);
+        Vue.use(Submenu);
+        Vue.use(MenuItemGroup);
 
 
         Vue.prototype.$message = Message;

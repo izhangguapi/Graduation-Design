@@ -10,7 +10,7 @@ export default {
   name: "Main",
 }
 </script>
-<style lang='less'>
+<style lang="less">
 .el-main {
   width: 100%;
   padding-top: 80px;

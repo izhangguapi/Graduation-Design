@@ -39,7 +39,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 .carouselImg {
   width: 100%;
   height: auto;

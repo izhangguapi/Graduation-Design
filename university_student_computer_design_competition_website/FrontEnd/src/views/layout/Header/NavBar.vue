@@ -12,7 +12,7 @@ export default {
   name: "NavBar",
   data() {
     return {
-      navBarList: [{path: '/home', title: '首页', icon: 'fa fa-house-chimney'},
+      navBarList: [{path: '/', title: '首页', icon: 'fa fa-house-chimney'},
         {path: '/find', title: '发现', icon: 'fa fa-infinity'},
         {path: '/management', title: '管理', icon: 'fa fa-flag'},
         {path: '/mine', title: '个人中心', icon: 'fa fa-graduation-cap'}]

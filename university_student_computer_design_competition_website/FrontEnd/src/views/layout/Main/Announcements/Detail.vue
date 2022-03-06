@@ -62,7 +62,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 .title {
   text-align: center;
   font-weight: bold;

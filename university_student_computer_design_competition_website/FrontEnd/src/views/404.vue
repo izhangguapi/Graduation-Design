@@ -4,7 +4,7 @@
       <img src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png" alt="">
     </template>
     <template slot="extra">
-      <el-button type="primary" size="medium" @click="back">返回</el-button>
+      <el-button type="primary" size="medium" @click="back">返回首页</el-button>
     </template>
   </el-result>
 </template>
@@ -14,12 +14,12 @@ export default {
   name: "404",
   methods:{
     back(){
-      this.$router.push("/home")
+      this.$router.push("/")
     }
   }
 }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 
 </style>

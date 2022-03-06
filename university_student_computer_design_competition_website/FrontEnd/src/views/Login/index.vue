@@ -133,7 +133,7 @@ export default {
   },
 };
 </script>
-<style scoped lang="less">
+<style lang="less" scoped>
 .loginContainer {
   border-radius: 15px;
   background-clip: padding-box;
