@@ -1,6 +1,7 @@
 <template>
   <el-header>
-    <el-row :gutter="20">
+
+  <el-row :gutter="20">
       <el-col :span="6" :push="1">
         <img src="../../../assets/logo.png" alt="logo" class="logo">
       </el-col>
@@ -39,7 +40,7 @@ export default {
   }
 }
 </script>
-<style lang="less" scoped>
+<style lang="less">
 .el-header {
   box-shadow: 0 1px 3px rgba(255, 100, 100, 0.5);
   background-color: #fff;

@@ -12,27 +12,26 @@ export default {
   name: "NavBar",
   data() {
     return {
-      navBarList: [{path: '/', title: '首页', icon: 'fa fa-house-chimney'},
-        {path: '/find', title: '发现', icon: 'fa fa-infinity'},
-        {path: '/management', title: '管理', icon: 'fa fa-flag'},
-        {path: '/mine', title: '个人中心', icon: 'fa fa-graduation-cap'}]
+      navBarList: []
     }
   },
   mounted() {
     this.loadingMenu();
   },
-  methods:{
-    loadingMenu(){
+  methods: {
+    loadingMenu() {
       let gid = this.$store.state.gid;
-      console.log(gid);
-      if (gid === 2 || gid === undefined || !gid) {
-        this.navBarList.splice(2, 1);
+      let navBarList = [{path: '/', title: '首页', icon: 'fa fa-house-chimney'},
+        {path: '/find', title: '发现', icon: 'fa fa-infinity'},
+        {path: '/mine', title: '个人中心', icon: 'fa fa-graduation-cap'}]
+      if (gid !== 2) {
+        navBarList.splice(2, 0, {path: '/management', title: '管理', icon: 'fa fa-flag'});
       }
+      this.navBarList = navBarList;
     }
   },
   computed: {
     activeMenu() {
-      console.log("/" + this.$route.path.split("/")[1]);
       return "/" + this.$route.path.split("/")[1];
     }
   },

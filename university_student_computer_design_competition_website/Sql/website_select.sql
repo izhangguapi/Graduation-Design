@@ -17,7 +17,14 @@ DELETE FROM messages WHERE recipient=2 AND state=TRUE;
 SELECT contests.contest_id,contest_title,COUNT(scores_id) number FROM contests LEFT JOIN scores ON contests.contest_id=scores.contest_id WHERE group_id = 3 GROUP BY contest_id
 SELECT contests.contest_id,contest_title FROM contests INNER JOIN scores ON contests.contest_id=scores.contest_id WHERE group_id = 3 GROUP BY contest_title
 
+SELECT contests.contest_id,contest_title,status,COUNT(scores_id) number FROM contests LEFT JOIN scores ON contests.contest_id=scores.contest_id WHERE group_id = 3 GROUP BY contest_id
+
+SELECT   contests.contest_id,contest_title,contests.`status`,COUNT(scores_id) number   FROM contests LEFT JOIN scores ON contests.contest_id=scores.contest_id  WHERE group_id = 3 GROUP BY contest_id
+
+
 SELECT * FROM contests LEFT JOIN scores ON contests.contest_id=scores.contest_id WHERE group_id = 3 GROUP BY contest_title
+
+
 
 -- 发消息
 
@@ -64,7 +71,7 @@ INNER JOIN users  ON scores.contestant,scores.judge = users.user_id
  
 UPDATE  messages SET state=TRUE  WHERE message_id  = 33
  
-UPDATE  messages SET state=FALSE  WHERE recipient = 2
+UPDATE  messages SET `status`=FALSE  WHERE recipient = 2
  
 UPDATE  messages SET state=TRUE  WHERE message_id IN(
 SELECT message_id,recipient,title,text,sender,time,state,`name` FROM messages

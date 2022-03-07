@@ -54,7 +54,7 @@ public interface MessagesService extends IService<Messages> {
      *
      * @param messages
      */
-    void upDataMessagesState(Messages messages);
+    void upDataMessagesStatus(Messages messages);
 
     /**
      * 删除已读消息

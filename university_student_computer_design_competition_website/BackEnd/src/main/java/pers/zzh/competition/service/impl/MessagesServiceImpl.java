@@ -43,7 +43,7 @@ public class MessagesServiceImpl extends ServiceImpl<MessagesMapper, Messages> i
     @Override
     public Messages selectAnnouncementById(int id) {
         QueryWrapper<Messages> qw = new QueryWrapper<>();
-        qw.select("recipient,title,text,time,sender,state,`name`").last("INNER JOIN users ON messages.sender = users.user_id WHERE message_id = " + id);
+        qw.select("recipient,title,text,time,sender,status,`name`").last("INNER JOIN users ON messages.sender = users.user_id WHERE message_id = " + id);
         return baseMapper.selectOne(qw);
     }
 
@@ -51,13 +51,13 @@ public class MessagesServiceImpl extends ServiceImpl<MessagesMapper, Messages> i
     @Override
     public List<Messages> selectMessagesByRecipient(int id) {
         QueryWrapper<Messages> qw = new QueryWrapper<>();
-        qw.select("message_id,title,time,state,`name`").last("INNER JOIN users ON messages.sender = users.user_id WHERE recipient = " + id + " ORDER BY state,time DESC");
+        qw.select("message_id,title,time,status,`name`").last("INNER JOIN users ON messages.sender = users.user_id WHERE recipient = " + id + " ORDER BY status,time DESC");
         return baseMapper.selectList(qw);
     }
 
     // 未读变已读
     @Override
-    public void upDataMessagesState(Messages messages) {
+    public void upDataMessagesStatus(Messages messages) {
         baseMapper.updateById(messages);
     }
 
@@ -69,7 +69,7 @@ public class MessagesServiceImpl extends ServiceImpl<MessagesMapper, Messages> i
     @Override
     public Integer deleteMessageRead(String uid) {
         QueryWrapper<Messages> qw = new QueryWrapper<>();
-        qw.and(wrapper -> wrapper.eq("recipient",uid).eq("state",true));
+        qw.and(wrapper -> wrapper.eq("recipient",uid).eq("status",true));
         return baseMapper.delete(qw);
     }
 

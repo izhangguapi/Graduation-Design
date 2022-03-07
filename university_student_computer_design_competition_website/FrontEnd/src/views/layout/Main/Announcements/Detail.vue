@@ -8,11 +8,11 @@
             <el-button @click="$router.go(-1)" type="primary" round style="float: right;" size="mini">返回</el-button>
           </div>
           <div style="padding: 20px 20%">
-            <div class="title">{{ title }}</div>
-            <div class="time">{{ time }}</div>
-            <div class="text">{{ text }}</div>
+            <div class="title">{{ data.title }}</div>
+            <div class="time">{{ data.time }}</div>
+            <div class="text">{{ data.text }}</div>
             <div class="name">
-              <el-tag type="success">{{ name }}</el-tag>
+              <el-tag type="success">{{ data.name }}</el-tag>
             </div>
           </div>
         </el-card>
@@ -28,10 +28,7 @@ export default {
   name: "Announcement",
   data() {
     return {
-      title: '',
-      time: '',
-      text: '',
-      name: '',
+      data:{}
     }
   },
   watch: {
@@ -40,7 +37,6 @@ export default {
     }
   },
   mounted() {
-    putRequest("/messages/state",{messageId:this.$route.params.messageId,state:true});
     this.announcementLoading();
   },
   methods: {
@@ -48,11 +44,13 @@ export default {
       getRequest("/messages/announcement/" + this.$route.params.messageId).then((res) => {
         const data = res.data.data;
         console.log(data);
+
         if (data.recipient === 1 || data.recipient === this.$store.state.uid) {
-          this.title = data.title;
-          this.time = data.time;
-          this.text = data.text;
-          this.name = data.name;
+          this.data = data;
+          if (this.data.recipient !== this.data.sender && !this.data.status) {
+            console.log(this.$route.params.messageId)
+            putRequest("/messages/status", {messageId: this.$route.params.messageId, status: true});
+          }
         } else {
           this.$message.error("消息查询失败！");
         }

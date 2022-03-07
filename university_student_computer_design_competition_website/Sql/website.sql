@@ -77,6 +77,8 @@ CREATE TABLE `contests` (
 	`reg_end_time` DATETIME NOT NULL COMMENT '报名结束时间',
 	`start_time` DATETIME NOT NULL COMMENT '比赛开始时间',
 	`end_time` DATETIME NOT NULL COMMENT '比赛截止时间',
+	`status` TINYINT(1) DEFAULT(FALSE) COMMENT '比赛审核状态',
+	`status_text` VARCHAR(255) DEFAULT(NULL) COMMENT '比赛审核结果',
 	PRIMARY KEY (`contest_id`),
 	CONSTRAINT `contests_1` FOREIGN KEY (`promulgator`) REFERENCES `users` (`user_id`),
 	CONSTRAINT `contests_2` FOREIGN KEY (`group_id`) REFERENCES `groups` (`group_id`)
@@ -86,32 +88,42 @@ INSERT INTO contests VALUES
 (DEFAULT,'2021年度全国大学生算法设计编程挑战赛',
 '# 2021年度全国大学生算法设计编程挑战赛\n报名开始时间：2021-01-01 10:00:00\n报名结束时间：2021-02-01 23:59:59\n\n**请同学们尽快报名**\n\n![测试图片](https://pic.imgdb.cn/item/5fb1289a0d550d58f52f5b1b.png)',
 'https://pic.imgdb.cn/item/61e95e482ab3f51d91903853.jpg',
-'2','3','2021-01-01 10:00:00','2021-02-01 23:59:59','2021-03-01 10:00:00','2021-04-01 23:59:59');
+'2','3','2021-01-01 10:00:00','2021-02-01 23:59:59','2021-03-01 10:00:00','2021-04-01 23:59:59',TRUE,DEFAULT);
 INSERT INTO contests VALUES
 (DEFAULT,'2021年度阿里巴巴人工智能对抗算法竞赛',
 '# 2021年度阿里巴巴人工智能对抗算法竞赛\n内容：\n1. 第一条\n2. 第二条\n3. 第三条',
 'https://pic.imgdb.cn/item/61e95e482ab3f51d9190384d.jpg',
-'5','4','2021-08-01 10:00:00','2022-10-01 23:59:59','2021-11-01 10:00:00','2022-11-11 23:59:59');
+'5','4','2021-08-01 10:00:00','2022-10-01 23:59:59','2021-11-01 10:00:00','2022-11-11 23:59:59',TRUE,DEFAULT);
 INSERT INTO contests VALUES
 (DEFAULT,'2021年度中国国际艺术博览会设计视觉形象设计大赛',
 '# 2021年度中国国际艺术博览会设计视觉形象设计大赛\n内容：123',
 'https://pic.imgdb.cn/item/61e95e482ab3f51d91903848.jpg',
-'6','4','2021-12-01 10:00:00','2022-02-01 23:59:59','2022-02-10 10:00:00','2022-04-01 23:59:59');
+'6','4','2021-12-01 10:00:00','2022-02-01 23:59:59','2022-02-10 10:00:00','2022-04-01 23:59:59',TRUE,DEFAULT);
 INSERT INTO contests VALUES
 (DEFAULT,'2022年度世界大学生超级计算机竞赛',
 '# 2022年度世界大学生超级计算机竞赛\n内容：456',
 'https://pic.imgdb.cn/item/61e95e482ab3f51d91903844.gif',
-'3','4','2022-01-01 10:00:00','2022-03-01 23:59:59','2022-03-02 10:00:00','2022-03-20 23:59:59');
+'3','4','2022-01-01 10:00:00','2022-03-01 23:59:59','2022-03-02 10:00:00','2022-03-20 23:59:59',TRUE,DEFAULT);
 INSERT INTO contests VALUES
 (DEFAULT,'2022年度中国高校计算机大赛-网络技术挑战赛',
 '# 2022年度中国高校计算机大赛-网络技术挑战赛\n内容：789',
 'https://pic.imgdb.cn/item/61e95d082ab3f51d918ed3d2.png',
-'4','3','2022-02-01 10:00:00','2022-05-01 23:59:59','2022-06-01 10:00:00','2022-07-01 23:59:59');
+'4','3','2022-02-01 10:00:00','2022-05-01 23:59:59','2022-06-01 10:00:00','2022-07-01 23:59:59',TRUE,DEFAULT);
 INSERT INTO contests VALUES
 (DEFAULT,'ACM国际大学生程序设计竞赛',
 '# ACM国际大学生程序设计竞赛\n内容：\n> 段落引用',
 'https://pic.imgdb.cn/item/61e95e482ab3f51d9190384d.jpg',
-'2','3','2022-03-01 10:00:00','2022-03-20 23:59:59','2022-04-04 10:00:00','2022-05-01 23:59:59');
+'2','3','2022-03-01 10:00:00','2022-03-20 23:59:59','2022-04-04 10:00:00','2022-05-01 23:59:59',TRUE,DEFAULT);
+INSERT INTO contests VALUES
+(DEFAULT,'测试比赛1',
+'# 测试比赛1\n内容：\n> 段落引用',
+'https://pic.imgdb.cn/item/61e95e482ab3f51d9190384d.jpg',
+'2','3','2022-03-01 10:00:00','2022-03-20 23:59:59','2022-04-04 10:00:00','2022-05-01 23:59:59',FALSE,'这个比赛重复，请删除');
+INSERT INTO contests VALUES
+(DEFAULT,'测试比赛2',
+'# 测试比赛2\n内容：\n> 段落引用',
+'https://pic.imgdb.cn/item/61e95e482ab3f51d9190384d.jpg',
+'2','3','2022-03-01 10:00:00','2022-03-20 23:59:59','2022-04-04 10:00:00','2022-05-01 23:59:59',FALSE,DEFAULT);
 
 -- ----------------------------
 -- 创建消息表:  `messages`
@@ -124,7 +136,7 @@ CREATE TABLE `messages` (
 	`text` text NOT NULL COMMENT '消息内容',
 	`sender` INT NOT NULL COMMENT '发布人（用户.用户id）',
 	`time` DATETIME NOT NULL DEFAULT(now()) COMMENT '发布时间',
-	`state` TINYINT(1) DEFAULT(FALSE) COMMENT '消息读取状态',
+	`status` TINYINT(1) DEFAULT(FALSE) COMMENT '消息读取状态',
 	PRIMARY KEY (`message_id`),
 	CONSTRAINT `messages_1` FOREIGN KEY (`recipient`) REFERENCES `users` (`user_id`),
 	CONSTRAINT `messages_2` FOREIGN KEY (`sender`) REFERENCES `users` (`user_id`)
@@ -191,7 +203,7 @@ CREATE TABLE `scores` (
 	`scores_id` INT NOT NULL AUTO_INCREMENT COMMENT '报名id',
 	`contest_id` INT NOT NULL COMMENT '比赛id（比赛.比赛id）',
 	`contestant` INT NOT NULL COMMENT '参赛者（用户.用户id）',
-	`state` TINYINT(1) NOT NULL DEFAULT(0) COMMENT '评审状态（0或1）',
+	`status` TINYINT(1) NOT NULL DEFAULT(0) COMMENT '评审状态（0或1）',
 	`judge` INT COMMENT '评委（用户.用户id）',
 	`text` text COMMENT '评审内容',
 	`result` TINYINT(3) COMMENT '成绩',

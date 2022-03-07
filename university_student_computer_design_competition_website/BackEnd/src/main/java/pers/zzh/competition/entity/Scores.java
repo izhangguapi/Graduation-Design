@@ -16,7 +16,7 @@ public class Scores {
     private Integer scoresId;
     private Integer contestId;
     private String contestant;
-    private Boolean state;
+    private Boolean status;
     private String judge;
     private String text;
     private Integer result;

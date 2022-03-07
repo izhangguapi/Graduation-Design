@@ -1,9 +1,7 @@
 <template>
   <el-container>
     <!--左侧功能-->
-    <el-aside width="200px">
-      <Aside></Aside>
-    </el-aside>
+    <Aside></Aside>
     <!--左侧功能结束-->
     <el-container>
       <!--顶部功能-->
@@ -30,7 +28,6 @@
 </template>
 
 <script>
-
 import Aside from "@/views/Admin/Aside";
 import Header from "@/views/Admin/Header";
 
@@ -116,13 +113,6 @@ export default {
   color: #333;
   text-align: center;
   line-height: 60px;
-}
-
-.el-aside {
-  background-color: #D3DCE6;
-  color: #333;
-  text-align: center;
-  line-height: 200px;
 }
 
 .el-tabs__nav .el-tabs__item:nth-child(1) span {

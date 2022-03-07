@@ -46,8 +46,8 @@
             </el-table-column>
             <el-table-column property="name" label="状态" align="center" width="100%">
               <template v-slot="scope">
-                <el-tag :type="scope.row.state ? 'info' : 'warning'" disable-transitions>
-                  {{ scope.row.state ? '已读' : '未读' }}
+                <el-tag :type="scope.row.status ? 'info' : 'warning'" disable-transitions>
+                  {{ scope.row.status ? '已读' : '未读' }}
                 </el-tag>
               </template>
             </el-table-column>
@@ -94,7 +94,7 @@ export default {
           const data = res.data.data;
           let unread = 0;
           for (let i = 0; i < data.length; i++) {
-            if (!data[i].state) {
+            if (!data[i].status) {
               unread++;
             }
           }
@@ -121,7 +121,7 @@ export default {
       // 跳转页面
       this.$router.push({name: 'messages-detail', params: {messageId: id}});
       // 未读变已读
-      putRequest("/messages/state", {messageId: id, state: true});
+      putRequest("/messages/status", {messageId: id, status: true});
       // 修改data数据
       this.getMessages();
     },

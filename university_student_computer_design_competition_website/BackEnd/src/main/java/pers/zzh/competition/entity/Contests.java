@@ -29,6 +29,9 @@ public class Contests {
     private Date startTime;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date endTime;
+    private Boolean status;
+    private String statusText;
+
     /**
      * 链表查询-用户表字段：姓名
      */

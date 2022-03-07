@@ -59,7 +59,7 @@ export default {
         name: '',
         phone: '',
         school: '',
-        state: '',
+        status: '',
         ranking: '',
         judge: '',
         result: '',
@@ -70,7 +70,7 @@ export default {
         scoresId: '',
         judge: '',
         result: '',
-        state: true,
+        status: true,
         text: ''
       }
     }
@@ -87,7 +87,7 @@ export default {
     // 加载
     scoreLoading(id) {
       // 根据id查询
-      if (this.data.state) {
+      if (this.data.status) {
         getRequest("/scores/" + id).then((res) => {
           const data = res.data.data;
           this.$set(this.data, 'ranking', data.ranking === undefined ? '未知' : data.ranking);
@@ -123,7 +123,7 @@ export default {
             this.$message.success("评审成功。")
             // 发送通知
             this.message();
-            this.data.state = true;
+            this.data.status = true;
             this.scoreLoading(this.data.scoresId);
           } else {
             this.$message.error("评审失败！")

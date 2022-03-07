@@ -22,7 +22,7 @@ public class Messages {
     private Integer sender;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date time;
-    private Boolean state;
+    private Boolean status;
     /**
      * 链表查询-用户表字段：姓名
      */

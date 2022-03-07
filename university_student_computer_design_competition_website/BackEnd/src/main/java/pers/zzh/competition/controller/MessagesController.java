@@ -79,9 +79,9 @@ public class MessagesController {
      *
      * @param messages
      */
-    @PutMapping("/messages/state")
-    public void upDataMessagesState(@RequestBody Messages messages) {
-        service.upDataMessagesState(messages);
+    @PutMapping("/messages/status")
+    public void upDataMessagesStatus(@RequestBody Messages messages) {
+        service.updateById(messages);
     }
 
     /**

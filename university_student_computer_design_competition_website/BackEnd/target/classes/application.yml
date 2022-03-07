@@ -21,4 +21,3 @@ mybatis-plus:
   configuration:
     # MP日志
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-  mapper-locations:

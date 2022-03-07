@@ -105,9 +105,9 @@ public class ScoresServiceImpl extends ServiceImpl<ScoresMapper, Scores> impleme
     @Override
     public List<Scores> selectScoresByCid(String cid) {
         QueryWrapper<Scores> qw = new QueryWrapper<>();
-        qw.select("scores_id,user_id,`name`,school,phone,state")
+        qw.select("scores_id,user_id,`name`,school,phone,status")
                 .last("INNER JOIN users ON scores.contestant=users.user_id\n" +
-                        "WHERE contest_id = " + cid + " ORDER BY state");
+                        "WHERE contest_id = " + cid + " ORDER BY status");
         return baseMapper.selectList(qw);
     }
 }

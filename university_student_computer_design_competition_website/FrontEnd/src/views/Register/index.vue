@@ -81,11 +81,11 @@
         </div>
         <el-dialog width="30%" title="创建组" :visible.sync="innerVisible" append-to-body>
           <el-form-item prop="gName" label="名称：">
-            <el-input prefix-icon="fa fa-map-marker" v-model="groups.groupName" maxlength="10"
+            <el-input v-model="groups.groupName" maxlength="10"
                       show-word-limit placeholder="请输入组名称"></el-input>
           </el-form-item>
           <el-form-item prop="encoding" label="编码：">
-            <el-input prefix-icon="fa fa-map-marker" v-model="groups.encoding"  maxlength="5" show-word-limit
+            <el-input v-model="groups.encoding"  maxlength="5" show-word-limit
                       onkeyup="value=value.replace(/[^\da-zA-Z]/g,'')"
                       placeholder="请输入五位组编码"></el-input>
           </el-form-item>

@@ -69,7 +69,7 @@ public class ContestsServiceImpl extends ServiceImpl<ContestsMapper, Contests> i
     @Override
     public List<Contests> selectContestsByGid(String gid) {
         QueryWrapper<Contests> qw = new QueryWrapper<>();
-        qw.select("contests.contest_id,contest_title,COUNT(scores_id) number")
+        qw.select("contests.contest_id,contest_title,contests.`status`,status_text,COUNT(scores_id) number")
                 .last(" LEFT JOIN scores ON contests.contest_id=scores.contest_id\n" +
                         " WHERE group_id = " + gid + " GROUP BY contest_id");
         return baseMapper.selectList(qw);

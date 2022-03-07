@@ -14,17 +14,17 @@
             <el-table-column prop="name" label="姓名" align="center"></el-table-column>
             <el-table-column prop="school" label="学校" align="center"></el-table-column>
             <el-table-column prop="phone" label="手机号" align="center"></el-table-column>
-            <el-table-column prop="state" label="评审状态" align="center">
+            <el-table-column prop="status" label="评审状态" align="center">
               <template v-slot="scope">
-                <el-tag :type="scope.row.state ? 'danger' : 'success'" disable-transitions>
-                  {{ scope.row.state ? '已评审' : '未评审' }}
+                <el-tag :type="scope.row.status ? 'danger' : 'success'" disable-transitions>
+                  {{ scope.row.status ? '已评审' : '未评审' }}
                 </el-tag>
               </template>
             </el-table-column>
             <el-table-column fixed="right" label="操作" width="100%" align="center">
               <template v-slot="scope">
                 <el-button type="text" size="small" @click="go(scope.row)">
-                  {{ scope.row.state ? '查看' : '评审' }}
+                  {{ scope.row.status ? '查看' : '评审' }}
                 </el-button>
               </template>
             </el-table-column>
@@ -113,7 +113,7 @@ export default {
       this.params.phone = data.phone;
       this.params.school = data.school;
       this.params.userId = data.userId;
-      this.params.state = data.state;
+      this.params.status = data.status;
       // console.log(this.params);
       this.$router.push({name: 'management-score', params: this.params})
     }

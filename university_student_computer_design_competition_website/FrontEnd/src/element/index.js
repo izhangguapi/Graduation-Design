@@ -49,6 +49,7 @@ import {
     Aside,
     Submenu,
     MenuItemGroup,
+    Popconfirm,
 
 
     Notification,
@@ -110,6 +111,8 @@ const element = {
         Vue.use(Aside);
         Vue.use(Submenu);
         Vue.use(MenuItemGroup);
+        Vue.use(Popconfirm);
+
 
 
         Vue.prototype.$message = Message;
