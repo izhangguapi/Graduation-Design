@@ -28,14 +28,6 @@ export default {
 </script>
 
 <style lang="less" scoped>
-//.el-header {
-//  box-shadow: 0 1px 3px rgba(255, 100, 100, 0.5);
-//  background-color: #fff;
-//  position: fixed;
-//  width: 100%;
-//  z-index: 255;
-//  overflow: hidden;
-//}
 .el-main {
   width: 100%;
   padding-top: 100px;

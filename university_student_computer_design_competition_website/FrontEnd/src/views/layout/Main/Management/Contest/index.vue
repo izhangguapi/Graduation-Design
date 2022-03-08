@@ -62,7 +62,7 @@ import 'mavon-editor/dist/css/index.css'
 const mdEditor = require('mavon-editor')
 
 export default {
-  name: "Competition",
+  name: "Contest",
   components: {
     'mdEditor': mdEditor.mavonEditor
   },
@@ -106,7 +106,8 @@ export default {
         regStartTime: '',
         regEndTime: '',
         startTime: '',
-        endTime: ''
+        endTime: '',
+        status: false
       },
       rules: {
         contestTitle: [{required: true, message: '请输入比赛名称', trigger: 'blur'}],
@@ -133,8 +134,9 @@ export default {
       this.addOrUpdate = false;
       this.btnText = '立即修改';
       document.title = '修改比赛';
-      getRequest("/contests/" + this.$route.params.contestId).then((res) => {
+      getRequest("/contestForUpdate/" + this.$route.params.contestId).then((res) => {
         const data = res.data.data;
+        console.log(data)
         if (data) {
           this.contestForm.contestTitle = data.contestTitle;
           this.contestForm.contestId = this.$route.params.contestId;
@@ -159,9 +161,9 @@ export default {
         if (valid) {
           if (this.addOrUpdate) {
             // 添加
-            postRequest("/addContests", this.contestForm).then((resp) => {
+            postRequest("/addContest", this.contestForm).then((resp) => {
               if (resp.data.data) {
-                this.$message.success('发布成功。');
+                this.$message.success('发布成功，等待审核。');
                 this.$router.push("/management");
               } else {
                 this.$message.error('发布失败！');
@@ -169,10 +171,10 @@ export default {
             })
           } else {
             // 修改
-            putRequest("/updateContests", this.contestForm).then((resp) => {
+            putRequest("/updateContest", this.contestForm).then((resp) => {
               console.log(resp.data.data);
               if (resp.data.data) {
-                this.$message.success('修改成功。');
+                this.$message.success('修改成功，等待审核。');
                 this.$router.push("/management");
               } else {
                 this.$message.error('修改失败！');

@@ -39,7 +39,7 @@
             所属组：<samp class="itemRight">{{ groupName }}</samp>
           </div>
           <div style="text-align: center" v-if="btnHidden">
-            <el-button type="primary" round @click="submit">{{btnText}}</el-button>
+            <el-button type="primary" round @click="submit">{{ btnText }}</el-button>
           </div>
           <div style="text-align: center" v-else>
             <el-button type="danger" round disabled>{{ btnText }}</el-button>
@@ -52,19 +52,19 @@
 
 <script>
 import {getRequest, postRequest} from "@/utils/api";
-
-const mdEditor = require('mavon-editor')
 import 'mavon-editor/dist/css/index.css'
 
+const mdEditor = require('mavon-editor')
+
 export default {
-  inject:['reload'],                                 //注入App里的reload方法
+  inject: ['reload'],                                 //注入App里的reload方法
   components: {
     'mdEditor': mdEditor.mavonEditor
   },
   data() {
     return {
       btnHidden: false,
-      btnText:'不可报名',
+      btnText: '不可报名',
       promulgator: 0,
       contestTitle: '',
       contestText: '',
@@ -95,44 +95,55 @@ export default {
     }
   },
   mounted() {
-    this.contestId = this.$route.params.contestId;
-    // 查询当前用户是否已报名此比赛
-    getRequest("/scores/" + this.$store.state.uid + "/" + this.contestId).then((res) => {
-      if (this.$store.state.gid === '2') {
-        if (res.data.data === 0){
-          this.btnHidden = true;
-          this.btnText='立即报名';
-        }else{
-          this.btnHidden = false;
-          this.btnText='已报名';
-        }
-      } else {
-        this.btnHidden = false;
-      }
-    });
-    // 查询id为this.$route.params.contestId的比赛并显示
-    getRequest("/contests/" + this.contestId).then((res) => {
-      const data = res.data.data;
-      if (data) {
-        document.title = this.contestTitle = data.contestTitle;
-        this.contestText = data.contestText;
-        this.name = data.name;
-        this.groupName = data.groupName;
-        this.promulgator = data.promulgator;
-        this.activities[0].timestamp = data.regStartTime;
-        this.activities[1].timestamp = data.regEndTime;
-        if (new Date() > new Date(data.regEndTime)) {
-          this.btnText='报名时间已过';
-          this.btnHidden = false;
-        }
-        this.activities[2].timestamp = data.startTime;
-        this.activities[3].timestamp = data.endTime;
-      } else {
-        this.$router.push("/404");
-      }
-    });
+    this.contestLoading();
+  },
+  watch: {
+    '$store.state.uid'() {
+      this.contestLoading();
+    }
   },
   methods: {
+    // 初始化
+    contestLoading() {
+      if (this.$store.state.uid !== undefined) {
+        this.contestId = this.$route.params.contestId;
+        // 查询当前用户是否已报名此比赛
+        getRequest("/scores/" + this.$store.state.uid + "/" + this.contestId).then((res) => {
+          if (this.$store.state.gid === '2') {
+            if (res.data.data === 0) {
+              this.btnHidden = true;
+              this.btnText = '立即报名';
+            } else {
+              this.btnHidden = false;
+              this.btnText = '已报名';
+            }
+          } else {
+            this.btnHidden = false;
+          }
+        });
+        // 查询id为this.$route.params.contestId的比赛并显示
+        getRequest("/contests/" + this.contestId).then((res) => {
+          const data = res.data.data;
+          if (data) {
+            document.title = this.contestTitle = data.contestTitle;
+            this.contestText = data.contestText;
+            this.name = data.name;
+            this.groupName = data.groupName;
+            this.promulgator = data.promulgator;
+            this.activities[0].timestamp = data.regStartTime;
+            this.activities[1].timestamp = data.regEndTime;
+            if (new Date() > new Date(data.regEndTime)) {
+              this.btnText = '报名时间已过';
+              this.btnHidden = false;
+            }
+            this.activities[2].timestamp = data.startTime;
+            this.activities[3].timestamp = data.endTime;
+          } else {
+            this.$router.push("/404");
+          }
+        });
+      }
+    },
     /**
      * 点击报名按钮
      */
@@ -149,7 +160,7 @@ export default {
             sender: this.promulgator
           };
           postRequest("/messages/insert", obj).then((res) => {
-            if (res.data.data===1){
+            if (res.data.data === 1) {
               this.reload();
             }
           })

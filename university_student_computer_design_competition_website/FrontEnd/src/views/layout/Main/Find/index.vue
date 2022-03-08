@@ -2,19 +2,19 @@
     <div>
       <el-row :gutter="20">
         <el-col :span="16" :offset="4">
-          <competitionList></competitionList>
+          <ContestList></ContestList>
         </el-col>
       </el-row>
     </div>
 </template>
 
 <script>
-import competitionList from "./CompetitionList";
+import ContestList from "./ContestList";
 
 
 export default {
   name: "Find",
-  components: {competitionList},
+  components: {ContestList},
 }
 </script>
 

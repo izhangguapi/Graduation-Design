@@ -9,7 +9,7 @@
     <el-row :gutter="20">
       <!--左侧卡片-->
       <el-col :span="12" :offset="4">
-        <competitionList></competitionList>
+        <ContestList></ContestList>
       </el-col>
       <!--右侧公告通知-->
       <el-col :span="4">
@@ -20,13 +20,13 @@
 </template>
 
 <script>
-import competitionList from "../Find/CompetitionList";
+import ContestList from "../Find/ContestList";
 import AnnouncementsList from "./AnnouncementsList";
 import Banner from "./Banner";
 
 export default {
   name: "Home",
-  components: {Banner, competitionList, AnnouncementsList},
+  components: {Banner, ContestList, AnnouncementsList},
   data() {
     return {
       carouselImages: [

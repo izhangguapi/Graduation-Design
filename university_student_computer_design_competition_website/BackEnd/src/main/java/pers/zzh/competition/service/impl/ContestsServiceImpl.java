@@ -25,9 +25,9 @@ public class ContestsServiceImpl extends ServiceImpl<ContestsMapper, Contests> i
     public Contests selectContestsOne(String id) {
         QueryWrapper<Contests> qw = new QueryWrapper<>();
         qw.select("contest_id,contest_text,contest_title,url,name,group_name,reg_start_time,start_time,reg_end_time,end_time,promulgator")
-                .last(" INNER JOIN groups g ON contests.group_id=g.group_id\n" +
-                        " INNER JOIN users u ON contests.promulgator=u.user_id\n" +
-                        " WHERE contest_id=" + id);
+                .last(" INNER JOIN groups g ON contests.group_id=g.group_id \n" +
+                        " INNER JOIN users u ON contests.promulgator=u.user_id \n" +
+                        " WHERE and contest_id=" + id + "and status = true");
         return baseMapper.selectOne(qw);
     }
 
@@ -38,11 +38,11 @@ public class ContestsServiceImpl extends ServiceImpl<ContestsMapper, Contests> i
      * @return 分页查询结果
      */
     @Override
-    public Page<Contests> selectContests(int num) {
+    public Page<Contests> selectContests(Integer num) {
         Page<Contests> page = new Page<>(num, 4);
         QueryWrapper<Contests> qw = new QueryWrapper<>();
         qw.select("contest_id,contest_title,url,reg_start_time,reg_end_time")
-                .last(" c,users u WHERE c.promulgator=u.user_id");
+                .eq("status", true);
         return baseMapper.selectPage(page, qw);
     }
 
@@ -69,9 +69,12 @@ public class ContestsServiceImpl extends ServiceImpl<ContestsMapper, Contests> i
     @Override
     public List<Contests> selectContestsByGid(String gid) {
         QueryWrapper<Contests> qw = new QueryWrapper<>();
-        qw.select("contests.contest_id,contest_title,contests.`status`,status_text,COUNT(scores_id) number")
-                .last(" LEFT JOIN scores ON contests.contest_id=scores.contest_id\n" +
-                        " WHERE group_id = " + gid + " GROUP BY contest_id");
+        qw.select("contests.contest_id,contest_title,contests.`status`,status_text,`name`,COUNT(scores_id) number ")
+                .last("LEFT JOIN scores ON contests.contest_id=scores.contest_id \n" +
+                        "INNER JOIN users ON promulgator = user_id \n" +
+                        "WHERE contests.group_id = " + gid + "  GROUP BY contest_id");
         return baseMapper.selectList(qw);
     }
+
+
 }

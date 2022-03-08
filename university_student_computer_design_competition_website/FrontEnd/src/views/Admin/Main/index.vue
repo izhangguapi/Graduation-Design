@@ -8,6 +8,10 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style lang="less">
+//.el-main {
+//  width: 100%;
+//  padding-top: 100px;
+//  min-height: 800px;
+//}
 </style>

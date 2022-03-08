@@ -11,5 +11,9 @@ export default {
 </script>
 
 <style scoped>
-
+div {
+  width: 100%;
+  padding-top: 100px;
+  min-height: 800px;
+}
 </style>

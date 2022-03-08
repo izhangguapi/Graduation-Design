@@ -59,7 +59,7 @@ export default {
         children: [{
           // 发布比赛审核，消息审核
           childrenTitle: '审核比赛',
-          index: '/admin/audit/contests'
+          index: '/admin/review/contests'
         }]
       }]
     }

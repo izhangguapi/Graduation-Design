@@ -88,12 +88,12 @@ const router = new VueRouter({
                 },
                 component: () => import('@/views/layout/Main/Management')
             }, {
-                name: 'management-competition',
-                path: 'competition',
+                name: 'management-contest',
+                path: 'contest',
                 meta: {
                     title: '发布或修改比赛'
                 },
-                component: () => import('@/views/layout/Main/Management/Competition')
+                component: () => import('@/views/layout/Main/Management/Contest')
             }, {
                 name: 'management-message',
                 path: 'message',
@@ -200,7 +200,7 @@ const router = new VueRouter({
                 meta: {
                     title: '比赛管理',
                 },
-                component: () => import('@/views/Admin/Main/Contest')
+                component: () => import('@/views/Admin/Main/Contests')
             }, {
                 name: 'messages',
                 path: 'messages',
@@ -215,6 +215,13 @@ const router = new VueRouter({
                     title: '报名评分管理',
                 },
                 component: () => import('@/views/Admin/Main/Scores')
+            }, {
+                name: 'contests',
+                path: 'review/contests',
+                meta: {
+                    title: '审核比赛',
+                },
+                component: () => import('@/views/Admin/Main/Review/Contests')
             }]
         },
     ]

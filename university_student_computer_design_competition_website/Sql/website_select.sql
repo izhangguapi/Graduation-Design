@@ -10,6 +10,26 @@ SELECT * FROM contests;
 SELECT * FROM messages;
 SELECT * FROM scores;
 
+
+SELECT contest_id,contest_text,contest_title,url,name,group_name,reg_start_time,start_time,reg_end_time,end_time,promulgator FROM contests 
+INNER JOIN groups g ON contests.group_id=g.group_id 
+INNER JOIN users u ON contests.promulgator=u.user_id 
+WHERE status = true and contest_id = 7
+
+SELECT contest_id,contest_title,url,reg_start_time,reg_end_time FROM contests WHERE status = TRUE
+
+SELECT contests.contest_id,contest_title,contests.`status`,status_text,`name`,COUNT(scores_id) number 
+FROM contests 
+LEFT JOIN scores ON contests.contest_id=scores.contest_id 
+INNER JOIN users ON promulgator = user_id
+WHERE contests.group_id = 3 GROUP BY contest_id
+
+SELECT 
+FROM contests 
+LEFT JOIN scores ON contests.contest_id=scores.contest_id 
+-- INNER JOIN users ON promulgator = user_id
+WHERE contests.group_id = 3 GROUP BY contest_id
+
 SELECT * FROM scores WHERE scores_id = 25
 
 DELETE FROM messages WHERE recipient=2 AND state=TRUE;

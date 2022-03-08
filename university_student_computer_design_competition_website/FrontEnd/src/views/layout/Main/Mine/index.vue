@@ -5,7 +5,7 @@
         <Information></Information>
       </el-col>
       <el-col :span="4">
-        <Competition></Competition>
+        <Contest></Contest>
       </el-col>
     </el-row>
   </div>
@@ -13,12 +13,12 @@
 
 <script>
 import Information from "@/views/layout/Main/Mine/Information";
-import Competition from "@/views/layout/Main/Mine/Competition";
+import Contest from "@/views/layout/Main/Mine/Contest";
 import {login} from "@/utils/login";
 
 export default {
   name: "index",
-  components: {Information, Competition},
+  components: {Information, Contest},
   computed:{
     isLogin(){
       return this.$store.state.isLogin;
