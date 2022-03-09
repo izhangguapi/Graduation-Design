@@ -78,36 +78,36 @@ const router = new VueRouter({
             }]
         },
         {
-            path: '/management',
+            path: '/manage',
             component: layout,
             children: [{
-                name: 'management',
+                name: 'manage',
                 path: '',
                 meta: {
                     title: '管理比赛'
                 },
-                component: () => import('@/views/layout/Main/Management')
+                component: () => import('@/views/layout/Main/Manage')
             }, {
-                name: 'management-contest',
+                name: 'manage-contest',
                 path: 'contest',
                 meta: {
                     title: '发布或修改比赛'
                 },
-                component: () => import('@/views/layout/Main/Management/Contest')
+                component: () => import('@/views/layout/Main/Manage/Contest')
             }, {
-                name: 'management-message',
+                name: 'manage-message',
                 path: 'message',
                 meta: {
                     title: '发送消息'
                 },
-                component: () => import('@/views/layout/Main/Management/Message/')
+                component: () => import('@/views/layout/Main/Manage/Message')
             }, {
-                name: 'management-score',
+                name: 'manage-score',
                 path: 'score',
                 meta: {
                     title: '评审比赛'
                 },
-                component: () => import('@/views/layout/Main/Management/Score')
+                component: () => import('@/views/layout/Main/Manage/Score')
             }]
         },
         {
@@ -216,8 +216,8 @@ const router = new VueRouter({
                 },
                 component: () => import('@/views/Admin/Main/Scores')
             }, {
-                name: 'contests',
-                path: 'review/contests',
+                name: 'review-contests',
+                path: 'reviewContests',
                 meta: {
                     title: '审核比赛',
                 },

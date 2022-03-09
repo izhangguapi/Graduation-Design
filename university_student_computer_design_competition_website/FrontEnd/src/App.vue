@@ -35,7 +35,7 @@ export default {
 //  margin: 0;
 //  background-color: #f4f4f4;
 //}
-html,body,#app {
+html, body, #app {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -52,5 +52,9 @@ html,body,#app {
 
 .fade-enter, .fade-leave-to {
   opacity: 0;
+}
+
+[class*="fa-"] + span {
+  margin-left: 5px;
 }
 </style>

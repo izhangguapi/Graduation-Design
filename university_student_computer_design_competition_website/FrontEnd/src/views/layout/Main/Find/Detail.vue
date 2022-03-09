@@ -122,7 +122,7 @@ export default {
           }
         });
         // 查询id为this.$route.params.contestId的比赛并显示
-        getRequest("/contests/" + this.contestId).then((res) => {
+        getRequest("/contest/" + this.contestId).then((res) => {
           const data = res.data.data;
           if (data) {
             document.title = this.contestTitle = data.contestTitle;

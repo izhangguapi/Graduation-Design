@@ -1,7 +1,6 @@
 package pers.zzh.competition.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import org.apache.ibatis.annotations.Options;
 import pers.zzh.competition.entity.Groups;
 
 import java.util.List;
@@ -31,10 +30,17 @@ public interface GroupsService extends IService<Groups> {
     int insertGroupGetId(Groups groups);
 
     /**
-     * 查询单个组
+     * 搜索组表
      *
-     * @param id
-     * @return
+     * @param query 搜索值
+     * @return 结果列表
      */
-    Groups getGroupName(String id);
+    List<Groups> searchGroups(String query);
+
+    /**
+     * 查询用户组表
+     *
+     * @return 结果列表
+     */
+    List<Groups> selectGroupsList();
 }

@@ -84,7 +84,7 @@ public class ContestsController {
     }
 
     /**
-     * 根据组id查询
+     * 根据组id查询比赛
      *
      * @param gid 组id
      * @return 查询结果

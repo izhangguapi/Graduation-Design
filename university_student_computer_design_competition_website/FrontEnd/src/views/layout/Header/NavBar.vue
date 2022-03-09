@@ -25,7 +25,7 @@ export default {
         {path: '/find', title: '发现', icon: 'fa fa-infinity'},
         {path: '/mine', title: '个人中心', icon: 'fa fa-graduation-cap'}]
       if (gid !== 2) {
-        navBarList.splice(2, 0, {path: '/management', title: '管理', icon: 'fa fa-flag'});
+        navBarList.splice(2, 0, {path: '/manage', title: '管理', icon: 'fa fa-flag'});
       }
       this.navBarList = navBarList;
     }

@@ -27,7 +27,7 @@ public class ContestsServiceImpl extends ServiceImpl<ContestsMapper, Contests> i
         qw.select("contest_id,contest_text,contest_title,url,name,group_name,reg_start_time,start_time,reg_end_time,end_time,promulgator")
                 .last(" INNER JOIN groups g ON contests.group_id=g.group_id \n" +
                         " INNER JOIN users u ON contests.promulgator=u.user_id \n" +
-                        " WHERE and contest_id=" + id + "and status = true");
+                        " WHERE status = true and contest_id = " + id);
         return baseMapper.selectOne(qw);
     }
 

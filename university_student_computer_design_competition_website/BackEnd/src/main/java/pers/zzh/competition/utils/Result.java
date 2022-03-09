@@ -27,10 +27,13 @@ public class Result {
 //    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
 //    private Date time = new Date();
 
-//    public Result(Integer code, String msg) {
+    //    public Result(Integer code, String msg) {
 //        this.code = code;
 //        this.msg = msg;
 //    }
+
+    public Result() {
+    }
 
     public Result(Integer code, String msg, Object data) {
         this.code = code;
@@ -51,4 +54,9 @@ public class Result {
     public Result(Object data) {
         this.data = data;
     }
+    public Result(String msg) {
+        this.msg = msg;
+    }
+
+
 }

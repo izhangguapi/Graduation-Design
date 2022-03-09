@@ -14,4 +14,8 @@ public class Groups {
     private Integer groupId;
     private String groupName;
     private String encoding;
+    /**
+     * 链表查询-自定义字段：数量
+     */
+    private Integer number;
 }

@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "审核比赛",
+  name: "ReviewContests",
   data(){
     return{
 
