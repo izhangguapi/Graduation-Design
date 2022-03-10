@@ -9,15 +9,14 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import pers.zzh.competition.common.AverageAlgorithm;
-import pers.zzh.competition.entity.Contests;
 import pers.zzh.competition.entity.Groups;
 import pers.zzh.competition.entity.Scores;
 import pers.zzh.competition.entity.Users;
 import pers.zzh.competition.mapper.*;
+import pers.zzh.competition.service.UsersService;
 
 import java.io.File;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @SpringBootTest
@@ -33,6 +32,8 @@ class ApplicationTests {
     private MessagesMapper messagesDao;
     @Autowired
     private ContestsMapper contestsMapper;
+    @Autowired
+    private UsersService usersService;
 
     @Test
     void testGetBy0() {
@@ -153,13 +154,6 @@ class ApplicationTests {
         System.out.println(usersDao.deleteById(15));
     }
 
-    @Test
-    void testDelete123() {
-        QueryWrapper<Scores> qw = new QueryWrapper<>(); // 创建条件构造器
-        qw.select("*").last("inner join `contests` ON scores.contest_id = contests.contest_id WHERE contestant = 7");
-        System.out.println(scoresDao.selectList(qw));
-    }
-
 //    @Test
 //    void algorithm1() {
 //        // 获取组id
@@ -214,6 +208,17 @@ class ApplicationTests {
 //    }
 
     @Test
+    void testDelete123() {
+        QueryWrapper<Scores> qw = new QueryWrapper<>(); // 创建条件构造器
+        qw.select("*").last("inner join `contests` ON scores.contest_id = contests.contest_id WHERE contestant = 7");
+        System.out.println(scoresDao.selectList(qw));
+    }
+
+
+//    @Autowired
+//    private AverageAlgorithm averageAlgorithm;
+
+    @Test
     void testAlgorithm() {
         AverageAlgorithm.entrance(3);
     }
@@ -225,7 +230,8 @@ class ApplicationTests {
         // 创建Map对象 //数据采用的哈希表结构
         Map<String, Integer> map = new HashMap<>();
         for (int i = 0; i < 3; i++) {
-            System.out.print(i+","+b+",");System.out.println(i==b);
+            System.out.print(i + "," + b + ",");
+            System.out.println(i == b);
             // 第一次
             if (i < b) {
                 map.put("userStart" + i, i * a + i);
@@ -239,7 +245,7 @@ class ApplicationTests {
             }
         }
         for (int i = 0; i < 3; i++) {
-            System.out.println(map.get("userStart"+i) + ","+map.get("userEnd"+i));
+            System.out.println(map.get("userStart" + i) + "," + map.get("userEnd" + i));
         }
 
     }

@@ -3,8 +3,11 @@ package pers.zzh.competition.service;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import pers.zzh.competition.common.entity.Login;
 import pers.zzh.competition.entity.Users;
+
+import java.util.List;
 
 
 /**
@@ -64,4 +67,11 @@ public interface UsersService extends IService<Users> {
      * @return 该id的用户信息
      */
     Users selectById(int uid);
+
+    /**
+     * 根据组id查询该组下有哪用户，生成一个用户id列表
+     * @param gid 组id
+     * @return 列表
+     */
+    List<Users> selectByGid(Integer gid);
 }

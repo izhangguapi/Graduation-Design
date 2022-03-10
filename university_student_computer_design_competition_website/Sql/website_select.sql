@@ -63,7 +63,7 @@ LEFT JOIN scores ON contests.contest_id=scores.contest_id
 INNER JOIN users ON promulgator = user_id
 WHERE contests.group_id = 3 GROUP BY contest_id
 
-SELECT 
+SELECT *
 FROM contests 
 LEFT JOIN scores ON contests.contest_id=scores.contest_id 
 -- INNER JOIN users ON promulgator = user_id

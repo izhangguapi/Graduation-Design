@@ -12,6 +12,8 @@ import pers.zzh.competition.mapper.UsersMapper;
 import pers.zzh.competition.entity.Users;
 import pers.zzh.competition.service.UsersService;
 
+import java.util.List;
+
 /**
  * 业务逻辑实现类
  *
@@ -111,5 +113,13 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users> implements
         qw.select("address,birthday,email,group_name,name,phone,school,sex")
                 .last("inner join groups g ON users.group_id = g.group_id where user_id = " + uid);
         return baseMapper.selectOne(qw);
+    }
+
+    @Override
+    public List<Users> selectByGid(Integer gid) {
+        // 根据组id查询该组下有哪用户，生成一个用户id列表
+        QueryWrapper<Users> qw = new QueryWrapper<>();
+        qw.select("user_id").eq("group_id", gid);
+        return  baseMapper.selectList(qw);
     }
 }

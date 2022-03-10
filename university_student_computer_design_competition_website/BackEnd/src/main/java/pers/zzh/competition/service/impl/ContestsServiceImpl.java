@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 import pers.zzh.competition.entity.Contests;
+import pers.zzh.competition.entity.Users;
 import pers.zzh.competition.mapper.ContestsMapper;
 import pers.zzh.competition.service.ContestsService;
 
@@ -76,5 +77,13 @@ public class ContestsServiceImpl extends ServiceImpl<ContestsMapper, Contests> i
         return baseMapper.selectList(qw);
     }
 
-
+    @Override
+    public List<Contests> selectByGid(Integer gid) {
+        // 根据组id查询有哪些比赛以及报名人数，生成一个组id和
+        QueryWrapper<Contests> qw = new QueryWrapper<>();
+        qw.select("contests.contest_id,COUNT(scores_id) number")
+                .last("LEFT JOIN scores ON contests.contest_id=scores.contest_id \n" +
+                        "WHERE contests.group_id = " + gid + " GROUP BY contest_id");
+        return baseMapper.selectList(qw);
+    }
 }
