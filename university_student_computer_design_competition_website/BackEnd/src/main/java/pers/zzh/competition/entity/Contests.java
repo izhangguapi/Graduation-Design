@@ -48,5 +48,5 @@ public class Contests {
      * 链表查询-自定义字段：数量
      */
     @TableField(exist = false)
-    private String number;
+    private Integer number;
 }

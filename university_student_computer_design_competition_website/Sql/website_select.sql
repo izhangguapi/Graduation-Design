@@ -11,6 +11,45 @@ SELECT * FROM messages;
 SELECT * FROM scores;
 
 
+SELECT COUNT(*) FROM messages;
+SELECT COUNT(*) FROM messages LIMIT 0,18
+SELECT * FROM messages LIMIT 0,18
+SELECT * FROM messages LIMIT 18,18
+SELECT * FROM messages LIMIT 36,17
+
+{userStart3=33, userStart4=44, userEnd4=10, userStart1=11, userEnd3=10, userStart2=21, userEnd2=11, userEnd1=11, userStart0=0, userEnd0=11}
+
+SELECT * FROM messages LIMIT 0,10;
+SELECT * FROM messages LIMIT 10,10;
+SELECT * FROM messages LIMIT 20,10;
+SELECT * FROM messages LIMIT 30,10;
+SELECT * FROM messages LIMIT 40,10;
+
+SELECT * FROM messages LIMIT 0,11;
+SELECT * FROM messages LIMIT 11,11;
+SELECT * FROM messages LIMIT 22,11;
+SELECT * FROM messages LIMIT 33,10;
+SELECT * FROM messages LIMIT 43,10;
+
+SELECT COUNT(*) FROM messages LIMIT 0,18
+SELECT COUNT(*) FROM messages LIMIT 18,18
+SELECT COUNT(*) FROM messages LIMIT 36,17;
+
+select * FROM users WHERE group_id = 3
+
+SELECT contests.contest_id,COUNT(scores_id) number 
+FROM contests 
+LEFT JOIN scores ON contests.contest_id=scores.contest_id 
+WHERE contests.group_id = 3 GROUP BY contest_id
+
+SELECT groups.*,COUNT(user_id) number FROM groups
+LEFT JOIN users ON groups.group_id = users.group_id
+WHERE CONCAT(group_name,encoding) LIKE '%设计%'
+GROUP BY groups.group_id
+
+select * from groups where CONCAT(group_name,encoding) LIKE '%设计%'
+select * from contests where CONCAT(contest_text,contest_title) LIKE '%设计%'
+
 SELECT contest_id,contest_text,contest_title,url,name,group_name,reg_start_time,start_time,reg_end_time,end_time,promulgator FROM contests 
 INNER JOIN groups g ON contests.group_id=g.group_id 
 INNER JOIN users u ON contests.promulgator=u.user_id 
