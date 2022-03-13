@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <!--针对IE8以上浏览器的配置，让它以最高级别渲染页面-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--开启移动端的理想视口-->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--配置页签图标-->
+    <link rel="icon" href="/favicon.ico">
+    <!--配置网站标题-->
+    <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+<body>
+<!--当浏览器不支持js时，下面元素将被渲染-->
+<noscript>
+    <strong>很抱歉，如果不启用JavaScript，<%= htmlWebpackPlugin.options.title %>页面将无法正常工作。请启用后再运行。</strong>
+</noscript>
+<!--容器-->
+<div id="app"></div>
+<!-- 构建的文件将被自动注入 -->
+</body>
+</html>
