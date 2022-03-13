@@ -16,7 +16,6 @@ public interface ContestsService extends IService<Contests> {
      * 根据id查询一条数据
      *
      * @param id
-     * @param status
      * @return
      */
     Contests selectContestsOne(String id);
@@ -27,7 +26,7 @@ public interface ContestsService extends IService<Contests> {
      * @param num 第几页
      * @return 分页查询结果
      */
-    Page<Contests> selectContests(Integer num);
+    Page<Contests> selectContestsPage(Integer num);
 
     /**
      * 搜索
@@ -51,4 +50,12 @@ public interface ContestsService extends IService<Contests> {
      * @return 列表
      */
     List<Contests> selectByGid(Integer gid);
+
+    /**
+     * 查询未审核的比赛
+     * @return 未审核比赛的列表
+     */
+     List<Contests> selectContests();
+
+    List<Contests> searchContests(String query);
 }

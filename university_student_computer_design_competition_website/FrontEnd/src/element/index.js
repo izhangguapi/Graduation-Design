@@ -51,7 +51,6 @@ import {
     MenuItemGroup,
     Popconfirm,
 
-
     Notification,
     Message,
     MessageBox
@@ -112,8 +111,6 @@ const element = {
         Vue.use(Submenu);
         Vue.use(MenuItemGroup);
         Vue.use(Popconfirm);
-
-
 
         Vue.prototype.$message = Message;
         Vue.prototype.$msgbox = MessageBox;

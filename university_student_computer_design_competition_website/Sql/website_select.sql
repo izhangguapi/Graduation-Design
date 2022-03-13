@@ -11,6 +11,11 @@ SELECT * FROM messages;
 SELECT * FROM scores;
 
 
+SELECT contest_id,contest_title,contest_text,group_name,`name`,`status`,status_text FROM contests 
+INNER JOIN groups ON contests.group_id=groups.group_id
+INNER JOIN users ON contests.promulgator = users.user_id
+WHERE `status`=FALSE AND contest_title LIKE '%比赛2%' ORDER BY contest_id DESC;
+
 SELECT COUNT(*) FROM messages;
 SELECT COUNT(*) FROM messages LIMIT 0,18
 SELECT * FROM messages LIMIT 0,18

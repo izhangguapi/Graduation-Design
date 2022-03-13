@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 import pers.zzh.competition.entity.Contests;
+import pers.zzh.competition.entity.Groups;
 import pers.zzh.competition.entity.Users;
 import pers.zzh.competition.mapper.ContestsMapper;
 import pers.zzh.competition.service.ContestsService;
@@ -39,7 +40,7 @@ public class ContestsServiceImpl extends ServiceImpl<ContestsMapper, Contests> i
      * @return 分页查询结果
      */
     @Override
-    public Page<Contests> selectContests(Integer num) {
+    public Page<Contests> selectContestsPage(Integer num) {
         Page<Contests> page = new Page<>(num, 4);
         QueryWrapper<Contests> qw = new QueryWrapper<>();
         qw.select("contest_id,contest_title,url,reg_start_time,reg_end_time")
@@ -84,6 +85,26 @@ public class ContestsServiceImpl extends ServiceImpl<ContestsMapper, Contests> i
         qw.select("contests.contest_id,COUNT(scores_id) number")
                 .last("LEFT JOIN scores ON contests.contest_id=scores.contest_id \n" +
                         "WHERE contests.group_id = " + gid + " GROUP BY contest_id");
+        return baseMapper.selectList(qw);
+    }
+
+    @Override
+    public List<Contests> selectContests() {
+        QueryWrapper<Contests> qw = new QueryWrapper<>();
+        qw.select("contest_id,contest_title,contest_text,group_name,`name`,`status`,status_text")
+                .last("INNER JOIN groups ON contests.group_id=groups.group_id\n" +
+                        " INNER JOIN users ON contests.promulgator = users.user_id\n" +
+                        " ORDER BY contest_id DESC");
+        return baseMapper.selectList(qw);
+    }
+
+    @Override
+    public List<Contests> searchContests(String query) {
+        QueryWrapper<Contests> qw = new QueryWrapper<>();
+        qw.select("contest_id,contest_title,contest_text,group_name,`name`,`status`,status_text")
+                .last("INNER JOIN groups ON contests.group_id=groups.group_id\n" +
+                        " INNER JOIN users ON contests.promulgator = users.user_id\n" +
+                        " WHERE contest_title LIKE '%" + query + "%' ORDER BY contest_id DESC");
         return baseMapper.selectList(qw);
     }
 }

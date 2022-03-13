@@ -23,7 +23,7 @@
                     :content="scope.row.statusText">
                   <el-button slot="reference" type="danger" size="mini" plain>失败</el-button>
                 </el-popover>
-                <el-tag v-else type="warning">进行中</el-tag>
+                <el-tag v-else type="warning">审核中</el-tag>
               </template>
 
             </el-table-column>

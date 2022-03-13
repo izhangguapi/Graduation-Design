@@ -103,7 +103,7 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
 .el-container {
   height: 100%;
 }
@@ -117,5 +117,18 @@ export default {
 
 .el-tabs__nav .el-tabs__item:nth-child(1) span {
   display: none;
+}
+
+.box {
+  margin-bottom: 20px;
+}
+
+.box-input {
+  width: 200px;
+  display: inline-block;
+}
+
+.mr20 {
+  margin-right: 20px;
 }
 </style>

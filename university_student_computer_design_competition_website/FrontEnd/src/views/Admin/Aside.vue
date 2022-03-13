@@ -14,7 +14,7 @@
           <span slot="title">{{ item.title }}</span>
         </template>
         <el-menu-item-group>
-          <el-menu-item v-for="(child) in item.children" :index='child.index'>
+          <el-menu-item v-for="(child,childKey) in item.children" :index='child.index' :key="key+'-'+childKey">
             {{ child.childrenTitle }}
           </el-menu-item>
         </el-menu-item-group>

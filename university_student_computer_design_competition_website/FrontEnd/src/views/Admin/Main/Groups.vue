@@ -36,8 +36,8 @@
       </el-form>
       <div slot="footer" class="dialog-footer">
         <el-button @click="dialog = false">取 消</el-button>
-        <el-button v-if="groupTitle==='添加用户组'" type="primary" @click="insertGroups">添 加</el-button>
-        <el-button v-else type="primary" @click="updateGroup">修 改</el-button>
+        <el-button v-if="group.encoding" type="primary" @click="updateGroup">修 改</el-button>
+        <el-button v-else type="primary" @click="insertGroups">添 加</el-button>
       </div>
     </el-dialog>
   </div>
@@ -158,17 +158,17 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
-.box {
-  margin-bottom: 20px;
-}
+<!--<style lang="less" scoped>-->
+<!--.box {-->
+<!--  margin-bottom: 20px;-->
+<!--}-->
 
-.box-input {
-  width: 200px;
-  display: inline-block;
-}
+<!--.box-input {-->
+<!--  width: 200px;-->
+<!--  display: inline-block;-->
+<!--}-->
 
-.mr20 {
-  margin-right: 20px;
-}
-</style>
+<!--.mr20 {-->
+<!--  margin-right: 20px;-->
+<!--}-->
+<!--</style>-->

@@ -67,8 +67,8 @@ public class ContestsController {
      * @return 分页查询结果
      */
     @GetMapping("/contestsList/{num}")
-    public Result selectContests(@PathVariable Integer num) {
-        return new Result(service.selectContests(num));
+    public Result selectContestsPage(@PathVariable Integer num) {
+        return new Result(service.selectContestsPage(num));
 
     }
 
@@ -103,5 +103,15 @@ public class ContestsController {
     @DeleteMapping("/deleteContest/{id}")
     public Result deleteContest(@PathVariable String id) {
         return new Result(service.removeById(id));
+    }
+
+    @GetMapping("/selectContests")
+    public Result selectContests(){
+        return new Result(service.selectContests());
+    }
+
+    @GetMapping("/searchContests")
+    public Result searchContests(@RequestParam String query){
+        return new Result(service.searchContests(query));
     }
 }
