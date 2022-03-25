@@ -36,7 +36,7 @@ const router = new VueRouter({
         //     name: 'index', // 主要布局
         //     path: '/',
         //     redirect: {
-        //         path: '/home',
+        //         path: '/',
         //     }
         // },
         {

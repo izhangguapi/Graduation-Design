@@ -1,28 +1,41 @@
 import store from "@/store";
-import {Message} from "element-ui";
-import {postRequest} from "@/utils/api";
+import {getRequest} from "@/utils/api";
 
-// 判断是否保存了账号信息，用于自动登录
-export function login() {
-    console.log("自动登录");
-    // localStorage存入账号密码
-    if (localStorage.phone && localStorage.password || localStorage.email) {
-        let loginForm = {
-            phone: localStorage.phone,
-            email: localStorage.email,
-            password: localStorage.password
-        }
-        postRequest("/automaticLogin", loginForm).then((res) => {
+export function getUser() {
+    // localStorage获取token
+    if (localStorage.token) {
+        getRequest("/currentUser").then(res=>{
+            console.log(res);
             let data = res.data.data;
+            console.log(res);
             if (data){
-                store.state.uid = data.userId;
+                store.state.uid = data.uid;
                 store.state.name = data.name;
-                store.state.gid = data.groupId;
-                store.state.isLogin = true;
+                store.state.gid = data.gid;
+                store.state.isAdmin = data.isAdmin;
             }
         })
+        return true;
+        // 舍弃
+        // let loginForm = {
+        //     phone: localStorage.phone,
+        //     email: localStorage.email,
+        //     password: localStorage.password
+        // }
+        // postRequest("/automaticLogin", loginForm).then(res => {
+        //     console.log(res);
+        //     let token = res.data.data;
+        //     localStorage.setItem("token",token)
+        //     console.log(token);
+        //
+        //     if (data){
+        //         store.state.uid = data.userId;
+        //         store.state.name = data.name;
+        //         store.state.gid = data.groupId;
+        //         store.state.isLogin = true;
+        //     }
+        // })
     } else {
         return false;
     }
-    console.log("自动登录完成");
 }

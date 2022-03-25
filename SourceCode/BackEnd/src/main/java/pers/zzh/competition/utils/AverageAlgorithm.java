@@ -1,4 +1,4 @@
-package pers.zzh.competition.common;
+package pers.zzh.competition.utils;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -6,7 +6,6 @@ import pers.zzh.competition.entity.Contests;
 import pers.zzh.competition.entity.Users;
 import pers.zzh.competition.service.ContestsService;
 import pers.zzh.competition.service.UsersService;
-import pers.zzh.competition.utils.SaveFile;
 
 import java.util.HashMap;
 import java.util.List;

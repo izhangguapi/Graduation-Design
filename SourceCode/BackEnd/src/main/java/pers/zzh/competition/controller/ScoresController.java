@@ -4,7 +4,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import pers.zzh.competition.entity.Scores;
 import pers.zzh.competition.service.ScoresService;
-import pers.zzh.competition.utils.Result;
+import pers.zzh.competition.vo.Result;
+import pers.zzh.competition.vo.ResultCode;
 
 
 /**
@@ -25,7 +26,7 @@ public class ScoresController {
      */
     @GetMapping("/addScores/{uid}/{cid}")
     public Result addScores(@PathVariable String uid,@PathVariable int cid) {
-        return new Result(200, "验证成功", service.insertScores(uid,cid));
+        return  Result.success(ResultCode.ADD_SUCCESS, service.insertScores(uid,cid));
     }
 
     /**
@@ -36,7 +37,7 @@ public class ScoresController {
      */
     @GetMapping("/scores/{uid}/{cid}")
     public Result selectScores(@PathVariable int uid,@PathVariable int cid) {
-        return new Result(200, "验证成功", service.selectScores(uid,cid));
+        return Result.success(ResultCode.SELECT_SUCCESS,service.selectScores(uid,cid));
     }
 
     /**
@@ -46,7 +47,7 @@ public class ScoresController {
      */
     @GetMapping("/scores/contest/{uid}")
     public Result selectForContest(@PathVariable int uid){
-        return new Result(200, service.selectForContest(uid));
+        return Result.success(ResultCode.SELECT_SUCCESS, service.selectForContest(uid));
     }
 
     /**
@@ -56,7 +57,7 @@ public class ScoresController {
      */
     @GetMapping("/scores/contestNot/{uid}")
     public Result selectForContestNot(@PathVariable int uid){
-        return new Result(200, service.selectForContestNot(uid));
+        return Result.success(ResultCode.SELECT_SUCCESS, service.selectForContestNot(uid));
     }
 
     /**
@@ -66,7 +67,7 @@ public class ScoresController {
      */
     @GetMapping("/scores/{sid}")
     public Result selectScoresById(@PathVariable int sid){
-        return new Result(200, service.selectScoresById(sid));
+        return Result.success(ResultCode.SELECT_SUCCESS, service.selectScoresById(sid));
     }
 
     /**
@@ -76,7 +77,7 @@ public class ScoresController {
      */
     @GetMapping("/scores/users")
     public Result selectScoresByCid(@RequestParam("cid") String cid){
-        return new Result(200, service.selectScoresByCid(cid));
+        return Result.success(ResultCode.SELECT_SUCCESS, service.selectScoresByCid(cid));
     }
 
     /**
@@ -86,6 +87,6 @@ public class ScoresController {
      */
     @PutMapping("/scores/update")
     public Result upDate(@RequestBody Scores scores) {
-        return new Result(service.updateById(scores));
+        return Result.success(ResultCode.ADD_SUCCESS,service.updateById(scores));
     }
 }

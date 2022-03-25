@@ -16,12 +16,6 @@ import java.util.List;
 @Service
 public class MessagesServiceImpl extends ServiceImpl<MessagesMapper, Messages> implements MessagesService {
 
-    // 新增消息
-    @Override
-    public int insertMessage(Messages messages) {
-        return baseMapper.insert(messages);
-    }
-
     // 首页查询公告
     @Override
     public List<Messages> selectAnnouncement() {
@@ -33,7 +27,7 @@ public class MessagesServiceImpl extends ServiceImpl<MessagesMapper, Messages> i
     // 分页查询公告
     @Override
     public Page<Messages> selectAnnouncementPage(int currentPage) {
-        Page<Messages> page = new Page<>(currentPage, 10); // 创建分页对象
+        Page<Messages> page = new Page<>(currentPage, 10);
         QueryWrapper<Messages> qw = new QueryWrapper<>();
         qw.select("message_id,title,time").eq("recipient", 1).orderByDesc("time");
         return baseMapper.selectPage(page, qw);

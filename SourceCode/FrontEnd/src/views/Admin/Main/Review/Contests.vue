@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import {getRequest, postRequest, putRequest} from "@/utils/api";
+import {getRequest, putRequest} from "@/utils/api";
 import mdEditor from "mavon-editor";
 
 export default {

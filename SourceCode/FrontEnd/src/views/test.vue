@@ -1,30 +1,30 @@
 <template>
 
-
-  <el-popover
-      placement="top-start"
-      title="标题"
-      width="200"
-      trigger="click"
-      content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。">
-    <!--<el-button slot="reference">hover 激活</el-button>-->
-    <el-button slot="reference" type="danger" size="mini" plain>危险按钮</el-button>
-    <el-tag slot="reference">hover 激活</el-tag>
-  </el-popover>
 </template>
 
 <script>
 
+import {getRequest, postRequest} from "@/utils/api";
+
 const mdEditor = require('mavon-editor')
 import 'mavon-editor/dist/css/index.css'
+import {login} from "@/utils/login";
 
 export default {
   name: "test",
-  components: {
-    'mdEditor': mdEditor.mavonEditor
-  },
   data() {
-    return {value: '1'}
+    return {
+
+    }
+  },
+  methods:{
+
+  },
+  mounted() {
+
+    getRequest("/currentUser").then(res=>{
+      console.log(res.data);
+    })
   }
 }
 </script>

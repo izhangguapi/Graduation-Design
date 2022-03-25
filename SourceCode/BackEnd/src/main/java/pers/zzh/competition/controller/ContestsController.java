@@ -4,7 +4,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import pers.zzh.competition.entity.Contests;
 import pers.zzh.competition.service.ContestsService;
-import pers.zzh.competition.utils.Result;
+import pers.zzh.competition.vo.Result;
+import pers.zzh.competition.vo.ResultCode;
 
 /**
  * @author 张恣豪
@@ -24,7 +25,7 @@ public class ContestsController {
      */
     @PostMapping("/addContest")
     public Result addContest(@RequestBody Contests contests) {
-        return new Result(service.save(contests));
+        return service.save(contests) ? Result.success(ResultCode.ADD_SUCCESS) : Result.fail(ResultCode.ADD_FAIL);
     }
 
     /**
@@ -35,29 +36,30 @@ public class ContestsController {
      */
     @PutMapping("/updateContest")
     public Result updateContest(@RequestBody Contests contests) {
-        return new Result(service.updateById(contests));
+        return service.updateById(contests) ? Result.success(ResultCode.UPDATE_SUCCESS) : Result.success(ResultCode.UPDATE_FAIL);
+
     }
 
     /**
-     * 根据id查询一条数据，前端展示
+     * 根据id查询一条数据，前台展示
      *
      * @param id 比赛id
      * @return 一条数据
      */
     @GetMapping("/contest/{id}")
     public Result selectContestOne(@PathVariable String id) {
-        return new Result(200, service.selectContestsOne(id));
+        return Result.success(ResultCode.SELECT_SUCCESS, service.selectContestsOne(id));
     }
 
     /**
-     * 根据id查询一条数据
+     * 根据id查询一条数据，用于修改数据
      *
      * @param id 比赛id
      * @return 一条数据
      */
     @GetMapping("/contestForUpdate/{id}")
     public Result selectContestForUpdate(@PathVariable String id) {
-        return new Result(200, service.getById(id));
+        return Result.success(ResultCode.SELECT_SUCCESS, service.getById(id));
     }
 
     /**
@@ -68,8 +70,7 @@ public class ContestsController {
      */
     @GetMapping("/contestsList/{num}")
     public Result selectContestsPage(@PathVariable Integer num) {
-        return new Result(service.selectContestsPage(num));
-
+        return Result.success(ResultCode.SELECT_SUCCESS, service.selectContestsPage(num));
     }
 
     /**
@@ -80,7 +81,7 @@ public class ContestsController {
      */
     @GetMapping("/search")
     public Result selectContests(@RequestParam("query") String query) {
-        return new Result(service.selectContestsLike(query));
+        return Result.success(ResultCode.SELECT_SUCCESS, service.selectContestsLike(query));
     }
 
     /**
@@ -91,7 +92,7 @@ public class ContestsController {
      */
     @GetMapping("/contests/gid")
     public Result selectContestsByGid(@RequestParam("gid") String gid) {
-        return new Result(service.selectContestsByGid(gid));
+        return Result.success(ResultCode.SELECT_SUCCESS, service.selectContestsByGid(gid));
     }
 
     /**
@@ -102,16 +103,21 @@ public class ContestsController {
      */
     @DeleteMapping("/deleteContest/{id}")
     public Result deleteContest(@PathVariable String id) {
-        return new Result(service.removeById(id));
+        return service.removeById(id) ? Result.success(ResultCode.DELETE_SUCCESS) : Result.success(ResultCode.DELETE_FAIL);
     }
 
     @GetMapping("/selectContests")
-    public Result selectContests(){
-        return new Result(service.selectContests());
+    public Result selectContests() {
+        return Result.success(ResultCode.SELECT_SUCCESS, service.selectContests());
     }
 
+    /**
+     * 后台：搜索
+     * @param query
+     * @return
+     */
     @GetMapping("/searchContests")
-    public Result searchContests(@RequestParam String query){
-        return new Result(service.searchContests(query));
+    public Result searchContests(@RequestParam String query) {
+        return Result.success(ResultCode.SELECT_SUCCESS, service.searchContests(query));
     }
 }

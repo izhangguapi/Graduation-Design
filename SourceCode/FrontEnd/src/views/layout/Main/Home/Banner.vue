@@ -1,5 +1,5 @@
 <template>
-  <el-carousel type="card" :height="bannerHeight+'px'">
+  <el-carousel type="card" :height="height+'px'">
     <el-carousel-item v-for="(item,i) in carouselImages" :key="i">
       <img class="carouselImg" :src="item.url" :alt="item.link" ref="image" @load="imgLoading"/>
     </el-carousel-item>
@@ -12,7 +12,7 @@ export default {
   name: "Banner",
   data() {
     return {
-      bannerHeight: '',
+      height: '',
       count:1,
       carouselImages: [
         {url: 'https://pic.imgdb.cn/item/61e95d082ab3f51d918ed3d2.png', link: '比赛1'},
@@ -26,13 +26,13 @@ export default {
   //跑马灯高度自适应
   mounted() {
     window.addEventListener('resize',() => {
-      this.bannerHeight=this.$refs.image[0].height;
+      this.height=this.$refs.image[0]["height"];
     },false)
   },
   methods: {
     imgLoading() {
       this.$nextTick(()=>{
-        this.bannerHeight=this.$refs.image[0].height;
+        this.height=this.$refs.image[0]["height"];
       });
     }
   }

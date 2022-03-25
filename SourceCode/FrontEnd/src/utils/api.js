@@ -1,6 +1,15 @@
 import axios from 'axios'
 import {Message} from "element-ui";
-// 测试后台服务器是否正常运行
+
+//请求拦截
+axios.interceptors.request.use(config => {
+    //如果有token，统一带上
+    const token = localStorage.token;
+    if (token) { // 判断是否存在token，如果存在的话，则每个http header都加上token
+        config.headers.Authorization = `${token}`;
+    }
+    return config
+})
 
 //响应拦截器
 // axios.interceptors.response.use(res => {

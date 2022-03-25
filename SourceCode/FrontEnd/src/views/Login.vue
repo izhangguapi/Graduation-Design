@@ -29,7 +29,7 @@
         <el-link href="https://zhangguapi.com" target="_blank" :underline="false" class="forgot">忘记密码？</el-link>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" style="width: 48%" @click="login" round>登录</el-button>
+        <el-button type="primary" style="width: 48%" @click="clickLogin" round>登录</el-button>
         <el-button type="success" style="width: 48%; float: right" @click="goToRegisterPage" round>注册</el-button>
       </el-form-item>
     </el-form>
@@ -41,7 +41,7 @@
 
 <script>
 import {postRequest} from "@/utils/api";
-import {login} from "@/utils/login";
+import {getUser} from "@/utils/login";
 
 export default {
   name: "Login",
@@ -62,11 +62,12 @@ export default {
     };
   },
   mounted() {
-    // 页面启动给datetime赋值时间戳
+    // // 页面启动给datetime赋值时间戳
     this.loginForm.datetime = new Date().getTime();
-    // 判断是否存在登录信息
-    if (login()) {
-      this.$router.push("/home");
+    // // 判断是否存在登录信息
+    console.log(this.$store.state)
+    if (this.$store.state.uid && this.$store.state.name && this.$store.state.gid && this.$store.state.isAdmin) {
+      this.$router.push("/");
     }
   },
   computed: {
@@ -98,28 +99,26 @@ export default {
           break;
       }
       this.loginForm.password = "";
-
-
     },
     //登录点击事件
-    login() {
+    clickLogin() {
       this.$refs.loginForm.validate((valid) => {
         if (valid) {
           postRequest("/login", this.loginForm).then((res) => {
-            const data = res.data.data;
-            console.log(data);
+            const token = res.data.data;
             if (this.checked) {
-              localStorage.setItem("phone", this.loginForm.phone);
-              localStorage.setItem("email", this.loginForm.email);
-              localStorage.setItem("password", this.$md5(this.loginForm.password));
+              localStorage.setItem("token", token)
             }
-            this.$store.state.uid = data.userId;
-            this.$store.state.name = data.name;
-            this.$store.state.gid = data.groupId;
-            this.$store.state.isLogin = true;
+            if (getUser()) {
+              this.$message.success("登录成功。")
+            } else {
+              this.$message.error("登录失败！")
+              this.updateCaptcha();
+            }
             this.$router.push("/");
           }).catch((error) => {
             console.log(error)
+            this.updateCaptcha();
           });
         } else {
           this.$message.error("请输入完整！");

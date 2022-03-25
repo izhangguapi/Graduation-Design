@@ -255,7 +255,7 @@ export default {
         //   sessionStorage.setItem("uid", res.data.data)
         //   sessionStorage.setItem("name", this.registerForm.name);
         //   sessionStorage.setItem("gid", this.registerForm.groupId);
-        //   this.$router.push("/home");
+        //   this.$router.push("/");
         // } else {
         //   this.active = 0;
         // }

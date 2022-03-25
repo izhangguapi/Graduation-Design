@@ -4,7 +4,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import pers.zzh.competition.entity.Groups;
 import pers.zzh.competition.service.GroupsService;
-import pers.zzh.competition.utils.Result;
+import pers.zzh.competition.vo.Result;
+import pers.zzh.competition.vo.ResultCode;
 
 import java.util.Collections;
 import java.util.List;
@@ -22,20 +23,22 @@ public class GroupsController {
     @GetMapping("/encoding/{encoding}")
     public Result verifyEncodingPhoneEmail(@PathVariable String encoding) {
         List<Groups> list = service.selectEncoding(encoding);
-        return list.isEmpty() ? new Result(100, "查询结果为空", Collections.emptyMap()) : new Result(100, "查询存在此编码", list);
+        return list.isEmpty()
+                ? Result.fail(ResultCode.SELECT_IS_EMPTY)
+                : Result.success(ResultCode.SELECT_SUCCESS, list);
     }
 
     @PostMapping("/insertGroup")
     public Result addGroup(@RequestBody Groups groups) {
         int gid = service.insertGroupGetId(groups);
         return gid == 0
-                ? new Result(201, "创建失败，组名称或组编码已存在。", false)
-                : new Result(200, "创建成功", gid);
+                ?  Result.fail(ResultCode.ADD_FAIL)
+                :  Result.success(ResultCode.ADD_SUCCESS, gid);
     }
 
     @GetMapping("/selectGroupsList")
     public Result getGroupsList() {
-        return new Result(service.selectGroupsList());
+        return Result.success(ResultCode.SELECT_SUCCESS,service.selectGroupsList());
     }
 
     @PostMapping("/deleteGroups")
@@ -43,18 +46,18 @@ public class GroupsController {
         try {
             service.removeBatchByIds(groups);
         } catch (Exception e) {
-            return new Result(false);
+            return  Result.fail(ResultCode.DELETE_FAIL);
         }
-        return new Result(true);
+        return  Result.success(ResultCode.DELETE_SUCCESS);
     }
 
     @GetMapping("/searchGroups")
     public Result searchGroups(@RequestParam String query) {
-        return new Result(service.searchGroups(query));
+        return Result.success(ResultCode.SELECT_SUCCESS,service.searchGroups(query));
     }
 
     @PutMapping("/updateGroup")
     public Result updateGroup(@RequestBody Groups groups) {
-        return new Result(service.updateById(groups));
+        return Result.success(ResultCode.SELECT_SUCCESS,service.updateById(groups));
     }
 }

@@ -12,7 +12,7 @@
 |  码云  |  https://gitee.com/zhangguapipi/Graduation_Design   |
 
 ### 开发环境
-操作系统：macOS 12.2.1
+操作系统：macOS Monterey 12.3
 
 前端框架：Vue 2.6.14
 

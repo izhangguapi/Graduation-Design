@@ -4,9 +4,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import pers.zzh.competition.entity.Messages;
 import pers.zzh.competition.service.MessagesService;
-import pers.zzh.competition.utils.Result;
+import pers.zzh.competition.vo.Result;
+import pers.zzh.competition.vo.ResultCode;
 
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -27,7 +27,9 @@ public class MessagesController {
      */
     @PostMapping("/messages/insert")
     public Result insertMessage(@RequestBody Messages messages) {
-        return new Result(service.insertMessage(messages));
+        return service.save(messages)
+                ? Result.success(ResultCode.ADD_SUCCESS)
+                : Result.fail(ResultCode.ADD_FAIL);
     }
 
     /**
@@ -38,7 +40,9 @@ public class MessagesController {
     @GetMapping("/messages/announcement")
     public Result selectAnnouncement() {
         List<Messages> list = service.selectAnnouncement();
-        return list.isEmpty() ? new Result(100, "查询结果为空", Collections.emptyMap()) : new Result(100, "查询成功", list);
+        return list.isEmpty()
+                ? Result.fail(ResultCode.SELECT_IS_EMPTY)
+                : Result.success(ResultCode.SELECT_SUCCESS,list);
     }
 
     /**
@@ -49,7 +53,7 @@ public class MessagesController {
      */
     @GetMapping("/messages/announcementPage/{currentPage}")
     public Result selectAnnouncementPage(@PathVariable int currentPage) {
-        return new Result(service.selectAnnouncementPage(currentPage));
+        return  Result.success(ResultCode.SELECT_SUCCESS,service.selectAnnouncementPage(currentPage));
     }
 
     /**
@@ -60,7 +64,7 @@ public class MessagesController {
      */
     @GetMapping("/messages/announcement/{id}")
     public Result selectAnnouncementById(@PathVariable int id) {
-        return new Result(service.selectAnnouncementById(id));
+        return Result.success(ResultCode.SELECT_SUCCESS,service.selectAnnouncementById(id));
     }
 
     /**
@@ -71,7 +75,7 @@ public class MessagesController {
      */
     @GetMapping("/messages/recipient/{id}")
     public Result selectMessagesByRecipient(@PathVariable int id) {
-        return new Result(service.selectMessagesByRecipient(id));
+        return Result.success(ResultCode.SELECT_SUCCESS,service.selectMessagesByRecipient(id));
     }
 
     /**
@@ -92,7 +96,7 @@ public class MessagesController {
      */
     @PostMapping("/messages/save")
     public Result addMessages(@RequestBody List<Messages> messages) {
-        return new Result(service.saveBatch(messages));
+        return Result.success(ResultCode.ADD_SUCCESS,service.saveBatch(messages));
     }
 
     /**
@@ -103,7 +107,7 @@ public class MessagesController {
      */
     @DeleteMapping("/deleteMessage")
     public Result deleteMessage(@RequestBody List<Messages> messages) {
-        return new Result(service.removeBatchByIds(messages));
+        return Result.success(ResultCode.DELETE_SUCCESS,service.removeBatchByIds(messages));
     }
 
     /**
@@ -114,6 +118,6 @@ public class MessagesController {
      */
     @GetMapping("/deleteMessageRead")
     public Result deleteMessageRead(@RequestParam("uid") String uid) {
-        return new Result(service.deleteMessageRead(uid));
+        return Result.success(ResultCode.DELETE_SUCCESS,service.deleteMessageRead(uid));
     }
 }

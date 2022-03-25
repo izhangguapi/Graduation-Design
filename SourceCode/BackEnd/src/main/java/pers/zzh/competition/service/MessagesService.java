@@ -10,13 +10,6 @@ import java.util.List;
  * @author 张恣豪
  */
 public interface MessagesService extends IService<Messages> {
-    /**
-     * 新增消息
-     *
-     * @param messages
-     * @return
-     */
-    int insertMessage(Messages messages);
 
     /**
      * 首页查询公告

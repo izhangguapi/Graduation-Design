@@ -5,8 +5,6 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 import pers.zzh.competition.entity.Contests;
-import pers.zzh.competition.entity.Groups;
-import pers.zzh.competition.entity.Users;
 import pers.zzh.competition.mapper.ContestsMapper;
 import pers.zzh.competition.service.ContestsService;
 

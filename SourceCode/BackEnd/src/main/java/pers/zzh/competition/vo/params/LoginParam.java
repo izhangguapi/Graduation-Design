@@ -1,4 +1,4 @@
-package pers.zzh.competition.common.entity;
+package pers.zzh.competition.vo.params;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
@@ -9,7 +9,7 @@ import lombok.Data;
  */
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Login {
+public class LoginParam {
     private String phone;
     private String email;
     private String password;

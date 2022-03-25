@@ -9,8 +9,6 @@ const state = {
     gid: undefined,
     // 组id
     name: undefined,
-    // 是否登录
-    isLogin: false,
     // 是否为管理员
     isAdmin:false,
     // 已打开的标签页

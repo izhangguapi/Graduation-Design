@@ -8,7 +8,7 @@ import org.assertj.core.util.Strings;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import pers.zzh.competition.common.AverageAlgorithm;
+import pers.zzh.competition.utils.AverageAlgorithm;
 import pers.zzh.competition.entity.Groups;
 import pers.zzh.competition.entity.Scores;
 import pers.zzh.competition.entity.Users;

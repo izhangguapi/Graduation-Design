@@ -16,13 +16,22 @@
 <script>
 import Header from '@/views/layout/Header';
 import Footer from '@/views/layout/Footer'
-import {login} from "@/utils/login";
+import {getUser, login} from "@/utils/login";
 
 export default {
   name: 'Layout',
   components: {Header, Footer},
-  created() {
-    if (!this.$store.state.isLogin) login();
+  beforeCreate() {
+    if (this.$store.state.isAdmin){
+      this.$router.push("/admin");
+    }
+  },
+  watch:{
+    "$store.state.isAdmin"() {
+      if (data.isAdmin){
+        this.$router.push("/admin");
+      }
+    }
   }
 }
 </script>

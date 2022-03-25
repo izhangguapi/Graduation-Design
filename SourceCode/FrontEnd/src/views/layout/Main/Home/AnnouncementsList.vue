@@ -27,6 +27,7 @@ export default {
     }
   },
   mounted() {
+    // 获取公告
     getRequest("/messages/announcement").then((res) => {
       this.list = res.data.data;
     });

@@ -3,14 +3,18 @@ package pers.zzh.competition.controller;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.wf.captcha.GifCaptcha;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.*;
 
-import pers.zzh.competition.common.entity.Login;
 import pers.zzh.competition.entity.Users;
 import pers.zzh.competition.service.UsersService;
-import pers.zzh.competition.utils.Result;
+import pers.zzh.competition.utils.Jwt;
+import pers.zzh.competition.vo.Result;
+import pers.zzh.competition.vo.ResultCode;
+import pers.zzh.competition.vo.params.LoginParam;
 
+import javax.annotation.Resource;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -23,11 +27,11 @@ import java.util.Collections;
  * @since 2022-1-12
  */
 @RestController
-@RequiredArgsConstructor
 @RequestMapping("/api")
 public class UsersController {
 
-    final UsersService service;
+    @Resource
+    private UsersService service;
 
     /**
      * 查询users表的全部
@@ -35,7 +39,7 @@ public class UsersController {
      */
     @GetMapping("/users")
     public Result getAll() {
-        return new Result(200, "查询成功", service.list());
+        return Result.success(ResultCode.SELECT_SUCCESS, service.list());
     }
 
     /**
@@ -47,62 +51,62 @@ public class UsersController {
      */
     @GetMapping("/users/{currentPage}/{pageSize}")
     public Result getAll(@PathVariable int currentPage, @PathVariable int pageSize) {
-        Page<Users> list = service.selectListPage(currentPage, pageSize);
-
-        return list.getRecords().isEmpty()
-                ? new Result(200, "查询失败", Collections.emptyMap())
-                : new Result(200, "查询成功", service.selectListPage(currentPage, pageSize));
+        return service.selectListPage(currentPage, pageSize);
     }
 
     /**
      * 登录功能
      *
-     * @param login 用户账号密码
+     * @param loginParam 用户账号密码
      * @param session session对象
      * @return 是否登录成功，成功返回该用户信息
      */
     @PostMapping("/login")
-    public Result login(@RequestBody Login login, HttpSession session) {
+    public Result login(@RequestBody LoginParam loginParam, HttpSession session) {
         // 定义session存入的验证码
         String sessionCaptcha;
         // 异常处理，赋值，发生异常返回验证码错误信息
         try {
-            sessionCaptcha = session.getAttribute(login.getDatetime()).toString();
+            sessionCaptcha = session.getAttribute(loginParam.getDatetime()).toString();
         } catch (Exception e) {
-            return new Result(201, "验证码已失效，请刷新！");
+            return Result.fail(ResultCode.CAPTCHA_EXPIRE);
         }
         // 删除session存入的验证码
-        session.removeAttribute(login.getDatetime());
+        session.removeAttribute(loginParam.getDatetime());
         // 获取用户输入的验证码
-        String userCaptcha = login.getCaptcha();
+        String userCaptcha = loginParam.getCaptcha();
         // 判断session存入的验证码是否跟用户输入的一样(比较字母，忽略大小写.equalsIgnoreCase())
         if (sessionCaptcha.equalsIgnoreCase(userCaptcha)) {
-            Users users = service.selectPhoneEmailPassword(login.getPhone()
-                    , login.getEmail()
-                    , DigestUtils.md5DigestAsHex(login.getPassword().getBytes()));
-            if (users != null) {
-                return new Result(200, "登录成功", users);
-            }
-            return new Result(201, "密码错误");
+            return service.selectPhoneEmailPassword(loginParam.getPhone()
+                    , loginParam.getEmail()
+                    , DigestUtils.md5DigestAsHex(loginParam.getPassword().getBytes()));
         }
-        return new Result(201, "验证码错误");
+        return Result.fail(ResultCode.CAPTCHA_ERROR);
     }
 
     /**
      * 自动登录
      *
-     * @param login 用户账号密码
+     * @param loginParam 用户账号密码
      * @return 是否登录成功，成功返回该用户信息
      */
     @PostMapping("/automaticLogin")
-    public Result automaticLogin(@RequestBody Login login) {
-        Users users = service.selectPhoneEmailPassword(login.getPhone(), login.getEmail(), login.getPassword());
-        if (users == null) {
-            return new Result(201, "自动登录失败！！！");
-        } else {
-            return new Result(200, "自动登录成功", users);
-        }
+    public Result automaticLogin(@RequestBody LoginParam loginParam) {
+        return service.selectPhoneEmailPassword(loginParam.getPhone(), loginParam.getEmail(), loginParam.getPassword());
     }
+
+    /**
+     * token查询数据
+     *
+     * @param token
+     * @return
+     */
+    @GetMapping("/currentUser")
+    public Result currentUser(@RequestHeader("Authorization") String token){
+        System.out.println(token);
+        return Result.success(ResultCode.SELECT_SUCCESS,Jwt.checkToken(token));
+    }
+
 
     /**
      * 生成验证码
@@ -134,10 +138,8 @@ public class UsersController {
      * @return 验证
      */
     @PostMapping("/registerVerify")
-    public Result registerVerify(@RequestBody Login phoneEmail) {
-        return service.selectPhoneEmail(phoneEmail)
-                ? new Result(200, true)
-                : new Result(201, "手机号或邮箱存在，请重新输入", false);
+    public Result registerVerify(@RequestBody LoginParam phoneEmail) {
+        return service.selectPhoneEmail(phoneEmail);
     }
 
     /**
@@ -148,7 +150,7 @@ public class UsersController {
      */
     @PostMapping("/register")
     public Result register(@RequestBody Users users) {
-        return new Result(service.insertUsers(users));
+        return service.insertUsers(users);
     }
 
     /**
@@ -159,17 +161,19 @@ public class UsersController {
      */
     @GetMapping("/user/{uid}")
     public Result mine(@PathVariable int uid) {
-        return new Result(service.selectById(uid));
+        return service.selectById(uid);
     }
 
     /**
      * 修改个人资料
      *
      * @param users users对象
-     * @return 统一返回对象
+     * @return 是否成功
      */
     @PutMapping("/user/update")
     public Result update(@RequestBody Users users) {
-        return new Result(service.updateUser(users));
+        return service.updateById(users)
+                ? Result.success(ResultCode.UPDATE_SUCCESS)
+                : Result.fail(ResultCode.UPDATE_FAIL);
     }
 }
