@@ -9,11 +9,11 @@
       <div class="list">
         <el-row>
           <el-col v-for="item in lists" :span="9" :key="item.contestId" :offset="2" style="margin-bottom: 30px">
-            <el-card :body-style="{ padding: '0' }">
+            <el-card style="cursor: pointer;" :body-style="{ padding: '0' }">
               <router-link :to="{ name: 'find-detail', params: {contestId: item.contestId} }" custom
                            v-slot="{ navigate }">
                 <div @click="navigate" @keypress.enter="navigate" role="link">
-                  <img :src="item.url" class="image" alt="" style="cursor:hand">
+                  <img :src="item.url" class="image" alt="">
                   <div style="padding: 14px;">
                     <el-tooltip class="item" effect="dark" :content="item.contestTitle" placement="top">
                   <span

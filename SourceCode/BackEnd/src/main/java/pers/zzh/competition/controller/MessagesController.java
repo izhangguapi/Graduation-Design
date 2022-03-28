@@ -29,7 +29,7 @@ public class MessagesController {
     public Result insertMessage(@RequestBody Messages messages) {
         return service.save(messages)
                 ? Result.success(ResultCode.ADD_SUCCESS)
-                : Result.fail(ResultCode.ADD_FAIL);
+                : Result.failure(ResultCode.ADD_FAIL);
     }
 
     /**
@@ -41,7 +41,7 @@ public class MessagesController {
     public Result selectAnnouncement() {
         List<Messages> list = service.selectAnnouncement();
         return list.isEmpty()
-                ? Result.fail(ResultCode.SELECT_IS_EMPTY)
+                ? Result.failure(ResultCode.SELECT_IS_EMPTY)
                 : Result.success(ResultCode.SELECT_SUCCESS,list);
     }
 

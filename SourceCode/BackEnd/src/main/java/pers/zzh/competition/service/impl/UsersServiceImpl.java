@@ -1,5 +1,6 @@
 package pers.zzh.competition.service.impl;
 
+import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -13,6 +14,7 @@ import pers.zzh.competition.utils.Jwt;
 import pers.zzh.competition.vo.Result;
 import pers.zzh.competition.vo.ResultCode;
 import pers.zzh.competition.vo.params.LoginParam;
+import pers.zzh.competition.vo.params.PageQuery;
 
 import java.util.List;
 
@@ -27,22 +29,24 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users> implements
     /**
      * 分页链表查询
      *
-     * @param currentPage 当前第几页
-     * @param pageSize    分页大小（分几页）
+     * @param pageQuery 分页查询对象
      * @return 结果对象
      */
     @Override
-    public Result selectListPage(int currentPage, int pageSize) {
+    public Page<Users> selectListPage(PageQuery pageQuery) {
         // 创建分页对象
-        Page<Users> page = new Page<>(currentPage, pageSize);
+        Page<Users> page = new Page<>(pageQuery.getCurrentPage(), pageQuery.getPageSize());
         // 创建条件构造器
         QueryWrapper<Users> qw = new QueryWrapper<>();
         // 查询全部，尾部添加链表条件
-        qw.select("*").last("inner join groups g ON users.group_id = g.group_id order by user_id");
-        Page<Users> list = baseMapper.selectPage(page, qw);
-        return list.getRecords().isEmpty()
-                ? Result.fail(ResultCode.SELECT_FAIL)
-                : Result.success(ResultCode.SELECT_SUCCESS, list);
+        String sql = "LEFT JOIN groups ON users.group_id = groups.group_id";
+        if (pageQuery.getQuery()!=null){
+            sql+="WHERE CONCAT(`name`,school,phone) LIKE '%"+pageQuery.getQuery().trim()+"%'";
+        }
+
+        qw.select("user_id,`name`,sex,school,birthday,phone,address,email,group_name")
+                .last(sql);
+        return baseMapper.selectPage(page, qw);
     }
 
     /**
@@ -56,16 +60,14 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users> implements
     @Override
     public Result selectPhoneEmailPassword(String phone, String email, String password) {
         LambdaQueryWrapper<Users> qw = new LambdaQueryWrapper<>();
-        qw.select(Users::getUserId, Users::getName, Users::getGroupId, Users::getPassword)
-                .eq(Users::getPhone, phone)
-                .or()
-                .eq(Users::getEmail, email)
+        qw.eq(StrUtil.isNotBlank(phone),Users::getPhone, phone)
+                .eq(StrUtil.isNotBlank(email),Users::getEmail, email)
                 // 增加 查询效率
                 .last("LIMIT 1");
         Users user = baseMapper.selectOne(qw);
         return user.getPassword().equals(password)
                 ? Result.success(ResultCode.LOGIN_SUCCESS, Jwt.createToken(user.getName(), user.getUserId(), user.getGroupId(),user.getGroupId().equals(1)))
-                : Result.fail(ResultCode.LOGIN_FAIL);
+                : Result.failure(ResultCode.LOGIN_FAIL);
     }
 
     /**
@@ -80,7 +82,7 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users> implements
         try {
             baseMapper.insert(users);
         } catch (Exception e) {
-            return Result.fail(ResultCode.REGISTER_FAIL);
+            return Result.failure(ResultCode.REGISTER_FAIL);
         }
         return Result.success(ResultCode.REGISTER_SUCCESS);
     }
@@ -99,7 +101,7 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users> implements
                 .or().eq("email", phoneAndEmail.getEmail());
         return baseMapper.selectList(qw).isEmpty()
                 ? Result.success(ResultCode.SELECT_SUCCESS)
-                : Result.fail(ResultCode.ACCOUNT_EXIST);
+                : Result.failure(ResultCode.ACCOUNT_EXIST);
     }
 
     /**
@@ -123,13 +125,4 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users> implements
         qw.select("user_id").eq("group_id", gid);
         return baseMapper.selectList(qw);
     }
-
-
-//    public Result findUserByToken(String token) {
-//        if (StringUtils.isBlank(token)) {
-//            return Result.fail(ResultCode.TOKEN_ILLEGAL);
-//        }
-//
-//        return null;
-//    }
 }

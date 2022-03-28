@@ -57,5 +57,16 @@ public interface ContestsService extends IService<Contests> {
      */
      List<Contests> selectContests();
 
+    /**
+     * 搜索比赛
+     * @param query
+     * @return
+     */
     List<Contests> searchContests(String query);
+
+    /**
+     * 最新比赛数据
+     * @return
+     */
+    Contests selectLatestContest();
 }

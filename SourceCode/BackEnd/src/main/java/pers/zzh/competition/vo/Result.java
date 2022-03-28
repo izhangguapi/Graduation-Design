@@ -29,7 +29,7 @@ public class Result {
     /**
      * 响应时间
      */
-    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss:SSS")
     private Date time;
 
     public static Result success(int code,String msg, Object data) {
@@ -42,7 +42,7 @@ public class Result {
         return new Result(true, resultCode.getCode(), resultCode.getMsg(), null, new Date());
     }
 
-    public static Result fail(ResultCode resultCode) {
+    public static Result failure(ResultCode resultCode) {
         return new Result(false, resultCode.getCode(), resultCode.getMsg(), null, new Date());
     }
 }

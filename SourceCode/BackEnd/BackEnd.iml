@@ -100,6 +100,7 @@
     <orderEntry type="library" name="Maven: com.alibaba:druid:1.2.8" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.32" level="project" />
     <orderEntry type="library" name="Maven: com.GitHub.whvcse:easy-captcha:1.6.2" level="project" />
+    <orderEntry type="library" name="Maven: cn.hutool:hutool-all:5.7.22" level="project" />
     <orderEntry type="library" name="Maven: io.jsonwebtoken:jjwt:0.9.1" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.13.1" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.13.1" level="project" />

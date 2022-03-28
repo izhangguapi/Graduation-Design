@@ -66,9 +66,8 @@ export default {
     }
   },
   watch: {
-    "$store.state.isLogin"() {
+    "$store.state.gid"() {
       this.isStudent();
-      this.contestsLoading();
     }
   },
   methods: {
@@ -77,6 +76,7 @@ export default {
         this.$message.warning("此功能暂未对学生开发！");
         this.$router.go(-1);
       }
+      this.contestsLoading();
     },
     contestsLoading() {
       getRequest("/contests/gid", {gid: this.$store.state.gid}).then((res) => {
@@ -90,12 +90,12 @@ export default {
       this.$router.push({name: 'manage-contest', params: {contestId: cid}});
     },
     removeContest(id) {
-      deleteRequest("/deleteContest/"+id).then(res=>{
+      deleteRequest("/deleteContest/" + id).then(res => {
         console.log(res.data);
-        if (res.data.data){
+        if (res.data.data) {
           this.$message.success("删除成功。")
           this.contestsLoading();
-        }else{
+        } else {
           this.$message.error("删除失败！")
         }
       })
@@ -103,10 +103,7 @@ export default {
     }
   },
   mounted() {
-    if (this.$store.state.isLogin) {
-      this.isStudent();
-      this.contestsLoading();
-    }
+    this.isStudent();
   }
 }
 </script>

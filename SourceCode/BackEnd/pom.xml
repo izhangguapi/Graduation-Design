@@ -60,6 +60,13 @@
             <artifactId>easy-captcha</artifactId>
             <version>1.6.2</version>
         </dependency>
+        <!--糊涂工具包-->
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.7.22</version>
+        </dependency>
+
         <!--jwt验证-->
         <dependency>
             <groupId>io.jsonwebtoken</groupId>

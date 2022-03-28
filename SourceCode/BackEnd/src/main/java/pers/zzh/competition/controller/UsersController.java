@@ -1,9 +1,6 @@
 package pers.zzh.competition.controller;
 
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.wf.captcha.GifCaptcha;
-import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,12 +10,12 @@ import pers.zzh.competition.utils.Jwt;
 import pers.zzh.competition.vo.Result;
 import pers.zzh.competition.vo.ResultCode;
 import pers.zzh.competition.vo.params.LoginParam;
+import pers.zzh.competition.vo.params.PageQuery;
 
 import javax.annotation.Resource;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.util.Collections;
 
 /**
  * 前端控制器 - users表的操作
@@ -42,16 +39,16 @@ public class UsersController {
         return Result.success(ResultCode.SELECT_SUCCESS, service.list());
     }
 
+
     /**
      * 分页链表查询users
      *
-     * @param currentPage 当前第几页
-     * @param pageSize    分页大小（分几页）
+     * @param pageQuery 分页查询对象
      * @return 结果对象
      */
-    @GetMapping("/users/{currentPage}/{pageSize}")
-    public Result getAll(@PathVariable int currentPage, @PathVariable int pageSize) {
-        return service.selectListPage(currentPage, pageSize);
+    @PostMapping("/users/list")
+    public Result getAll(@RequestBody PageQuery pageQuery) {
+        return  Result.success( ResultCode.SELECT_SUCCESS,service.selectListPage(pageQuery));
     }
 
     /**
@@ -69,7 +66,7 @@ public class UsersController {
         try {
             sessionCaptcha = session.getAttribute(loginParam.getDatetime()).toString();
         } catch (Exception e) {
-            return Result.fail(ResultCode.CAPTCHA_EXPIRE);
+            return Result.failure(ResultCode.CAPTCHA_EXPIRE);
         }
         // 删除session存入的验证码
         session.removeAttribute(loginParam.getDatetime());
@@ -81,7 +78,7 @@ public class UsersController {
                     , loginParam.getEmail()
                     , DigestUtils.md5DigestAsHex(loginParam.getPassword().getBytes()));
         }
-        return Result.fail(ResultCode.CAPTCHA_ERROR);
+        return Result.failure(ResultCode.CAPTCHA_ERROR);
     }
 
     /**
@@ -98,12 +95,11 @@ public class UsersController {
     /**
      * token查询数据
      *
-     * @param token
-     * @return
+     * @param token token
+     * @return token的body部分
      */
     @GetMapping("/currentUser")
     public Result currentUser(@RequestHeader("Authorization") String token){
-        System.out.println(token);
         return Result.success(ResultCode.SELECT_SUCCESS,Jwt.checkToken(token));
     }
 
@@ -174,6 +170,6 @@ public class UsersController {
     public Result update(@RequestBody Users users) {
         return service.updateById(users)
                 ? Result.success(ResultCode.UPDATE_SUCCESS)
-                : Result.fail(ResultCode.UPDATE_FAIL);
+                : Result.failure(ResultCode.UPDATE_FAIL);
     }
 }

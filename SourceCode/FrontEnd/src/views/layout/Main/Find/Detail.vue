@@ -182,7 +182,7 @@ export default {
   border-color: transparent;
 
   &:hover {
-    color: #ff6464;
+    color: #F56C6C;
   }
 }
 

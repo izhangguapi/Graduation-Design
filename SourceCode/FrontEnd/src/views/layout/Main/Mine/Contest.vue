@@ -28,7 +28,6 @@
 
 <script>
 import {getRequest} from "@/utils/api";
-import {login} from "@/utils/login";
 
 export default {
   name: "Contest",

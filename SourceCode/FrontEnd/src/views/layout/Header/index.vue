@@ -69,7 +69,7 @@ export default {
       transition: color .2s linear, background-color .2s linear, border .2s linear, box-shadow .2s linear;
 
       &:focus {
-        border-bottom: 1px solid #ff6464;
+        border-bottom: 1px solid #F56C6C;
       }
     }
 
@@ -85,7 +85,7 @@ export default {
       transition: color .2s linear, background-color .2s linear, border .2s linear, box-shadow .2s linear;
 
       &:hover {
-        color: #ff6464;
+        color: #F56C6C;
       }
     }
   }

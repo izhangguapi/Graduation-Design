@@ -16,7 +16,6 @@
 <script>
 import Header from '@/views/layout/Header';
 import Footer from '@/views/layout/Footer'
-import {getUser, login} from "@/utils/login";
 
 export default {
   name: 'Layout',
@@ -28,7 +27,7 @@ export default {
   },
   watch:{
     "$store.state.isAdmin"() {
-      if (data.isAdmin){
+      if (this.$store.state.isAdmin){
         this.$router.push("/admin");
       }
     }
@@ -41,8 +40,5 @@ export default {
   width: 100%;
   padding-top: 100px;
   min-height: 800px;
-}
-.el-card:hover{
-  box-shadow: 0 2px 12px 0 rgb(255 100 100 / 50%);
 }
 </style>

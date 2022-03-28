@@ -32,7 +32,6 @@ export function getUser() {
         //         store.state.uid = data.userId;
         //         store.state.name = data.name;
         //         store.state.gid = data.groupId;
-        //         store.state.isLogin = true;
         //     }
         // })
     } else {

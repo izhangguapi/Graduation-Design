@@ -13,11 +13,9 @@
           <i :class="item.icon"></i>
           <span slot="title">{{ item.title }}</span>
         </template>
-        <el-menu-item-group>
           <el-menu-item v-for="(child,childKey) in item.children" :index='child.index' :key="key+'-'+childKey">
             {{ child.childrenTitle }}
           </el-menu-item>
-        </el-menu-item-group>
       </el-submenu>
     </template>
   </el-menu>
@@ -34,7 +32,7 @@ export default {
         index: '/admin',
         icon: 'fa fa-house-user'
       }, {
-        title: '用户组管理',
+        title: '组管理',
         index: '/admin/groups',
         icon: 'fa fa-user-group'
       }, {
@@ -72,7 +70,7 @@ export default {
   height: 56px;
   line-height: 56px;
   font-size: 20px;
-  color: #ff6464;
+  color: #F56C6C;
   padding: 0 20px;
   cursor: pointer;
   text-align: center;

@@ -13,12 +13,12 @@
       <el-main>
         <!-- 此处放置el-tabs代码 -->
         <div>
-          <el-tabs v-model="activeIndex" type="border-card" v-if="tabs.length" @tab-click='clickTab'
+          <el-tabs v-model="activeIndex" type="border-card" @tab-click='clickTab'
                    @tab-remove='removeTab'>
-            <el-tab-pane :key="item.name" v-for="item in tabs" :label="item.name" :name="item.route"
+            <el-tab-pane v-for="item in tabs" :key="item.name" :label="item.name" :name="item.route"
                          :closable="item.name !=='首页'">
-              <router-view/>
             </el-tab-pane>
+            <router-view/>
           </el-tabs>
         </div>
       </el-main>
@@ -37,8 +37,6 @@ export default {
   methods: {
     //tab标签点击时，切换相应的路由
     clickTab(tab) {
-      console.log("tab", tab);
-      console.log('active', this.activeIndex);
       this.$router.push({path: this.activeIndex});
     },
     // 删除标签页
@@ -47,7 +45,6 @@ export default {
       if (this.activeIndex === targetName) {
         // 设置当前激活的路由
         if (this.tabs && this.tabs.length >= 1) {
-          console.log('=============', this.tabs[this.tabs.length - 1].route)
           this.$store.commit('setActiveIndex', this.tabs[this.tabs.length - 1].route);
           this.$router.push({path: this.activeIndex});
         } else {
@@ -56,16 +53,16 @@ export default {
       }
     }
   },
-  mounted: function () {
+  mounted() {
+    // 判断不是管理员则返回上一层
+    if (!this.$store.state.isAdmin) {
+      this.$router.go(-1);
+    }
     // 刷新时以当前路由做为tab加入tabs
     if (this.$route.path !== '/admin') {
       // 当前路由不是首页时，添加首页添加到store里，并设置激活状态
       this.$store.commit('addTab', {route: this.$route.path, name: this.$route.meta["title"]});
       this.$store.commit('setActiveIndex', this.$route.path);
-    } else {
-      // 当前路由是首页时，添加首页到store，并设置激活状态
-      this.$store.commit('setActiveIndex', '/admin');
-      this.$router.push('/admin');
     }
   },
   computed: {
@@ -97,6 +94,12 @@ export default {
       if (!flag) {
         this.$store.commit('addTab', {route: to.path, name: to.meta.title});
         this.$store.commit('setActiveIndex', to.path);
+      }
+    },
+    "$store.state.isAdmin"() {
+      // 判断不是管理员则返回上一层
+      if (!this.$store.state.isAdmin) {
+        this.$router.go(-1);
       }
     }
   }

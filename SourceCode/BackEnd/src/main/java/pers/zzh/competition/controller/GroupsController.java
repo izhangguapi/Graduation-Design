@@ -6,6 +6,7 @@ import pers.zzh.competition.entity.Groups;
 import pers.zzh.competition.service.GroupsService;
 import pers.zzh.competition.vo.Result;
 import pers.zzh.competition.vo.ResultCode;
+import pers.zzh.competition.vo.params.PageQuery;
 
 import java.util.Collections;
 import java.util.List;
@@ -24,7 +25,7 @@ public class GroupsController {
     public Result verifyEncodingPhoneEmail(@PathVariable String encoding) {
         List<Groups> list = service.selectEncoding(encoding);
         return list.isEmpty()
-                ? Result.fail(ResultCode.SELECT_IS_EMPTY)
+                ? Result.failure(ResultCode.SELECT_IS_EMPTY)
                 : Result.success(ResultCode.SELECT_SUCCESS, list);
     }
 
@@ -32,13 +33,13 @@ public class GroupsController {
     public Result addGroup(@RequestBody Groups groups) {
         int gid = service.insertGroupGetId(groups);
         return gid == 0
-                ?  Result.fail(ResultCode.ADD_FAIL)
+                ?  Result.failure(ResultCode.ADD_FAIL)
                 :  Result.success(ResultCode.ADD_SUCCESS, gid);
     }
 
-    @GetMapping("/selectGroupsList")
-    public Result getGroupsList() {
-        return Result.success(ResultCode.SELECT_SUCCESS,service.selectGroupsList());
+    @PostMapping("/groups/list")
+    public Result selectGroupsList(@RequestBody PageQuery pageQuery) {
+        return Result.success(ResultCode.SELECT_SUCCESS,service.selectGroupsList(pageQuery));
     }
 
     @PostMapping("/deleteGroups")
@@ -46,14 +47,9 @@ public class GroupsController {
         try {
             service.removeBatchByIds(groups);
         } catch (Exception e) {
-            return  Result.fail(ResultCode.DELETE_FAIL);
+            return  Result.failure(ResultCode.DELETE_FAIL);
         }
         return  Result.success(ResultCode.DELETE_SUCCESS);
-    }
-
-    @GetMapping("/searchGroups")
-    public Result searchGroups(@RequestParam String query) {
-        return Result.success(ResultCode.SELECT_SUCCESS,service.searchGroups(query));
     }
 
     @PutMapping("/updateGroup")

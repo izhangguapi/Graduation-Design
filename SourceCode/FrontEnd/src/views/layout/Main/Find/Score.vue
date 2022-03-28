@@ -61,7 +61,7 @@ export default {
               offset: 200,
               duration: 0
             });
-            this.color = '#ff6464';
+            this.color = '#F56C6C';
           }         else this.ranking = data.ranking;
         } else this.$message.info("此比赛暂无结果。");
       })

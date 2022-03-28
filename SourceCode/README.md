@@ -4,6 +4,6 @@ BackEnd（后端代码）
 
 FrontEnd（前端代码）
 
-Other（其他文件）
+Maven JAR（需要科学上网下载的jar包）
 
 Sql（sql文件）

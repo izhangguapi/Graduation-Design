@@ -1,10 +1,12 @@
 package pers.zzh.competition.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 import pers.zzh.competition.entity.Contests;
+import pers.zzh.competition.entity.Users;
 import pers.zzh.competition.mapper.ContestsMapper;
 import pers.zzh.competition.service.ContestsService;
 
@@ -89,7 +91,7 @@ public class ContestsServiceImpl extends ServiceImpl<ContestsMapper, Contests> i
     @Override
     public List<Contests> selectContests() {
         QueryWrapper<Contests> qw = new QueryWrapper<>();
-        qw.select("contest_id,contest_title,contest_text,group_name,`name`,`status`,status_text")
+        qw.select("contest_id,contest_title,contest_text,url,group_name,`name`,`status`,status_text")
                 .last("INNER JOIN groups ON contests.group_id=groups.group_id\n" +
                         " INNER JOIN users ON contests.promulgator = users.user_id\n" +
                         " ORDER BY contest_id DESC");
@@ -104,5 +106,15 @@ public class ContestsServiceImpl extends ServiceImpl<ContestsMapper, Contests> i
                         " INNER JOIN users ON contests.promulgator = users.user_id\n" +
                         " WHERE contest_title LIKE '%" + query + "%' ORDER BY contest_id DESC");
         return baseMapper.selectList(qw);
+    }
+
+    @Override
+    public Contests selectLatestContest() {
+        LambdaQueryWrapper<Contests> qw = new LambdaQueryWrapper<>();
+        qw.select(Contests::getContestId,Contests::getContestTitle,Contests::getRegStartTime,Contests::getRegEndTime,Contests::getStartTime,Contests::getEndTime)
+                .eq(Contests::getStatus,true)
+                .orderByDesc(Contests::getContestId)
+                .last("LIMIT 1");
+        return baseMapper.selectOne(qw);
     }
 }

@@ -25,15 +25,15 @@
       </el-table-column>
     </el-table>
 
-    <el-dialog title="比赛详情" :visible.sync="dialog" width="70%">
+    <el-dialog title="比赛详情" :visible.sync="dialog" width="50%">
 
+      <img :src="srcUrl" alt="封面图" style="width: 100%;height: auto">
       <mdEditor v-model="contestText" :ishljs="true" :subfield="false" :toolbars="{}" defaultOpen="preview"
                 style="min-height: 300px" :toolbarsFlag="false"/>
 
       <div slot="footer" class="dialog-footer">
-        <el-button type="primary" @click="pass">通过</el-button>
-        <el-button type="primary" @click="noPass">不通过</el-button>
-        <el-button @click="dialog = false">取 消</el-button>
+        <el-button type="success" @click="pass">通过</el-button>
+        <el-button type="danger" @click="fail">不通过</el-button>
       </div>
     </el-dialog>
 
@@ -57,6 +57,7 @@ export default {
       multipleSelection: [],
       tableData: [],
       contestText: '',
+      srcUrl:'',
       operation: {
         contestId: null,
         status: false,
@@ -84,6 +85,7 @@ export default {
     // 查询用户组
     selectContests() {
       getRequest("/selectContests").then(res => {
+        console.log(res.data.data)
         this.tableData = res.data.data;
       })
     },
@@ -97,13 +99,14 @@ export default {
     check(row) {
       this.operation.contestId = row.contestId;
       this.contestText = row.contestText;
+      this.srcUrl = row.url;
       this.dialog = true;
     },
     pass() {
       this.operation.status = true;
       this.updateContest();
     },
-    noPass() {
+    fail() {
       this.$prompt('请输入不予通过的理由', '不通过', {
         confirmButtonText: '确定',
         cancelButtonText: '取消'

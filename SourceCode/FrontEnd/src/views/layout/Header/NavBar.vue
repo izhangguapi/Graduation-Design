@@ -1,5 +1,5 @@
 <template>
-  <el-menu :default-active="activeMenu" mode="horizontal" active-text-color="#ff6464" router>
+  <el-menu :default-active="activeMenu" mode="horizontal" active-text-color="#F56C6C" router>
     <el-menu-item v-for="(item,i) in navBarList" :key="i" :index="item.path" :route="item.path">
       <i :class="item.icon" style="font-size: 18px;"></i>{{ item.title }}
     </el-menu-item>

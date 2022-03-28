@@ -1,10 +1,12 @@
 package pers.zzh.competition.service;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 import pers.zzh.competition.entity.Users;
 import pers.zzh.competition.vo.Result;
 import pers.zzh.competition.vo.params.LoginParam;
+import pers.zzh.competition.vo.params.PageQuery;
 
 import java.util.List;
 
@@ -19,11 +21,10 @@ public interface UsersService extends IService<Users> {
     /**
      * 分页链表查询
      *
-     * @param currentPage 当前第几页
-     * @param pageSize    分页大小（分几页）
+     * @param pageQuery 分页查询对象
      * @return 结果对象
      */
-    Result selectListPage(int currentPage, int pageSize);
+    Page<Users> selectListPage(PageQuery pageQuery);
 
     /**
      * 登录功能（账号为手机号或邮箱）

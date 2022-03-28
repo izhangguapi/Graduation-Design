@@ -3,14 +3,14 @@
     <el-badge :value="unread" :max="99" :hidden="badgeHidden" class="item">
       <el-button size="small" icon="fa fa-bell" @click="drawerControl">消息</el-button>
     </el-badge>
-    <el-dropdown>
+    <el-dropdown trigger="click">
       <div class="el-dropdown-link">
         <el-link>
           <el-avatar :size="48" src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-avatar>
         </el-link>
       </div>
       <el-dropdown-menu slot="dropdown">
-        <template v-if="isLogin">
+        <template v-if="$store.state.uid">
           <el-dropdown-item @click.native="$router.push('/mine')">个人中心</el-dropdown-item>
           <el-dropdown-item @click.native="changePassword">修改密码</el-dropdown-item>
           <!--<el-dropdown-item divided>发布比赛</el-dropdown-item>-->
@@ -75,19 +75,8 @@ export default {
       multipleSelection:[]
     }
   },
-  computed: {
-    // 判断是否存在登录信息
-    isLogin() {
-      // 获取未读消息
-      this.getMessages();
-      return this.$store.state.isLogin;
-    }
-  },
   methods: {
-    drawerControl() {
-      this.getMessages();
-      this.drawer = true;
-    },
+    // 获取消息
     getMessages() {
       if (this.$store.state.uid) {
         getRequest("/messages/recipient/" + this.$store.state.uid).then((res => {
@@ -104,13 +93,18 @@ export default {
         }));
       }
     },
+    // 隐藏消息
+    drawerControl() {
+      this.getMessages();
+      this.drawer = true;
+    },
     // 退出登录
     logOut() {
-      this.$store.state.isLogin = false;
-      this.$store.state.uid = false;
-      this.$store.state.name = false;
-      this.$store.state.gid = false;
       localStorage.clear();
+      this.$store.state.isAdmin = false;
+      this.$store.state.uid = undefined;
+      this.$store.state.name = undefined;
+      this.$store.state.gid = undefined;
       this.$router.push("/login");
     },
     // 点击表格一列进行跳转
@@ -161,6 +155,9 @@ export default {
       })
 
     }
+  },
+  mounted() {
+    this.getMessages();
   }
 }
 </script>

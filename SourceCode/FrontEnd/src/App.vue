@@ -47,6 +47,10 @@ html, body, #app {
   background-color: #f4f4f4;
 }
 
+.el-card:hover{
+  box-shadow: 0 2px 12px 0 rgb(255 100 100 / 50%);
+}
+
 ::-webkit-scrollbar {
   display: none; /* Chrome Safari */
 }

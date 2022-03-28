@@ -1,7 +1,9 @@
 package pers.zzh.competition.service;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 import pers.zzh.competition.entity.Groups;
+import pers.zzh.competition.vo.params.PageQuery;
 
 import java.util.List;
 
@@ -24,23 +26,15 @@ public interface GroupsService extends IService<Groups> {
     /**
      * 添加组并返回id
      *
-     * @param groups
-     * @return
+     * @param groups 用户组对象
+     * @return 结果集
      */
     int insertGroupGetId(Groups groups);
 
     /**
-     * 搜索组表
-     *
-     * @param query 搜索值
-     * @return 结果列表
-     */
-    List<Groups> searchGroups(String query);
-
-    /**
      * 查询用户组表
-     *
-     * @return 结果列表
+     * @param pageQuery 分页查询对象
+     * @return 结果集
      */
-    List<Groups> selectGroupsList();
+    Page<Groups> selectGroupsList(PageQuery pageQuery);
 }

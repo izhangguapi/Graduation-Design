@@ -17,6 +17,11 @@ public class ContestsController {
 
     final ContestsService service;
 
+
+    @GetMapping("/latestContest")
+    public Result latestContest() {
+        return Result.success(ResultCode.ADD_SUCCESS,service.selectLatestContest());
+    }
     /**
      * 添加比赛
      *
@@ -25,7 +30,7 @@ public class ContestsController {
      */
     @PostMapping("/addContest")
     public Result addContest(@RequestBody Contests contests) {
-        return service.save(contests) ? Result.success(ResultCode.ADD_SUCCESS) : Result.fail(ResultCode.ADD_FAIL);
+        return service.save(contests) ? Result.success(ResultCode.ADD_SUCCESS) : Result.failure(ResultCode.ADD_FAIL);
     }
 
     /**
@@ -109,15 +114,5 @@ public class ContestsController {
     @GetMapping("/selectContests")
     public Result selectContests() {
         return Result.success(ResultCode.SELECT_SUCCESS, service.selectContests());
-    }
-
-    /**
-     * 后台：搜索
-     * @param query
-     * @return
-     */
-    @GetMapping("/searchContests")
-    public Result searchContests(@RequestParam String query) {
-        return Result.success(ResultCode.SELECT_SUCCESS, service.searchContests(query));
     }
 }

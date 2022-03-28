@@ -5,6 +5,8 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import pers.zzh.competition.vo.params.PageQuery;
 
 import java.util.Date;
 
@@ -12,8 +14,9 @@ import java.util.Date;
  * @author 张恣豪
  */
 @Data
+@EqualsAndHashCode(callSuper = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Users {
+public class Users extends PageQuery {
     @TableId
     private Integer userId;
     private String name;
