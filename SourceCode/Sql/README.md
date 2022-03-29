@@ -1,5 +1,7 @@
 # sql文件
 
-website.sql：建库建表插入数据
+contest_web_create.sql：建库建表
 
-website_select.sql：测试查询
+contest_web_insert.sql：插入数据
+
+contest_web_select.sql：测试查询

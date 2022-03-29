@@ -24,7 +24,7 @@ export default {
       let navBarList = [{path: '/', title: '首页', icon: 'fa fa-house-chimney'},
         {path: '/find', title: '发现', icon: 'fa fa-infinity'},
         {path: '/mine', title: '个人中心', icon: 'fa fa-graduation-cap'}]
-      if (gid !== 2) {
+      if (gid && gid !== 2) {
         navBarList.splice(2, 0, {path: '/manage', title: '管理', icon: 'fa fa-flag'});
       }
       this.navBarList = navBarList;

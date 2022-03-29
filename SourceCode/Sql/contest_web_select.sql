@@ -1,4 +1,4 @@
-USE website;
+USE `contest_web`;
 
 -- 清除表数据
 truncate table `users`;

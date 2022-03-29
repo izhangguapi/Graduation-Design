@@ -19,19 +19,7 @@ import Footer from '@/views/layout/Footer'
 
 export default {
   name: 'Layout',
-  components: {Header, Footer},
-  beforeCreate() {
-    if (this.$store.state.isAdmin){
-      this.$router.push("/admin");
-    }
-  },
-  watch:{
-    "$store.state.isAdmin"() {
-      if (this.$store.state.isAdmin){
-        this.$router.push("/admin");
-      }
-    }
-  }
+  components: {Header, Footer}
 }
 </script>
 

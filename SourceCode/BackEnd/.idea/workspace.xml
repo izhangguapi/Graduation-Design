@@ -8,46 +8,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2f4faf0-13b2-49c4-9432-ccd98a80af67" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/vo/params/PageQuery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Main/Home/LatestContest.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../204304064_张恣豪_专业综合实训报告2021-2022-1（专升本）.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd.iml" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/controller/ContestsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/controller/ContestsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/controller/GroupsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/controller/GroupsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/controller/MessagesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/controller/MessagesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/controller/UsersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/entity/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/entity/Users.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/ContestsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/ContestsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/GroupsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/GroupsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/UsersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/UsersService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/impl/ContestsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/impl/ContestsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/impl/GroupsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/impl/GroupsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/impl/UsersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/impl/UsersServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/vo/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/vo/Result.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/vo/params/PageQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/vo/params/PageQuery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FrontEnd/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/store/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FrontEnd/src/utils/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/utils/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/Admin/Aside.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/Admin/Aside.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/Admin/Main/Groups.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/Admin/Main/Groups.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/Admin/Main/Review/Contests.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/Admin/Main/Review/Contests.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/Admin/Main/Users.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/Admin/Main/Users.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/Admin/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/Admin/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Header/NavBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Header/NavBar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Header/UserInfo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Header/UserInfo.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Header/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Header/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Main/Find/ContestList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Main/Find/ContestList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Main/Find/Detail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Main/Find/Detail.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Main/Find/Score.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Main/Find/Score.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Main/Home/AnnouncementsList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Main/Home/Announcements.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Main/Home/Banner.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Main/Home/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Main/Home/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Main/Manage/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Main/Manage/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Main/Mine/Contest.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Main/Mine/Contest.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Main/Mine/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Main/Mine/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/layout/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/layout/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sql/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Sql/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sql/website.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sql/website_select.sql" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +84,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../FrontEnd" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -123,7 +94,7 @@
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.35950413" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -357,6 +328,10 @@
       <workItem from="1648446706983" duration="41000" />
       <workItem from="1648456576825" duration="243000" />
       <workItem from="1648456834902" duration="13579000" />
+      <workItem from="1648484135784" duration="735000" />
+      <workItem from="1648518889231" duration="3551000" />
+      <workItem from="1648550155455" duration="651000" />
+      <workItem from="1648560436352" duration="1210000" />
     </task>
     <servers />
   </component>

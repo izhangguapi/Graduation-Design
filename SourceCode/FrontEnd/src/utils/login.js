@@ -7,7 +7,6 @@ export function getUser() {
         getRequest("/currentUser").then(res=>{
             console.log(res);
             let data = res.data.data;
-            console.log(res);
             if (data){
                 store.state.uid = data.uid;
                 store.state.name = data.name;

@@ -31,6 +31,18 @@ export default {
         this.isRouterAlive = true;         //再打开
       })
     }
+  },
+  mounted() {
+    if (this.$store.state.isAdmin){
+      this.$router.push("/admin");
+    }
+  },
+  watch:{
+    "$store.state.isAdmin"() {
+      if (this.$store.state.isAdmin){
+        this.$router.push("/admin");
+      }
+    }
   }
 }
 </script>
