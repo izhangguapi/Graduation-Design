@@ -46,10 +46,10 @@ public interface ContestsService extends IService<Contests> {
 
     /**
      * 根据组id查询有哪些比赛以及报名人数
-     * @param gid 组id
+     * @param cid 比赛id
      * @return 列表
      */
-    List<Contests> selectByGid(Integer gid);
+    Contests selectByCid(Integer cid);
 
     /**
      * 查询未审核的比赛

@@ -95,12 +95,12 @@ const router = new VueRouter({
                 },
                 component: () => import('@/views/layout/Main/Manage/Contest')
             }, {
-                name: 'manage-message',
-                path: 'message',
+                name: 'manage-review',
+                path: 'review',
                 meta: {
                     title: '发送消息'
                 },
-                component: () => import('@/views/layout/Main/Manage/Message')
+                component: () => import('@/views/layout/Main/Manage/Review')
             }, {
                 name: 'manage-score',
                 path: 'score',

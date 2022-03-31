@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import pers.zzh.competition.entity.Users;
 import pers.zzh.competition.service.UsersService;
-import pers.zzh.competition.utils.Jwt;
+import pers.zzh.competition.utils.JwtUtils;
 import pers.zzh.competition.vo.Result;
 import pers.zzh.competition.vo.ResultCode;
 import pers.zzh.competition.vo.params.LoginParam;
@@ -100,7 +100,7 @@ public class UsersController {
      */
     @GetMapping("/currentUser")
     public Result currentUser(@RequestHeader("Authorization") String token){
-        return Result.success(ResultCode.SELECT_SUCCESS,Jwt.checkToken(token));
+        return Result.success(ResultCode.SELECT_SUCCESS, JwtUtils.checkToken(token));
     }
 
 

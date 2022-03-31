@@ -46,7 +46,7 @@ public interface ScoresService extends IService<Scores> {
     /**
      * 查询分数基本信息
      *
-     * @param sid
+     * @param sid 评分报名id
      * @return
      */
     Scores selectScoresById(int sid);
@@ -54,8 +54,8 @@ public interface ScoresService extends IService<Scores> {
     /**
      * 查询该比赛报名人
      *
-     * @param cid
+     * @param cid 比赛id
      * @return
      */
-    List<Scores> selectScoresByCid(String cid);
+    List<Scores> selectScoresByCid(String token,int cid);
 }

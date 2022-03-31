@@ -9,16 +9,116 @@
   <component name="ChangeListManager">
     <list default="true" id="a2f4faf0-13b2-49c4-9432-ccd98a80af67" name="变更" comment="">
       <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/vo/params/PageQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/vo/params/PageQuery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/controller/MessagesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/controller/MessagesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/controller/ScoresController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/controller/ScoresController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/controller/UsersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/ContestsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/ContestsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/MessagesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/MessagesService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/ScoresService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/ScoresService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/impl/ContestsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/impl/ContestsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/impl/MessagesServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/impl/MessagesServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/impl/ScoresServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/impl/ScoresServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/impl/UsersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/impl/UsersServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/utils/AverageAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/utils/AverageAlgorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/utils/Jwt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/utils/JwtUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/utils/SaveFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/utils/FileOperations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/vo/ResultCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/vo/ResultCode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/utils/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/utils/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Header/NavBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Header/NavBar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/layout/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/layout/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sql/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Sql/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sql/website.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sql/website_select.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pers/zzh/competition/ApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pers/zzh/competition/ApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/BackEnd-1.0.0.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/BackEnd-1.0.0.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/css/app.25fad96c.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/css/chunk-04d12f0f.028cb97c.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/css/chunk-1c610302.bac8ebe3.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/css/chunk-2128833b.b6c85ff9.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/css/chunk-2a0c6c1a.f1ea7a42.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/css/chunk-32ce3e3b.0860fd75.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/css/chunk-3baa8f03.e0710e43.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/css/chunk-6440f6d0.33f6816a.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/css/chunk-b3ee8f44.c3a54ba6.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/css/chunk-c63692ea.03d649f8.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/css/chunk-e1a0b540.8f1c7597.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/css/chunk-ec6cde08.d281a7dc.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/css/chunk-vendors.478121de.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/fonts/element-icons.535877f5.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/fonts/element-icons.732389de.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/fonts/fa-brands-400.ee91e640.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/fonts/fa-brands-400.f34b6a2a.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/fonts/fa-regular-400.65e80529.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/fonts/fa-regular-400.82bafee9.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/fonts/fa-solid-900.52afeb7a.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/fonts/fa-solid-900.57b380d2.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/fonts/fa-v4compatibility.43044320.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/fonts/fa-v4compatibility.9d6f359a.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/fonts/fontello.068ca2b3.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/fonts/fontello.8d4a4e6f.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/fonts/fontello.a782baa8.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/fonts/fontello.e73a0647.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/img/fontello.9354499c.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/img/logo.16b2e70c.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/js/app.a8d1e9c2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/js/app.a8d1e9c2.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/js/chunk-015a9761.300c0b44.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/js/chunk-015a9761.300c0b44.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/js/chunk-04d12f0f.a84c2110.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/js/chunk-04d12f0f.a84c2110.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/js/chunk-1c610302.b21da6aa.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/js/chunk-1c610302.b21da6aa.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/js/chunk-2128833b.35473980.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/js/chunk-2128833b.35473980.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/js/chunk-2a0c6c1a.0de197dc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/js/chunk-2a0c6c1a.0de197dc.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/js/chunk-2d0b2956.c3ad9ef9.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/js/chunk-2d0b2956.c3ad9ef9.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/js/chunk-2d0b30b7.1db6ff1a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/js/chunk-2d0b30b7.1db6ff1a.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/js/chunk-2d0be167.2e61ca5a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/js/chunk-2d0be167.2e61ca5a.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/js/chunk-2d0c46a1.a06ddc59.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/js/chunk-2d0c46a1.a06ddc59.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/js/chunk-2d0e95df.48703333.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/js/chunk-2d0e95df.48703333.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/js/chunk-32ce3e3b.2e30b137.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/js/chunk-32ce3e3b.2e30b137.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/js/chunk-3baa8f03.268dd037.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/js/chunk-3baa8f03.268dd037.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/js/chunk-6440f6d0.d26e350e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/js/chunk-6440f6d0.d26e350e.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/js/chunk-66ebd072.dd0e0350.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/js/chunk-66ebd072.dd0e0350.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/js/chunk-b3ee8f44.04d3cc25.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/js/chunk-b3ee8f44.04d3cc25.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/js/chunk-c63692ea.87854f55.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/js/chunk-c63692ea.87854f55.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/js/chunk-e1a0b540.177380c0.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/js/chunk-e1a0b540.177380c0.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/js/chunk-ec6cde08.70492b15.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/js/chunk-ec6cde08.70492b15.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/js/chunk-edd1f648.7e938fa0.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/js/chunk-edd1f648.7e938fa0.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/js/chunk-vendors.83892742.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/dist/js/chunk-vendors.83892742.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/utils/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/utils/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/Admin/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/Admin/Header.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/Admin/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/Admin/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/Login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Header/UserInfo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Header/UserInfo.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Main/Manage/Message.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Main/Manage/Review.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Main/Manage/Score.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Main/Manage/Score.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Main/Manage/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Main/Manage/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sql/contest_web_insert.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../Sql/contest_web_insert.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sql/contest_web_select.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../Sql/contest_web_select.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../答辩/3-30提交材料/任务书.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../答辩/3-30提交材料/任务书.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../答辩/3-30提交材料/外文翻译.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../答辩/3-30提交材料/外文翻译.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../答辩/3-30提交材料/开题报告书.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../答辩/3-30提交材料/开题报告书.docx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,6 +207,22 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.Application">
+    <configuration name="ApplicationTests.aasf" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BackEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pers.zzh.competition.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pers.zzh.competition" />
+      <option name="MAIN_CLASS_NAME" value="pers.zzh.competition.ApplicationTests" />
+      <option name="METHOD_NAME" value="aasf" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ApplicationTests.algorithm2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="BackEnd" />
       <extension name="coverage">
@@ -171,22 +287,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ApplicationTests.testDelete123" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="BackEnd" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pers.zzh.competition.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="pers.zzh.competition" />
-      <option name="MAIN_CLASS_NAME" value="pers.zzh.competition.ApplicationTests" />
-      <option name="METHOD_NAME" value="testDelete123" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="BackEnd" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="pers.zzh.competition.Application" />
@@ -196,20 +296,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.ApplicationTests.testDelete123" />
       <item itemvalue="JUnit.ApplicationTests.algorithm2" />
       <item itemvalue="JUnit.ApplicationTests.ar" />
       <item itemvalue="JUnit.ApplicationTests.testAlgorithm" />
       <item itemvalue="JUnit.ApplicationTests.testDelete" />
+      <item itemvalue="JUnit.ApplicationTests.aasf" />
       <item itemvalue="Spring Boot.Application" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ApplicationTests.aasf" />
         <item itemvalue="JUnit.ApplicationTests.testAlgorithm" />
         <item itemvalue="JUnit.ApplicationTests.testDelete" />
         <item itemvalue="JUnit.ApplicationTests.ar" />
         <item itemvalue="JUnit.ApplicationTests.algorithm2" />
-        <item itemvalue="JUnit.ApplicationTests.testDelete123" />
       </list>
     </recent_temporary>
   </component>
@@ -332,6 +432,9 @@
       <workItem from="1648518889231" duration="3551000" />
       <workItem from="1648550155455" duration="651000" />
       <workItem from="1648560436352" duration="1210000" />
+      <workItem from="1648710606439" duration="23186000" />
+      <workItem from="1648744059919" duration="726000" />
+      <workItem from="1648748345495" duration="202000" />
     </task>
     <servers />
   </component>

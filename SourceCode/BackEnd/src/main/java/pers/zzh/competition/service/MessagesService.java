@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 import pers.zzh.competition.entity.Messages;
 
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -55,4 +56,11 @@ public interface MessagesService extends IService<Messages> {
      * @return
      */
     Integer deleteMessageRead(String uid);
+
+    /**
+     * 添加消息
+     * @param obj 对象
+     * @return
+     */
+    List<Messages> selectScoresSpellMessages(Object obj);
 }

@@ -25,7 +25,6 @@
       </el-dropdown-menu>
     </el-dropdown>
     <!--消息抽屉-->
-    <div>
       <el-drawer :append-to-body="true" :modal-append-to-body="false" :visible.sync="drawer" direction="rtl" size="45%">
         <div class="box-card" style="padding: 20px">
           <div>
@@ -53,10 +52,7 @@
             </el-table-column>
           </el-table>
         </div>
-
-
       </el-drawer>
-    </div>
   </div>
 
 </template>

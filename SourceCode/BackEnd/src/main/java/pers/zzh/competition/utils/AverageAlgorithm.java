@@ -1,5 +1,7 @@
 package pers.zzh.competition.utils;
 
+import cn.hutool.json.JSONObject;
+import cn.hutool.json.JSONUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import pers.zzh.competition.entity.Contests;
@@ -10,6 +12,7 @@ import pers.zzh.competition.service.UsersService;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * 平均分配参赛者数量的算法
@@ -27,40 +30,65 @@ public class AverageAlgorithm {
 
     private static String path;
 
+    private static String UID;
+
+    private static Map<String,Integer> limitMap = new HashMap<>(2);
+
     /**
-     * 算法
+     * 获取Limit
+     *
+     * @param uid 用户id
+     * @param gid 组id
+     * @param cid 比赛id
+     */
+    public static Map<String, Integer> getLimit(String uid, String gid, int cid) {
+        UID = uid;
+        // 组合路径
+        String string = "/group" + gid + "/Contest" + cid + ".json";
+        // 从路径json文件获取值
+        JSONObject jsonObject = JSONUtil.parseObj(FileOperations.readJsonFile(string));
+        String limitL = jsonObject.getStr("limitL" + uid);
+        String limitR = jsonObject.getStr("limitR" + uid);
+
+        Map<String, Integer> map = new HashMap<>(2);
+        // 获取的值为null就执行算法，否则直接返回获取到的值
+        if (limitL == null || limitR == null) {
+            initialize(gid, cid);
+            return limitMap;
+        } else {
+            map.put("limitL", Integer.valueOf(Objects.requireNonNull(jsonObject).getStr("limitL" + uid)));
+            map.put("limitR", Integer.valueOf(Objects.requireNonNull(jsonObject).getStr("limitR" + uid)));
+        }
+        return map;
+    }
+
+    /**
+     * 算法初始化
      *
      * @param gid 组id
      */
-
-    public static void entrance(Integer gid) {
+    public static void initialize(String gid, int cid) {
         path = "/group" + gid;
         // 获取用户列表
-        usersList = usersService.selectByGid(gid);
+        usersList = usersService.selectByGid(Integer.valueOf(gid));
         // 获取比赛列表
-        List<Contests> contestsList = contestsService.selectByGid(gid);
-        // 循环比赛列表，取出比赛id和比赛人数
-        loopForCompute(contestsList);
+        loopForCompute(contestsService.selectByCid(cid), cid);
     }
-
 
     /**
      * 循环比赛列表
      */
-    private static void loopForCompute(List<Contests> list) {
-        for (Contests contests : list) {
-
-            String afterPath = path + "/Contest" + contests.getContestId() + ".json";
-            // 参赛者数量
-            int participantsNumber = contests.getNumber();
-            // 判断参赛者数量是否为0
-            if (participantsNumber != 0) {
-                Map<String, Integer> map = compute(participantsNumber, usersList.size());
-                if (map.get("remainder") == null) {
-                    createMap(map.get("quotient"), afterPath);
-                } else {
-                    createMap(map.get("quotient"), map.get("remainder"), afterPath);
-                }
+    private static void loopForCompute(Contests contests, int cid) {
+        String afterPath = path + "/Contest" + cid + ".json";
+        // 参赛者数量
+        int participantsNumber = contests.getNumber();
+        // 判断参赛者数量是否为0
+        if (participantsNumber != 0) {
+            Map<String, Integer> map = compute(participantsNumber, usersList.size());
+            if (map.get("remainder") == null) {
+                 createMap(map.get("quotient"), afterPath);
+            } else {
+                 createMap(map.get("quotient"), map.get("remainder"), afterPath);
             }
         }
     }
@@ -96,12 +124,14 @@ public class AverageAlgorithm {
         Map<String, Integer> map = new HashMap<>(usersList.size() * 2);
         int i = 0;
         for (Users users : usersList) {
-            map.put("userL" + users.getUserId(), i * quotient);
-            map.put("userR" + users.getUserId(), quotient);
+            map.put("limitL" + users.getUserId(), i * quotient);
+            map.put("limitR" + users.getUserId(), quotient);
             i++;
         }
         // 保存文件
-        SaveFile.saveJson(map, afterPath);
+        FileOperations.saveJsonFile(map, afterPath);
+
+        setMap(map);
     }
 
     /**
@@ -116,20 +146,26 @@ public class AverageAlgorithm {
         int i = 0;
         for (Users users : usersList) {
             if (i < remainder) {
-                map.put("userL" + users.getUserId(), i * quotient + i);
-                map.put("userR" + users.getUserId(), quotient + 1);
+                map.put("limitL" + users.getUserId(), i * quotient + i);
+                map.put("limitR" + users.getUserId(), quotient + 1);
             } else if (i == remainder) {
-                map.put("userL" + users.getUserId(), i * quotient + remainder);
-                map.put("userR" + users.getUserId(), quotient);
+                map.put("limitL" + users.getUserId(), i * quotient + remainder);
+                map.put("limitR" + users.getUserId(), quotient);
             } else {
-                map.put("userL" + users.getUserId(), i * quotient + remainder);
-                map.put("userR" + users.getUserId(), quotient);
+                map.put("limitL" + users.getUserId(), i * quotient + remainder);
+                map.put("limitR" + users.getUserId(), quotient);
             }
             i++;
         }
         // 保存文件
-        SaveFile.saveJson(map, afterPath);
+        FileOperations.saveJsonFile(map, afterPath);
 
+        setMap(map);
+    }
+
+    private static void setMap(Map<String, Integer> map) {
+        limitMap.put("limitL", map.get("limitL" + UID));
+        limitMap.put("limitR", map.get("limitR" + UID));
     }
 
     @Autowired

@@ -10,7 +10,7 @@
       </el-header>
       <!--顶部功能结束-->
       <!--顶部标签-->
-      <el-main>
+      <el-main v-if="isAdmin">
         <!-- 此处放置el-tabs代码 -->
         <div>
           <el-tabs v-model="activeIndex" type="border-card" @tab-click='clickTab'
@@ -55,17 +55,21 @@ export default {
   },
   mounted() {
     // 判断不是管理员则返回上一层
-    if (!this.$store.state.isAdmin) {
-      this.$router.go(-1);
-    }
-    // 刷新时以当前路由做为tab加入tabs
-    if (this.$route.path !== '/admin') {
-      // 当前路由不是首页时，添加首页添加到store里，并设置激活状态
-      this.$store.commit('addTab', {route: this.$route.path, name: this.$route.meta["title"]});
-      this.$store.commit('setActiveIndex', this.$route.path);
+    if (!this.isAdmin) {
+      this.$router.push("/login");
+    }else {
+      // 刷新时以当前路由做为tab加入tabs
+      if (this.$route.path !== '/admin') {
+        // 当前路由不是首页时，添加首页添加到store里，并设置激活状态
+        this.$store.commit('addTab', {route: this.$route.path, name: this.$route.meta["title"]});
+        this.$store.commit('setActiveIndex', this.$route.path);
+      }
     }
   },
   computed: {
+    isAdmin(){
+      return this.$store.state.isAdmin;
+    },
     tabs() {
       return this.$store.state.tabs;
     },
@@ -98,8 +102,8 @@ export default {
     },
     "$store.state.isAdmin"() {
       // 判断不是管理员则返回上一层
-      if (!this.$store.state.isAdmin) {
-        this.$router.go(-1);
+      if (!this.isAdmin) {
+        this.$router.push("/login");
       }
     }
   }
@@ -114,8 +118,6 @@ export default {
 .el-header {
   background-color: #B3C0D1;
   color: #333;
-  text-align: center;
-  line-height: 60px;
 }
 
 .el-tabs__nav .el-tabs__item:nth-child(1) span {

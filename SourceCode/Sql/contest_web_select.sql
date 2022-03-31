@@ -11,6 +11,26 @@ SELECT * FROM messages;
 SELECT * FROM scores;
 
 
+SELECT * FROM scores WHERE contest_id = 6
+
+INSERT INTO `messages`
+VALUES
+	( DEFAULT, '1', '测试公告01', '这是一条测试公告01', '1', DEFAULT, DEFAULT ),
+
+
+SELECT contestant FROM scores WHERE contest_id = 1
+
+SELECT scores_id,scores.contest_id,scores.`status`,text,result,u1.`name` 'contestant',u2.`name` 'judge',c.contest_title,u1.`name`,u1.phone,u1.school 
+FROM scores 
+LEFT JOIN users u1 ON u1.user_id=scores.contestant 
+LEFT JOIN users u2 ON u2.user_id=scores.judge 
+LEFT JOIN contests c ON c.contest_id=scores.contest_id 
+WHERE scores_id = 24
+
+SELECT contests.contest_id,COUNT(scores_id) number FROM contests
+LEFT JOIN scores ON contests.contest_id=scores.contest_id
+WHERE contests.contest_id = 1
+
 SELECT contest_id,contest_title,contest_text,group_name,`name`,`status`,status_text FROM contests 
 INNER JOIN groups ON contests.group_id=groups.group_id
 INNER JOIN users ON contests.promulgator = users.user_id

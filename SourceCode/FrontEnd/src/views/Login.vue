@@ -111,6 +111,9 @@ export default {
             }
             if (getUser()) {
               this.$message.success("登录成功。")
+              if (this.$store.state.isAdmin){
+                this.$router.push("/admin")
+              }
             } else {
               this.$message.error("登录失败！")
               this.updateCaptcha();

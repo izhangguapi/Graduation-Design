@@ -6,7 +6,6 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 import pers.zzh.competition.entity.Contests;
-import pers.zzh.competition.entity.Users;
 import pers.zzh.competition.mapper.ContestsMapper;
 import pers.zzh.competition.service.ContestsService;
 
@@ -71,7 +70,7 @@ public class ContestsServiceImpl extends ServiceImpl<ContestsMapper, Contests> i
     @Override
     public List<Contests> selectContestsByGid(String gid) {
         QueryWrapper<Contests> qw = new QueryWrapper<>();
-        qw.select("contests.contest_id,contest_title,contests.`status`,status_text,`name`,COUNT(scores_id) number ")
+        qw.select("contests.contest_id,contest_title,contests.`status`,reg_end_time,status_text,`name`,COUNT(scores_id) number ")
                 .last("LEFT JOIN scores ON contests.contest_id=scores.contest_id \n" +
                         "INNER JOIN users ON promulgator = user_id \n" +
                         "WHERE contests.group_id = " + gid + "  GROUP BY contest_id");
@@ -79,13 +78,13 @@ public class ContestsServiceImpl extends ServiceImpl<ContestsMapper, Contests> i
     }
 
     @Override
-    public List<Contests> selectByGid(Integer gid) {
+    public Contests selectByCid(Integer cid) {
         // 根据组id查询有哪些比赛以及报名人数，生成一个组id和
         QueryWrapper<Contests> qw = new QueryWrapper<>();
-        qw.select("contests.contest_id,COUNT(scores_id) number")
+        qw.select("COUNT(scores_id) number")
                 .last("LEFT JOIN scores ON contests.contest_id=scores.contest_id \n" +
-                        "WHERE contests.group_id = " + gid + " GROUP BY contest_id");
-        return baseMapper.selectList(qw);
+                        "WHERE contests.contest_id = " + cid);
+        return baseMapper.selectOne(qw);
     }
 
     @Override
@@ -111,8 +110,8 @@ public class ContestsServiceImpl extends ServiceImpl<ContestsMapper, Contests> i
     @Override
     public Contests selectLatestContest() {
         LambdaQueryWrapper<Contests> qw = new LambdaQueryWrapper<>();
-        qw.select(Contests::getContestId,Contests::getContestTitle,Contests::getRegStartTime,Contests::getRegEndTime,Contests::getStartTime,Contests::getEndTime)
-                .eq(Contests::getStatus,true)
+        qw.select(Contests::getContestId, Contests::getContestTitle, Contests::getRegStartTime, Contests::getRegEndTime, Contests::getStartTime, Contests::getEndTime)
+                .eq(Contests::getStatus, true)
                 .orderByDesc(Contests::getContestId)
                 .last("LIMIT 1");
         return baseMapper.selectOne(qw);

@@ -24,15 +24,15 @@ JavaScript运行环境：Node.js 16.14.0
 
 后端框架：Spring Boot 2.6.3
 
-Java SE 开发工具包：jkd-8u321
+Java SE 开发工具包：jkd-8u321(1.8)
 
 数据库：MariaDB 10.6.4
 
-开发软件：IntelliJ IDEA 2021.3.2
+开发软件：IntelliJ IDEA 2021.3.3
 
 数据库管理工具：Navicat Premium 16.0.8
 
-浏览器：Google Chrome 98.0.4758.109
+浏览器：Google Chrome 100.0.4896.60（正式版本） (x86_64)
 
 
 
@@ -57,7 +57,7 @@ Java SE 开发工具包：jkd-8u321
 
 ## 在线预览
 
-http://competition.zhangguapi.com
+http://contest.zhangguapi.com
 
 测试账号：
 
@@ -77,4 +77,3 @@ http://competition.zhangguapi.com
 |        学生        |      14912959902       |  吴同学  |
 |        学生        |      15089652824       |  郑同学  |
 |        学生        |      15939648850       |  王同学  |
-

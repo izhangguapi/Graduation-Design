@@ -1,5 +1,6 @@
 package pers.zzh.competition;
 
+import cn.hutool.json.JSONUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
@@ -7,6 +8,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.assertj.core.util.Strings;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.configurationprocessor.json.JSONObject;
 import org.springframework.boot.test.context.SpringBootTest;
 import pers.zzh.competition.utils.AverageAlgorithm;
 import pers.zzh.competition.entity.Groups;
@@ -14,6 +16,8 @@ import pers.zzh.competition.entity.Scores;
 import pers.zzh.competition.entity.Users;
 import pers.zzh.competition.mapper.*;
 import pers.zzh.competition.service.UsersService;
+import pers.zzh.competition.utils.FileOperations;
+import pers.zzh.competition.utils.JwtUtils;
 
 import java.io.File;
 import java.util.HashMap;
@@ -218,10 +222,6 @@ class ApplicationTests {
 //    @Autowired
 //    private AverageAlgorithm averageAlgorithm;
 
-    @Test
-    void testAlgorithm() {
-        AverageAlgorithm.entrance(3);
-    }
 
     @Test
     void ar() {
@@ -284,5 +284,11 @@ class ApplicationTests {
 //            System.out.println(false);
 //            e.printStackTrace();
 //        }
+    }
+
+    @Test
+    void aasf(){
+        String string = "/group" + 3 + "/Contest" + 1+".json";
+        FileOperations.readJsonFile(string);
     }
 }

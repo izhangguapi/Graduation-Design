@@ -10,7 +10,7 @@ spring:
       driver-class-name: org.mariadb.jdbc.Driver
       url: jdbc:mariadb://localhost:3306/contest_web?characterEncoding=utf-8&useSSL=false&useTimezone=true&serverTimezone=GMT%2B8
       username: root
-      password: root
+      password: 995716
       test-while-idle: false # 取消空闲时测试连接的有效性
 
 mybatis-plus:

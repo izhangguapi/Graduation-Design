@@ -18,12 +18,12 @@ public enum ResultCode {
 
     SELECT_IS_EMPTY(201,"查询结果为空"),
 
-    SELECT_FAIL(201,"查询失败"),
-    ADD_FAIL(201,"添加失败"),
-    UPDATE_FAIL(201,"修改失败"),
-    DELETE_FAIL(201,"删除失败"),
-    LOGIN_FAIL(201,"登录失败"),
-    REGISTER_FAIL(201,"注册失败"),
+    SELECT_FAIL(201,"查询失败！"),
+    ADD_FAIL(201,"添加失败！"),
+    UPDATE_FAIL(201,"修改失败！"),
+    DELETE_FAIL(201,"删除失败！"),
+    LOGIN_FAIL(201,"登录失败，账号或密码错误！"),
+    REGISTER_FAIL(201,"注册失败！"),
 
 
     CAPTCHA_EXPIRE(201, "验证码已失效，请刷新！"),

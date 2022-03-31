@@ -4,9 +4,9 @@
       <el-col :span="10" :offset="7">
         <el-card>
           <div slot="header" class="clearfix">
-            <span style="line-height: 28px;font-size: 20px">{{ this.data.contestTitle }}</span>
+            <span style="line-height: 28px;font-size: 20px">{{ data.contestTitle }}</span>
             <el-button style="float: right" size="mini" type="primary" round
-                       @click="$router.push({name: 'manage-message', params: {contestId:data.contestId,contestTitle:data.contestTitle}})">
+                       @click="$router.push({name: 'manage-review', params: {contestId:data.contestId,contestTitle:data.contestTitle}})">
               返回
             </el-button>
           </div>
@@ -31,7 +31,7 @@
             </el-descriptions-item>
           </el-descriptions>
           <div style="float: right;margin: 20px 0">
-            <template v-if="inputDisabled">
+            <template v-if="data.status">
               <el-button type="warning" round @click="scoreModify">修改</el-button>
             </template>
             <template v-else>
@@ -78,26 +78,20 @@ export default {
   mounted() {
     this.data = this.$route.params;
     this.scoreLoading(this.data.scoresId);
-    // getRequest("/contests/gid", {gid: sessionStorage.gid}).then((res) => {
-    //   this.data = res.data.data;
-    //   console.log(this.data)
-    // })
   },
   methods: {
     // 加载
     scoreLoading(id) {
       // 根据id查询
-      if (this.data.status) {
+      if (id) {
         getRequest("/scores/" + id).then((res) => {
-          const data = res.data.data;
-          this.$set(this.data, 'ranking', data.ranking === undefined ? '未知' : data.ranking);
-          this.$set(this.data, 'judge', data.judge);
-          this.$set(this.data, 'result', data.result);
-          this.$set(this.data, 'text', data.text);
+          console.log(res);
+          this.data = res.data.data;
+          // this.$set(this.data, 'ranking', data.ranking === undefined ? '未知' : data.ranking);
+          // this.$set(this.data, 'judge', data.judge);
+          // this.$set(this.data, 'result', data.result);
+          // this.$set(this.data, 'text', data.text);
         })
-      } else {
-        this.inputDisabled = false;
-        this.data.judge = this.data.ranking = '暂无';
       }
     },
     // 修改
@@ -118,7 +112,7 @@ export default {
         this.submitData.text = this.data.text;
         this.inputDisabled = !this.inputDisabled;
         // 修改数据
-        putRequest("/scores/update",this.submitData).then((res) => {
+        putRequest("/scores/update", this.submitData).then((res) => {
           if (res.data.data) {
             this.$message.success("评审成功。")
             // 发送通知

@@ -10,7 +10,7 @@ import org.springframework.util.DigestUtils;
 import pers.zzh.competition.entity.Users;
 import pers.zzh.competition.mapper.UsersMapper;
 import pers.zzh.competition.service.UsersService;
-import pers.zzh.competition.utils.Jwt;
+import pers.zzh.competition.utils.JwtUtils;
 import pers.zzh.competition.vo.Result;
 import pers.zzh.competition.vo.ResultCode;
 import pers.zzh.competition.vo.params.LoginParam;
@@ -62,12 +62,19 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users> implements
         LambdaQueryWrapper<Users> qw = new LambdaQueryWrapper<>();
         qw.eq(StrUtil.isNotBlank(phone),Users::getPhone, phone)
                 .eq(StrUtil.isNotBlank(email),Users::getEmail, email)
-                // 增加 查询效率
+                // 增加查询效率
                 .last("LIMIT 1");
-        Users user = baseMapper.selectOne(qw);
-        return user.getPassword().equals(password)
-                ? Result.success(ResultCode.LOGIN_SUCCESS, Jwt.createToken(user.getName(), user.getUserId(), user.getGroupId(),user.getGroupId().equals(1)))
-                : Result.failure(ResultCode.LOGIN_FAIL);
+         Users user = baseMapper.selectOne(qw);
+
+         try {
+             if (user.getPassword().equals(password)){
+                 return Result.success(ResultCode.LOGIN_SUCCESS, JwtUtils.createToken(user.getName(), user.getUserId(), user.getGroupId(),user.getGroupId().equals(1)));
+             }else {
+                 return Result.failure(ResultCode.LOGIN_FAIL);
+             }
+         }catch (Exception e){
+             return Result.failure(ResultCode.LOGIN_FAIL);
+         }
     }
 
     /**

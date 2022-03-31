@@ -33,15 +33,19 @@ axios.interceptors.response.use(success => {
 }, error => {
     switch (error.response.status) {
         case 500:
-            Message.error("内部服务器错误！！！");
+            Message.error("内部服务器错误！");
+            break;
+        case 400:
+            Message.error("错误的请求！");
             break;
         default:
-            Message.error("未知错误！！！");
+            Message.error("未知错误！");
             break;
     }
 })
 // url前缀
 let base = '/api';
+
 //post请求，用来增添数据到数据库
 export function postRequest(url, parameter) {
     return axios({
@@ -50,6 +54,7 @@ export function postRequest(url, parameter) {
         data: parameter
     })
 }
+
 //delete请求，用来删除数据库信息
 export function deleteRequest(url, parameter) {
     return axios({
@@ -58,6 +63,7 @@ export function deleteRequest(url, parameter) {
         data: parameter
     })
 }
+
 //put请求用来更新数据库
 export function putRequest(url, parameter) {
     return axios({
@@ -66,6 +72,7 @@ export function putRequest(url, parameter) {
         data: parameter
     })
 }
+
 //get请求，用来查询数据库
 export function getRequest(url, parameter) {
     return axios({

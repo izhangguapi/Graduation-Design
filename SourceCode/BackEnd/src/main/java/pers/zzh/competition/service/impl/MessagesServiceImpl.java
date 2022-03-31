@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import pers.zzh.competition.entity.Messages;
 import pers.zzh.competition.mapper.MessagesMapper;
 import pers.zzh.competition.service.MessagesService;
+import pers.zzh.competition.service.ScoresService;
 
 import java.util.List;
 
@@ -65,6 +66,12 @@ public class MessagesServiceImpl extends ServiceImpl<MessagesMapper, Messages> i
         QueryWrapper<Messages> qw = new QueryWrapper<>();
         qw.and(wrapper -> wrapper.eq("recipient",uid).eq("status",true));
         return baseMapper.delete(qw);
+    }
+
+    @Override
+    public List<Messages> selectScoresSpellMessages(Object obj) {
+//        ScoresService.selectScoresByCid(cid)
+        return null;
     }
 
 }
