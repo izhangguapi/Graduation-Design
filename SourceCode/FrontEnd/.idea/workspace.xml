@@ -4,118 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b94a5a1-4c3a-4d58-ac73-0b46223b2154" name="变更" comment="">
-      <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/controller/MessagesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/controller/MessagesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/controller/ScoresController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/controller/ScoresController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/controller/UsersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/service/ContestsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/service/ContestsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/service/MessagesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/service/MessagesService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/service/ScoresService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/service/ScoresService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/service/impl/ContestsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/service/impl/ContestsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/service/impl/MessagesServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/service/impl/MessagesServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/service/impl/ScoresServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/service/impl/ScoresServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/service/impl/UsersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/service/impl/UsersServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/utils/AverageAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/utils/AverageAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/utils/Jwt.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/utils/JwtUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/utils/SaveFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/utils/FileOperations.java" afterDir="false" />
+    <list default="true" id="9b94a5a1-4c3a-4d58-ac73-0b46223b2154" name="变更" comment="变更">
+      <change beforePath="$PROJECT_DIR$/../BackEnd/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/.idea/dataSources/dcb6f383-ad4d-4df3-8ece-dce780285376.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/.idea/dataSources/dcb6f383-ad4d-4df3-8ece-dce780285376.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/entity/Groups.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/entity/Groups.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/vo/ResultCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/vo/ResultCode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/src/test/java/pers/zzh/competition/ApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/test/java/pers/zzh/competition/ApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BackEnd/target/BackEnd-1.0.0.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/target/BackEnd-1.0.0.jar.original" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BackEnd/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/css/app.25fad96c.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/css/chunk-04d12f0f.028cb97c.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/css/chunk-1c610302.bac8ebe3.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/css/chunk-2128833b.b6c85ff9.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/css/chunk-2a0c6c1a.f1ea7a42.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/css/chunk-32ce3e3b.0860fd75.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/css/chunk-3baa8f03.e0710e43.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/css/chunk-6440f6d0.33f6816a.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/css/chunk-b3ee8f44.c3a54ba6.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/css/chunk-c63692ea.03d649f8.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/css/chunk-e1a0b540.8f1c7597.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/css/chunk-ec6cde08.d281a7dc.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/css/chunk-vendors.478121de.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/fonts/element-icons.535877f5.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/fonts/element-icons.732389de.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/fonts/fa-brands-400.ee91e640.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/fonts/fa-brands-400.f34b6a2a.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/fonts/fa-regular-400.65e80529.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/fonts/fa-regular-400.82bafee9.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/fonts/fa-solid-900.52afeb7a.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/fonts/fa-solid-900.57b380d2.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/fonts/fa-v4compatibility.43044320.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/fonts/fa-v4compatibility.9d6f359a.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/fonts/fontello.068ca2b3.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/fonts/fontello.8d4a4e6f.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/fonts/fontello.a782baa8.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/fonts/fontello.e73a0647.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/img/fontello.9354499c.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/img/logo.16b2e70c.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/app.a8d1e9c2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/app.a8d1e9c2.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-015a9761.300c0b44.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-015a9761.300c0b44.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-04d12f0f.a84c2110.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-04d12f0f.a84c2110.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-1c610302.b21da6aa.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-1c610302.b21da6aa.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2128833b.35473980.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2128833b.35473980.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2a0c6c1a.0de197dc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2a0c6c1a.0de197dc.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0b2956.c3ad9ef9.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0b2956.c3ad9ef9.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0b30b7.1db6ff1a.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0b30b7.1db6ff1a.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0be167.2e61ca5a.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0be167.2e61ca5a.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0c46a1.a06ddc59.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0c46a1.a06ddc59.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0e95df.48703333.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0e95df.48703333.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-32ce3e3b.2e30b137.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-32ce3e3b.2e30b137.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-3baa8f03.268dd037.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-3baa8f03.268dd037.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-6440f6d0.d26e350e.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-6440f6d0.d26e350e.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-66ebd072.dd0e0350.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-66ebd072.dd0e0350.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-b3ee8f44.04d3cc25.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-b3ee8f44.04d3cc25.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-c63692ea.87854f55.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-c63692ea.87854f55.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-e1a0b540.177380c0.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-e1a0b540.177380c0.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-ec6cde08.70492b15.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-ec6cde08.70492b15.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-edd1f648.7e938fa0.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-edd1f648.7e938fa0.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-vendors.83892742.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-vendors.83892742.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Admin/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Admin/Header.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Admin/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Admin/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Admin/Main/Messages.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Admin/Main/Messages.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/layout/Header/UserInfo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/layout/Header/UserInfo.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/layout/Main/Manage/Message.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/layout/Main/Manage/Review.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/layout/Main/Manage/Score.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/layout/Main/Manage/Score.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/layout/Main/Manage/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/layout/Main/Manage/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Register.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/layout/Header/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/layout/Header/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/layout/Main/Mine/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/layout/Main/Mine/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Maven JAR/com/github/whvcse/easy-captcha/1.6.2/_remote.repositories" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Maven JAR/com/github/whvcse/easy-captcha/1.6.2/easy-captcha-1.6.2.jar.sha1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Maven JAR/com/github/whvcse/easy-captcha/1.6.2/easy-captcha-1.6.2.pom" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Maven JAR/com/github/whvcse/easy-captcha/1.6.2/easy-captcha-1.6.2.pom.sha1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sql/contest_web_create.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../Sql/contest_web_create.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Sql/contest_web_insert.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../Sql/contest_web_insert.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sql/contest_web_select.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../Sql/contest_web_select.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../答辩/3-30提交材料/任务书.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../答辩/3-30提交材料/任务书.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../答辩/3-30提交材料/外文翻译.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../答辩/3-30提交材料/外文翻译.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../答辩/3-30提交材料/开题报告书.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../答辩/3-30提交材料/开题报告书.docx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,25 +73,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Build Variants" />
-    <property name="project.structure.proportion" value="0.17" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/views/Admin/Main/Contest" />
@@ -202,6 +108,26 @@
       </scripts>
       <node-interpreter value="project" />
       <package-manager value="npm" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="编译" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="编译" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
       <envs />
       <method v="2" />
     </configuration>
@@ -382,7 +308,36 @@
       <workItem from="1648560435131" duration="1321000" />
       <workItem from="1648710604773" duration="19254000" />
       <workItem from="1648744065852" duration="399000" />
-      <workItem from="1648748342973" duration="204000" />
+      <workItem from="1648748342973" duration="868000" />
+      <workItem from="1648786876065" duration="979000" />
+      <workItem from="1648918746161" duration="695000" />
+      <workItem from="1648919461565" duration="594000" />
+      <workItem from="1649259381675" duration="156000" />
+      <workItem from="1649259582516" duration="651000" />
+      <workItem from="1649781226699" duration="84000" />
+      <workItem from="1649782013636" duration="520000" />
+      <workItem from="1649782542458" duration="440000" />
+      <workItem from="1649783016142" duration="22000" />
+      <workItem from="1649783046385" duration="212000" />
+      <workItem from="1649783283438" duration="391000" />
+      <workItem from="1649783690686" duration="5000" />
+      <workItem from="1649783735543" duration="66000" />
+      <workItem from="1649783811002" duration="75000" />
+      <workItem from="1649784076734" duration="241000" />
+      <workItem from="1650046953832" duration="123000" />
+      <workItem from="1650047569734" duration="517000" />
+      <workItem from="1650048106163" duration="39000" />
+      <workItem from="1650048155911" duration="191000" />
+      <workItem from="1650124581075" duration="1202000" />
+      <workItem from="1650126034828" duration="757000" />
+      <workItem from="1651438212338" duration="396000" />
+      <workItem from="1651450772723" duration="275000" />
+      <workItem from="1651451060360" duration="358000" />
+      <workItem from="1651451430839" duration="400000" />
+      <workItem from="1651451844021" duration="610000" />
+      <workItem from="1651452471814" duration="479000" />
+      <workItem from="1651654038149" duration="451000" />
+      <workItem from="1651654505790" duration="2869000" />
     </task>
     <servers />
   </component>

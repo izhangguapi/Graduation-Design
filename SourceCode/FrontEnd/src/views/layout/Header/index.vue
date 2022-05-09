@@ -9,7 +9,7 @@
       </el-col>
       <el-col :span="6">
         <div class="search">
-          <input v-model="search" placeholder="活动搜索..." @keyup.enter="press"/>
+          <input v-model="search" placeholder="搜索比赛" @keyup.enter="press"/>
           <i class="fa fa-magnifying-glass" @click="$router.push({name: 'search', params: {search: search}})"></i>
         </div>
       </el-col>

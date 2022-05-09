@@ -85,7 +85,7 @@
               <el-input v-model="group.groupName" maxlength="10" show-word-limit placeholder="请输入组名称"></el-input>
             </el-form-item>
             <el-form-item prop="encoding" label="编码：">
-              <el-input v-model="group.encoding" maxlength="5"  show-word-limit placeholder="请输入五位组编码"
+              <el-input v-model="group.encoding" maxlength="5" show-word-limit placeholder="请输入五位组编码"
                         @blur="group.encoding = group.encoding.replace(/\s*/g,'').toUpperCase()"></el-input>
             </el-form-item>
           </el-form>
@@ -227,12 +227,13 @@ export default {
           // 判断当前是第几步
           if (this.active === 0) { // 第一步
             //查询输入的手机号或者邮箱是否存在如果存在则清空手机号和邮箱，否则进入下一步
-            postRequest("/registerVerify", this.registerForm).then((resp) => {
-              if (resp) {
+            postRequest("/registerVerify", this.registerForm).then(res => {
+              console.log(res)
+              if (res && res.data.status) {
                 // Message.success(resp.data.msg)
                 this.active++;
               } else {
-                // Message.error(resp.data.msg)
+                this.$message.error(res.data.msg)
                 this.registerForm.phone = '';
                 this.registerForm.email = '';
               }
@@ -250,15 +251,11 @@ export default {
       // 第三步输入完成进行判断/register
       postRequest("/register", this.registerForm).then((res) => {
         console.log(res.data)
-        // if (res.data.data) {
-        //   // 登录成功将信息存入session
-        //   sessionStorage.setItem("uid", res.data.data)
-        //   sessionStorage.setItem("name", this.registerForm.name);
-        //   sessionStorage.setItem("gid", this.registerForm.groupId);
-        //   this.$router.push("/");
-        // } else {
-        //   this.active = 0;
-        // }
+        if (res && res.data.status) {
+          this.goToLoginPage();
+        } else {
+          this.active = 0;
+        }
       });
     },
     // 跳转到登录
@@ -298,7 +295,7 @@ export default {
     },
     // 加入组
     joinGroup() {
-      this.$prompt('请输入5为组编码', '加入或创建组', {
+      this.$prompt('请输入5为组编码', '加入组', {
         confirmButtonText: '确定',
         cancelButtonText: '取消',
         inputPattern: /^[0-9A-Za-z]{5}$/,
@@ -306,17 +303,16 @@ export default {
         roundButton: true
       }).then(({value}) => {
         //去数据库搜索输入的编码是否存在 groupId JSON.stringify(
-        getRequest("/encoding/" + value.toUpperCase()).then((resp) => {
-          console.log(resp)
-          if (resp.data.data) {
+        getRequest("/encoding/" + value.toUpperCase()).then(res => {
+          console.log(res.data)
+          if (res.data.status) {
             this.$message({type: 'success', message: '加入组成功'});
-            this.registerForm.groupId = resp.data.data[0].groupId;
+            this.registerForm.groupId = res.data.data[0].groupId;
             this.innerVisible = false;
             this.outerVisible = false;
             this.selectDisabled = true;
             this.active = 3;
           } else {
-            console.log(resp.data.groupId)
             this.$message({type: 'warning', message: '暂无该组，请创建'});
             this.group.encoding = value.toUpperCase();
             this.innerVisible = true;

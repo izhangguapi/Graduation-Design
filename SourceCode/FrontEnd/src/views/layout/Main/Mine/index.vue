@@ -1,5 +1,5 @@
 <template>
-    <el-row :gutter="20">
+    <el-row :gutter="20" v-if="isLogin!==undefined">
       <el-col :span="10" :offset="5">
         <Information></Information>
       </el-col>
@@ -7,6 +7,9 @@
         <Contest></Contest>
       </el-col>
     </el-row>
+  <div v-else style="text-align:center">
+    未登录
+  </div>
 </template>
 
 <script>
@@ -16,7 +19,12 @@ import {login} from "@/utils/login";
 
 export default {
   name: "index",
-  components: {Information, Contest}
+  components: {Information, Contest},
+  computed:{
+    isLogin(){
+      return this.$store.state.uid;
+    }
+  }
 }
 </script>
 

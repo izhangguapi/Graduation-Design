@@ -105,14 +105,20 @@ export default {
       this.$refs.loginForm.validate((valid) => {
         if (valid) {
           postRequest("/login", this.loginForm).then((res) => {
+            console.log(res)
             const token = res.data.data;
-            if (this.checked) {
-              localStorage.setItem("token", token)
-            }
-            if (getUser()) {
-              this.$message.success("登录成功。")
-              if (this.$store.state.isAdmin){
-                this.$router.push("/admin")
+            if (token){
+              if (this.checked) {
+                localStorage.setItem("token", token)
+                if (getUser()) {
+                  this.$message.success("登录成功。")
+                  if (this.$store.state.isAdmin){
+                    this.$router.push("/admin")
+                  }
+                } else {
+                  this.$message.error("登录失败！")
+                  this.updateCaptcha();
+                }
               }
             } else {
               this.$message.error("登录失败！")

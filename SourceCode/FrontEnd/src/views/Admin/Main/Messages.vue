@@ -6,7 +6,15 @@
 
 <script>
 export default {
-  name: "Messages"
+  name: "Messages",
+  data(){
+    return{
+
+    }
+  },
+  mounted() {
+    // 获取消息
+  }
 }
 </script>
 

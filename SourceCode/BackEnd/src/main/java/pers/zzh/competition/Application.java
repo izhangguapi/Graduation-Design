@@ -12,9 +12,9 @@ public class Application {
         System.out.println("|---------- 正在启动...... ----------|");
         try {
             SpringApplication.run(Application.class, args);
+            System.out.println("|---------- 启动成功 ----------|");
         } catch (Exception e) {
             System.out.println("|---------- 启动失败 ----------|");
         }
-        System.out.println("|---------- 启动成功 ----------|");
     }
 }

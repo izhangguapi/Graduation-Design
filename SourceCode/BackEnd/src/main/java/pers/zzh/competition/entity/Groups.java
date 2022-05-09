@@ -1,5 +1,6 @@
 package pers.zzh.competition.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
@@ -17,5 +18,6 @@ public class Groups {
     /**
      * 链表查询-自定义字段：数量
      */
+    @TableField(exist = false)
     private Integer number;
 }
