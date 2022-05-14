@@ -136,7 +136,6 @@ export default {
       document.title = '修改比赛';
       getRequest("/contestForUpdate/" + this.$route.params.contestId).then((res) => {
         const data = res.data.data;
-        console.log(data)
         if (data) {
           this.contestForm.contestTitle = data.contestTitle;
           this.contestForm.contestId = this.$route.params.contestId;
@@ -161,8 +160,8 @@ export default {
         if (valid) {
           if (this.addOrUpdate) {
             // 添加
-            postRequest("/addContest", this.contestForm).then((resp) => {
-              if (resp.data.data) {
+            postRequest("/addContest", this.contestForm).then(res => {
+              if (res.data.status) {
                 this.$message.success('发布成功，等待审核。');
                 this.$router.push("/manage");
               } else {
@@ -171,14 +170,13 @@ export default {
             })
           } else {
             // 修改
-            putRequest("/updateContest", this.contestForm).then((resp) => {
-              console.log(resp.data.data);
-              if (resp.data.data) {
+            putRequest("/updateContest", this.contestForm).then(res => {
+              if (res.data.status) {
                 this.$message.success('修改成功，等待审核。');
-                this.$router.push("/manage");
               } else {
                 this.$message.error('修改失败！');
               }
+              this.$router.push("/manage");
             })
           }
         } else {

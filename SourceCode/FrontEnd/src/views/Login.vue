@@ -5,17 +5,17 @@
       <el-tabs tab-position="top" style="height: 100px" stretch :before-leave="leaveTab">
         <el-tab-pane label="手机号登录">
           <el-form-item prop="phone">
-            <el-input tpye="text" v-model="loginForm.phone" placeholder="请输入手机号"></el-input>
+            <el-input v-model="loginForm.phone" placeholder="请输入手机号"></el-input>
           </el-form-item>
         </el-tab-pane>
         <el-tab-pane label="邮箱登录">
           <el-form-item prop="email">
-            <el-input tpye="text" v-model="loginForm.email" placeholder="请输入邮箱"></el-input>
+            <el-input v-model="loginForm.email" placeholder="请输入邮箱"></el-input>
           </el-form-item>
         </el-tab-pane>
       </el-tabs>
       <el-form-item prop="password">
-        <el-input tpye="text" v-model="loginForm.password" placeholder="请输入密码"></el-input>
+        <el-input show-password v-model="loginForm.password" placeholder="请输入密码"></el-input>
       </el-form-item>
       <el-form-item prop="captcha">
         <el-input tpye="text" v-model="loginForm.captcha" placeholder="点击图片更换验证码" style="width: 60%"></el-input>
@@ -65,7 +65,7 @@ export default {
     // // 页面启动给datetime赋值时间戳
     this.loginForm.datetime = new Date().getTime();
     // // 判断是否存在登录信息
-    console.log(this.$store.state)
+    // console.log(this.$store.state)
     if (this.$store.state.uid && this.$store.state.name && this.$store.state.gid && this.$store.state.isAdmin) {
       this.$router.push("/");
     }
@@ -105,7 +105,7 @@ export default {
       this.$refs.loginForm.validate((valid) => {
         if (valid) {
           postRequest("/login", this.loginForm).then((res) => {
-            console.log(res)
+            // console.log(res)
             const token = res.data.data;
             if (token){
               if (this.checked) {
@@ -114,19 +114,21 @@ export default {
                   this.$message.success("登录成功。")
                   if (this.$store.state.isAdmin){
                     this.$router.push("/admin")
+                  }else {
+                    this.$router.push("/")
                   }
                 } else {
-                  this.$message.error("登录失败！")
+                  this.$message.error(res.data.msg)
                   this.updateCaptcha();
                 }
               }
             } else {
-              this.$message.error("登录失败！")
+              this.$message.error(res.data.msg)
               this.updateCaptcha();
             }
-            this.$router.push("/");
+
           }).catch((error) => {
-            console.log(error)
+            // console.log(error)
             this.updateCaptcha();
           });
         } else {

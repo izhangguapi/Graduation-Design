@@ -84,7 +84,7 @@ public class ScoresServiceImpl extends ServiceImpl<ScoresMapper, Scores> impleme
     @Override
     public Scores selectScoresById(int sid) {
         QueryWrapper<Scores> qw = new QueryWrapper<>();
-        qw.select("scores_id,scores.contest_id,scores.`status`,text,result,u1.`name` 'contestant',u2.`name` 'judge',c.contest_title,u1.`name`,u1.phone,u1.school")
+        qw.select("scores_id,scores.contest_id,scores.contestant 'user_id',scores.`status`,text,result,u1.`name` 'contestant',u2.`name` 'judge',c.contest_title,u1.`name`,u1.phone,u1.school")
                 .last("LEFT JOIN users u1 ON u1.user_id=scores.contestant\n" +
                         " LEFT JOIN users u2 ON u2.user_id=scores.judge\n" +
                         " LEFT JOIN contests c ON c.contest_id=scores.contest_id\n" +

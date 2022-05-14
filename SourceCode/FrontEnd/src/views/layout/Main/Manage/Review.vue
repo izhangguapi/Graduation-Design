@@ -60,7 +60,7 @@ export default {
     this.params = this.$route.params;
     if (this.params.contestId) {
       getRequest("/scores/users", {cid: this.params.contestId}).then((res) => {
-        console.log(res.data.data);
+        // console.log(res.data.data);
         this.data = res.data.data;
       })
     }
@@ -82,8 +82,8 @@ export default {
         }
         // console.log(this.multipleSelection);
         postRequest("/messages/save", this.multipleSelection).then((res) => {
-          console.log(res.data.data);
-          if (res.data.data) {
+          // console.log(res.data.data);
+          if (res.data.status) {
             this.$message.success("发送成功。")
           } else {
             this.$message.error("发送失败！")

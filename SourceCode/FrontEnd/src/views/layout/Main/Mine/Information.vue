@@ -86,7 +86,7 @@ export default {
         this.$message.error("不允许为空");
       } else {
         putRequest("/user/update", this.fromData).then((res) => {
-          if (res.data.data) {
+          if (res.data.status) {
             this.$message.success("修改成功");
             this.inputDisabled = true;
           } else {

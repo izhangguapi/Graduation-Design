@@ -37,7 +37,7 @@ export default {
       result: 0,
       contestTitle: '',
       text: "",
-      color:'#409EFF'
+      color: '#409EFF'
     }
   },
   mounted() {
@@ -53,7 +53,7 @@ export default {
           this.result = data.result;
           this.text = data.text;
           this.contestTitle = data.contestTitle;
-          if (data.ranking===undefined) {
+          if (data.ranking === 0) {
             this.ranking = '未知';
             this.$notify.info({
               title: '排名未更新',
@@ -62,7 +62,7 @@ export default {
               duration: 0
             });
             this.color = '#F56C6C';
-          }         else this.ranking = data.ranking;
+          } else this.ranking = data.ranking;
         } else this.$message.info("此比赛暂无结果。");
       })
     } else {

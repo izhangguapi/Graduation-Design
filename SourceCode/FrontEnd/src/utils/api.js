@@ -23,14 +23,14 @@ axios.interceptors.request.use(config => {
 // })
 axios.interceptors.response.use(success => {
     //console.log(success)
-    return success;
-    // switch (success.data.code) {
-    //     case 201:
-    //         Message.error(success.data.msg);
-    //         return null;
-    //     default:
-    //         return success;
-    // }
+    // return success;
+    switch (success.data.code) {
+        case 0:
+            Message.error(success.data.msg);
+            return null;
+        default:
+            return success;
+    }
 }, error => {
     switch (error.response.status) {
         case 500:

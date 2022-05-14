@@ -41,7 +41,6 @@
             <!--评审-->
             <el-table-column label="评审" width="110%" align="center">
               <template v-slot="scope">
-
                 <el-popover v-if="!scope.row.status" placement="top-start" trigger="hover" content="审核未完成">
                   <el-button slot="reference" type="info" size="mini" round>禁用</el-button>
                 </el-popover>
@@ -82,12 +81,11 @@
                     :rules="[{ required: true, message: '内容不能为空'}]"></el-input>
         </el-form-item>
         <el-form-item style="float: right">
+          <el-button round @click="dialogVisible = false">取 消</el-button>
           <el-button type="primary" round @click="send">发送</el-button>
         </el-form-item>
       </el-form>
       <span slot="footer" class="dialog-footer">
-    <el-button @click="dialogVisible = false">取 消</el-button>
-    <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
   </span>
     </el-dialog>
   </div>
@@ -121,15 +119,16 @@ export default {
   },
   methods: {
     isStudent() {
-      if (this.$store.state.gid === 2) {
-        this.$message.warning("此功能暂未对学生开发！");
-        this.$router.go(-1);
+      if (this.$store.state.gid && this.$store.state.gid !== 2) {
+        this.contestsLoading();
+      }else {
+        this.$message.warning("请登录！");
+        this.$router.push("/login");
       }
-      this.contestsLoading();
     },
     contestsLoading() {
-      getRequest("/contests/gid", {gid: this.$store.state.gid}).then((res) => {
-        console.log(res)
+      getRequest("/contests/gid", {gid: this.$store.state.gid}).then(res => {
+        // console.log(res)
         if (res) {
           this.contests = res.data.data;
         }
@@ -146,13 +145,13 @@ export default {
     // 删除比赛
     removeContest(id) {
       deleteRequest("/deleteContest/" + id).then(res => {
-        console.log(res.data);
-        if (res.data.data) {
+        // console.log(res.data);
+        if (res.data.status) {
           this.$message.success("删除成功。")
-          this.contestsLoading();
         } else {
           this.$message.error("删除失败！")
         }
+        this.contestsLoading();
       })
       this.visible = false;
     },
@@ -160,9 +159,9 @@ export default {
     send() {
       if (this.title.trim() !== '' && this.text.trim() !== '') {
         const jsonObject = {cid: this.cid, uid: this.$store.state.uid, title: this.title, text: this.text}
-        console.log(jsonObject);
+        // console.log(jsonObject);
         postRequest("/messages/save", jsonObject).then((res) => {
-          console.log(res.data);
+          // console.log(res.data);
           if (res.data.status) {
             this.$message.success("发送成功。")
           } else {

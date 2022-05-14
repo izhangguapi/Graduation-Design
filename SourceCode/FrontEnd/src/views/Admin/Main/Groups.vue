@@ -113,7 +113,7 @@ export default {
     // 查询用户组
     getGroupsList() {
       postRequest("/groups/list", this.pageQuery).then(res => {
-        console.log(res.data);
+        // console.log(res.data);
         this.tableData = res.data.data.records;
         this.total = res.data.data.total;
       })
@@ -145,7 +145,7 @@ export default {
     },
     // 添加用户组
     insertGroups() {
-      console.log("添加")
+      // console.log("添加")
       this.$refs.group.validate((valid) => {
         if (valid) {
           postRequest("/insertGroup", this.group).then(res => {
@@ -158,11 +158,11 @@ export default {
     },
     // 修改用户组
     updateGroup() {
-      console.log("修改")
+      // console.log("修改")
       this.$refs.group.validate((valid) => {
         if (valid) {
           putRequest("/updateGroup", this.group).then(res => {
-            if (res.data.data) {
+            if (res.data.status) {
               this.$message.success("修改成功。");
               this.getGroupsList();
             } else this.$message.error("修改失败！");

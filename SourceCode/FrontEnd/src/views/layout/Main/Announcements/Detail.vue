@@ -43,12 +43,11 @@ export default {
     announcementLoading() {
       getRequest("/messages/announcement/" + this.$route.params.messageId).then((res) => {
         const data = res.data.data;
-        console.log(data);
-
+        // console.log(data);
         if (data.recipient === 1 || data.recipient === this.$store.state.uid) {
           this.data = data;
           if (this.data.recipient !== this.data.sender && !this.data.status) {
-            console.log(this.$route.params.messageId)
+            // console.log(this.$route.params.messageId)
             putRequest("/messages/status", {messageId: this.$route.params.messageId, status: true});
           }
         } else {

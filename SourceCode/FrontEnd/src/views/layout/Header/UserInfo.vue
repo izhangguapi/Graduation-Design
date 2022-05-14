@@ -126,10 +126,10 @@ export default {
 
     },
     deleteMessage(){
-      console.log(this.multipleSelection);
+      // console.log(this.multipleSelection);
       if (this.multipleSelection.length !== 0){
         deleteRequest("/deleteMessage",this.multipleSelection).then((res)=>{
-          if (res.data.data){
+          if (res.data.status){
             this.$message.success("删除成功。")
           }else {
             this.$message.error("删除失败！")
@@ -142,7 +142,7 @@ export default {
     },
     deleteMessageRead(){
       getRequest("/deleteMessageRead",{uid: this.$store.state.uid}).then((res)=>{
-        if (res.data.data === 0){
+        if (res.data.status){
           this.$message.warning("暂无已读消息。")
         }else {
           this.$message.success("已读消息删除成功。")

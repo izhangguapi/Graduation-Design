@@ -122,7 +122,7 @@ export default {
     //数据修改提交
     submitForm() {
       putRequest("/user/update", this.updateData).then((res) => {
-        console.log(res)
+        // console.log(res)
         if (res.data.code === 200) {
           this.update = false;
           this.$message({
@@ -160,7 +160,7 @@ export default {
     //查所有用户
     getUserList() {
       postRequest("/users/list", this.pageQuery).then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         this.tableData = res.data.data.records;
         this.total = res.data.data.total;
       });

@@ -38,11 +38,9 @@
           <div class="text item">
             所属组：<samp class="itemRight">{{ groupName }}</samp>
           </div>
-          <div style="text-align: center" v-if="btnHidden">
-            <el-button type="primary" round @click="submit">{{ btnText }}</el-button>
-          </div>
-          <div style="text-align: center" v-else>
-            <el-button type="danger" round disabled>{{ btnText }}</el-button>
+          <div style="text-align: center" >
+            <el-button type="primary" round v-if="btnHidden" @click="submit">{{ btnText }}</el-button>
+            <el-button type="danger" round disabled v-else>{{ btnText }}</el-button>
           </div>
         </el-card>
       </el-col>
@@ -109,13 +107,14 @@ export default {
         this.contestId = this.$route.params.contestId;
         // 查询当前用户是否已报名此比赛
         getRequest("/scores/" + this.$store.state.uid + "/" + this.contestId).then((res) => {
-          if (this.$store.state.gid === '2') {
-            if (res.data.data === 0) {
-              this.btnHidden = true;
-              this.btnText = '立即报名';
-            } else {
+          // console.log(res.data)
+          if (this.$store.state.gid === 2) {
+            if (res.data.data === 1) {
               this.btnHidden = false;
               this.btnText = '已报名';
+            } else {
+              this.btnHidden = true;
+              this.btnText = '立即报名';
             }
           } else {
             this.btnHidden = false;
@@ -160,7 +159,7 @@ export default {
             sender: this.promulgator
           };
           postRequest("/messages/insert", obj).then((res) => {
-            if (res.data.data === 1) {
+            if (res.data.status) {
               this.reload();
             }
           })

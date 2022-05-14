@@ -10,8 +10,26 @@ SELECT * FROM contests;
 SELECT * FROM messages;
 SELECT * FROM scores;
 
+SELECT scores_id,scores.contest_id,scores.contestant 'user_id',scores.`status`,text,result,u1.`name` 'contestant',u2.`name` 'judge',c.contest_title,u1.`name`,u1.phone,u1.school 
+FROM scores
+ LEFT JOIN users u1 ON u1.user_id=scores.contestant 
+ LEFT JOIN users u2 ON u2.user_id=scores.judge 
+ LEFT JOIN contests c ON c.contest_id=scores.contest_id 
+ WHERE scores_id = 30
 
+
+
+
+SELECT * FROM users LEFT JOIN groups ON users.group_id = groups.group_id
+
+SELECT scores_id,user_id,`name`,school,phone,status FROM scores INNER JOIN users ON scores.contestant=users.user_id WHERE contest_id = 3 ORDER BY status limit 0,3
+SELECT scores_id,user_id,`name`,school,phone,status FROM scores INNER JOIN users ON scores.contestant=users.user_id WHERE contest_id = 3 ORDER BY status limit 3,3
+SELECT scores_id,user_id,`name`,school,phone,status FROM scores INNER JOIN users ON scores.contestant=users.user_id WHERE contest_id = 3 ORDER BY status limit 6,3
+SELECT scores_id,user_id,`name`,school,phone,status FROM scores INNER JOIN users ON scores.contestant=users.user_id WHERE contest_id = 3 ORDER BY status limit 9,2
+SELECT scores_id,user_id,`name`,school,phone,status FROM scores INNER JOIN users ON scores.contestant=users.user_id WHERE contest_id = 3 ORDER BY status limit 11,2
 SELECT * FROM scores WHERE contest_id = 6
+
+SELECT * FROM users WHERE group_id = 3
 
 INSERT INTO `messages`
 VALUES

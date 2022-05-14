@@ -23,7 +23,7 @@ export default {
   mounted() {
 
     getRequest("/currentUser").then(res=>{
-      console.log(res.data);
+      // console.log(res.data);
     })
   }
 }

@@ -85,13 +85,13 @@ export default {
     // 查询用户组
     selectContests() {
       getRequest("/selectContests").then(res => {
-        console.log(res.data.data)
+        // console.log(res.data.data)
         this.tableData = res.data.data;
       })
     },
     // 搜索用户组
     searchContests() {
-      console.log(this.input.trim())
+      // console.log(this.input.trim())
       getRequest("/searchContests", {query: this.input.trim()}).then(res => {
         this.tableData = res.data.data;
       })
@@ -117,7 +117,7 @@ export default {
     },
     updateContest() {
       putRequest("/updateContest", this.operation).then(res => {
-        if (res.data.data) {
+        if (res.data.status) {
           this.$message.success("审核成功。");
           this.selectContests();
         } else {

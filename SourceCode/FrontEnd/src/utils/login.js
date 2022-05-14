@@ -5,7 +5,7 @@ export function getUser() {
     // localStorage获取token
     if (localStorage.token) {
         getRequest("/currentUser").then(res=>{
-            console.log(res);
+            // console.log(res);
             let data = res.data.data;
             if (data){
                 store.state.uid = data.uid;

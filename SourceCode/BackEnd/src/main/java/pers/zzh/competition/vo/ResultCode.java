@@ -26,7 +26,7 @@ public enum ResultCode {
     REGISTER_FAIL(201,"注册失败！"),
 
 
-    CAPTCHA_EXPIRE(201, "验证码已失效，请刷新！"),
+    CAPTCHA_EXPIRE(201, "验证码失效，请重新登录！"),
     CAPTCHA_ERROR(201, "验证码错误！"),
     PARAMS_ERROR(10001,"参数有误"),
     ACCOUNT_PWD_NOT_EXIST(10002,"用户名或密码不存在！"),

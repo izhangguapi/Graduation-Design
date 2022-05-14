@@ -32,7 +32,7 @@ public class AverageAlgorithm {
 
     private static String UID;
 
-    private static Map<String,Integer> limitMap = new HashMap<>(2);
+    private static final Map<String, Integer> limitMap = new HashMap<>(2);
 
     /**
      * 获取Limit
@@ -47,15 +47,18 @@ public class AverageAlgorithm {
         String string = "/group" + gid + "/Contest" + cid + ".json";
         // 从路径json文件获取值
         JSONObject jsonObject = JSONUtil.parseObj(FileOperations.readJsonFile(string));
+        System.out.println(jsonObject);
         String limitL = jsonObject.getStr("limitL" + uid);
         String limitR = jsonObject.getStr("limitR" + uid);
-
+        System.out.println("左：" + limitL + "\n右：" + limitR);
         Map<String, Integer> map = new HashMap<>(2);
         // 获取的值为null就执行算法，否则直接返回获取到的值
         if (limitL == null || limitR == null) {
+            System.out.println("读取失败，创建新的json文件");
             initialize(gid, cid);
             return limitMap;
         } else {
+            System.out.println("读取成功");
             map.put("limitL", Integer.valueOf(Objects.requireNonNull(jsonObject).getStr("limitL" + uid)));
             map.put("limitR", Integer.valueOf(Objects.requireNonNull(jsonObject).getStr("limitR" + uid)));
         }
@@ -86,9 +89,9 @@ public class AverageAlgorithm {
         if (participantsNumber != 0) {
             Map<String, Integer> map = compute(participantsNumber, usersList.size());
             if (map.get("remainder") == null) {
-                 createMap(map.get("quotient"), afterPath);
+                createMap(map.get("quotient"), afterPath);
             } else {
-                 createMap(map.get("quotient"), map.get("remainder"), afterPath);
+                createMap(map.get("quotient"), map.get("remainder"), afterPath);
             }
         }
     }
@@ -149,7 +152,7 @@ public class AverageAlgorithm {
                 map.put("limitL" + users.getUserId(), i * quotient + i);
                 map.put("limitR" + users.getUserId(), quotient + 1);
             } else if (i == remainder) {
-                map.put("limitL" + users.getUserId(), i * quotient + remainder);
+                map.put("limitL" + users.getUserId(), i * quotient + i);
                 map.put("limitR" + users.getUserId(), quotient);
             } else {
                 map.put("limitL" + users.getUserId(), i * quotient + remainder);
@@ -157,6 +160,7 @@ public class AverageAlgorithm {
             }
             i++;
         }
+        System.out.println(map);
         // 保存文件
         FileOperations.saveJsonFile(map, afterPath);
 

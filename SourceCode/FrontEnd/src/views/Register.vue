@@ -228,7 +228,7 @@ export default {
           if (this.active === 0) { // 第一步
             //查询输入的手机号或者邮箱是否存在如果存在则清空手机号和邮箱，否则进入下一步
             postRequest("/registerVerify", this.registerForm).then(res => {
-              console.log(res)
+              // console.log(res)
               if (res && res.data.status) {
                 // Message.success(resp.data.msg)
                 this.active++;
@@ -250,7 +250,7 @@ export default {
     submitForm() {
       // 第三步输入完成进行判断/register
       postRequest("/register", this.registerForm).then((res) => {
-        console.log(res.data)
+        // console.log(res.data)
         if (res && res.data.status) {
           this.goToLoginPage();
         } else {
@@ -277,7 +277,7 @@ export default {
     insertGroup() {
       this.$refs.group.validate((valid) => {
         if (valid) {
-          console.log(1)
+          // console.log(1)
           postRequest("/insertGroup", this.group).then((resp) => {
             if (resp) {
               this.registerForm.groupId = resp.data.data;
@@ -304,7 +304,7 @@ export default {
       }).then(({value}) => {
         //去数据库搜索输入的编码是否存在 groupId JSON.stringify(
         getRequest("/encoding/" + value.toUpperCase()).then(res => {
-          console.log(res.data)
+          // console.log(res.data)
           if (res.data.status) {
             this.$message({type: 'success', message: '加入组成功'});
             this.registerForm.groupId = res.data.data[0].groupId;
