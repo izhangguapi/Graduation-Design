@@ -5,36 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b94a5a1-4c3a-4d58-ac73-0b46223b2154" name="变更" comment="变更">
-      <change beforePath="$PROJECT_DIR$/../../._README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../._README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../._README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../._README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BackEnd/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/service/impl/ScoresServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/service/impl/ScoresServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/utils/AverageAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/utils/AverageAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/utils/FileOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/utils/FileOperations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/vo/ResultCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/pers/zzh/competition/vo/ResultCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/target/BackEnd-1.0.0.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/target/BackEnd-1.0.0.jar.original" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BackEnd/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/target/classes/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Admin/Main/Groups.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Admin/Main/Groups.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Admin/Main/Review/Contests.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Admin/Main/Review/Contests.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Admin/Main/Users.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Admin/Main/Users.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Register.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/layout/Header/UserInfo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/layout/Header/UserInfo.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/layout/Main/Announcements/Detail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/layout/Main/Announcements/Detail.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/layout/Main/Find/Detail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/layout/Main/Find/Detail.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/layout/Main/Find/Score.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/layout/Main/Find/Score.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/layout/Main/Manage/Contest.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/layout/Main/Manage/Contest.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/layout/Main/Manage/Review.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/layout/Main/Manage/Review.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/layout/Main/Manage/Score.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/layout/Main/Manage/Score.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/layout/Main/Manage/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/layout/Main/Manage/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/layout/Main/Mine/Information.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/layout/Main/Mine/Information.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/test.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/test.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sql/contest_web_create.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../Sql/contest_web_create.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sql/contest_web_select.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../Sql/contest_web_select.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +76,7 @@
       <recent name="$PROJECT_DIR$/src/views/layout/Main/Publish" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.构建">
+  <component name="RunManager">
     <configuration name="开发" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -196,10 +169,6 @@
       <envs />
       <method v="2" />
     </configuration>
-    <list>
-      <item itemvalue="npm.开发" />
-      <item itemvalue="npm.构建" />
-    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -360,6 +329,7 @@
       <workItem from="1652100652142" duration="771000" />
       <workItem from="1652167893946" duration="4712000" />
       <workItem from="1652534198067" duration="6715000" />
+      <workItem from="1652585745585" duration="1252000" />
     </task>
     <servers />
   </component>

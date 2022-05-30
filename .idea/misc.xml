@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/other/blog/vueblog" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/other/blog/vueblog/pom.xml" />
+        <option value="$PROJECT_DIR$/other/springboot-demo-dev/pom.xml" />
+        <option value="$PROJECT_DIR$/other/student-competition-master/pom.xml" />
+        <option value="$PROJECT_DIR$/other/campus-activity-management-system/后端代码/pom.xml" />
+        <option value="$PROJECT_DIR$/other/campus-activity-management-system1/后端代码/pom.xml" />
+        <option value="$PROJECT_DIR$/SourceCode/BackEnd/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+</project>

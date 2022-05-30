@@ -8,36 +8,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2f4faf0-13b2-49c4-9432-ccd98a80af67" name="变更" comment="">
+      <change beforePath="$PROJECT_DIR$/../../._.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../._.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../._BackEnd-1.0.0.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../._README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../._README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../._毕业设计进度表.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../._毕业设计进度表.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../BackEnd-1.0.0.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../._README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../._README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/._README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/impl/ScoresServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/impl/ScoresServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/utils/AverageAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/utils/AverageAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/utils/FileOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/utils/FileOperations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/vo/ResultCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/vo/ResultCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/BackEnd-1.0.0.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/BackEnd-1.0.0.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/._application.yml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FrontEnd/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/utils/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/utils/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/utils/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/utils/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/Admin/Main/Groups.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/Admin/Main/Groups.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/Admin/Main/Review/Contests.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/Admin/Main/Review/Contests.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/Admin/Main/Users.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/Admin/Main/Users.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/Register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/Register.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Header/UserInfo.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Header/UserInfo.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Main/Announcements/Detail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Main/Announcements/Detail.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Main/Find/Detail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Main/Find/Detail.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Main/Find/Score.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Main/Find/Score.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Main/Manage/Contest.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Main/Manage/Contest.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Main/Manage/Review.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Main/Manage/Review.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Main/Manage/Score.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Main/Manage/Score.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Main/Manage/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Main/Manage/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Main/Mine/Information.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/layout/Main/Mine/Information.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FrontEnd/src/views/test.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/src/views/test.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sql/contest_web_create.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../Sql/contest_web_create.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sql/contest_web_select.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../Sql/contest_web_select.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Maven JAR/com/github/whvcse/._.DS_Store" beforeDir="false" afterPath="$PROJECT_DIR$/../Maven JAR/com/github/whvcse/._.DS_Store" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Maven JAR/com/github/whvcse/easy-captcha/._.DS_Store" beforeDir="false" afterPath="$PROJECT_DIR$/../Maven JAR/com/github/whvcse/easy-captcha/._.DS_Store" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sql/._contest_web_create.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sql/._contest_web_insert.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sql/contest_web_create.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sql/contest_web_insert.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../SpringBoot基础.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../数据库设计.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../数据库设计.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../设计构想.docx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,9 +93,9 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Volumes/Code/Graduation_Design/SourceCode/BackEnd&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Volumes/张瓜皮/Graduation_Design/SourceCode/BackEnd&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDK&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
@@ -371,6 +363,12 @@
       <workItem from="1652100652729" duration="772000" />
       <workItem from="1652167893622" duration="8848000" />
       <workItem from="1652534198714" duration="5718000" />
+      <workItem from="1652585745150" duration="834000" />
+      <workItem from="1653659042197" duration="59000" />
+      <workItem from="1653659109799" duration="706000" />
+      <workItem from="1653930441785" duration="82000" />
+      <workItem from="1653930565244" duration="51000" />
+      <workItem from="1653930624692" duration="230000" />
     </task>
     <servers />
   </component>

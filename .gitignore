@@ -19,6 +19,7 @@
 *.rar
 
 # 其他文件或文件夹
+._*
 .DS_Store
 other/
 dist/

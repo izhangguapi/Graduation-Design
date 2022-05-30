@@ -2,7 +2,14 @@
 
 ### 项目简介
 
-本项目是一个前后端分离web应用程序，前端采用Vue框架，后端采用Spring Boot框架、数据库采用MariaDB。
+本项目是因毕业所设计出的一个前后端分离的web应用程序，前端采用Vue框架，后端采用Spring Boot框架、数据库采用MariaDB（可自行更改为其他关系型数据库）。
+
+起初课题名称：基于Web的大学生计算机设计大赛报名网站的设计与实现
+
+而后课题名称：基于Web的大学生计算机设计大赛网站的设计与实现
+
+最终课题名称：基于Web的大学生计算机设计大赛报名网站的开发
+
 
 [![AUR](https://img.shields.io/badge/license-GPL-blue.svg)](https://github.com/zhangguapipi/Graduation_Design/blob/main/LICENSE)
 
@@ -10,6 +17,9 @@
 |---|---|
 |  github |  https://github.com/izhangguapi/Graduation_Design  |
 |  码云  | https://gitee.com/izhangguapi/Graduation_Design |
+
+### 项目启动
+使用idea打开BackEnd和FrontEnd，后端需要jdk1.8，前端需要Vue脚手架和npm才可运行，如遇报错请前往`/SourceCode/BackEnd`文件夹或点击[这里](https://github.com/izhangguapi/Graduation_Design/tree/main/SourceCode/BackEnd)查看解决方案
 
 ### 开发环境
 操作系统：macOS Monterey 12.3
@@ -51,7 +61,7 @@ Java SE 开发工具包：jkd-8u321(1.8)
 
 ## 已知bug
 
-1. 点击消息列表后，前端消息已读数量偶尔出现不变化的情况。是应为后台运行查询比修改快，导致获取的消息列表跟上一次相同，目前本人已学的技术找不到良好的解决方案。
+1. 点击消息列表后，前端消息已读数量偶尔出现不变化的情况。是应为后台运行查询比修改快，导致获取的消息列表跟上一次相同，目前本人所学技术找不到良好的解决方案。
 
 
 
