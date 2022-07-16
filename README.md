@@ -10,7 +10,6 @@
 
 最终课题名称：基于Web的大学生计算机设计大赛报名网站的开发
 
-
 [![AUR](https://img.shields.io/badge/license-GPL-blue.svg)](https://github.com/zhangguapipi/Graduation_Design/blob/main/LICENSE)
 
 |  git仓库 |  源码  |
@@ -44,8 +43,6 @@ Java SE 开发工具包：jkd-8u321(1.8)
 
 浏览器：Google Chrome 100.0.4896.60（正式版本） (x86_64)
 
-
-
 ## 项目功能
 
 * 登录、退出、注册
@@ -57,11 +54,11 @@ Java SE 开发工具包：jkd-8u321(1.8)
 * 搜索比赛
 * 查看评审结果、比赛排名
 
+视频演示：[点击跳转](https://github.com/izhangguapi/Graduation-Design/blob/720c10bf940b0add57c83faa70d5ca8bfa8694e4/%E6%96%87%E6%A1%A3/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%8E%E6%8A%80%E6%9C%AF%EF%BC%88%E4%B8%93%E5%8D%87%E6%9C%AC%EF%BC%892002-204304064-%E5%BC%A0%E6%81%A3%E8%B1%AA/10.%E7%B3%BB%E7%BB%9F%E6%BC%94%E7%A4%BA%E8%A7%86%E9%A2%91-204304064-%E5%BC%A0%E6%81%A3%E8%B1%AA.mp4)
+
 ## 已知bug
 
 1. 点击消息列表后，前端消息已读数量偶尔出现不变化的情况。是应为后台运行查询比修改快，导致获取的消息列表跟上一次相同，目前本人所学技术找不到良好的解决方案。
-
-
 
 ## 在线预览
 
