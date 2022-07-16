@@ -57,6 +57,7 @@ Java SE 开发工具包：jkd-8u321(1.8)
 * 搜索比赛
 * 查看评审结果、比赛排名
 
+<video src="https://github.com/izhangguapi/Graduation-Design/blob/e388e340433dd2bb66ef5951067279230a8ebe4c/%E6%96%87%E6%A1%A3/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%8E%E6%8A%80%E6%9C%AF%EF%BC%88%E4%B8%93%E5%8D%87%E6%9C%AC%EF%BC%892002-204304064-%E5%BC%A0%E6%81%A3%E8%B1%AA/10.%E7%B3%BB%E7%BB%9F%E6%BC%94%E7%A4%BA%E8%A7%86%E9%A2%91-204304064-%E5%BC%A0%E6%81%A3%E8%B1%AA.mp4"></video>
 
 
 ## 已知bug
