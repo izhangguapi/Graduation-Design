@@ -103,8 +103,8 @@ export default {
   methods: {
     // 初始化
     contestLoading() {
+      this.contestId = this.$route.params.contestId;
       if (this.$store.state.uid !== undefined) {
-        this.contestId = this.$route.params.contestId;
         // 查询当前用户是否已报名此比赛
         getRequest("/scores/" + this.$store.state.uid + "/" + this.contestId).then((res) => {
           // console.log(res.data)
@@ -120,28 +120,28 @@ export default {
             this.btnHidden = false;
           }
         });
-        // 查询id为this.$route.params.contestId的比赛并显示
-        getRequest("/contest/" + this.contestId).then((res) => {
-          const data = res.data.data;
-          if (data) {
-            document.title = this.contestTitle = data.contestTitle;
-            this.contestText = data.contestText;
-            this.name = data.name;
-            this.groupName = data.groupName;
-            this.promulgator = data.promulgator;
-            this.activities[0].timestamp = data.regStartTime;
-            this.activities[1].timestamp = data.regEndTime;
-            if (new Date() > new Date(data.regEndTime)) {
-              this.btnText = '报名时间已过';
-              this.btnHidden = false;
-            }
-            this.activities[2].timestamp = data.startTime;
-            this.activities[3].timestamp = data.endTime;
-          } else {
-            this.$router.push("/404");
-          }
-        });
       }
+      // 查询id为this.$route.params.contestId的比赛并显示
+      getRequest("/contest/" + this.contestId).then((res) => {
+        const data = res.data.data;
+        if (data) {
+          document.title = this.contestTitle = data.contestTitle;
+          this.contestText = data.contestText;
+          this.name = data.name;
+          this.groupName = data.groupName;
+          this.promulgator = data.promulgator;
+          this.activities[0].timestamp = data.regStartTime;
+          this.activities[1].timestamp = data.regEndTime;
+          if (new Date() > new Date(data.regEndTime)) {
+            this.btnText = '报名时间已过';
+            this.btnHidden = false;
+          }
+          this.activities[2].timestamp = data.startTime;
+          this.activities[3].timestamp = data.endTime;
+        } else {
+          this.$router.push("/404");
+        }
+      });
     },
     /**
      * 点击报名按钮
