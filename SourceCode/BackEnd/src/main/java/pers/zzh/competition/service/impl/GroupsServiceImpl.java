@@ -13,9 +13,6 @@ import pers.zzh.competition.vo.params.PageQuery;
 
 import java.util.List;
 
-/**
- * @author 张恣豪
- */
 @Service
 public class GroupsServiceImpl extends ServiceImpl<GroupsMapper, Groups> implements GroupsService {
     /**
@@ -50,7 +47,6 @@ public class GroupsServiceImpl extends ServiceImpl<GroupsMapper, Groups> impleme
         }
         return num;
     }
-
     @Override
     public Page<Groups> selectGroupsList(PageQuery pageQuery) {
         // 创建分页对象

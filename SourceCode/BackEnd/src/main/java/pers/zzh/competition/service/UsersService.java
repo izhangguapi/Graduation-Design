@@ -10,13 +10,6 @@ import pers.zzh.competition.vo.params.PageQuery;
 
 import java.util.List;
 
-
-/**
- * 业务接口
- *
- * @author 张恣豪
- * @since 2022-1-10
- */
 public interface UsersService extends IService<Users> {
     /**
      * 分页链表查询
@@ -62,6 +55,7 @@ public interface UsersService extends IService<Users> {
 
     /**
      * 根据组id查询该组下有哪用户，生成一个用户id列表
+     *
      * @param gid 组id
      * @return 列表
      */

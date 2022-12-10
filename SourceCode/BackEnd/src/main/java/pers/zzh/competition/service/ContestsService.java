@@ -8,9 +8,6 @@ import pers.zzh.competition.entity.Users;
 
 import java.util.List;
 
-/**
- * @author 张恣豪
- */
 public interface ContestsService extends IService<Contests> {
     /**
      * 根据id查询一条数据

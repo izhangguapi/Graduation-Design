@@ -12,9 +12,6 @@ import pers.zzh.competition.utils.JwtUtils;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @author 张恣豪
- */
 @Service
 public class ScoresServiceImpl extends ServiceImpl<ScoresMapper, Scores> implements ScoresService {
 

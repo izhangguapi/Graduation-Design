@@ -16,8 +16,6 @@ import java.util.Objects;
 
 /**
  * 平均分配参赛者数量的算法
- *
- * @author zhangguapi
  */
 @Component
 public class AverageAlgorithm {

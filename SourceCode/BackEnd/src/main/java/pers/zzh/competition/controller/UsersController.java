@@ -1,9 +1,8 @@
 package pers.zzh.competition.controller;
 
-import com.wf.captcha.GifCaptcha;
+import com.pig4cloud.captcha.ArithmeticCaptcha;
 import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.*;
-
 import pers.zzh.competition.entity.Users;
 import pers.zzh.competition.service.UsersService;
 import pers.zzh.competition.utils.JwtUtils;
@@ -19,26 +18,22 @@ import javax.servlet.http.HttpSession;
 
 /**
  * 前端控制器 - users表的操作
- *
- * @author 张恣豪
- * @since 2022-1-12
  */
 @RestController
 @RequestMapping("/api")
 public class UsersController {
-
     @Resource
     private UsersService service;
 
     /**
      * 查询users表的全部
+     *
      * @return 查询的数据
      */
     @GetMapping("/users")
     public Result getAll() {
         return Result.success(ResultCode.SELECT_SUCCESS, service.list());
     }
-
 
     /**
      * 分页链表查询users
@@ -48,14 +43,14 @@ public class UsersController {
      */
     @PostMapping("/users/list")
     public Result getAll(@RequestBody PageQuery pageQuery) {
-        return  Result.success( ResultCode.SELECT_SUCCESS,service.selectListPage(pageQuery));
+        return Result.success(ResultCode.SELECT_SUCCESS, service.selectListPage(pageQuery));
     }
 
     /**
      * 登录功能
      *
      * @param loginParam 用户账号密码
-     * @param session session对象
+     * @param session    session对象
      * @return 是否登录成功，成功返回该用户信息
      */
     @PostMapping("/login")
@@ -99,10 +94,9 @@ public class UsersController {
      * @return token的body部分
      */
     @GetMapping("/currentUser")
-    public Result currentUser(@RequestHeader("Authorization") String token){
+    public Result currentUser(@RequestHeader("Authorization") String token) {
         return Result.success(ResultCode.SELECT_SUCCESS, JwtUtils.checkToken(token));
     }
-
 
     /**
      * 生成验证码
@@ -112,18 +106,17 @@ public class UsersController {
      * @param session  会话
      */
     @GetMapping("/captcha")
-    public void getCaptcha(@RequestParam("dateTime") String dateTime, HttpServletResponse response, HttpSession session) throws Exception {
+    public void getCaptcha(@RequestParam("ulid") String ulid, HttpServletResponse response, HttpSession session) throws Exception {
         ServletOutputStream outputStream = response.getOutputStream();
-        // 英文与数字动态验证码
-        GifCaptcha captcha = new GifCaptcha(120, 40);
-        // 设置验证码的位数
-        captcha.setLen(4);
+        // 算数验证码,设置图片宽度、高度、几个数字进行运算
+        ArithmeticCaptcha captcha = new ArithmeticCaptcha(120, 40, 2);
         // 输出图片
         captcha.out(outputStream);
         // 获取运算的结果并打印
-        System.out.println("用户获取：" + dateTime + "-" + captcha.text());
-        // 将时间戳作为key，验证码作为value存入session，设置过期时间为30秒
-        session.setAttribute(dateTime, captcha.text());
+        System.out.println(ulid + " : " + captcha.text());
+        // 将时间戳作为key，验证码作为value存入session
+        session.setAttribute(ulid, captcha.text());
+        // 设置session过期时间为60秒
         session.setMaxInactiveInterval(60);
     }
 

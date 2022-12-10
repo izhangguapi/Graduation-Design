@@ -8,7 +8,7 @@ import pers.zzh.competition.vo.Result;
 import pers.zzh.competition.vo.ResultCode;
 
 /**
- * @author 张恣豪
+ * 前端控制器 - contests表的操作
  */
 @RestController
 @RequiredArgsConstructor

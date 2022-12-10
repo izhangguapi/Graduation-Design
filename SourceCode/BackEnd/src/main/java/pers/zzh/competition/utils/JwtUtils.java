@@ -10,25 +10,20 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * @author zhangguapi
+ * JWT工具类
  */
 public class JwtUtils {
-    /**
-     * 过期时间7天
-     */
-      static final long TIME = 1000 * 60 * 60 * 24 * 7;
-    /**
-     * 秘钥
-     */
-      static final String SIGNATURE = "zgp99.J@";
+    // 过期时间7天
+    static final long TIME = 1000 * 60 * 60 * 24 * 7;
+    // 秘钥
+    static final String SIGNATURE = "zgp99.J@";
 
-    public static String createToken(String name,int uid,int gid,Boolean admin) {
+    public static String createToken(String name, int uid, int gid, Boolean admin) {
         Map<String, Object> claims = new HashMap<>(3);
         claims.put("name", name);
         claims.put("uid", uid);
         claims.put("gid", gid);
         claims.put("isAdmin", admin);
-
         // 创建jwt对象
         return Jwts.builder()
                 // 自定义body数据
@@ -52,10 +47,10 @@ public class JwtUtils {
 //    }
 
     /**
-     *  验证解析token
-     *  JWT Token 由 头部 荷载部 和 签名部 三部分组成。签名部分是由加密算法生成，无法反向解密。
-     *  而 头部 和 荷载部分是由 Base64 编码算法生成，是可以反向反编码回原样的。
-     *  这也是为什么不要在 JWT Token 中放敏感数据的原因。
+     * 验证解析token
+     * JWT Token 由 头部 荷载部 和 签名部 三部分组成。签名部分是由加密算法生成，无法反向解密。
+     * 而 头部 和 荷载部分是由 Base64 编码算法生成，是可以反向反编码回原样的。
+     * 这也是为什么不要在 JWT Token 中放敏感数据的原因。
      *
      * @param token 加密后的token
      * @return claims 返回荷载部分的键值对
@@ -77,12 +72,12 @@ public class JwtUtils {
 
     /**
      * 根据token字符串得到用户名称
+     *
      * @param token token
-     * @param key 键
+     * @param key   键
      * @return token下body对应的数据
      */
-    public static String getBody(String token,String key) {
+    public static String getBody(String token, String key) {
         return String.valueOf(Objects.requireNonNull(checkToken(token)).get(key));
     }
-
 }

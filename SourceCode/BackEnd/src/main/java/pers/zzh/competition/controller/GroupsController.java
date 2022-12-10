@@ -12,7 +12,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * @author 张恣豪
+ * 前端控制器 - groups表的操作
  */
 @RestController
 @RequiredArgsConstructor

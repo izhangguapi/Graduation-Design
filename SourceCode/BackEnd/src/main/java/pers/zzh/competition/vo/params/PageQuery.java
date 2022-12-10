@@ -5,9 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
 /**
- * @author zhangguapi
+ * 用于用户表分页查询,用户表实体类继承于此类
  */
 @Data
 @AllArgsConstructor

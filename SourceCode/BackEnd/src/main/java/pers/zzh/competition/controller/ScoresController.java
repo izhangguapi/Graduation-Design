@@ -14,7 +14,7 @@ import java.util.Map;
 
 
 /**
- * @author 张恣豪
+ * 前端控制器 - scores表的操作
  */
 @RestController
 @RequiredArgsConstructor

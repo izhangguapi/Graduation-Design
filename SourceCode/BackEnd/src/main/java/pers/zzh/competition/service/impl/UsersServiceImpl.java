@@ -18,12 +18,6 @@ import pers.zzh.competition.vo.params.PageQuery;
 
 import java.util.List;
 
-/**
- * 业务逻辑实现类
- *
- * @author 张恣豪
- * @since 2022-1-11
- */
 @Service
 public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users> implements UsersService {
     /**

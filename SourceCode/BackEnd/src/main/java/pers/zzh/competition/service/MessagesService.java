@@ -7,9 +7,6 @@ import pers.zzh.competition.entity.Messages;
 import java.util.Collection;
 import java.util.List;
 
-/**
- * @author 张恣豪
- */
 public interface MessagesService extends IService<Messages> {
 
     /**
@@ -52,6 +49,7 @@ public interface MessagesService extends IService<Messages> {
 
     /**
      * 删除已读消息
+     *
      * @param uid
      * @return
      */
@@ -59,6 +57,7 @@ public interface MessagesService extends IService<Messages> {
 
     /**
      * 添加消息
+     *
      * @param obj 对象
      * @return
      */

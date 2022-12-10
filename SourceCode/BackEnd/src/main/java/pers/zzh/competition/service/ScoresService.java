@@ -2,12 +2,8 @@ package pers.zzh.competition.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import pers.zzh.competition.entity.Scores;
-
 import java.util.List;
 
-/**
- * @author 张恣豪
- */
 public interface ScoresService extends IService<Scores> {
     /**
      * 查询组

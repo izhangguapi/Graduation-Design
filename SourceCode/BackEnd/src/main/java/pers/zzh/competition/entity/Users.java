@@ -10,9 +10,6 @@ import pers.zzh.competition.vo.params.PageQuery;
 
 import java.util.Date;
 
-/**
- * @author 张恣豪
- */
 @Data
 @EqualsAndHashCode(callSuper = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,9 +26,7 @@ public class Users extends PageQuery {
     private String email;
     private Integer groupId;
     private String password;
-    /**
-     * 链表查询-组表字段：组名、组编码
-     */
+    // 链表查询-组表字段：组名、组编码
     @TableField(exist = false)
     private String groupName;
     @TableField(exist = false)

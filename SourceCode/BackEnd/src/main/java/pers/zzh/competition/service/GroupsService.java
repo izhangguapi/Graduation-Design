@@ -7,12 +7,6 @@ import pers.zzh.competition.vo.params.PageQuery;
 
 import java.util.List;
 
-/**
- * 业务接口
- *
- * @author 张恣豪
- * @since 2022-1-17
- */
 public interface GroupsService extends IService<Groups> {
 
     /**
