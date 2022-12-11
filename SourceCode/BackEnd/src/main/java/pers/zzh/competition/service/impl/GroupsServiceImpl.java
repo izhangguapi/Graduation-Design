@@ -6,7 +6,6 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.apache.ibatis.annotations.Options;
 import org.springframework.stereotype.Service;
 import pers.zzh.competition.entity.Groups;
-import pers.zzh.competition.entity.Users;
 import pers.zzh.competition.mapper.GroupsMapper;
 import pers.zzh.competition.service.GroupsService;
 import pers.zzh.competition.vo.params.PageQuery;
@@ -37,16 +36,17 @@ public class GroupsServiceImpl extends ServiceImpl<GroupsMapper, Groups> impleme
      */
     @Override
     @Options(useGeneratedKeys = true, keyProperty = "groupId", keyColumn = "groupId")
-    public int insertGroupGetId(Groups groups) {
-        int num;
+    public Integer insertGroupGetId(Groups groups) {
+        int num = 0;
         try {
             baseMapper.insert(groups);
             num = groups.getGroupId();
         } catch (Exception e) {
-            num = 0;
+            e.printStackTrace();
         }
         return num;
     }
+
     @Override
     public Page<Groups> selectGroupsList(PageQuery pageQuery) {
         // 创建分页对象
@@ -55,10 +55,10 @@ public class GroupsServiceImpl extends ServiceImpl<GroupsMapper, Groups> impleme
         QueryWrapper<Groups> qw = new QueryWrapper<>();
         // 查询全部，尾部添加链表条件
         String sql = " LEFT JOIN users ON groups.group_id = users.group_id";
-        if (pageQuery.getQuery()!=null){
-            sql+=" WHERE CONCAT(group_name,encoding) LIKE '%" + pageQuery.getQuery().trim() + "%'";
+        if (pageQuery.getQuery() != null) {
+            sql += " WHERE CONCAT(group_name,encoding) LIKE '%" + pageQuery.getQuery().trim() + "%'";
         }
-        sql+=" GROUP BY groups.group_id";
+        sql += " GROUP BY groups.group_id";
 
         qw.select("groups.*,COUNT(user_id) number")
                 .last(sql);

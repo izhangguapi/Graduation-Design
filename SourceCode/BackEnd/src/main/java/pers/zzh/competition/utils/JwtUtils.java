@@ -29,22 +29,12 @@ public class JwtUtils {
                 // 自定义body数据
                 .setClaims(claims)
                 // 设置签发算法
-                .signWith(SignatureAlgorithm.HS256, SIGNATURE)
+                .signWith(SignatureAlgorithm.HS256, JwtUtils.SIGNATURE)
                 // 设置有效时间
-                .setExpiration(new Date(System.currentTimeMillis() + TIME))
+                .setExpiration(new Date(System.currentTimeMillis() + JwtUtils.TIME))
                 // 生成token字符串
                 .compact();
     }
-
-//    public static Boolean checkToken(String token) {
-//        try {
-//            Jwts.parser().setSigningKey(SIGNATURE).parseClaimsJws(token);
-//            return true;
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//            return false;
-//        }
-//    }
 
     /**
      * 验证解析token
@@ -60,7 +50,7 @@ public class JwtUtils {
             // 创建解析对象
             return Jwts.parser()
                     // 设置安全密钥（生成签名所需的密钥和算法）
-                    .setSigningKey(SIGNATURE)
+                    .setSigningKey(JwtUtils.SIGNATURE)
                     // 解析token
                     .parseClaimsJws(token)
                     // 获取 payload 部分内容
@@ -78,6 +68,6 @@ public class JwtUtils {
      * @return token下body对应的数据
      */
     public static String getBody(String token, String key) {
-        return String.valueOf(Objects.requireNonNull(checkToken(token)).get(key));
+        return String.valueOf(Objects.requireNonNull(JwtUtils.checkToken(token)).get(key));
     }
 }

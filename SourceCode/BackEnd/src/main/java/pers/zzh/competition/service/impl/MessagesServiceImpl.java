@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import pers.zzh.competition.entity.Messages;
 import pers.zzh.competition.mapper.MessagesMapper;
 import pers.zzh.competition.service.MessagesService;
-import pers.zzh.competition.service.ScoresService;
 
 import java.util.List;
 
@@ -55,20 +54,20 @@ public class MessagesServiceImpl extends ServiceImpl<MessagesMapper, Messages> i
 
     /**
      * 删除已读消息
-     * @param uid
-     * @return
+     *
+     * @param uid 用户id
+     * @return 删除结果
      */
     @Override
     public Integer deleteMessageRead(String uid) {
         QueryWrapper<Messages> qw = new QueryWrapper<>();
-        qw.and(wrapper -> wrapper.eq("recipient",uid).eq("status",true));
+        qw.and(wrapper -> wrapper.eq("recipient", uid).eq("status", true));
         return baseMapper.delete(qw);
     }
 
     @Override
     public List<Messages> selectScoresSpellMessages(Object obj) {
-//        ScoresService.selectScoresByCid(cid)
+        // ScoresService.selectScoresByCid(cid)
         return null;
     }
-
 }

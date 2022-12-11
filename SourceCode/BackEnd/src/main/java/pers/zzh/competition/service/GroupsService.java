@@ -8,7 +8,6 @@ import pers.zzh.competition.vo.params.PageQuery;
 import java.util.List;
 
 public interface GroupsService extends IService<Groups> {
-
     /**
      * 根据组编码查询除id为1，2，3以外的组
      *
@@ -23,10 +22,11 @@ public interface GroupsService extends IService<Groups> {
      * @param groups 用户组对象
      * @return 结果集
      */
-    int insertGroupGetId(Groups groups);
+    Integer insertGroupGetId(Groups groups);
 
     /**
      * 查询用户组表
+     *
      * @param pageQuery 分页查询对象
      * @return 结果集
      */

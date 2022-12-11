@@ -8,50 +8,43 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2f4faf0-13b2-49c4-9432-ccd98a80af67" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_GitHub_whvcse_easy_captcha_1_6_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__cn_hutool_hutool_all_5_7_22.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_1_2_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_spring_boot_starter_1_2_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_3_5_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_annotation_3_5_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_boot_starter_3_5_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_core_3_5_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_baomidou_mybatis_plus_extension_3_5_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_jsqlparser_jsqlparser_4_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_5_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_2_0_6.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BackEnd.iml" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/config/MybatisPlusConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/config/MybatisPlusConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/controller/ContestsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/controller/ContestsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/controller/GroupsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/controller/GroupsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/controller/MessagesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/controller/MessagesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/controller/ScoresController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/controller/ScoresController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/controller/UsersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/entity/Contests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/entity/Contests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/entity/Groups.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/entity/Groups.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/entity/Messages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/entity/Messages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/entity/Scores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/entity/Scores.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/entity/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/entity/Users.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/mapper/ContestsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/mapper/ContestsMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/mapper/GroupsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/mapper/GroupsMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/mapper/MessagesMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/mapper/MessagesMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/mapper/ScoresMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/mapper/ScoresMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/mapper/UsersMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/mapper/UsersMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/ContestsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/ContestsService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/GroupsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/GroupsService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/MessagesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/MessagesService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/ScoresService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/ScoresService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/UsersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/UsersService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/impl/ContestsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/impl/ContestsServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/impl/GroupsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/impl/GroupsServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/impl/MessagesServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/impl/MessagesServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/impl/ScoresServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/impl/ScoresServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/impl/UsersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/service/impl/UsersServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/utils/AverageAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/utils/AverageAlgorithm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/utils/FileOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/utils/FileOperations.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/utils/JwtUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/utils/JwtUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/vo/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/vo/Result.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/vo/ResultCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/vo/ResultCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/vo/params/LoginParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/vo/params/LoginParam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/vo/params/PageQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/zzh/competition/vo/params/PageQuery.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="ComposerSettings">
     <execution />
@@ -121,7 +114,7 @@
     "project.structure.last.edited": "项目",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.keymap",
+    "settings.editor.selected.configurable": "settings.saveactions",
     "spring.configuration.checksum": "2ef1323c08ddc2382d250091a0d76917",
     "vue.rearranger.settings.migration": "true"
   }
@@ -400,7 +393,9 @@
       <workItem from="1659589250441" duration="384000" />
       <workItem from="1659589686867" duration="1484000" />
       <workItem from="1670658678335" duration="1198000" />
-      <workItem from="1670660381133" duration="9895000" />
+      <workItem from="1670660381133" duration="14917000" />
+      <workItem from="1670761237896" duration="337000" />
+      <workItem from="1670761596242" duration="3349000" />
     </task>
     <servers />
   </component>

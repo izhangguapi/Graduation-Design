@@ -31,4 +31,16 @@ public class Users extends PageQuery {
     private String groupName;
     @TableField(exist = false)
     private String encoding;
+
+    public String getSex() {
+        return sex ? "男" : "女";
+    }
+
+    public void setSex(String sex) {
+        if (sex.equals("男")) {
+            this.sex = true;
+        } else if (sex.equals("女")) {
+            this.sex = false;
+        }
+    }
 }

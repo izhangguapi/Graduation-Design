@@ -82,27 +82,32 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.xmlunit:xmlunit-core:2.8.4" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-configuration-processor:2.6.2" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.mariadb.jdbc:mariadb-java-client:2.7.4" level="project" />
-    <orderEntry type="library" name="Maven: com.baomidou:mybatis-plus-boot-starter:3.5.1" level="project" />
-    <orderEntry type="library" name="Maven: com.baomidou:mybatis-plus:3.5.1" level="project" />
-    <orderEntry type="library" name="Maven: com.baomidou:mybatis-plus-extension:3.5.1" level="project" />
-    <orderEntry type="library" name="Maven: com.baomidou:mybatis-plus-core:3.5.1" level="project" />
-    <orderEntry type="library" name="Maven: com.baomidou:mybatis-plus-annotation:3.5.1" level="project" />
-    <orderEntry type="library" name="Maven: com.github.jsqlparser:jsqlparser:4.3" level="project" />
-    <orderEntry type="library" name="Maven: org.mybatis:mybatis:3.5.9" level="project" />
-    <orderEntry type="library" name="Maven: org.mybatis:mybatis-spring:2.0.6" level="project" />
+    <orderEntry type="library" name="Maven: com.baomidou:mybatis-plus-boot-starter:3.5.2" level="project" />
+    <orderEntry type="library" name="Maven: com.baomidou:mybatis-plus:3.5.2" level="project" />
+    <orderEntry type="library" name="Maven: com.baomidou:mybatis-plus-extension:3.5.2" level="project" />
+    <orderEntry type="library" name="Maven: com.baomidou:mybatis-plus-core:3.5.2" level="project" />
+    <orderEntry type="library" name="Maven: com.baomidou:mybatis-plus-annotation:3.5.2" level="project" />
+    <orderEntry type="library" name="Maven: com.github.jsqlparser:jsqlparser:4.4" level="project" />
+    <orderEntry type="library" name="Maven: org.mybatis:mybatis:3.5.10" level="project" />
+    <orderEntry type="library" name="Maven: org.mybatis:mybatis-spring:2.0.7" level="project" />
+    <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.10" level="project" />
+    <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-stdlib:1.6.10" level="project" />
+    <orderEntry type="library" name="Maven: org.jetbrains:annotations:13.0" level="project" />
+    <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-stdlib-common:1.6.10" level="project" />
+    <orderEntry type="library" name="Maven: org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.10" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-autoconfigure:2.6.2" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-jdbc:2.6.2" level="project" />
     <orderEntry type="library" name="Maven: com.zaxxer:HikariCP:4.0.3" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-jdbc:5.3.14" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-tx:5.3.14" level="project" />
     <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.18.22" level="project" />
-    <orderEntry type="library" name="Maven: com.alibaba:druid-spring-boot-starter:1.2.8" level="project" />
-    <orderEntry type="library" name="Maven: com.alibaba:druid:1.2.8" level="project" />
+    <orderEntry type="library" name="Maven: com.alibaba:druid-spring-boot-starter:1.2.15" level="project" />
+    <orderEntry type="library" name="Maven: com.alibaba:druid:1.2.15" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.32" level="project" />
     <orderEntry type="library" name="Maven: com.pig4cloud.plugin:captcha-spring-boot-starter:2.2.2" level="project" />
     <orderEntry type="library" name="Maven: com.pig4cloud.plugin:captcha-core:2.2.2" level="project" />
     <orderEntry type="library" name="Maven: com.googlecode.aviator:aviator:5.3.0" level="project" />
-    <orderEntry type="library" name="Maven: cn.hutool:hutool-all:5.7.22" level="project" />
+    <orderEntry type="library" name="Maven: cn.hutool:hutool-all:5.8.10" level="project" />
     <orderEntry type="library" name="Maven: io.jsonwebtoken:jjwt:0.9.1" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.13.1" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.13.1" level="project" />

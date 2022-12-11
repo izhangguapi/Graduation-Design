@@ -2,9 +2,7 @@ package pers.zzh.competition.service;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import pers.zzh.competition.entity.Contests;
-import pers.zzh.competition.entity.Users;
 
 import java.util.List;
 
@@ -43,6 +41,7 @@ public interface ContestsService extends IService<Contests> {
 
     /**
      * 根据组id查询有哪些比赛以及报名人数
+     *
      * @param cid 比赛id
      * @return 列表
      */
@@ -50,12 +49,14 @@ public interface ContestsService extends IService<Contests> {
 
     /**
      * 查询未审核的比赛
+     *
      * @return 未审核比赛的列表
      */
-     List<Contests> selectContests();
+    List<Contests> selectContests();
 
     /**
      * 搜索比赛
+     *
      * @param query
      * @return
      */
@@ -63,6 +64,7 @@ public interface ContestsService extends IService<Contests> {
 
     /**
      * 最新比赛数据
+     *
      * @return
      */
     Contests selectLatestContest();

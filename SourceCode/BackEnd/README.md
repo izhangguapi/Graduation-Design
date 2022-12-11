@@ -1,6 +1,6 @@
 # 后端代码
 
-## 可能出现的问题
+## 可能出现的问题(已更换jar包,国内正常下载)
 
 1. UsersController.java文件里面引用的import com.wf.captcha.GifCaptcha报错
 

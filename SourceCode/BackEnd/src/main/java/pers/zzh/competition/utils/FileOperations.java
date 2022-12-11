@@ -1,25 +1,20 @@
 package pers.zzh.competition.utils;
 
-import cn.hutool.json.JSONObject;
-import cn.hutool.json.JSONUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
-import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 /**
  * 保存和读取json文件
  */
 public class FileOperations {
-
     static final String HEAD_PATH = System.getProperty("user.home") + "/.ReviewAllot";
 
     public static void saveJsonFile(Map<String, Integer> map, String afterPath) {
-        String fullPath = HEAD_PATH + afterPath;
+        String fullPath = FileOperations.HEAD_PATH + afterPath;
         System.out.println("保存文件路径：" + fullPath);
         ObjectMapper mapper = new ObjectMapper();
         try {
@@ -47,7 +42,7 @@ public class FileOperations {
     }
 
     public static StringBuilder readJsonFile(String afterPath) {
-        String fullPath = HEAD_PATH + afterPath;
+        String fullPath = FileOperations.HEAD_PATH + afterPath;
         System.out.println("读取文件路径：" + fullPath);
         try {
             File file = new File(fullPath);
