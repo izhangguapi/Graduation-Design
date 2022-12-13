@@ -3,6 +3,10 @@ server:
   port: 8090
 
 spring:
+  security:
+    user:
+      name: user
+      password: user
   main:
     banner-mode: 'off' # 禁止控制台打印出banner
   datasource: # 数据库配置

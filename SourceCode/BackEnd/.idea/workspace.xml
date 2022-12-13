@@ -94,31 +94,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Project.color": "340f20",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Code/Graduation-Design/SourceCode/BackEnd",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "项目",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "settings.saveactions",
-    "spring.configuration.checksum": "2ef1323c08ddc2382d250091a0d76917",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Project.color&quot;: &quot;340f20&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Code/Graduation-Design/SourceCode/BackEnd&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;项目&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.saveactions&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;2ef1323c08ddc2382d250091a0d76917&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/pers/zzh/competition" />
@@ -129,37 +129,11 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.Application">
-    <configuration name="ApplicationTests.aasf" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="BackEnd" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pers.zzh.competition.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="pers.zzh.competition" />
-      <option name="MAIN_CLASS_NAME" value="pers.zzh.competition.ApplicationTests" />
-      <option name="METHOD_NAME" value="aasf" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="generated-requests | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" requestIdentifier="#1" runType="运行单个请求">
+      <method v="2" />
     </configuration>
-    <configuration name="ApplicationTests.algorithm2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="BackEnd" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pers.zzh.competition.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="pers.zzh.competition" />
-      <option name="MAIN_CLASS_NAME" value="pers.zzh.competition.ApplicationTests" />
-      <option name="METHOD_NAME" value="algorithm2" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="generated-requests | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="2" requestIdentifier="#2" runType="运行单个请求">
+      <method v="2" />
     </configuration>
     <configuration name="ApplicationTests.ar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="BackEnd" />
@@ -211,14 +185,14 @@
     </configuration>
     <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="BackEnd" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="pers.zzh.competition.Application" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zzh.competition.Application" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.ApplicationTests.aasf" />
-      <item itemvalue="JUnit.ApplicationTests.algorithm2" />
+      <item itemvalue="HTTP 请求.generated-requests | #1" />
+      <item itemvalue="HTTP 请求.generated-requests | #2" />
       <item itemvalue="JUnit.ApplicationTests.ar" />
       <item itemvalue="JUnit.ApplicationTests.testAlgorithm" />
       <item itemvalue="JUnit.ApplicationTests.testDelete" />
@@ -226,11 +200,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP 请求.generated-requests | #2" />
+        <item itemvalue="HTTP 请求.generated-requests | #1" />
         <item itemvalue="JUnit.ApplicationTests.testDelete" />
         <item itemvalue="JUnit.ApplicationTests.testAlgorithm" />
         <item itemvalue="JUnit.ApplicationTests.ar" />
-        <item itemvalue="JUnit.ApplicationTests.algorithm2" />
-        <item itemvalue="JUnit.ApplicationTests.aasf" />
       </list>
     </recent_temporary>
   </component>
@@ -396,6 +370,7 @@
       <workItem from="1670660381133" duration="14917000" />
       <workItem from="1670761237896" duration="337000" />
       <workItem from="1670761596242" duration="3349000" />
+      <workItem from="1670933441227" duration="8358000" />
     </task>
     <servers />
   </component>

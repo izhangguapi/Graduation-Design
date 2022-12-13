@@ -1,0 +1,18 @@
+GET http://localhost:8090/api
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2022-12-13T211027.404.json
+
+###
+
+GET http://localhost:8090/api/latestContest
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2022-12-13T210827.404.json
+
+###
+
