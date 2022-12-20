@@ -5,8 +5,8 @@ import com.zzh.competition.entity.Messages;
 import com.zzh.competition.entity.Scores;
 import com.zzh.competition.service.MessagesService;
 import com.zzh.competition.service.ScoresService;
-import com.zzh.competition.vo.Result;
-import com.zzh.competition.vo.ResultCode;
+import com.zzh.competition.utils.result.Result;
+import com.zzh.competition.utils.result.ResultCode;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -38,40 +38,6 @@ public class MessagesController {
                 : Result.failure(ResultCode.ADD_FAIL);
     }
 
-    /**
-     * 首页查询公告
-     *
-     * @return
-     */
-    @GetMapping("/messages/announcement")
-    public Result selectAnnouncement() {
-        List<Messages> list = service.selectAnnouncement();
-        return list.isEmpty()
-                ? Result.failure(ResultCode.SELECT_IS_EMPTY)
-                : Result.success(ResultCode.SELECT_SUCCESS, list);
-    }
-
-    /**
-     * 分页查询公告
-     *
-     * @param currentPage
-     * @return
-     */
-    @GetMapping("/messages/announcementPage/{currentPage}")
-    public Result selectAnnouncementPage(@PathVariable int currentPage) {
-        return Result.success(ResultCode.SELECT_SUCCESS, service.selectAnnouncementPage(currentPage));
-    }
-
-    /**
-     * id查询公告
-     *
-     * @param id
-     * @return
-     */
-    @GetMapping("/messages/announcement/{id}")
-    public Result selectAnnouncementById(@PathVariable int id) {
-        return Result.success(ResultCode.SELECT_SUCCESS, service.selectAnnouncementById(id));
-    }
 
     /**
      * 查询用户收到的消息

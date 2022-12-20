@@ -21,7 +21,11 @@ mybatis-plus:
   global-config:
     db-config:
       id-type: auto # 全局默认主键类型
-    banner: off
+    banner: false # 关闭banner
   configuration:
     # MP日志
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true # 开启驼峰命名
+
+mybatis-plus-join:
+  banner: false # 关闭banner

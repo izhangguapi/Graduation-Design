@@ -1,10 +1,10 @@
 package com.zzh.competition.controller;
 
 import com.zzh.competition.entity.Groups;
+import com.zzh.competition.entity.dto.PageQuery;
 import com.zzh.competition.service.GroupsService;
-import com.zzh.competition.vo.Result;
-import com.zzh.competition.vo.ResultCode;
-import com.zzh.competition.vo.params.PageQuery;
+import com.zzh.competition.utils.result.Result;
+import com.zzh.competition.utils.result.ResultCode;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,10 +21,10 @@ public class GroupsController {
 
     @GetMapping("/encoding/{encoding}")
     public Result verifyEncodingPhoneEmail(@PathVariable String encoding) {
-        List<Groups> list = service.selectEncoding(encoding);
-        return list.isEmpty()
+        Groups groups = service.selectEncoding(encoding);
+        return groups == null
                 ? Result.failure(ResultCode.SELECT_IS_EMPTY)
-                : Result.success(ResultCode.SELECT_SUCCESS, list);
+                : Result.success(ResultCode.SELECT_SUCCESS, groups);
     }
 
     @PostMapping("/insertGroup")

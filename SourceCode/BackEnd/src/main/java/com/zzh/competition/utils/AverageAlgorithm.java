@@ -2,7 +2,6 @@ package com.zzh.competition.utils;
 
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
-import com.zzh.competition.entity.Contests;
 import com.zzh.competition.entity.Users;
 import com.zzh.competition.service.ContestsService;
 import com.zzh.competition.service.UsersService;
@@ -73,13 +72,11 @@ public class AverageAlgorithm {
     /**
      * 循环比赛列表
      */
-    private static void loopForCompute(Contests contests, int cid) {
+    private static void loopForCompute(int contestants, int cid) {
         String afterPath = AverageAlgorithm.path + "/Contest" + cid + ".json";
-        // 参赛者数量
-        int participantsNumber = contests.getNumber();
         // 判断参赛者数量是否为0
-        if (participantsNumber != 0) {
-            Map<String, Integer> map = AverageAlgorithm.compute(participantsNumber, AverageAlgorithm.usersList.size());
+        if (contestants != 0) {
+            Map<String, Integer> map = AverageAlgorithm.compute(contestants, AverageAlgorithm.usersList.size());
             if (map.get("remainder") == null) {
                 AverageAlgorithm.createMap(map.get("quotient"), afterPath);
             } else {

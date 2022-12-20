@@ -2,8 +2,8 @@ package com.zzh.competition.controller;
 
 import com.zzh.competition.entity.Scores;
 import com.zzh.competition.service.ScoresService;
-import com.zzh.competition.vo.Result;
-import com.zzh.competition.vo.ResultCode;
+import com.zzh.competition.utils.result.Result;
+import com.zzh.competition.utils.result.ResultCode;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

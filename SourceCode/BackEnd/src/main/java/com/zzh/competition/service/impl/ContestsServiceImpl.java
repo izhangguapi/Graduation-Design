@@ -1,10 +1,13 @@
 package com.zzh.competition.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.github.yulichang.wrapper.MPJLambdaWrapper;
 import com.zzh.competition.entity.Contests;
+import com.zzh.competition.entity.Groups;
+import com.zzh.competition.entity.Scores;
+import com.zzh.competition.entity.Users;
 import com.zzh.competition.mapper.ContestsMapper;
 import com.zzh.competition.service.ContestsService;
 import org.springframework.stereotype.Service;
@@ -16,17 +19,19 @@ public class ContestsServiceImpl extends ServiceImpl<ContestsMapper, Contests> i
     /**
      * 根据id查询一条数据
      *
-     * @param id 比赛id
+     * @param cid 比赛id
      * @return 一条数据
      */
     @Override
-    public Contests selectContestsOne(String id) {
-        QueryWrapper<Contests> qw = new QueryWrapper<>();
-        qw.select("contest_id,contest_text,contest_title,url,name,group_name,reg_start_time,start_time,reg_end_time,end_time,promulgator")
-                .last(" INNER JOIN groups g ON contests.group_id=g.group_id \n" +
-                        " INNER JOIN users u ON contests.promulgator=u.user_id \n" +
-                        " WHERE status = true and contest_id = " + id);
-        return baseMapper.selectOne(qw);
+    public Contests selectContestsByCID(String cid) {
+        MPJLambdaWrapper<Contests> wrapper = new MPJLambdaWrapper<>();
+        wrapper.selectAll(Contests.class)
+                .innerJoin(Groups.class, Groups::getGroupId, Contests::getGroupId)
+                .select(Groups::getGroupName)
+                .innerJoin(Users.class, Users::getUserId, Contests::getPromulgator)
+                .select(Users::getName)
+                .eq(Contests::getStatus, true).eq(Contests::getContestId, cid);
+        return baseMapper.selectJoinOne(Contests.class, wrapper);
     }
 
     /**
@@ -37,11 +42,10 @@ public class ContestsServiceImpl extends ServiceImpl<ContestsMapper, Contests> i
      */
     @Override
     public Page<Contests> selectContestsPage(Integer num) {
-        Page<Contests> page = new Page<>(num, 4);
-        QueryWrapper<Contests> qw = new QueryWrapper<>();
-        qw.select("contest_id,contest_title,url,reg_start_time,reg_end_time")
-                .eq("status", true);
-        return baseMapper.selectPage(page, qw);
+        LambdaQueryWrapper<Contests> wrapper = new LambdaQueryWrapper<>();
+        wrapper.select(Contests::getContestId, Contests::getContestTitle, Contests::getUrl, Contests::getRegStartTime, Contests::getRegEndTime)
+                .eq(Contests::getStatus, true);
+        return baseMapper.selectPage(new Page<>(num, 4), wrapper);
     }
 
     /**
@@ -52,10 +56,11 @@ public class ContestsServiceImpl extends ServiceImpl<ContestsMapper, Contests> i
      */
     @Override
     public List<Contests> selectContestsLike(String query) {
-        QueryWrapper<Contests> qw = new QueryWrapper<>();
-        qw.select("contest_id,contest_title,reg_end_time")
-                .like("contest_title", query).orderByDesc("reg_end_time");
-        return baseMapper.selectList(qw);
+        LambdaQueryWrapper<Contests> wrapper = new LambdaQueryWrapper<>();
+        wrapper.select(Contests::getContestId, Contests::getContestTitle, Contests::getRegEndTime)
+                .like(Contests::getContestTitle, query)
+                .orderByDesc(Contests::getRegEndTime);
+        return baseMapper.selectList(wrapper);
     }
 
     /**
@@ -66,51 +71,65 @@ public class ContestsServiceImpl extends ServiceImpl<ContestsMapper, Contests> i
      */
     @Override
     public List<Contests> selectContestsByGid(String gid) {
-        QueryWrapper<Contests> qw = new QueryWrapper<>();
-        qw.select("contests.contest_id,contest_title,contests.`status`,reg_end_time,status_text,`name`,COUNT(scores_id) number ")
-                .last("LEFT JOIN scores ON contests.contest_id=scores.contest_id \n" +
-                        "INNER JOIN users ON promulgator = user_id \n" +
-                        "WHERE contests.group_id = " + gid + "  GROUP BY contest_id");
-        return baseMapper.selectList(qw);
+        MPJLambdaWrapper<Contests> wrapper = new MPJLambdaWrapper<>();
+        wrapper.select(Contests::getContestId, Contests::getContestTitle, Contests::getStatus, Contests::getRegEndTime, Contests::getStatusText)
+                .leftJoin(Scores.class, Scores::getContestId, Contests::getContestId)
+                .selectCount(Scores::getScoresId, "number")
+                .innerJoin(Users.class, Users::getUserId, Contests::getPromulgator)
+                .select(Users::getName)
+                .eq(Contests::getGroupId, gid)
+                .groupBy(Contests::getContestId);
+        return baseMapper.selectJoinList(Contests.class, wrapper);
     }
 
     @Override
-    public Contests selectByCid(Integer cid) {
-        // 根据组id查询有哪些比赛以及报名人数，生成一个组id和
-        QueryWrapper<Contests> qw = new QueryWrapper<>();
-        qw.select("COUNT(scores_id) number")
-                .last("LEFT JOIN scores ON contests.contest_id=scores.contest_id \n" +
-                        "WHERE contests.contest_id = " + cid);
-        return baseMapper.selectOne(qw);
+    public Integer selectByCid(Integer cid) {
+        MPJLambdaWrapper<Contests> wrapper = new MPJLambdaWrapper<>();
+        wrapper.select(Scores::getScoresId)
+                .leftJoin(Scores.class, Scores::getContestId, Contests::getContestId)
+                .eq(Contests::getContestId, cid);
+        return baseMapper.selectJoinCount(wrapper);
     }
 
     @Override
     public List<Contests> selectContests() {
-        QueryWrapper<Contests> qw = new QueryWrapper<>();
-        qw.select("contest_id,contest_title,contest_text,url,group_name,`name`,`status`,status_text")
-                .last("INNER JOIN groups ON contests.group_id=groups.group_id\n" +
-                        " INNER JOIN users ON contests.promulgator = users.user_id\n" +
-                        " ORDER BY contest_id DESC");
-        return baseMapper.selectList(qw);
+        MPJLambdaWrapper<Contests> wrapper = new MPJLambdaWrapper<>();
+        wrapper.select(Contests::getContestId, Contests::getContestTitle, Contests::getContestText, Contests::getUrl, Contests::getRegEndTime, Contests::getStatus, Contests::getStatusText)
+                .innerJoin(Groups.class, Groups::getGroupId, Contests::getGroupId)
+                .select(Groups::getGroupName)
+                .innerJoin(Users.class, Users::getUserId, Contests::getPromulgator)
+                .select(Users::getName)
+                .orderByDesc(Contests::getContestId);
+        // .last("INNER JOIN groups ON contests.group_id=groups.group_id\n" +
+        //         " INNER JOIN users ON contests.promulgator = users.user_id\n" +
+        //         " ORDER BY contest_id DESC");
+        return baseMapper.selectJoinList(Contests.class, wrapper);
     }
 
     @Override
     public List<Contests> searchContests(String query) {
-        QueryWrapper<Contests> qw = new QueryWrapper<>();
-        qw.select("contest_id,contest_title,contest_text,group_name,`name`,`status`,status_text")
-                .last("INNER JOIN groups ON contests.group_id=groups.group_id\n" +
-                        " INNER JOIN users ON contests.promulgator = users.user_id\n" +
-                        " WHERE contest_title LIKE '%" + query + "%' ORDER BY contest_id DESC");
-        return baseMapper.selectList(qw);
+        MPJLambdaWrapper<Contests> wrapper = new MPJLambdaWrapper<>();
+        // qw.select("contest_id,contest_title,contest_text,group_name,`name`,`status`,status_text")
+        //         .last("INNER JOIN groups ON contests.group_id=groups.group_id\n" +
+        //                 " INNER JOIN users ON contests.promulgator = users.user_id\n" +
+        //                 " WHERE contest_title LIKE '%" + query + "%' ORDER BY contest_id DESC");
+        wrapper.select(Contests::getContestId, Contests::getContestTitle, Contests::getContestText, Contests::getStatus, Contests::getStatusText)
+                .innerJoin(Groups.class, Groups::getGroupId, Contests::getGroupId)
+                .select(Groups::getGroupName)
+                .innerJoin(Users.class, Users::getUserId, Contests::getPromulgator)
+                .select(Users::getName)
+                .like(Contests::getContestTitle, query)
+                .orderByDesc(Contests::getContestId);
+        return baseMapper.selectJoinList(Contests.class, wrapper);
     }
 
     @Override
     public Contests selectLatestContest() {
-        LambdaQueryWrapper<Contests> qw = new LambdaQueryWrapper<>();
-        qw.select(Contests::getContestId, Contests::getContestTitle, Contests::getRegStartTime, Contests::getRegEndTime, Contests::getStartTime, Contests::getEndTime)
+        LambdaQueryWrapper<Contests> wrapper = new LambdaQueryWrapper<>();
+        wrapper.select(Contests::getContestId, Contests::getContestTitle, Contests::getRegStartTime, Contests::getRegEndTime, Contests::getStartTime, Contests::getEndTime)
                 .eq(Contests::getStatus, true)
                 .orderByDesc(Contests::getContestId)
                 .last("LIMIT 1");
-        return baseMapper.selectOne(qw);
+        return baseMapper.selectOne(wrapper);
     }
 }

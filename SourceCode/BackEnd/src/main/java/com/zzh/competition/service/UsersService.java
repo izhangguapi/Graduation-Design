@@ -3,9 +3,9 @@ package com.zzh.competition.service;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.zzh.competition.entity.Users;
-import com.zzh.competition.vo.Result;
-import com.zzh.competition.vo.params.LoginParam;
-import com.zzh.competition.vo.params.PageQuery;
+import com.zzh.competition.entity.dto.LoginParam;
+import com.zzh.competition.entity.dto.PageQuery;
+import com.zzh.competition.utils.result.Result;
 
 import java.util.List;
 

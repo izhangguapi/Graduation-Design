@@ -14,7 +14,7 @@
       <configuration />
     </facet>
   </component>
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_17">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
@@ -105,6 +105,10 @@
     <orderEntry type="library" name="Maven: com.zaxxer:HikariCP:4.0.3" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-jdbc:5.3.24" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-tx:5.3.24" level="project" />
+    <orderEntry type="library" name="Maven: com.github.yulichang:mybatis-plus-join:1.3.8" level="project" />
+    <orderEntry type="library" name="Maven: com.github.yulichang:mybatis-plus-join-boot-starter:1.3.8" level="project" />
+    <orderEntry type="library" name="Maven: com.github.yulichang:mybatis-plus-join-core:1.3.8" level="project" />
+    <orderEntry type="library" name="Maven: com.github.yulichang:mybatis-plus-join-annotation:1.3.8" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba:druid-spring-boot-starter:1.2.15" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba:druid:1.2.15" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.36" level="project" />

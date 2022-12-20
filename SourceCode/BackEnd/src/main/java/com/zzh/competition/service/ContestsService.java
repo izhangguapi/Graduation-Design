@@ -7,13 +7,8 @@ import com.zzh.competition.entity.Contests;
 import java.util.List;
 
 public interface ContestsService extends IService<Contests> {
-    /**
-     * 根据id查询一条数据
-     *
-     * @param id
-     * @return
-     */
-    Contests selectContestsOne(String id);
+    // 根据id查询一条数据
+    Contests selectContestsByCID(String id);
 
     /**
      * 分页查询比赛
@@ -40,12 +35,13 @@ public interface ContestsService extends IService<Contests> {
     List<Contests> selectContestsByGid(String gid);
 
     /**
-     * 根据组id查询有哪些比赛以及报名人数
+     * 根据比赛id查询该比赛的报名人数
+     * 该接口仅供平均分配算法使用
      *
      * @param cid 比赛id
      * @return 列表
      */
-    Contests selectByCid(Integer cid);
+    Integer selectByCid(Integer cid);
 
     /**
      * 查询未审核的比赛

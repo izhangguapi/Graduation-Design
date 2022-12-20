@@ -2,8 +2,8 @@ package com.zzh.competition.controller;
 
 import com.zzh.competition.entity.Contests;
 import com.zzh.competition.service.ContestsService;
-import com.zzh.competition.vo.Result;
-import com.zzh.competition.vo.ResultCode;
+import com.zzh.competition.utils.result.Result;
+import com.zzh.competition.utils.result.ResultCode;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -56,9 +56,9 @@ public class ContestsController {
      * @param id 比赛id
      * @return 一条数据
      */
-    @GetMapping("/contest/{id}")
-    public Result selectContestOne(@PathVariable String id) {
-        return Result.success(ResultCode.SELECT_SUCCESS, service.selectContestsOne(id));
+    @GetMapping("/contest/{cid}")
+    public Result selectContestsByCID(@PathVariable String cid) {
+        return Result.success(ResultCode.SELECT_SUCCESS, service.selectContestsByCID(cid));
     }
 
     /**
@@ -100,8 +100,8 @@ public class ContestsController {
      * @param gid 组id
      * @return 查询结果
      */
-    @GetMapping("/contests/gid")
-    public Result selectContestsByGid(@RequestParam("gid") String gid) {
+    @GetMapping("/contests/{gid}")
+    public Result selectContestsByGid(@PathVariable("gid") String gid) {
         return Result.success(ResultCode.SELECT_SUCCESS, service.selectContestsByGid(gid));
     }
 

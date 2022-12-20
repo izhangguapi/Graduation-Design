@@ -1,4 +1,4 @@
-package com.zzh.competition.vo;
+package com.zzh.competition.utils.result;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;

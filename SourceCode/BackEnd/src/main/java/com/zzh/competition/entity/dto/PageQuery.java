@@ -1,4 +1,4 @@
-package com.zzh.competition.vo.params;
+package com.zzh.competition.entity.dto;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import lombok.AllArgsConstructor;

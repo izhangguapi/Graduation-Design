@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.zzh.competition.vo.params.PageQuery;
+import com.zzh.competition.entity.dto.PageQuery;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 

@@ -1,16 +1,16 @@
 package com.zzh.competition.service.impl;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.github.yulichang.wrapper.MPJLambdaWrapper;
 import com.zzh.competition.entity.Groups;
+import com.zzh.competition.entity.Users;
+import com.zzh.competition.entity.dto.PageQuery;
 import com.zzh.competition.mapper.GroupsMapper;
 import com.zzh.competition.service.GroupsService;
-import com.zzh.competition.vo.params.PageQuery;
 import org.apache.ibatis.annotations.Options;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class GroupsServiceImpl extends ServiceImpl<GroupsMapper, Groups> implements GroupsService {
@@ -21,15 +21,14 @@ public class GroupsServiceImpl extends ServiceImpl<GroupsMapper, Groups> impleme
      * @return 组
      */
     @Override
-    public List<Groups> selectEncoding(String encoding) {
-        QueryWrapper<Groups> qw = new QueryWrapper<>();
-        qw.eq("encoding", encoding)
-                .last(" AND group_id NOT IN ('1','2')");
-        return baseMapper.selectList(qw);
+    public Groups selectEncoding(String encoding) {
+        MPJLambdaWrapper<Groups> wrapper = new MPJLambdaWrapper<>();
+        wrapper.eq(Groups::getEncoding, encoding).notIn(Groups::getGroupId, 1, 2);
+        return baseMapper.selectOne(wrapper);
     }
 
     /**
-     * 添加组并返回id
+     * 添加组并返回组id
      *
      * @param groups 对象
      * @return 组id
@@ -37,31 +36,37 @@ public class GroupsServiceImpl extends ServiceImpl<GroupsMapper, Groups> impleme
     @Override
     @Options(useGeneratedKeys = true, keyProperty = "groupId", keyColumn = "groupId")
     public Integer insertGroupGetId(Groups groups) {
-        int num = 0;
         try {
             baseMapper.insert(groups);
-            num = groups.getGroupId();
+            return groups.getGroupId();
         } catch (Exception e) {
             e.printStackTrace();
+            return 0;
         }
-        return num;
     }
 
     @Override
-    public Page<Groups> selectGroupsList(PageQuery pageQuery) {
-        // 创建分页对象
-        Page<Groups> page = new Page<>(pageQuery.getCurrentPage(), pageQuery.getPageSize());
-        // 创建条件构造器
-        QueryWrapper<Groups> qw = new QueryWrapper<>();
-        // 查询全部，尾部添加链表条件
-        String sql = " LEFT JOIN users ON groups.group_id = users.group_id";
+    public IPage<Groups> selectGroupsList(PageQuery pageQuery) {
+        IPage<Groups> page = new Page<>(pageQuery.getCurrentPage(), pageQuery.getPageSize());
+        MPJLambdaWrapper<Groups> wrapper = new MPJLambdaWrapper<>();
+        wrapper.selectAll(Groups.class)
+                .leftJoin(Users.class, Users::getGroupId, Groups::getGroupId)
+                .selectCount(Users::getUserId, "number");
         if (pageQuery.getQuery() != null) {
-            sql += " WHERE CONCAT(group_name,encoding) LIKE '%" + pageQuery.getQuery().trim() + "%'";
+            wrapper.like(Groups::getGroupName, pageQuery.getQuery().trim())
+                    .or()
+                    .like(Groups::getEncoding, pageQuery.getQuery().trim());
         }
-        sql += " GROUP BY groups.group_id";
-
-        qw.select("groups.*,COUNT(user_id) number")
-                .last(sql);
-        return baseMapper.selectPage(page, qw);
+        wrapper.groupBy(Groups::getGroupId);
+        // 查询全部，尾部添加链表条件
+        // String sql = " LEFT JOIN users ON groups.group_id = users.group_id";
+        // if (pageQuery.getQuery() != null) {
+        //     sql += " WHERE CONCAT(group_name,encoding) LIKE '%" + pageQuery.getQuery().trim() + "%'";
+        // }
+        // sql += " GROUP BY groups.group_id";
+        //
+        // qw.select("groups.*,COUNT(user_id) number")
+        //         .last(sql);
+        return baseMapper.selectJoinPage(page, Groups.class, wrapper);
     }
 }

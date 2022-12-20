@@ -1,4 +1,4 @@
-package com.zzh.competition.vo.params;
+package com.zzh.competition.entity.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;

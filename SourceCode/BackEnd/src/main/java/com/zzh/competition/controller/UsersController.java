@@ -2,12 +2,12 @@ package com.zzh.competition.controller;
 
 import com.pig4cloud.captcha.ArithmeticCaptcha;
 import com.zzh.competition.entity.Users;
+import com.zzh.competition.entity.dto.LoginParam;
+import com.zzh.competition.entity.dto.PageQuery;
 import com.zzh.competition.service.UsersService;
 import com.zzh.competition.utils.JwtUtils;
-import com.zzh.competition.vo.Result;
-import com.zzh.competition.vo.ResultCode;
-import com.zzh.competition.vo.params.LoginParam;
-import com.zzh.competition.vo.params.PageQuery;
+import com.zzh.competition.utils.result.Result;
+import com.zzh.competition.utils.result.ResultCode;
 import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.*;
 

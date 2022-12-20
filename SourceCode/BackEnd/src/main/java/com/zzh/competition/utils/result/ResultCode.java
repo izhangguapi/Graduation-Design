@@ -1,4 +1,4 @@
-package com.zzh.competition.vo;
+package com.zzh.competition.utils.result;
 
 /**
  * 统一返回类的枚举类
