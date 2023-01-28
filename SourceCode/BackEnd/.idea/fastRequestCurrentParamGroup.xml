@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="fastRequestCurrentParamGroup">
+    <option name="className" value="com.zzh.contest.controller.LoginController" />
+    <option name="method" value="login" />
+    <option name="methodDescription" value="生成验证码" />
+    <option name="module" value="BackEnd" />
+    <option name="originUrl" value="/login" />
+    <option name="requestParamMap">
+      <map>
+        <entry key="ulid">
+          <value>
+            <Object />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="tempId" value="" />
+    <option name="url" value="/captcha" />
+  </component>
+</project>

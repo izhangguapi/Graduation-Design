@@ -35,7 +35,7 @@
 | 数据库             | MariaDB 10.6.4              |                              |
 | 开发软件           | IntelliJ IDEA 2021.3.3      | IntelliJ IDEA 2022.3.1       |
 | 数据库管理工具     | Navicat Premium 16.0.8      | Navicat Premium 16.1.6       |
-| 浏览器             | Google Chrome 100.0.4896.60 | Google Chrome 108.0.5359.125 |
+| 浏览器             | Google Chrome 100.0.4896.60 | Google Chrome 109.0.5414.120 |
 
 ## 项目功能
 
@@ -53,11 +53,11 @@
 ## 项目所用技术
 
 * Json文件读写
-* 平均分配算法
+* 平均分配算法（自行设计，目前能用，比较简单，后续更新）
 * JWT
 * MyBatis-plus和MyBatis-plus-join链表查询插件
 * alibaba druid连接池
-* rmd5加密
+* Spring Security登录鉴权
 * element-ui
 * axios
 * vuex

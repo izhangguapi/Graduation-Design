@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.zzh.competition</groupId>
     <artifactId>BackEnd</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
     <name>BackEnd</name>
     <description>BackEnd</description>
     <properties>
@@ -30,6 +30,12 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <!-- redis -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+        <!-- spring security -->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-test</artifactId>
@@ -82,6 +88,13 @@
             <artifactId>jjwt</artifactId>
             <version>0.9.1</version>
         </dependency>
+        <!-- fastjson -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>2.0.22</version>
+        </dependency>
+
 
     </dependencies>
 

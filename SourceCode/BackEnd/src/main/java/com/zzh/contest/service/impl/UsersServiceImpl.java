@@ -5,30 +5,38 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.zzh.contest.entity.Role;
 import com.zzh.contest.entity.Users;
-import com.zzh.contest.entity.dto.LoginParam;
+import com.zzh.contest.entity.dto.Login;
 import com.zzh.contest.entity.dto.PageQuery;
 import com.zzh.contest.mapper.UsersMapper;
+import com.zzh.contest.service.RoleService;
 import com.zzh.contest.service.UsersService;
 import com.zzh.contest.utils.JwtUtils;
+import com.zzh.contest.utils.RedisCache;
 import com.zzh.contest.utils.result.Result;
 import com.zzh.contest.utils.result.ResultCode;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
 
+import javax.annotation.Resource;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.concurrent.TimeUnit;
 
 @Service
 public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users> implements UsersService, UserDetailsService {
-    /**
-     * 分页链表查询
-     *
-     * @param pageQuery 分页查询对象
-     * @return 结果对象
-     */
+
+    // 分页链表查询
     @Override
     public Page<Users> selectListPage(PageQuery pageQuery) {
         // 创建分页对象
@@ -46,36 +54,63 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users> implements
         return baseMapper.selectPage(page, qw);
     }
 
+    @Resource
+    private AuthenticationManager authenticationManager;
+
+    @Resource
+    RedisCache redisCache;
+
+    // 登录功能（账号为手机号或邮箱）
+    @Override
+    public Result login(Users users) {
+        // 使用ProviderManager auth方法进行验证
+        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(users.getPhone(), users.getPassword());
+        Authentication authentication = authenticationManager.authenticate(authenticationToken);
+        System.out.println("--------------------------------------");
+        System.out.println(authentication.toString());
+        System.out.println("--------------------------------------");
+        
+        // 生成jwt
+        Login login = (Login) (authentication.getPrincipal());
+        String jwt = JwtUtils.createToken(login.getUsers().getUserId());
+        login.setToken(jwt);
+        // 封装成前端需要的数据
+        Map<String, String> map = new HashMap<>();
+        map.put("token", jwt);
+        // 將用戶信息放入Redis
+        redisCache.setCacheObject("login:" + login.getUsers().getUserId(), login, 7, TimeUnit.DAYS);
+        return Result.success(ResultCode.LOGIN_SUCCESS, map);
+    }
+
     /**
-     * 登录功能（账号为手机号或邮箱）
-     *
-     * @param phone    手机号
-     * @param email    邮箱
-     * @param password 密码
-     * @return 登录结果
+     * 退出登录
      */
     @Override
-    public Result selectPhoneEmailPassword(String phone, String email, String password) {
-        LambdaQueryWrapper<Users> qw = new LambdaQueryWrapper<>();
-        qw.eq(StrUtil.isNotBlank(phone), Users::getPhone, phone)
-                .eq(StrUtil.isNotBlank(email), Users::getEmail, email);
-        Users user = baseMapper.selectOne(qw);
-
-        try {
-            if (user.getPassword().equals(password)) {
-                return Result.success(ResultCode.LOGIN_SUCCESS, JwtUtils.createToken(user.getName(), user.getUserId(), user.getGroupId(), user.getGroupId().equals(1)));
-            } else {
-                return Result.failure(ResultCode.LOGIN_FAIL);
-            }
-        } catch (Exception e) {
-            return Result.failure(ResultCode.LOGIN_FAIL);
+    public Result logout() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        Login login = (Login) authentication.getPrincipal();
+        Integer uid = login.getUsers().getUserId();
+        if (redisCache.deleteObject("login:" + uid)) {
+            return Result.success(ResultCode.LOGOUT_SUCCESS);
         }
+        return Result.success(ResultCode.LOGOUT_FAIL);
     }
+
+    @Resource
+    RoleService roleService;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-
-        return null;
+        LambdaQueryWrapper<Users> qw = new LambdaQueryWrapper<>();
+        qw.eq(StrUtil.isNotBlank(username), Users::getPhone, username)
+                .or().eq(StrUtil.isNotBlank(username), Users::getEmail, username);
+        Users user = baseMapper.selectOne(qw);
+        if (Objects.isNull(user)) {
+            throw new RuntimeException("用户不存在");
+        }
+        // 查询用户
+        List<Role> role = roleService.getUserRole(user.getUserId());
+        return new Login(user, role);
     }
 
     /**
@@ -95,20 +130,19 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users> implements
         return Result.success(ResultCode.REGISTER_SUCCESS);
     }
 
-
     /**
      * 查询手机号和邮箱是否存在
      *
-     * @param phoneAndEmail 登录对象
+     * @param users 登录对象
      * @return true或false
      */
     @Override
-    public Result selectPhoneEmail(LoginParam phoneAndEmail) {
+    public Result selectPhoneEmail(Users users) {
         QueryWrapper<Users> qw = new QueryWrapper<>();
-        qw.eq("phone", phoneAndEmail.getPhone())
-                .or().eq("email", phoneAndEmail.getEmail());
+        qw.eq("phone", users.getPhone())
+                .or().eq("email", users.getEmail());
         return baseMapper.selectList(qw).isEmpty()
-                ? Result.success(ResultCode.SELECT_SUCCESS)
+                ? Result.success(ResultCode.SELECT_SUCCESS, true)
                 : Result.failure(ResultCode.ACCOUNT_EXIST);
     }
 
@@ -133,6 +167,4 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users> implements
         qw.select("user_id").eq("group_id", gid);
         return baseMapper.selectList(qw);
     }
-
-
 }

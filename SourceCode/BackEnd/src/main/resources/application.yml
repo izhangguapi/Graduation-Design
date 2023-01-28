@@ -1,14 +1,24 @@
 # 服务器端口
 server:
   port: 8090
+  servlet:
+    # 定义路径
+    context-path: /api
 
 spring:
-  security:
-    user:
-      name: user
-      password: user
+
+  # 需要将其设置为always，彩色打印日志
+  output:
+    ansi:
+      enabled: always
+  #  测试
+  #  security:
+  #    user:
+  #      name: user
+  #      password: user
   main:
     banner-mode: 'off' # 禁止控制台打印出banner
+    allow-circular-references: true # 允许循环依赖
   datasource: # 数据库配置
     druid:
       driver-class-name: org.mariadb.jdbc.Driver

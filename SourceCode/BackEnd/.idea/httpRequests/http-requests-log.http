@@ -1,3 +1,14 @@
+POST http://localhost:8090/api/login
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Cookie: JSESSIONID=02DFBBD3743CE5243C686454B2E8C602
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-01-24T161957.400.json
+
+###
+
 GET http://localhost:8090/api/contest/1
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)

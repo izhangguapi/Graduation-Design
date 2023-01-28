@@ -3,7 +3,6 @@ package com.zzh.contest.service;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.zzh.contest.entity.Users;
-import com.zzh.contest.entity.dto.LoginParam;
 import com.zzh.contest.entity.dto.PageQuery;
 import com.zzh.contest.utils.result.Result;
 
@@ -21,12 +20,15 @@ public interface UsersService extends IService<Users> {
     /**
      * 登录功能（账号为手机号或邮箱）
      *
-     * @param phone    手机号
-     * @param email    邮箱
-     * @param password 密码
+     * @param users Users对象
      * @return 登录结果
      */
-    Result selectPhoneEmailPassword(String phone, String email, String password);
+    Result login(Users users);
+
+    /**
+     * 退出登录
+     */
+    Result logout();
 
     /**
      * 注册
@@ -39,10 +41,10 @@ public interface UsersService extends IService<Users> {
     /**
      * 查询手机号和邮箱是否存在
      *
-     * @param phoneAndEmail 登录信息的对象
+     * @param users 登录信息的对象
      * @return true或false
      */
-    Result selectPhoneEmail(LoginParam phoneAndEmail);
+    Result selectPhoneEmail(Users users);
 
     /**
      * 查询单个用户信息
@@ -59,4 +61,6 @@ public interface UsersService extends IService<Users> {
      * @return 列表
      */
     List<Users> selectByGid(Integer gid);
+
+
 }

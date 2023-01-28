@@ -50,7 +50,7 @@ public class GroupsServiceImpl extends ServiceImpl<GroupsMapper, Groups> impleme
         IPage<Groups> page = new Page<>(pageQuery.getCurrentPage(), pageQuery.getPageSize());
         MPJLambdaWrapper<Groups> wrapper = new MPJLambdaWrapper<>();
         wrapper.selectAll(Groups.class)
-                .leftJoin(Users.class, Users::getGroupId, Groups::getGroupId)
+                // .leftJoin(Users.class, Groups::getGroupId)
                 .selectCount(Users::getUserId, "number");
         if (pageQuery.getQuery() != null) {
             wrapper.like(Groups::getGroupName, pageQuery.getQuery().trim())

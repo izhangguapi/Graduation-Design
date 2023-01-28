@@ -16,8 +16,52 @@ FROM scores
  LEFT JOIN users u2 ON u2.user_id=scores.judge 
  LEFT JOIN contests c ON c.contest_id=scores.contest_id 
  WHERE scores_id = 30
+ 
+SELECT DISTINCT role_name FROM role WHERE user_id IN (SELECT			user_id 		FROM			users 		WHERE			user_id = 1)
+
+SELECT
+	role_name 
+FROM
+	role 
+WHERE
+	role_id IN ( SELECT role_id FROM UserRoleRelation WHERE user_id = 1 );
+
+SELECT  role_name  from role 
+INNER JOIN UserRoleRelation on UserRoleRelation.role_id = role.role_id 
+WHERE user_id = 1;
 
 
+SELECT
+	role_name 
+FROM
+	UserRoleRelation 
+WHERE
+	role_id
+	INNER JOIN role ON UserRoleRelation.role_id = role.role_id 
+WHERE
+	UserRoleRelation.user_id = 1
+
+
+SELECT
+	role_name 
+FROM
+	role 
+WHERE
+	role_id IN (
+	SELECT
+		role_id 
+	FROM
+		UserRoleRelation 
+	WHERE
+		user_id = 1
+	)
+
+SELECT DISTINCT	perms FROM	sys_menu WHERE	id 
+ IN (	SELECT		menu_id 	FROM		sys_role_menu 	WHERE		role_id
+	 IN (		SELECT			role_id 		FROM			sys_user_role 		WHERE			user_id = 1            )        ) and status='0'
+
+
+SELECT user_id,name,sex,birthday,school,address,phone,email,group_id,password FROM users WHERE (phone = 13886961359 OR email = 1388)
 
 
 SELECT * FROM users LEFT JOIN groups ON users.group_id = groups.group_id

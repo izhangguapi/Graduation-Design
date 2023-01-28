@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="fastRequestCollection">
+    <option name="detail">
+      <CollectionDetail>
+        <option name="childList">
+          <list>
+            <CollectionDetail>
+              <option name="childList">
+                <list>
+                  <CollectionDetail>
+                    <option name="childList">
+                      <list>
+                        <CollectionDetail>
+                          <option name="domain" value="http://127.0.0.1:8090/api" />
+                          <option name="enableEnv" value="dev" />
+                          <option name="enableProject" value="GD" />
+                          <option name="headerList">
+                            <list>
+                              <DataMapping>
+                                <option name="type" value="token" />
+                                <option name="value" value="" />
+                              </DataMapping>
+                            </list>
+                          </option>
+                          <option name="id" value="id_com.zzh.contest.controller.LoginController.getCaptcha" />
+                          <option name="name" value="生成验证码" />
+                          <option name="paramGroup">
+                            <ParamGroupCollection>
+                              <option name="className" value="com.zzh.contest.controller.LoginController" />
+                              <option name="method" value="getCaptcha" />
+                              <option name="methodDescription" value="生成验证码" />
+                              <option name="multipartKeyValueListJson" value="[]" />
+                              <option name="originUrl" value="/captcha" />
+                              <option name="pathParamsKeyValueListJson" value="[]" />
+                              <option name="preScript" value="" />
+                              <option name="url" value="/captcha" />
+                              <option name="urlEncodedKeyValueListJson" value="[]" />
+                              <option name="urlParamsKeyValueListJson" value="[{&quot;comment&quot;:&quot;&quot;,&quot;customFlag&quot;:2,&quot;enabled&quot;:true,&quot;key&quot;:&quot;ulid&quot;,&quot;type&quot;:&quot;String&quot;,&quot;value&quot;:&quot;ulid_c5m1d&quot;}]" />
+                              <option name="urlParamsKeyValueListText" value="ulid=ulid_c5m1d" />
+                            </ParamGroupCollection>
+                          </option>
+                          <option name="tempId" value="id_com.zzh.contest.controller.LoginController.getCaptcha" />
+                          <option name="type" value="2" />
+                        </CollectionDetail>
+                        <CollectionDetail>
+                          <option name="domain" value="http://127.0.0.1:8090/api" />
+                          <option name="enableEnv" value="dev" />
+                          <option name="enableProject" value="GD" />
+                          <option name="headerList">
+                            <list>
+                              <DataMapping>
+                                <option name="type" value="token" />
+                                <option name="value" value="" />
+                              </DataMapping>
+                            </list>
+                          </option>
+                          <option name="id" value="id_com.zzh.contest.controller.LoginController.login" />
+                          <option name="name" value="生成验证码" />
+                          <option name="paramGroup">
+                            <ParamGroupCollection>
+                              <option name="bodyKeyValueListJson" value="{&#10;  &quot;phone&quot;: &quot;13886961359&quot;,&#10;  &quot;email&quot;: &quot;&quot;,&#10;  &quot;password&quot;: &quot;12345&quot;&#10;}" />
+                              <option name="className" value="com.zzh.contest.controller.LoginController" />
+                              <option name="jsonDocument" value="{&#10;  &quot;userId&quot;: &quot;No comment,Value =1&quot;,&#10;  &quot;name&quot;: &quot;No comment,Value =name_1xj3l&quot;,&#10;  &quot;sex&quot;: &quot;No comment,Value =true&quot;,&#10;  &quot;birthday&quot;: &quot;No comment,Value =2023-01-26&quot;,&#10;  &quot;school_id&quot;: &quot;No comment,Value =school_id_w9l4l&quot;,&#10;  &quot;address&quot;: &quot;No comment,Value =address_p94po&quot;,&#10;  &quot;phone&quot;: &quot;No comment,Value =phone_5zhpv&quot;,&#10;  &quot;email&quot;: &quot;No comment,Value =email_yfp8p&quot;,&#10;  &quot;password&quot;: &quot;No comment,Value =password_4uhgx&quot;,&#10;  &quot;groupName&quot;: &quot;No comment,Value =groupName_38qsk&quot;,&#10;  &quot;encoding&quot;: &quot;No comment,Value =encoding_lxunk&quot;,&#10;  &quot;datetime&quot;: &quot;No comment,Value =datetime_nnkw4&quot;,&#10;  &quot;captcha&quot;: &quot;No comment,Value =captcha_ufr8d&quot;,&#10;  &quot;query&quot;: &quot;No comment,Value =query_hg6bk&quot;,&#10;  &quot;currentPage&quot;: &quot;No comment,Value =1&quot;,&#10;  &quot;pageSize&quot;: &quot;No comment,Value =1&quot;&#10;}" />
+                              <option name="method" value="login" />
+                              <option name="methodDescription" value="生成验证码" />
+                              <option name="methodType" value="POST" />
+                              <option name="multipartKeyValueListJson" value="[]" />
+                              <option name="originUrl" value="/login" />
+                              <option name="pathParamsKeyValueListJson" value="[]" />
+                              <option name="preScript" value="" />
+                              <option name="url" value="/login" />
+                              <option name="urlEncodedKeyValueListJson" value="[]" />
+                              <option name="urlParamsKeyValueListJson" value="[{&quot;customFlag&quot;:2,&quot;enabled&quot;:true,&quot;key&quot;:&quot;ulid&quot;,&quot;type&quot;:&quot;String&quot;,&quot;value&quot;:&quot;123&quot;},{&quot;customFlag&quot;:2,&quot;enabled&quot;:true,&quot;key&quot;:&quot;captcha&quot;,&quot;type&quot;:&quot;String&quot;,&quot;value&quot;:&quot;-1&quot;}]" />
+                              <option name="urlParamsKeyValueListText" value="ulid=123&#10;&amp;captcha=-1" />
+                            </ParamGroupCollection>
+                          </option>
+                          <option name="tempId" value="id_com.zzh.contest.controller.LoginController.login" />
+                          <option name="type" value="2" />
+                        </CollectionDetail>
+                      </list>
+                    </option>
+                    <option name="id" value="20230126163636833" />
+                    <option name="name" value="LoginController" />
+                    <option name="type" value="3" />
+                  </CollectionDetail>
+                  <CollectionDetail>
+                    <option name="childList">
+                      <list>
+                        <CollectionDetail>
+                          <option name="domain" value="http://127.0.0.1:8090/api" />
+                          <option name="enableEnv" value="dev" />
+                          <option name="enableProject" value="GD" />
+                          <option name="headerList">
+                            <list>
+                              <DataMapping>
+                                <option name="type" value="token" />
+                                <option name="value" value="" />
+                              </DataMapping>
+                            </list>
+                          </option>
+                          <option name="id" value="id_com.zzh.contest.controller.RoleController.getAll" />
+                          <option name="name" value="查询全部角色" />
+                          <option name="paramGroup">
+                            <ParamGroupCollection>
+                              <option name="className" value="com.zzh.contest.controller.RoleController" />
+                              <option name="method" value="getAll" />
+                              <option name="methodDescription" value="查询全部角色" />
+                              <option name="multipartKeyValueListJson" value="[]" />
+                              <option name="originUrl" value="/role/all" />
+                              <option name="pathParamsKeyValueListJson" value="[]" />
+                              <option name="preScript" value="" />
+                              <option name="returnDocument" value="[&#10;&#9;{&#10;&#9;&#9;&quot;roleId&quot;:&quot;No comment,Type =Number&quot;,&#10;&#9;&#9;&quot;roleName&quot;:&quot;No comment,Type =String&quot;,&#10;&#9;&#9;&quot;createTime&quot;:&quot;No comment,Type =String&quot;,&#10;&#9;&#9;&quot;description&quot;:&quot;No comment,Type =String&quot;&#10;&#9;}&#10;]" />
+                              <option name="url" value="/role/all" />
+                              <option name="urlEncodedKeyValueListJson" value="[]" />
+                              <option name="urlParamsKeyValueListJson" value="[]" />
+                            </ParamGroupCollection>
+                          </option>
+                          <option name="tempId" value="id_com.zzh.contest.controller.RoleController.getAll" />
+                          <option name="type" value="2" />
+                        </CollectionDetail>
+                      </list>
+                    </option>
+                    <option name="id" value="20230126163455874" />
+                    <option name="name" value="RoleController" />
+                    <option name="type" value="3" />
+                  </CollectionDetail>
+                  <CollectionDetail>
+                    <option name="id" value="20230124115552120" />
+                    <option name="name" value="UsersController" />
+                    <option name="type" value="3" />
+                  </CollectionDetail>
+                </list>
+              </option>
+              <option name="id" value="20230124115553117" />
+              <option name="name" value="BackEnd" />
+              <option name="type" value="4" />
+            </CollectionDetail>
+            <CollectionDetail>
+              <option name="groupId" value="1" />
+              <option name="id" value="1" />
+              <option name="name" value="Default Group" />
+              <option name="type" value="1" />
+            </CollectionDetail>
+          </list>
+        </option>
+        <option name="groupId" value="-1" />
+        <option name="id" value="0" />
+        <option name="name" value="Root" />
+        <option name="type" value="1" />
+      </CollectionDetail>
+    </option>
+  </component>
+</project>

@@ -18,17 +18,14 @@ public class JwtUtils {
     // 秘钥
     static final String SIGNATURE = "zgp99.J@";
 
-    public static String createToken(String name, int uid, int gid, Boolean admin) {
+    public static String createToken(int uid) {
         Map<String, Object> claims = new HashMap<>(3);
-        claims.put("name", name);
         claims.put("uid", uid);
-        claims.put("gid", gid);
-        claims.put("isAdmin", admin);
         // 创建jwt对象
         return Jwts.builder()
                 // 自定义body数据
                 .setClaims(claims)
-                // 设置签发算法
+                // 设置签发算法和秘钥
                 .signWith(SignatureAlgorithm.HS256, JwtUtils.SIGNATURE)
                 // 设置有效时间
                 .setExpiration(new Date(System.currentTimeMillis() + JwtUtils.TIME))

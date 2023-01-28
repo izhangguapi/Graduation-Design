@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api")
+@RequestMapping("/contests")
 public class ContestsController {
 
     final ContestsService service;
@@ -53,7 +53,7 @@ public class ContestsController {
     /**
      * 根据id查询一条数据，前台展示
      *
-     * @param id 比赛id
+     * @param cid 比赛id
      * @return 一条数据
      */
     @GetMapping("/contest/{cid}")

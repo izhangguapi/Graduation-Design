@@ -2,64 +2,93 @@
 <project version="4">
   <component name="AnalysisUIOptions">
     <option name="ANALYZE_TEST_SOURCES" value="false" />
+    <option name="ANALYZE_INJECTED_CODE" value="false" />
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2f4faf0-13b2-49c4-9432-ccd98a80af67" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/editstarters.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/fastRequestCollection.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/fastRequestCurrentParamGroup.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/fastRequestCurrentProjectConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/fastRequestHistoryConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson2_fastjson2_2_0_22.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson2_fastjson2_extension_2_0_22.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_2_0_22.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_lettuce_lettuce_core_6_1_10_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_1_85_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_1_85_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_1_85_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_4_1_85_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_4_1_85_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_1_85_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_unix_common_4_1_85_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_projectreactor_reactor_core_3_4_25.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_reactivestreams_reactive_streams_1_0_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_redis_2_7_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_7_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_keyvalue_2_7_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_redis_2_7_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_5_3_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_oxm_5_3_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/config/RedisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/controller/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/controller/RoleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/entity/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/entity/School.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/entity/UserGroup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/entity/UserRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/entity/dto/Login.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/filter/CaptchaFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/filter/JwtAuthenticationTokenFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/filter/UsernamePasswordFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/handler/AccessDeniedHandlerImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/handler/AuthenticationEntryPointImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/mapper/RoleMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/mapper/SchoolMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/mapper/UserRoleRelationMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/provider/LoginAuthenticationProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/service/RoleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/service/SchoolService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/service/UserRoleRelationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/service/impl/RoleServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/service/impl/SchoolServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/utils/FastJsonRedisSerializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/utils/IpUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/utils/RedisCache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/utils/WebUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_yulichang_mybatis_plus_join_1_3_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_yulichang_mybatis_plus_join_1_4_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_yulichang_mybatis_plus_join_annotation_1_3_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_yulichang_mybatis_plus_join_annotation_1_4_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_yulichang_mybatis_plus_join_boot_starter_1_3_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_yulichang_mybatis_plus_join_boot_starter_1_4_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_yulichang_mybatis_plus_join_core_1_3_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_yulichang_mybatis_plus_join_core_1_4_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BackEnd.iml" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/competition/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/competition/config/MybatisPlusConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/config/MybatisPlusConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/competition/controller/AnnouncementsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/controller/AnnouncementsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/competition/controller/ContestsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/controller/ContestsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/competition/controller/GroupsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/controller/GroupsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/competition/controller/MessagesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/controller/MessagesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/competition/controller/ScoresController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/controller/ScoresController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/competition/controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/controller/UsersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/competition/entity/Announcements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/entity/Announcements.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/competition/entity/Contests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/entity/Contests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/competition/entity/Groups.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/entity/Groups.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/competition/entity/Messages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/entity/Messages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/competition/entity/Scores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/entity/Scores.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/competition/entity/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/entity/Users.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/competition/entity/dto/LoginParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/entity/dto/LoginParam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/competition/entity/dto/PageQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/entity/dto/PageQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/competition/mapper/AnnouncementsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/mapper/AnnouncementsMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/competition/mapper/ContestsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/mapper/ContestsMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/competition/mapper/GroupsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/mapper/GroupsMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/competition/mapper/MessagesMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/mapper/MessagesMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/competition/mapper/ScoresMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/mapper/ScoresMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/competition/mapper/UsersMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/mapper/UsersMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/competition/service/AnnouncementsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/service/AnnouncementsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/competition/service/ContestsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/service/ContestsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/competition/service/GroupsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/service/GroupsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/competition/service/MessagesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/service/MessagesService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/competition/service/ScoresService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/service/ScoresService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/competition/service/UsersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/service/UsersService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/competition/service/impl/AnnouncementsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/service/impl/AnnouncementsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/competition/service/impl/ContestsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/service/impl/ContestsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/competition/service/impl/GroupsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/service/impl/GroupsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/competition/service/impl/MessagesServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/service/impl/MessagesServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/competition/service/impl/ScoresServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/service/impl/ScoresServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/competition/service/impl/UsersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/service/impl/UsersServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/competition/utils/AverageAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/utils/AverageAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/competition/utils/FileOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/utils/FileOperations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/competition/utils/JwtUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/utils/JwtUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/competition/utils/result/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/utils/result/Result.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/competition/utils/result/ResultCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/utils/result/ResultCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/zzh/competition/ApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/zzh/contest/ApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/zzh/competition/GroupsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/zzh/contest/GroupsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/zzh/competition/UsersServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/zzh/contest/UsersServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/contest/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/contest/controller/ContestsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/controller/ContestsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/contest/controller/GroupsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/controller/GroupsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/contest/controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/controller/UsersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/contest/entity/Announcements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/entity/Announcements.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/contest/entity/Contests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/entity/Contests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/contest/entity/Groups.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/entity/Groups.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/contest/entity/Messages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/entity/Messages.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/contest/entity/Scores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/entity/Scores.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/contest/entity/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/entity/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/contest/entity/dto/LoginParam.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/contest/service/UsersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/service/UsersService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/contest/service/impl/GroupsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/service/impl/GroupsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/contest/service/impl/UsersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/service/impl/UsersServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/contest/utils/JwtUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/utils/JwtUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/contest/utils/result/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/utils/result/Result.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zzh/contest/utils/result/ResultCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zzh/contest/utils/result/ResultCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/zzh/contest/ApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/zzh/contest/ApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/zzh/contest/GroupsTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/zzh/contest/UsersServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FrontEnd/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../FrontEnd/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sql/contest_web.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sql/contest_web_select.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../Sql/contest_web_select.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,20 +158,32 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Code/Graduation-Design/SourceCode/BackEnd&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-1.8&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Administrator/.m2/repository/org/springframework/security/spring-security-crypto/5.7.5/spring-security-crypto-5.7.5.jar&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDK&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;项目&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;StringManipulation&quot;,
+    &quot;settings.editor.splitter.proportion&quot;: &quot;0.18945022&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;2ef1323c08ddc2382d250091a0d76917&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;redis&quot;
+    ]
   }
 }</component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/pers/zzh/competition" />
@@ -152,7 +193,10 @@
       <recent name="pers.zzh.competition.dto" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ApplicationTests.Test">
+  <component name="RunManager" selected="Spring Boot.Application">
+    <configuration name="generated-requests | #6" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="6" requestIdentifier="#6" runType="运行单个请求">
+      <method v="2" />
+    </configuration>
     <configuration name="ApplicationTests.Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="BackEnd" />
       <extension name="coverage">
@@ -169,6 +213,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ApplicationTests.getUserRoleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BackEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zzh.contest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.zzh.contest" />
+      <option name="MAIN_CLASS_NAME" value="com.zzh.contest.ApplicationTests" />
+      <option name="METHOD_NAME" value="getUserRoleTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApplicationTests.jwtTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BackEnd" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zzh.contest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.zzh.contest" />
+      <option name="MAIN_CLASS_NAME" value="com.zzh.contest.ApplicationTests" />
+      <option name="METHOD_NAME" value="jwtTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="BackEnd" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.zzh.contest.Application" />
@@ -177,12 +253,18 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="HTTP 请求.generated-requests | #6" />
+      <item itemvalue="JUnit.ApplicationTests.jwtTest" />
+      <item itemvalue="JUnit.ApplicationTests.getUserRoleTest" />
       <item itemvalue="JUnit.ApplicationTests.Test" />
       <item itemvalue="Spring Boot.Application" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ApplicationTests.jwtTest" />
+        <item itemvalue="JUnit.ApplicationTests.getUserRoleTest" />
         <item itemvalue="JUnit.ApplicationTests.Test" />
+        <item itemvalue="HTTP 请求.generated-requests | #6" />
       </list>
     </recent_temporary>
   </component>
@@ -369,6 +451,25 @@
       <workItem from="1672871524884" duration="4750000" />
       <workItem from="1673192944684" duration="59000" />
       <workItem from="1673193487962" duration="207000" />
+      <workItem from="1673321050565" duration="11223000" />
+      <workItem from="1673360209928" duration="1043000" />
+      <workItem from="1673361269993" duration="96000" />
+      <workItem from="1673361379984" duration="3655000" />
+      <workItem from="1674115269696" duration="127000" />
+      <workItem from="1674115409344" duration="7122000" />
+      <workItem from="1674194939349" duration="5821000" />
+      <workItem from="1674267865415" duration="2279000" />
+      <workItem from="1674316855632" duration="5139000" />
+      <workItem from="1674358617183" duration="1210000" />
+      <workItem from="1674452092374" duration="15536000" />
+      <workItem from="1674531735475" duration="16584000" />
+      <workItem from="1674576080001" duration="2994000" />
+      <workItem from="1674621106704" duration="3452000" />
+      <workItem from="1674701788934" duration="19553000" />
+      <workItem from="1674726914927" duration="10969000" />
+      <workItem from="1674800671342" duration="14069000" />
+      <workItem from="1674880939262" duration="6123000" />
+      <workItem from="1674888172910" duration="68000" />
     </task>
     <servers />
   </component>
@@ -395,6 +496,12 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="org.springframework.security.web.firewall.FirewalledResponse" memberName="response" />
+        <PinnedItemInfo parentTag="com.zzh.contest.service.impl.UsersServiceImpl$$FastClassBySpringCGLIB$$7cb09f35" memberName="type" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
