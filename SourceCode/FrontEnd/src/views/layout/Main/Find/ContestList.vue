@@ -77,15 +77,17 @@ export default {
       if (this.loader) {
         //获取比赛
         getRequest("/contestsList/" + this.page).then((resp) => {
-          const data = resp.data.data;
-          if (this.page === data.pages) {
-            this.loader = false;
-            this.loadingText = "没有更多了";
-          } else {
-            this.page++;
-          }
-          for (let i = 0; i < data.records.length; i++) {
-            this.lists.push(data.records[i]);
+          if (resp.data){
+            const data = resp.data.data;
+            if (this.page === data.pages) {
+              this.loader = false;
+              this.loadingText = "没有更多了";
+            } else {
+              this.page++;
+            }
+            for (let i = 0; i < data.records.length; i++) {
+              this.lists.push(data.records[i]);
+            }
           }
         });
       }

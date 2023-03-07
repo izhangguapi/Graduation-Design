@@ -1,7 +1,7 @@
 package com.zzh.contest.filter;
 
-import com.alibaba.fastjson.JSON;
 import com.zzh.contest.utils.RedisCache;
+import com.zzh.contest.utils.WebUtils;
 import com.zzh.contest.utils.result.Result;
 import com.zzh.contest.utils.result.ResultCode;
 import org.jetbrains.annotations.NotNull;
@@ -12,7 +12,6 @@ import org.springframework.web.filter.OncePerRequestFilter;
 import javax.annotation.Resource;
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
-import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -34,11 +33,7 @@ public class CaptchaFilter extends OncePerRequestFilter {
             // 判断用户是否输入了验证码
             if (!StringUtils.hasText(captcha) || !StringUtils.hasText(ulid)) {
                 // 用户没有输入验证码
-                String json = JSON.toJSONString(Result.failure(ResultCode.NO_CAPTCHA));
-                ServletOutputStream outputStream = response.getOutputStream();
-                outputStream.write(json.getBytes());
-                outputStream.flush();
-                outputStream.close();
+                WebUtils.responseJson(response, Result.failure(ResultCode.NO_CAPTCHA));
             } else {
                 // 获取redis中的验证码
                 String serverCaptcha = redisCache.getCacheObject(ulid);
@@ -48,11 +43,7 @@ public class CaptchaFilter extends OncePerRequestFilter {
                     filterChain.doFilter(request, response);
                 } else {
                     // 验证码不正确或已失效
-                    String json = JSON.toJSONString(Result.failure(ResultCode.CAPTCHA_ERROR_OR_EXPIRE));
-                    ServletOutputStream outputStream = response.getOutputStream();
-                    outputStream.write(json.getBytes());
-                    outputStream.flush();
-                    outputStream.close();
+                    WebUtils.responseJson(response, Result.failure(ResultCode.CAPTCHA_ERROR_OR_EXPIRE));
                 }
             }
         } else {

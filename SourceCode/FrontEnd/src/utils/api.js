@@ -1,6 +1,9 @@
 import axios from 'axios'
 import {Message} from "element-ui";
 
+// 请求后端接口的前缀
+let base = '/api';
+
 //请求拦截
 axios.interceptors.request.use(config => {
     //如果有token，统一带上
@@ -22,30 +25,22 @@ axios.interceptors.request.use(config => {
 //     return Promise.reject(err)
 // })
 axios.interceptors.response.use(success => {
-    //console.log(success)
-    // return success;
-    switch (success.data.code) {
-        case 0:
-            Message.error(success.data.msg);
-            return null;
-        default:
-            return success;
-    }
+    return success;
 }, error => {
     switch (error.response.status) {
         case 500:
-            Message.error("内部服务器错误！");
+            console.log("内部服务器错误！")
             break;
         case 400:
-            Message.error("错误的请求！");
+            console.log("错误的请求！")
             break;
         default:
-            Message.error("未知错误！");
+            console.log("未知错误！")
             break;
     }
+    return error;
+
 })
-// url前缀
-let base = '/api';
 
 //post请求，用来增添数据到数据库
 export function postRequest(url, parameter) {

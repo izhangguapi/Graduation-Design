@@ -5,21 +5,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b94a5a1-4c3a-4d58-ac73-0b46223b2154" name="变更" comment="变更">
-      <change afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/com/zzh/contest/filter/JwtAuthenticationTokenFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/.idea/fastRequestCollection.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/.idea/fastRequestCollection.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/.idea/fastRequestCurrentParamGroup.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/.idea/fastRequestCurrentParamGroup.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/.idea/fastRequestHistoryConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/.idea/fastRequestHistoryConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BackEnd/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/zzh/contest/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/com/zzh/contest/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/zzh/contest/controller/ContestsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/com/zzh/contest/controller/ContestsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/zzh/contest/controller/UsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/com/zzh/contest/controller/UsersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/zzh/contest/entity/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/com/zzh/contest/entity/Users.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/zzh/contest/entity/dto/LoginParam.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/com/zzh/contest/entity/dto/LoginParam.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/zzh/contest/service/UsersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/com/zzh/contest/service/UsersService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/zzh/contest/controller/AnnouncementsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/com/zzh/contest/controller/AnnouncementsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/zzh/contest/entity/Announcements.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/com/zzh/contest/entity/Announcements.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/zzh/contest/filter/CaptchaFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/com/zzh/contest/filter/CaptchaFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/zzh/contest/filter/JwtAuthenticationTokenFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/com/zzh/contest/filter/JwtAuthenticationTokenFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/zzh/contest/filter/UsernamePasswordFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/zzh/contest/provider/LoginAuthenticationProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/zzh/contest/service/impl/AnnouncementsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/com/zzh/contest/service/impl/AnnouncementsServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/zzh/contest/service/impl/UsersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/com/zzh/contest/service/impl/UsersServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/zzh/contest/utils/JwtUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/com/zzh/contest/utils/JwtUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/src/test/java/com/zzh/contest/ApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/test/java/com/zzh/contest/ApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/com/zzh/contest/utils/result/ResultCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/com/zzh/contest/utils/result/ResultCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/target/BackEnd-1.0.0.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Sql/contest_web.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../Sql/contest_web.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/layout/Main/Find/ContestList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/layout/Main/Find/ContestList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/layout/Main/Home/Announcements.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/layout/Main/Home/Announcements.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/layout/Main/Home/LatestContest.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/layout/Main/Home/LatestContest.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/layout/Main/Home/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/layout/Main/Home/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sql/contest_web_insert.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../Sql/contest_web_insert.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Sql/contest_web_select.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../Sql/contest_web_select.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -75,7 +95,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -95,15 +115,11 @@
       <recent name="$PROJECT_DIR$/src/views/layout/Main/Publish" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="开发测试" type="js.build_tools.npm">
+  <component name="RunManager" selected="npm.开发测试">
+    <configuration name="初始化" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="dev" />
-      </scripts>
+      <command value="install" />
       <node-interpreter value="project" />
-      <package-manager value="npm" />
       <envs />
       <method v="2" />
     </configuration>
@@ -124,13 +140,6 @@
       <scripts>
         <script value="serve" />
       </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <configuration name="初始化" type="js.build_tools.npm">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="install" />
       <node-interpreter value="project" />
       <envs />
       <method v="2" />
@@ -212,6 +221,12 @@
       <envs />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="npm.初始化" />
+      <item itemvalue="npm.开发测试" />
+      <item itemvalue="npm.构建项目" />
+      <item itemvalue="npm.项目初始化" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -403,6 +418,10 @@
       <workItem from="1674115411178" duration="599000" />
       <workItem from="1674194941681" duration="1200000" />
       <workItem from="1674267856230" duration="13000" />
+      <workItem from="1675242002202" duration="1840000" />
+      <workItem from="1675257964472" duration="1974000" />
+      <workItem from="1675318893199" duration="9883000" />
+      <workItem from="1675409246586" duration="6000" />
     </task>
     <servers />
   </component>

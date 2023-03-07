@@ -1,6 +1,6 @@
 {
   "name": "competition",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "scripts": {
     "dev": "SET NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service serve",
@@ -9,22 +9,22 @@
     "lint": "SET NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service lint"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^6.0.0-beta3",
+    "@fortawesome/fontawesome-free": "^6.2.1",
     "axios": "^0.24.0",
     "core-js": "^3.6.5",
-    "element-ui": "^2.15.6",
+    "element-ui": "^2.15.12",
     "js-md5": "^0.7.3",
-    "less-loader": "^7.3.0",
+    "less-loader": "^11.1.0",
     "mavon-editor": "^2.10.4",
     "vue": "^2.6.14",
     "vue-router": "^3.2.0",
     "vuex": "^3.4.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-router": "~4.5.0",
-    "@vue/cli-plugin-vuex": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
+    "@vue/cli-plugin-babel": "^5.0.8",
+    "@vue/cli-plugin-router": "^5.0.8",
+    "@vue/cli-plugin-vuex": "^5.0.8",
+    "@vue/cli-service": "^5.0.8",
     "babel-plugin-component": "^1.1.1",
     "vue-template-compiler": "^2.6.11"
   },

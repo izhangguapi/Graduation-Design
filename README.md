@@ -23,17 +23,17 @@
 使用idea打开BackEnd和FrontEnd，后端需要jdk1.8，前端需要Vue脚手架和node.js才可运行
 
 ### 开发环境
-| 名称               | 版本                        | 后续更新版本                 |
+| 名称               | 早期开发使用的版本          | 后续更新使用的版本           |
 | ------------------ | --------------------------- | ---------------------------- |
 | 操作系统           | macOS Monterey 12.3         | Windows11_22H2_22621.963     |
 | 前端框架           | Vue 2.6.14                  |                              |
-| 前端脚手架         | Vue CLI 4.5.15              |                              |
+| 前端脚手架         | @vue/cli 4.5.15             | @vue/cli 5.0.8               |
 | JavaScript运行环境 | Node.js 16.14.0             | Node.js 18.12.1              |
 | 包管理工具         | npm 8.5.3                   | npm 9.2.0                    |
 | 后端框架           | Spring Boot 2.6.3           | Spring Boot 2.7.6            |
 | Java SE 开发工具包 | jkd-8u321(1.8)              | corretto-jdk1.8.0_342        |
 | 数据库             | MariaDB 10.6.4              |                              |
-| 开发软件           | IntelliJ IDEA 2021.3.3      | IntelliJ IDEA 2022.3.1       |
+| 开发软件           | IntelliJ IDEA 2021.3.3      | IntelliJ IDEA 2022.3.2       |
 | 数据库管理工具     | Navicat Premium 16.0.8      | Navicat Premium 16.1.6       |
 | 浏览器             | Google Chrome 100.0.4896.60 | Google Chrome 109.0.5414.120 |
 

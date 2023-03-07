@@ -56,14 +56,14 @@
                             </list>
                           </option>
                           <option name="id" value="id_com.zzh.contest.controller.LoginController.login" />
-                          <option name="name" value="生成验证码" />
+                          <option name="name" value="登录" />
                           <option name="paramGroup">
                             <ParamGroupCollection>
                               <option name="bodyKeyValueListJson" value="{&#10;  &quot;phone&quot;: &quot;13886961359&quot;,&#10;  &quot;email&quot;: &quot;&quot;,&#10;  &quot;password&quot;: &quot;12345&quot;&#10;}" />
                               <option name="className" value="com.zzh.contest.controller.LoginController" />
                               <option name="jsonDocument" value="{&#10;  &quot;userId&quot;: &quot;No comment,Value =1&quot;,&#10;  &quot;name&quot;: &quot;No comment,Value =name_1xj3l&quot;,&#10;  &quot;sex&quot;: &quot;No comment,Value =true&quot;,&#10;  &quot;birthday&quot;: &quot;No comment,Value =2023-01-26&quot;,&#10;  &quot;school_id&quot;: &quot;No comment,Value =school_id_w9l4l&quot;,&#10;  &quot;address&quot;: &quot;No comment,Value =address_p94po&quot;,&#10;  &quot;phone&quot;: &quot;No comment,Value =phone_5zhpv&quot;,&#10;  &quot;email&quot;: &quot;No comment,Value =email_yfp8p&quot;,&#10;  &quot;password&quot;: &quot;No comment,Value =password_4uhgx&quot;,&#10;  &quot;groupName&quot;: &quot;No comment,Value =groupName_38qsk&quot;,&#10;  &quot;encoding&quot;: &quot;No comment,Value =encoding_lxunk&quot;,&#10;  &quot;datetime&quot;: &quot;No comment,Value =datetime_nnkw4&quot;,&#10;  &quot;captcha&quot;: &quot;No comment,Value =captcha_ufr8d&quot;,&#10;  &quot;query&quot;: &quot;No comment,Value =query_hg6bk&quot;,&#10;  &quot;currentPage&quot;: &quot;No comment,Value =1&quot;,&#10;  &quot;pageSize&quot;: &quot;No comment,Value =1&quot;&#10;}" />
                               <option name="method" value="login" />
-                              <option name="methodDescription" value="生成验证码" />
+                              <option name="methodDescription" value="登录" />
                               <option name="methodType" value="POST" />
                               <option name="multipartKeyValueListJson" value="[]" />
                               <option name="originUrl" value="/login" />

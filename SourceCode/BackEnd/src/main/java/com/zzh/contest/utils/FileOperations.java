@@ -46,6 +46,7 @@ public class FileOperations {
         System.out.println("读取文件路径：" + fullPath);
         try {
             File file = new File(fullPath);
+            // 如果文件存在
             if (file.exists()) {
                 FileReader fileReader = new FileReader(file);
                 Reader reader = new InputStreamReader(Files.newInputStream(file.toPath()), StandardCharsets.UTF_8);
@@ -58,15 +59,12 @@ public class FileOperations {
                 reader.close();
                 return stringBuffer;
             } else {
+                // 不存在返回null
                 return null;
             }
         } catch (Exception e) {
+            // 异常返回null
             return null;
         }
     }
 }
-
-
-
-
-

@@ -50,7 +50,9 @@ public class SecurityConfig {
                 .and()
                 .authorizeRequests()
                 // 配置登录注册相关的接口允许匿名访问;只有未登录的人才能访问
-                .antMatchers("/login", "/register", "/captcha", "/ip")
+                .antMatchers("/login", "/register", "/captcha")
+                .anonymous()
+                .antMatchers("/announcement", "/ip")
                 .anonymous()
                 // 静态资源放行;不管登录与否都能访问
                 .antMatchers("/logout", "/js/**", "/css/**", "/jQuery/**", "/images/**", "/icon/**", "/file/**")

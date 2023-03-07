@@ -9,6 +9,7 @@ SELECT * FROM users;
 SELECT * FROM contests;
 SELECT * FROM messages;
 SELECT * FROM scores;
+SELECT * FROM announcements;
 
 SELECT scores_id,scores.contest_id,scores.contestant 'user_id',scores.`status`,text,result,u1.`name` 'contestant',u2.`name` 'judge',c.contest_title,u1.`name`,u1.phone,u1.school 
 FROM scores

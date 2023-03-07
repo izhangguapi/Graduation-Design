@@ -15,7 +15,7 @@ import java.util.Date;
 @TableName(value = "announcements")
 public class Announcements {
     @TableId
-    private Integer messageId;
+    private Integer announcementId;
     private String title;
     private String text;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")

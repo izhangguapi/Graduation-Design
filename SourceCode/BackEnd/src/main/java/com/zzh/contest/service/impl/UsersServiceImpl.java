@@ -66,9 +66,6 @@ public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users> implements
         // 使用ProviderManager auth方法进行验证
         UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(users.getPhone(), users.getPassword());
         Authentication authentication = authenticationManager.authenticate(authenticationToken);
-        System.out.println("--------------------------------------");
-        System.out.println(authentication.toString());
-        System.out.println("--------------------------------------");
         
         // 生成jwt
         Login login = (Login) (authentication.getPrincipal());

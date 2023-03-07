@@ -25,7 +25,7 @@ Vue.use(element);
 // Vue.use(ElementUI);
 
 //引入fontawesome图标
-import '@fortawesome/fontawesome-free/css/all.min.css'
+import '@fortawesome/fontawesome-free/css/all.css'
 
 // 关闭Vue生产提示
 Vue.config.productionTip = false;

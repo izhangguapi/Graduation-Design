@@ -4,6 +4,9 @@ import com.alibaba.fastjson2.JSON;
 import com.zzh.contest.entity.dto.Login;
 import com.zzh.contest.utils.JwtUtils;
 import com.zzh.contest.utils.RedisCache;
+import com.zzh.contest.utils.WebUtils;
+import com.zzh.contest.utils.result.Result;
+import com.zzh.contest.utils.result.ResultCode;
 import io.jsonwebtoken.Claims;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -30,7 +33,7 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
         // 获取token
         String token = request.getHeader("token");
         if (!StringUtils.hasText(token)) {
-            filterChain.doFilter(request, response);
+            WebUtils.responseJson(response, Result.failure(ResultCode.NO_TOKEN));
             return;
         }
         // 解析token
@@ -41,13 +44,15 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
             assert claims != null;
             uid = claims.get("uid", Integer.class);
         } catch (Exception e) {
-            throw new RuntimeException("token验证失败");
+            WebUtils.responseJson(response, Result.failure(ResultCode.TOKEN_ILLEGAL));
+            return;
         }
         // 获取用户信息
         Object obj = redisCache.getCacheObject("login:" + uid);
         Login login = JSON.parseObject(JSON.toJSONString(obj), Login.class);
         if (Objects.isNull(login)) {
-            throw new RuntimeException("用户信息获取失败");
+            WebUtils.responseJson(response, Result.failure(ResultCode.LOGIN_EXPIRE));
+            return;
         }
         // 封装Authentication
         UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken

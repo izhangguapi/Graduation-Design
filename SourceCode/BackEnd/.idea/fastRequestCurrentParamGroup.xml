@@ -1,21 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="fastRequestCurrentParamGroup">
-    <option name="className" value="com.zzh.contest.controller.LoginController" />
-    <option name="method" value="login" />
-    <option name="methodDescription" value="生成验证码" />
+    <option name="className" value="com.zzh.contest.controller.AnnouncementsController" />
+    <option name="method" value="selectAnnouncement" />
+    <option name="methodDescription" value="首页查询公告" />
     <option name="module" value="BackEnd" />
-    <option name="originUrl" value="/login" />
-    <option name="requestParamMap">
-      <map>
-        <entry key="ulid">
-          <value>
-            <Object />
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="tempId" value="" />
-    <option name="url" value="/captcha" />
+    <option name="originUrl" value="/api/announcement" />
+    <option name="returnDocument" value="{&#10;&#9;&quot;status&quot;:&quot;No comment,Type =Boolean&quot;,&#10;&#9;&quot;code&quot;:&quot;No comment,Type =Number&quot;,&#10;&#9;&quot;msg&quot;:&quot;No comment,Type =String&quot;,&#10;&#9;&quot;data&quot;:{},&#10;&#9;&quot;time&quot;:&quot;No comment,Type =String&quot;&#10;}" />
+    <option name="tempId" value="id_com.zzh.contest.controller.LoginController.login" />
+    <option name="url" value="/api/announcement" />
   </component>
 </project>

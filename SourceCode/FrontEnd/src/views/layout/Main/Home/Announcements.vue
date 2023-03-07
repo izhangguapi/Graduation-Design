@@ -9,9 +9,10 @@
           {{ item.title }}
         </el-link>
       </div>
-      <router-link class="more-link" :to="{name:'announcement'}">
+      <router-link v-if="list" class="more-link" :to="{name:'announcement'}">
         查看更多...
       </router-link>
+      <div v-else>暂无数据</div>
     </el-card>
   </div>
 </template>
@@ -23,13 +24,16 @@ export default {
   name: "AnnouncementList",
   data() {
     return {
+      // 虚假数据
       list: []
     }
   },
   mounted() {
     // 获取公告
-    getRequest("/messages/announcement").then((res) => {
-      this.list = res.data.data;
+    getRequest("/announcement").then((res) => {
+      if (res.data){
+        this.list = res.data.data;
+      }
     });
   }
 }

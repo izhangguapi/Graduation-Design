@@ -6,7 +6,6 @@
         <LatestContest></LatestContest>
       </el-col>
     </el-row>
-
     <el-row :gutter="20">
       <!--左侧卡片-->
       <el-col :span="12" :offset="4">

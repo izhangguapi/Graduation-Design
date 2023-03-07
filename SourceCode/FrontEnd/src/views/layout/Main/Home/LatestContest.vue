@@ -39,37 +39,38 @@ export default {
   //跑马灯高度自适应
   mounted() {
     getRequest("/latestContest").then(res => {
-      let data = res.data.data;
-      this.contest = data;
-
-      let nowTime = new Date();
-      let regStartTime = new Date(data.regStartTime);
-      let regEndTime = new Date(data.regEndTime);
-      let startTime = new Date(data.startTime);
-      let endTime = new Date(data.endTime);
-      if (nowTime < regStartTime) {
-        this.formatTimeStamp(Math.floor((regStartTime - nowTime) / 1000))
-        this.text = '距离报名开始还剩';
-        this.spanColor='#67C23A';
-        this.active = 0;
-      } else if (nowTime < regEndTime) {
-        this.formatTimeStamp(Math.floor((regEndTime - nowTime) / 1000));
-        this.text = '距离报名结束还剩';
-        this.spanColor='#E6A23C';
-        this.active = 1;
-      } else if (nowTime < startTime) {
-        this.formatTimeStamp(Math.floor((startTime - nowTime) / 1000));
-        this.text = '距离比赛开始还剩';
-        this.spanColor='#409EFF';
-        this.active = 2;
-      } else if (nowTime < endTime) {
-        this.formatTimeStamp(Math.floor((endTime - nowTime) / 1000));
-        this.text = '距离比赛结束还剩';
-        this.spanColor='#F56C6C';
-        this.active = 3;
-      } else {
-        this.text = '比赛已结束';
-        this.active = 4;
+      if (res.data){
+        let data = res.data.data;
+        this.contest = data;
+        let nowTime = new Date();
+        let regStartTime = new Date(data.regStartTime);
+        let regEndTime = new Date(data.regEndTime);
+        let startTime = new Date(data.startTime);
+        let endTime = new Date(data.endTime);
+        if (nowTime < regStartTime) {
+          this.formatTimeStamp(Math.floor((regStartTime - nowTime) / 1000))
+          this.text = '距离报名开始还剩';
+          this.spanColor='#67C23A';
+          this.active = 0;
+        } else if (nowTime < regEndTime) {
+          this.formatTimeStamp(Math.floor((regEndTime - nowTime) / 1000));
+          this.text = '距离报名结束还剩';
+          this.spanColor='#E6A23C';
+          this.active = 1;
+        } else if (nowTime < startTime) {
+          this.formatTimeStamp(Math.floor((startTime - nowTime) / 1000));
+          this.text = '距离比赛开始还剩';
+          this.spanColor='#409EFF';
+          this.active = 2;
+        } else if (nowTime < endTime) {
+          this.formatTimeStamp(Math.floor((endTime - nowTime) / 1000));
+          this.text = '距离比赛结束还剩';
+          this.spanColor='#F56C6C';
+          this.active = 3;
+        } else {
+          this.text = '比赛已结束';
+          this.active = 4;
+        }
       }
     })
     // if (this.contest.regStartTime);
