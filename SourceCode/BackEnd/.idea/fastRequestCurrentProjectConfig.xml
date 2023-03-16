@@ -9,8 +9,33 @@
         </DataMapping>
       </list>
     </option>
-    <option name="domain" value="http://127.0.0.1:8090/api" />
-    <option name="enableEnv" value="dev" />
-    <option name="enableProject" value="GD" />
+    <option name="dataList">
+      <list>
+        <NameGroup>
+          <option name="hostGroup">
+            <list>
+              <HostGroup>
+                <option name="env" value="tes" />
+                <option name="url" value="127.0.0.1:8090/api" />
+              </HostGroup>
+            </list>
+          </option>
+          <option name="name" value="test" />
+        </NameGroup>
+      </list>
+    </option>
+    <option name="domain" value="127.0.0.1:8090/api" />
+    <option name="enableEnv" value="tes" />
+    <option name="enableProject" value="test" />
+    <option name="envList">
+      <list>
+        <option value="tes" />
+      </list>
+    </option>
+    <option name="projectList">
+      <list>
+        <option value="test" />
+      </list>
+    </option>
   </component>
 </project>

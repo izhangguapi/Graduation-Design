@@ -17,7 +17,7 @@ spring:
   #      name: user
   #      password: user
   main:
-    banner-mode: 'off' # 禁止控制台打印出banner
+    banner-mode: off # 禁止控制台打印出banner
     allow-circular-references: true # 允许循环依赖
   datasource: # 数据库配置
     druid:

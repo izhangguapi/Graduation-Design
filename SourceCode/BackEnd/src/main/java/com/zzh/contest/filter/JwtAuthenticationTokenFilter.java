@@ -33,7 +33,9 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
         // 获取token
         String token = request.getHeader("token");
         if (!StringUtils.hasText(token)) {
-            WebUtils.responseJson(response, Result.failure(ResultCode.NO_TOKEN));
+            // 获取token失败后放行过滤器，而不是返回错误信息
+            filterChain.doFilter(request, response);
+            // WebUtils.responseJson(response, Result.failure(ResultCode.NO_TOKEN));
             return;
         }
         // 解析token

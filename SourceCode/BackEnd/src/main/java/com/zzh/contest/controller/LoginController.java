@@ -33,9 +33,9 @@ public class LoginController {
      */
     @GetMapping("/captcha")
     public void getCaptcha(HttpServletResponse response, @RequestParam String ulid) throws Exception {
-        if (ulid.equals("")) {
-            return;
-        }
+        // if (ulid.equals("")) {
+        //     return;
+        // }
         // 设置请求头为输出图片类型
         response.setContentType("image/gif");
         response.setHeader("Pragma", "No-cache");
@@ -48,9 +48,15 @@ public class LoginController {
         // 获取运算的结果
         System.out.println("计算结果为：" + captcha.text());
         // 将ulid作为key，验证码作为value存入redis
-        redisCache.setCacheObject(ulid, captcha.text(), 1, TimeUnit.MINUTES);
-        // 输出验证码图片
-        captcha.out(response.getOutputStream());
+        try {
+            redisCache.setCacheObject(ulid, captcha.text(), 1, TimeUnit.MINUTES);
+        } catch (Exception e) {
+            System.out.println("存入Redis失败");
+        } finally {
+            // 输出验证码图片
+            captcha.out(response.getOutputStream());
+        }
+
     }
 
     /**

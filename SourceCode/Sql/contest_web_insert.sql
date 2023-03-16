@@ -1,3 +1,4 @@
+USE `contest_web`;
 /*
 群组表:  `groups` 插入数据
 */ 

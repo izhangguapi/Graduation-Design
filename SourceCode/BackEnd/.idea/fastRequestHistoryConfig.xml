@@ -4,6 +4,57 @@
     <option name="historyList">
       <list>
         <ResponseHistory>
+          <option name="className" value="com.zzh.contest.controller.LoginController" />
+          <option name="code" value="200" />
+          <option name="enableEnv" value="tes" />
+          <option name="enableProject" value="test" />
+          <option name="method" value="getCaptcha" />
+          <option name="methodType" value="GET" />
+          <option name="name" value="生成验证码" />
+          <option name="paramGroup">
+            <ParamGroupCollection>
+              <option name="className" value="com.zzh.contest.controller.LoginController" />
+              <option name="method" value="getCaptcha" />
+              <option name="methodDescription" value="生成验证码" />
+              <option name="multipartKeyValueListJson" value="[]" />
+              <option name="originUrl" value="/captcha" />
+              <option name="pathParamsKeyValueListJson" value="[]" />
+              <option name="url" value="/captcha" />
+              <option name="urlEncodedKeyValueListJson" value="[]" />
+              <option name="urlParamsKeyValueListJson" value="[{&quot;comment&quot;:&quot;&quot;,&quot;customFlag&quot;:2,&quot;enabled&quot;:true,&quot;key&quot;:&quot;ulid&quot;,&quot;type&quot;:&quot;String&quot;,&quot;value&quot;:&quot;ulid_c5m1d&quot;}]" />
+              <option name="urlParamsKeyValueListText" value="ulid=ulid_c5m1d" />
+            </ParamGroupCollection>
+          </option>
+          <option name="requestInfo" value="Request Url: http://127.0.0.1:8090/api/captcha?ulid=%75%6C%69%64%5F%63%35%6D%31%64&#13;&#10;Request Headers: &#13;&#10;    Accept: application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#13;&#10;    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36 Hutool&#13;&#10;    Accept-Encoding: gzip, deflate&#13;&#10;    Accept-Language: zh-CN,zh;q=0.8&#13;&#10;Request Body: &#13;&#10;    null&#13;&#10;" />
+          <option name="url" value="/captcha" />
+        </ResponseHistory>
+        <ResponseHistory>
+          <option name="className" value="com.zzh.contest.controller.LoginController" />
+          <option name="code" value="500" />
+          <option name="enableEnv" value="tes" />
+          <option name="enableProject" value="test" />
+          <option name="method" value="getCaptcha" />
+          <option name="methodType" value="GET" />
+          <option name="name" value="生成验证码" />
+          <option name="paramGroup">
+            <ParamGroupCollection>
+              <option name="className" value="com.zzh.contest.controller.LoginController" />
+              <option name="method" value="getCaptcha" />
+              <option name="methodDescription" value="生成验证码" />
+              <option name="multipartKeyValueListJson" value="[]" />
+              <option name="originUrl" value="/captcha" />
+              <option name="pathParamsKeyValueListJson" value="[]" />
+              <option name="url" value="/captcha" />
+              <option name="urlEncodedKeyValueListJson" value="[]" />
+              <option name="urlParamsKeyValueListJson" value="[{&quot;comment&quot;:&quot;&quot;,&quot;customFlag&quot;:2,&quot;enabled&quot;:true,&quot;key&quot;:&quot;ulid&quot;,&quot;type&quot;:&quot;String&quot;,&quot;value&quot;:&quot;ulid_c5m1d&quot;}]" />
+              <option name="urlParamsKeyValueListText" value="ulid=ulid_c5m1d" />
+            </ParamGroupCollection>
+          </option>
+          <option name="requestInfo" value="Request Url: http://127.0.0.1:8090/api/captcha?ulid=%75%6C%69%64%5F%63%35%6D%31%64&#13;&#10;Request Headers: &#13;&#10;    Accept: application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#13;&#10;    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36 Hutool&#13;&#10;    Accept-Encoding: gzip, deflate&#13;&#10;    Accept-Language: zh-CN,zh;q=0.8&#13;&#10;Request Body: &#13;&#10;    null&#13;&#10;" />
+          <option name="response" value="{&quot;timestamp&quot;:&quot;2023-03-16T07:51:01.319+00:00&quot;,&quot;status&quot;:500,&quot;error&quot;:&quot;Internal Server Error&quot;,&quot;path&quot;:&quot;/api/captcha&quot;}" />
+          <option name="url" value="/captcha" />
+        </ResponseHistory>
+        <ResponseHistory>
           <option name="className" value="com.zzh.contest.controller.AnnouncementsController" />
           <option name="code" value="200" />
           <option name="enableEnv" value="dev" />
@@ -486,64 +537,6 @@
           </option>
           <option name="requestInfo" value="Request Url: http://127.0.0.1:8090/api/login?ulid=123&amp;captcha=-1&#13;&#10;Request Headers: &#13;&#10;    Accept: application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#13;&#10;    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36 Hutool&#13;&#10;    Accept-Encoding: gzip, deflate&#13;&#10;    Accept-Language: zh-CN,zh;q=0.8&#13;&#10;    Content-Length: 67&#13;&#10;    token: &#13;&#10;    Content-Type: application/json;charset=UTF-8&#13;&#10;Request Body: &#13;&#10;    {&#10;  &quot;phone&quot;: &quot;13886961359&quot;,&#10;  &quot;email&quot;: &quot;&quot;,&#10;  &quot;password&quot;: &quot;123456&quot;&#10;}&#13;&#10;" />
           <option name="response" value="{&quot;status&quot;:true,&quot;code&quot;:200,&quot;msg&quot;:&quot;登录成功&quot;,&quot;data&quot;:{&quot;token&quot;:&quot;eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NzU0OTAyMjksInVpZCI6Mn0.gFWc_TbiZSnywvAnA-KASTA1nfAFNY3WnbmpgvgBTDg&quot;},&quot;time&quot;:&quot;2023-01-28 13:57:09:780&quot;}" />
-          <option name="url" value="/login" />
-        </ResponseHistory>
-        <ResponseHistory>
-          <option name="className" value="com.zzh.contest.controller.LoginController" />
-          <option name="code" value="200" />
-          <option name="enableEnv" value="dev" />
-          <option name="enableProject" value="GD" />
-          <option name="method" value="login" />
-          <option name="methodType" value="GET" />
-          <option name="name" value="生成验证码" />
-          <option name="paramGroup">
-            <ParamGroupCollection>
-              <option name="bodyKeyValueListJson" value="{&#10;  &quot;phone&quot;: &quot;13886961359&quot;,&#10;  &quot;email&quot;: &quot;&quot;,&#10;  &quot;password&quot;: &quot;12345&quot;&#10;}" />
-              <option name="className" value="com.zzh.contest.controller.LoginController" />
-              <option name="jsonDocument" value="{&#10;  &quot;userId&quot;: &quot;No comment,Value =1&quot;,&#10;  &quot;name&quot;: &quot;No comment,Value =name_1xj3l&quot;,&#10;  &quot;sex&quot;: &quot;No comment,Value =true&quot;,&#10;  &quot;birthday&quot;: &quot;No comment,Value =2023-01-26&quot;,&#10;  &quot;school_id&quot;: &quot;No comment,Value =school_id_w9l4l&quot;,&#10;  &quot;address&quot;: &quot;No comment,Value =address_p94po&quot;,&#10;  &quot;phone&quot;: &quot;No comment,Value =phone_5zhpv&quot;,&#10;  &quot;email&quot;: &quot;No comment,Value =email_yfp8p&quot;,&#10;  &quot;password&quot;: &quot;No comment,Value =password_4uhgx&quot;,&#10;  &quot;groupName&quot;: &quot;No comment,Value =groupName_38qsk&quot;,&#10;  &quot;encoding&quot;: &quot;No comment,Value =encoding_lxunk&quot;,&#10;  &quot;datetime&quot;: &quot;No comment,Value =datetime_nnkw4&quot;,&#10;  &quot;captcha&quot;: &quot;No comment,Value =captcha_ufr8d&quot;,&#10;  &quot;query&quot;: &quot;No comment,Value =query_hg6bk&quot;,&#10;  &quot;currentPage&quot;: &quot;No comment,Value =1&quot;,&#10;  &quot;pageSize&quot;: &quot;No comment,Value =1&quot;&#10;}" />
-              <option name="method" value="login" />
-              <option name="methodDescription" value="生成验证码" />
-              <option name="methodType" value="POST" />
-              <option name="multipartKeyValueListJson" value="[]" />
-              <option name="originUrl" value="/login" />
-              <option name="pathParamsKeyValueListJson" value="[]" />
-              <option name="url" value="/login" />
-              <option name="urlEncodedKeyValueListJson" value="[]" />
-              <option name="urlParamsKeyValueListJson" value="[{&quot;customFlag&quot;:2,&quot;enabled&quot;:true,&quot;key&quot;:&quot;ulid&quot;,&quot;type&quot;:&quot;String&quot;,&quot;value&quot;:&quot;123&quot;},{&quot;customFlag&quot;:2,&quot;enabled&quot;:true,&quot;key&quot;:&quot;captcha&quot;,&quot;type&quot;:&quot;String&quot;,&quot;value&quot;:&quot;-1&quot;}]" />
-              <option name="urlParamsKeyValueListText" value="ulid=123&#10;&amp;captcha=-1" />
-            </ParamGroupCollection>
-          </option>
-          <option name="requestInfo" value="Request Url: http://127.0.0.1:8090/api/login?ulid=123&amp;captcha=-1&#13;&#10;Request Headers: &#13;&#10;    Accept: application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#13;&#10;    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36 Hutool&#13;&#10;    Accept-Encoding: gzip, deflate&#13;&#10;    Accept-Language: zh-CN,zh;q=0.8&#13;&#10;    Content-Length: 66&#13;&#10;    token: &#13;&#10;    Content-Type: application/json;charset=UTF-8&#13;&#10;Request Body: &#13;&#10;    {&#10;  &quot;phone&quot;: &quot;13886961359&quot;,&#10;  &quot;email&quot;: &quot;&quot;,&#10;  &quot;password&quot;: &quot;12345&quot;&#10;}&#13;&#10;" />
-          <option name="response" value="{&quot;code&quot;:301,&quot;msg&quot;:&quot;账号或密码错误，请重新登录&quot;,&quot;time&quot;:&quot;2023-01-28 13:56:56:648&quot;}" />
-          <option name="url" value="/login" />
-        </ResponseHistory>
-        <ResponseHistory>
-          <option name="className" value="com.zzh.contest.controller.LoginController" />
-          <option name="code" value="200" />
-          <option name="enableEnv" value="dev" />
-          <option name="enableProject" value="GD" />
-          <option name="method" value="login" />
-          <option name="methodType" value="GET" />
-          <option name="name" value="生成验证码" />
-          <option name="paramGroup">
-            <ParamGroupCollection>
-              <option name="bodyKeyValueListJson" value="{&#10;  &quot;phone&quot;: &quot;13886961359&quot;,&#10;  &quot;email&quot;: &quot;&quot;,&#10;  &quot;password&quot;: &quot;12345&quot;&#10;}" />
-              <option name="className" value="com.zzh.contest.controller.LoginController" />
-              <option name="jsonDocument" value="{&#10;  &quot;userId&quot;: &quot;No comment,Value =1&quot;,&#10;  &quot;name&quot;: &quot;No comment,Value =name_1xj3l&quot;,&#10;  &quot;sex&quot;: &quot;No comment,Value =true&quot;,&#10;  &quot;birthday&quot;: &quot;No comment,Value =2023-01-26&quot;,&#10;  &quot;school_id&quot;: &quot;No comment,Value =school_id_w9l4l&quot;,&#10;  &quot;address&quot;: &quot;No comment,Value =address_p94po&quot;,&#10;  &quot;phone&quot;: &quot;No comment,Value =phone_5zhpv&quot;,&#10;  &quot;email&quot;: &quot;No comment,Value =email_yfp8p&quot;,&#10;  &quot;password&quot;: &quot;No comment,Value =password_4uhgx&quot;,&#10;  &quot;groupName&quot;: &quot;No comment,Value =groupName_38qsk&quot;,&#10;  &quot;encoding&quot;: &quot;No comment,Value =encoding_lxunk&quot;,&#10;  &quot;datetime&quot;: &quot;No comment,Value =datetime_nnkw4&quot;,&#10;  &quot;captcha&quot;: &quot;No comment,Value =captcha_ufr8d&quot;,&#10;  &quot;query&quot;: &quot;No comment,Value =query_hg6bk&quot;,&#10;  &quot;currentPage&quot;: &quot;No comment,Value =1&quot;,&#10;  &quot;pageSize&quot;: &quot;No comment,Value =1&quot;&#10;}" />
-              <option name="method" value="login" />
-              <option name="methodDescription" value="生成验证码" />
-              <option name="methodType" value="POST" />
-              <option name="multipartKeyValueListJson" value="[]" />
-              <option name="originUrl" value="/login" />
-              <option name="pathParamsKeyValueListJson" value="[]" />
-              <option name="url" value="/login" />
-              <option name="urlEncodedKeyValueListJson" value="[]" />
-              <option name="urlParamsKeyValueListJson" value="[{&quot;customFlag&quot;:2,&quot;enabled&quot;:true,&quot;key&quot;:&quot;ulid&quot;,&quot;type&quot;:&quot;String&quot;,&quot;value&quot;:&quot;123&quot;},{&quot;customFlag&quot;:2,&quot;enabled&quot;:true,&quot;key&quot;:&quot;captcha&quot;,&quot;type&quot;:&quot;String&quot;,&quot;value&quot;:&quot;-1&quot;}]" />
-              <option name="urlParamsKeyValueListText" value="ulid=123&#10;&amp;captcha=-1" />
-            </ParamGroupCollection>
-          </option>
-          <option name="requestInfo" value="Request Url: http://127.0.0.1:8090/api/login?ulid=123&amp;captcha=-1&#13;&#10;Request Headers: &#13;&#10;    Accept: application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#13;&#10;    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36 Hutool&#13;&#10;    Accept-Encoding: gzip, deflate&#13;&#10;    Accept-Language: zh-CN,zh;q=0.8&#13;&#10;    Content-Length: 66&#13;&#10;    token: &#13;&#10;    Content-Type: application/json;charset=UTF-8&#13;&#10;Request Body: &#13;&#10;    {&#10;  &quot;phone&quot;: &quot;13886961359&quot;,&#10;  &quot;email&quot;: &quot;&quot;,&#10;  &quot;password&quot;: &quot;12345&quot;&#10;}&#13;&#10;" />
-          <option name="response" value="{&quot;code&quot;:301,&quot;msg&quot;:&quot;账号或密码错误，请重新登录&quot;,&quot;time&quot;:&quot;2023-01-28 13:56:19:315&quot;}" />
           <option name="url" value="/login" />
         </ResponseHistory>
       </list>
