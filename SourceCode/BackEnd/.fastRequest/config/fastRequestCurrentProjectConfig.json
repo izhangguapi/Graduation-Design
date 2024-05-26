@@ -1,0 +1,37 @@
+{
+	"dataList":[
+		{
+			"hostGroup":[
+				{
+					"env":"tes",
+					"url":"127.0.0.1:8090/api"
+				}
+			],
+			"name":"test"
+		}
+	],
+	"envList":[
+		"tes"
+	],
+	"headerList":[],
+	"postScript":"",
+	"preScript":"",
+	"projectList":[
+		"test"
+	],
+	"syncModel":{
+		"branch":"master",
+		"domain":"https://github.com",
+		"enabled":false,
+		"namingPolicy":"byDoc",
+		"owner":"",
+		"repo":"",
+		"repoUrl":"",
+		"syncAfterRun":false,
+		"token":"",
+		"type":"github"
+	},
+	"urlEncodedKeyValueList":[],
+	"urlParamsKeyValueList":[],
+	"urlSuffix":""
+}

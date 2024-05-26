@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="fastRequestCurrentProjectLocalConfig">
+    <option name="cookieList">
+      <list>
+        <DataMapping>
+          <option name="type" value="http://127.0.0.1:8090/api" />
+          <option name="value" value="JSESSIONID=FC15D04906EB07AFF90D02E968456E74; Path" />
+        </DataMapping>
+      </list>
+    </option>
+    <option name="domain" value="127.0.0.1:8090/api" />
+    <option name="enableEnv" value="tes" />
+    <option name="enableProject" value="test" />
+    <option name="initFlag" value="1" />
+  </component>
+</project>

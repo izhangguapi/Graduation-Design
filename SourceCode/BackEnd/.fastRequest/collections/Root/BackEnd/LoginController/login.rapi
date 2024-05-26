@@ -1,0 +1,43 @@
+{
+	"activeGroup":"Default",
+	"apiParamGroup":{},
+	"childList":[],
+	"description":"",
+	"directory":"~.fastRequest~collections~Root~BackEnd~LoginController",
+	"domain":"http://127.0.0.1:8090/api",
+	"enableEnv":"dev",
+	"enableProject":"GD",
+	"filePath":"~.fastRequest~collections~Root~BackEnd~LoginController~login.rapi",
+	"headerList":[
+		{
+			"enabled":true,
+			"type":"token",
+			"value":""
+		}
+	],
+	"id":"api_com.zzh.contest.controller.LoginController.login",
+	"name":"登录",
+	"paramGroup":{
+		"bodyKeyValueListJson":"{\n  \"phone\": \"13886961359\",\n  \"email\": \"\",\n  \"password\": \"12345\"\n}",
+		"className":"com.zzh.contest.controller.LoginController",
+		"jsonDocument":"{\n  \"userId\": \"No comment,Value =1\",\n  \"name\": \"No comment,Value =name_1xj3l\",\n  \"sex\": \"No comment,Value =true\",\n  \"birthday\": \"No comment,Value =2023-01-26\",\n  \"school_id\": \"No comment,Value =school_id_w9l4l\",\n  \"address\": \"No comment,Value =address_p94po\",\n  \"phone\": \"No comment,Value =phone_5zhpv\",\n  \"email\": \"No comment,Value =email_yfp8p\",\n  \"password\": \"No comment,Value =password_4uhgx\",\n  \"groupName\": \"No comment,Value =groupName_38qsk\",\n  \"encoding\": \"No comment,Value =encoding_lxunk\",\n  \"datetime\": \"No comment,Value =datetime_nnkw4\",\n  \"captcha\": \"No comment,Value =captcha_ufr8d\",\n  \"query\": \"No comment,Value =query_hg6bk\",\n  \"currentPage\": \"No comment,Value =1\",\n  \"pageSize\": \"No comment,Value =1\"\n}",
+		"method":"login",
+		"methodDescription":"登录",
+		"methodType":"POST",
+		"multipartKeyValueListJson":"[]",
+		"originUrl":"/login",
+		"pathParamsKeyValueListJson":"[]",
+		"postScript":"",
+		"postType":"json",
+		"preScript":"",
+		"returnDocument":"",
+		"tempId":"",
+		"url":"/login",
+		"urlEncodedKeyValueListJson":"[]",
+		"urlEncodedKeyValueListText":"",
+		"urlParamsKeyValueListJson":"[{\"customFlag\":2,\"enabled\":true,\"key\":\"ulid\",\"type\":\"String\",\"value\":\"123\"},{\"customFlag\":2,\"enabled\":true,\"key\":\"captcha\",\"type\":\"String\",\"value\":\"-1\"}]",
+		"urlParamsKeyValueListText":"ulid=123\n&captcha=-1"
+	},
+	"tempId":"id_com.zzh.contest.controller.LoginController.login",
+	"type":2
+}

@@ -1,0 +1,43 @@
+{
+	"activeGroup":"Default",
+	"apiParamGroup":{},
+	"childList":[],
+	"description":"",
+	"directory":"~.fastRequest~collections~Root~BackEnd~RoleController",
+	"domain":"http://127.0.0.1:8090/api",
+	"enableEnv":"dev",
+	"enableProject":"GD",
+	"filePath":"~.fastRequest~collections~Root~BackEnd~RoleController~getAll.rapi",
+	"headerList":[
+		{
+			"enabled":true,
+			"type":"token",
+			"value":""
+		}
+	],
+	"id":"api_com.zzh.contest.controller.RoleController.getAll",
+	"name":"查询全部角色",
+	"paramGroup":{
+		"bodyKeyValueListJson":"",
+		"className":"com.zzh.contest.controller.RoleController",
+		"jsonDocument":"",
+		"method":"getAll",
+		"methodDescription":"查询全部角色",
+		"methodType":"GET",
+		"multipartKeyValueListJson":"[]",
+		"originUrl":"/role/all",
+		"pathParamsKeyValueListJson":"[]",
+		"postScript":"",
+		"postType":"json",
+		"preScript":"",
+		"returnDocument":"[\n\t{\n\t\t\"roleId\":\"No comment,Type =Number\",\n\t\t\"roleName\":\"No comment,Type =String\",\n\t\t\"createTime\":\"No comment,Type =String\",\n\t\t\"description\":\"No comment,Type =String\"\n\t}\n]",
+		"tempId":"",
+		"url":"/role/all",
+		"urlEncodedKeyValueListJson":"[]",
+		"urlEncodedKeyValueListText":"",
+		"urlParamsKeyValueListJson":"[]",
+		"urlParamsKeyValueListText":""
+	},
+	"tempId":"id_com.zzh.contest.controller.RoleController.getAll",
+	"type":2
+}

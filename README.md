@@ -12,6 +12,12 @@
 
 **该项目已添加Spring Security和Redis，结构大改，有能力者可拉取代码自行完善。如需急用，请前往[这里](https://github.com/izhangguapi/Graduation-Design/releases)使用打包好的前端和后端，或者下载源码进行修改**
 
+请各位仔细甄别，本项目已开源，如果您是购买的，请退款并差评。
+
+挂一个不要脸的盗版贩卖者
+
+![csdn盗版](https://pic.imgdb.cn/item/66528688d9c307b7e99211b4.png)
+
 [![AUR](https://img.shields.io/badge/license-GPL-blue.svg)](https://github.com/zhangguapipi/Graduation_Design/blob/main/LICENSE)
 
 |  git仓库 |  源码  |
