@@ -22,8 +22,8 @@
 
 |  git仓库 |  源码  |
 |---|---|
-|  github |  https://github.com/izhangguapi/Graduation_Design  |
-|  码云  | https://gitee.com/izhangguapi/Graduation_Design |
+|  github |  https://github.com/izhangguapi/Graduation-Design  |
+|  码云  | https://gitee.com/izhangguapi/Graduation-Design |
 
 ### 项目启动
 使用idea打开BackEnd和FrontEnd，后端需要jdk1.8，前端需要Vue脚手架和node.js才可运行
