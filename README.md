@@ -16,7 +16,7 @@
 
 挂一个不要脸的盗版贩卖者
 
-![csdn盗版](https://pic.imgdb.cn/item/66528688d9c307b7e99211b4.png)
+![csdn盗版](https://github.com/izhangguapi/Graduation-Design/blob/50c88bcb6678c2da2e6bd8fdbaa5f9f5017ba4bb/%E6%96%87%E6%A1%A3/csdn.png)
 
 [![AUR](https://img.shields.io/badge/license-GPL-blue.svg)](https://github.com/zhangguapipi/Graduation_Design/blob/main/LICENSE)
 
